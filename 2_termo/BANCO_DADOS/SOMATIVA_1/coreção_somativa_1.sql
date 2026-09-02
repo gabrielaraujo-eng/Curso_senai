@@ -1,118 +1,76 @@
-create database oficina_de_veiculo_gabriel;
-use oficina_de_veiculo_gabriel;
-create table clientes (
-    id_cliente int primary key not null auto_increment,
-    nome varchar(100) not null,
-    cpf varchar(14) not null,
-    email varchar(150) not null,
-    endereco varchar(200) not null,
-    telefone varchar(15) not null
+CREATE DATABASE OFICINA_BRUNO;
+USE OFICINA_BRUNO;
+
+CREATE TABLE IF NOT EXISTS CLIENTES (
+    ID_CLIENTE INT AUTO_INCREMENT PRIMARY KEY,
+    TELEFONE CHAR(15) NOT NULL,
+    EMAIL VARCHAR(100) NOT NULL,
+    NOME_CLIENTE VARCHAR(60) NOT NULL,
+    ENDERECO VARCHAR(100) NOT NULL,
+    CPF_CLIENTE CHAR(14) NOT NULL UNIQUE,
+    DATA_CADASTRO TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
-create table pecas (
-    id_peca int primary key auto_increment,
-    fabricante varchar(100) not null,
-    nome varchar(100) not null,
-    quantidade int not null default 0,
-    descricao varchar(255),
-    preco decimal(10,2) not null default 0.00
+CREATE TABLE IF NOT EXISTS VEICULOS (
+    ID_VEICULO INT AUTO_INCREMENT PRIMARY KEY,
+    DESCRICAO_PROBLEMA TEXT(300) NOT NULL,
+    PLACA CHAR(8) NOT NULL UNIQUE,
+    COR VARCHAR(25) NOT NULL,
+    MARCA VARCHAR(25) NOT NULL,
+    QUILOMETRAGEM INT,
+    DATA_CADASTRO TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
-create table pagamentos (
-    id_pagamento int primary key not null auto_increment,
-    pedido varchar(50) not null,
-    data_pagamento datetime not null,
-    status varchar(30) not null default 'pendente',
-    preco decimal(10,2) not null,
-    forma_pagamento varchar(50) not null
+CREATE TABLE IF NOT EXISTS MARCAS (
+    ID_MARCA INT AUTO_INCREMENT PRIMARY KEY,
+    NOME_MARCA VARCHAR(50) NOT NULL,
+    PAIS_ORIGEM VARCHAR(30),
+    ANO_LANCAMENTO YEAR,
+    MODELO TEXT(500),
+    TIPO_COMBUSTIVEL ENUM('GASOLINA', 'ETANOL', 'DIESEL') DEFAULT 'ETANOL' NOT NULL,
+    DATA_CADASTRO TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
-create table fornecedores (
-    id_fornecedor int primary key not null auto_increment,
-    endereco varchar(200) not null,
-    email varchar(150) not null,
-    nome varchar(100) not null,
-    telefone varchar(15) not null,
-    cnpj varchar(18) not null
+CREATE TABLE IF NOT EXISTS MODELOS (
+    ID_MODELO INT AUTO_INCREMENT PRIMARY KEY,
+    NOME_MODELO VARCHAR(30) NOT NULL,
+    TIPO_MODELO ENUM('SUV', 'COMPACTO', 'SEDAN') DEFAULT 'COMPACTO' ,
+    ANO_FABRICACAO YEAR NOT NULL,
+    POTENCIA CHAR(10),
+    STATUS_MODELO ENUM ('ATIVO', 'INATIVO') DEFAULT 'ATIVO',
+    DATA_CADASTRO TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
-create table funcionarios (
-    id_funcionario int primary key not null auto_increment,
-    nome varchar(100) not null,
-    cpf varchar(14) not null,
-    telefone varchar(15) not null,
-    salario decimal(10,2) not null default 0.00,
-    cargo varchar(50) not null
+CREATE TABLE IF NOT EXISTS FUNCIONARIOS (
+    ID_FUNCIONARIO INT AUTO_INCREMENT PRIMARY KEY,
+    NOME_FUNCIONARIO VARCHAR(60) NOT NULL,
+    CPF_FUNCIONARIO CHAR(14) NOT NULL UNIQUE,
+    TELEFONE_FUNCIONARIO CHAR(15) NOT NULL,
+    CARGO VARCHAR(30),
+    SALARIO DECIMAL(10,2) NOT NULL,
+    DATA_CADASTRO TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
-create table veiculos (
-    id_veiculo int primary key auto_increment,
-    modelo varchar(50) not null,
-    ano year not null,
-    cor varchar(30) not null,
-    marca varchar(50) not null,
-    placa varchar(8) not null
+CREATE TABLE IF NOT EXISTS SERVICOS (
+    ID_SERVICO INT AUTO_INCREMENT PRIMARY KEY,
+    TIPO_SERVICO VARCHAR(100) NOT NULL,
+    VALOR DECIMAL(10,2) NOT NULL,
+    DATA_INICIO DATETIME NOT NULL,
+    DATA_TERMINO DATETIME NOT NULL,
+    DESCRICAO_SERVICO TEXT(500) NOT NULL,
+    STATUS_SERVICOS ENUM ('EM ANDAMENTO','EM ESPERA','CONCLUÍDO') DEFAULT 'EM ANDAMENTO' NOT NULL,
+    DATA_CADASTRO TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
-create table marcas (
-    id_marca int primary key not null auto_increment,
-    status varchar(30) not null default 'ativa',
-    site varchar(60),
-    nome_marca varchar(60) not null,
-    pais_origem varchar(60) not null,
-    data_fundacao date
+CREATE TABLE IF NOT EXISTS FORNECEDORES (
+    ID_FORNECEDOR INT AUTO_INCREMENT PRIMARY KEY,
+    TELEFONE CHAR(15) NOT NULL,
+    -- TEMPO_ENTREGA VARCHAR(30)
+    CNPJ CHAR(18) NOT NULL UNIQUE,
+    RAZAO_SOCIAL VARCHAR(100) NOT NULL,
+    SEGMENTO_AREA VARCHAR(50) NOT NULL,
+    ENDERECO VARCHAR(100) NOT NULL,
+    EMAIL VARCHAR(100) NOT NULL,
+    STATUS_FORNECEDOR ENUM ('ATIVO',  'INATIVO') DEFAULT 'ATIVO'
+    DATA_CADASTRO TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
-
-create table modelos (
-    id_modelo int primary key not null auto_increment,
-    descricao varchar(255),
-    nome_modelo varchar(60) not null,
-    motorizacao varchar(60) not null,
-    ano_modelo int not null,
-    tipo_veiculo varchar(60) not null
-);
-
-create table servicos (
-    id_servico int primary key not null auto_increment,
-    descricao varchar(255),
-    preco decimal(10,2) not null default 0.00,
-    status varchar(20) not null default 'ativo',
-    tempo_estimado int not null default 60,
-    nome varchar(100) not null
-);
-
-create table ordens_de_servico (
-    id_ordem_servico int primary key not null auto_increment,
-    observacao varchar(255),
-    status varchar(30) not null default 'aberta',
-    data_abertura date not null default (current_date),
-    data_fechamento date,
-    valor_total decimal(10,2) not null default 0.00
-);
-
-alter table clientes add data_nascimento datetime not null;
-alter table pecas add tamanho decimal(10,2) not null;
-alter table pagamentos add  local_pagamento varchar(50) not null;
-alter table fornecedores add local_fornecimento varchar(50) not null;
-alter table funcionarios add comisao int not null default 0.00;
-alter table veiculos add tamanho decimal(10,2) not null;
-alter table marcas add criador varchar(50) not null;
-alter table modelos add criador varchar(50) not null;
-alter table servicos add taxa_servico decimal (10,2) not null default 0.00;
-alter table ordens_de_servico add manutencao varchar(50);
-
-
-alter table clientes drop column data_nascimento;
-alter table pecas drop column tamanho;
-alter table pagamentos drop column local_pagamento;
-alter table fornecedores drop column local_fornecimento;
-alter table funcionarios drop column comisao;
-alter table veiculos drop column tamanho;
-alter table marcas drop column criador;
-alter table modelos drop column criador;
-alter table servicos drop column taxa_servico;
-alter table ordens_de_servico drop column manutencao;
-
-
-rename table modelos to modelos_fab;
-rename table modelos_fab to modelos;
