@@ -1,0 +1,806 @@
+<!-- <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>03 – MER E DER</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="3b1369ac-6af0-80f9-b7e2-d80c73f21c24" class="page serif"><header><h1 class="page-title" dir="auto">03 – MER E DER</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><p id="3b1369ac-6af0-803e-9af4-cfa04e1824e2" class="" dir="auto"><strong>Tema da Aula: Modelagem Conceitual – Entidades, Atributos, Relacionamentos (MER e DER)</strong></p><hr id="3b1369ac-6af0-8038-bc8e-c0176d28a295" dir="auto"/><h1 id="3b1369ac-6af0-806c-9ba1-ed269f419170" class="" dir="auto">Abertura Inspiradora</h1><blockquote id="3b1369ac-6af0-80c6-b64f-fc625288204c" class="" dir="auto"><strong>&quot;Se eu tivesse uma hora para resolver um problema, passaria cinquenta e cinco minutos pensando nele e cinco minutos resolvendo-o.&quot;</strong><p id="3b1369ac-6af0-8078-9e3d-d7122a551194" class="" dir="auto"><strong>— Albert Einstein</strong></p></blockquote><h3 id="3b1369ac-6af0-8065-86c4-e5a09de4e249" class="" dir="auto">Conversa inicial</h3><p id="3b1369ac-6af0-80f9-b76d-ce41923d5f14" class="" dir="auto">Pergunta:</p><blockquote id="3b1369ac-6af0-80a4-911b-d73f19b5953f" class="" dir="auto"><strong>&quot;Por que muitos sistemas fracassam mesmo quando foram programados por pessoas competentes?&quot;</strong></blockquote><p id="3b1369ac-6af0-809e-8293-d4efffebb215" class="" dir="auto">Resposta:</p><blockquote id="3b1369ac-6af0-8028-baf7-d6f59be7f985" class="" dir="auto">&quot;Porque um software ruim geralmente não nasce de um código ruim. Ele nasce de um planejamento ruim.&quot;</blockquote><p id="3b1369ac-6af0-804b-acfc-cbcacb8b1563" class="" dir="auto">Hoje ninguém será programador.</p><p id="3b1369ac-6af0-80b3-b20c-f21b99479dd5" class="" dir="auto">Hoje todos serão <strong>Analistas de Sistemas</strong>.</p><hr id="3b1369ac-6af0-801c-92ce-d91b402c810b" dir="auto"/><h1 id="3b1369ac-6af0-8083-a79a-f55bbf8ed589" class="" dir="auto">Revisão das Aulas 1 e 2 (20 minutos)</h1><p id="3b1369ac-6af0-8094-984b-ee2a1c79025a" class="" dir="auto">Revisar conteúdo de introdução</p><h2 id="3b1369ac-6af0-807d-b327-eaa8d8271d2b" class="" dir="auto">Perguntas rápidas</h2><ul id="3b1369ac-6af0-8095-bcb3-e8fedd393b4c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">O que é um dado?</li></ul><ul id="3b1369ac-6af0-8069-bd9c-f57a8348f9fd" class="bulleted-list" dir="auto"><li style="list-style-type:disc">O que diferencia dado de informação?</li></ul><ul id="3b1369ac-6af0-80ea-be9f-c872205a41f1" class="bulleted-list" dir="auto"><li style="list-style-type:disc">O que é um Banco de Dados?</li></ul><ul id="3b1369ac-6af0-8036-8c11-db9771bec41f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Qual é a função de um SGBD?</li></ul><ul id="3b1369ac-6af0-808d-98d5-d4685ec269e3" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Qual a diferença entre Banco Relacional e Não Relacional?</li></ul><ul id="3b1369ac-6af0-8042-9c73-e265c5c0e16c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Cite três SGBDs conhecidos.</li></ul><ul id="3b1369ac-6af0-804f-aac4-f56b57259121" class="bulleted-list" dir="auto"><li style="list-style-type:disc">O que aprendemos ao instalar um ambiente de banco de dados?</li></ul><ul id="3b1369ac-6af0-80ae-bc9e-fabc574a57da" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Por que uma boa configuração é importante para um sistema?</li></ul><p id="3b1369ac-6af0-807e-a689-e136cd04cac6" class="" dir="auto">Mensagem:</p><blockquote id="3b1369ac-6af0-80f4-8680-f0ced0229500" class="" dir="auto"><strong>&quot;Até agora conhecemos o mundo dos bancos de dados. A partir de hoje começaremos a construí-los.&quot;</strong></blockquote><hr id="3b1369ac-6af0-803c-858a-e2f35cb8109d" dir="auto"/><h1 id="3b1369ac-6af0-8048-96d7-ef0ff79b6ab6" class="" dir="auto">Objetivos</h1><p id="3b1369ac-6af0-80bb-b354-c5086b1433f1" class="" dir="auto">Ao final da aula, o estudante será capaz de:</p><ul id="3b1369ac-6af0-8070-9d3f-cfccc5a61101" class="bulleted-list" dir="auto"><li style="list-style-type:disc">compreender a importância da modelagem de dados;</li></ul><ul id="3b1369ac-6af0-800f-9b64-f716f2719952" class="bulleted-list" dir="auto"><li style="list-style-type:disc">identificar entidades, atributos e relacionamentos;</li></ul><ul id="3b1369ac-6af0-800c-8e35-d0cbb77dc6e7" class="bulleted-list" dir="auto"><li style="list-style-type:disc">diferenciar MER e DER;</li></ul><ul id="3b1369ac-6af0-805f-ac95-e4b160ea576d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">iniciar a construção do modelo conceitual do projeto SmartCoffee;</li></ul><ul id="3b1369ac-6af0-8090-b94a-eaeec3a001a5" class="bulleted-list" dir="auto"><li style="list-style-type:disc">desenvolver pensamento lógico antes da implementação.</li></ul><hr id="3b1369ac-6af0-80f8-9aab-cd900abe484b" dir="auto"/><h1 id="3b1369ac-6af0-8095-bd32-ebeee8b23192" class="" dir="auto">Grande Pergunta</h1><p id="3b1369ac-6af0-80b7-91e0-ecf4f3e6adc1" class="" dir="auto">Pergunta:</p><blockquote id="3b1369ac-6af0-8086-abfb-f830b30f95e6" class="" dir="auto"><strong>&quot;É possível construir uma casa sem planta?&quot;</strong></blockquote><p id="3b1369ac-6af0-80a1-a17b-c926e35a24ee" class="" dir="auto">Espere as respostas.</p><p id="3b1369ac-6af0-805b-9f0e-c66da6e01f98" class="" dir="auto">Depois pergunte:</p><blockquote id="3b1369ac-6af0-80fb-ad03-e79a3cbbf823" class="" dir="auto"><strong>&quot;Então por que muitos querem construir um banco de dados sem planejamento?&quot;</strong></blockquote><hr id="3b1369ac-6af0-801f-9b25-c7e38a7dfccb" dir="auto"/><h1 id="3b1369ac-6af0-807e-a1a0-e0c2c913f8de" class="" dir="auto">Cultura Tech</h1><h2 id="3b1369ac-6af0-8079-84bd-ede130cd36d8" class="" dir="auto">Edgar F. Codd: o arquiteto dos bancos relacionais</h2><p id="3b1369ac-6af0-807f-8d5c-d123336427c4" class="" dir="auto">Conte brevemente a história de <strong>Edgar F. Codd</strong>, pesquisador da IBM que revolucionou a forma como os dados são organizados ao propor o modelo relacional em 1970.</p><p id="3b1369ac-6af0-8047-a491-f8200e3c1288" class="" dir="auto">Explique que, embora MER e DER tenham sido desenvolvidos por outros pesquisadores e evoluído ao longo do tempo, todos fazem parte da mesma ideia: <strong>planejar antes de implementar</strong>.</p><p id="3b1369ac-6af0-806d-8db6-ca5a1958167d" class="" dir="auto">Mensagem final:</p><blockquote id="3b1369ac-6af0-80f6-b544-d02cf751c8c3" class="" dir="auto"><strong>&quot;Toda grande aplicação começa como um desenho em uma folha de papel.&quot;</strong></blockquote><hr id="3b1369ac-6af0-8047-b3b8-fa1f0e57793d" dir="auto"/><h1 id="3b1369ac-6af0-80e3-bb37-e99264125a28" class="" dir="auto">Storytelling</h1><p id="3b1369ac-6af0-8090-a3a2-e98008ecce61" class="" dir="auto">Imagine que uma cafeteria deseja informatizar todos os seus processos.</p><p id="3b1369ac-6af0-80f5-a187-e2681fe898ac" class="" dir="auto">O proprietário apenas diz:</p><blockquote id="3b1369ac-6af0-800b-a3dc-ce362b54bbd6" class="" dir="auto">&quot;Quero controlar clientes, pedidos, estoque e pagamentos.&quot;</blockquote><p id="3b1369ac-6af0-8082-b4ac-e993ecc7a6f8" class="" dir="auto">Pergunta:</p><p id="3b1369ac-6af0-8015-8624-e4806e7d9286" class="" dir="auto"><strong>&quot;Já podemos abrir o MySQL e começar a criar tabelas?&quot;</strong></p><p id="3b1369ac-6af0-8029-8e3e-d8aa9f2912ac" class="" dir="auto">Naturalmente alguns dirão que sim.</p><p id="3b1369ac-6af0-80d3-8a3b-edcda1768598" class="" dir="auto">Então responda:</p><blockquote id="3b1369ac-6af0-802e-a1e3-cc5573fdd73b" class="" dir="auto">&quot;Ainda não sabemos exatamente quais informações existem nem como elas se relacionam.&quot;</blockquote><p id="3b1369ac-6af0-80ae-af53-f7e01bafe3c9" class="" dir="auto">É nesse momento que nasce a modelagem.</p><hr id="3b1369ac-6af0-80aa-b10e-d2f6f4a025a1" dir="auto"/><h1 id="3b1369ac-6af0-80d9-91e9-fb140bce2b32" class="" dir="auto">Conceito de Modelagem</h1><p id="3b1369ac-6af0-80a1-b885-f6d74ad2f73c" class="" dir="auto">Modelar significa representar a realidade de forma organizada.</p><p id="3b1369ac-6af0-8013-a37d-d230709cfdc0" class="" dir="auto">Analogia:</p><blockquote id="3b1369ac-6af0-8007-a44d-f17a6dba8e31" class="" dir="auto"><strong>&quot;Um arquiteto desenha a planta antes da obra. Um analista desenha o modelo antes do banco.&quot;</strong></blockquote><hr id="3b1369ac-6af0-804f-acb7-d6c1ba419729" dir="auto"/><h1 id="3b1369ac-6af0-800a-944c-c2fb4722b642" class="" dir="auto">MER – Modelo Entidade-Relacionamento</h1><p id="3b1369ac-6af0-8070-bf52-e604f6081134" class="" dir="auto">O MER é uma representação conceitual do negócio.</p><p id="3b1369ac-6af0-801b-9f22-f9935e584ba2" class="" dir="auto">Ainda não existe SQL.</p><p id="3b1369ac-6af0-8025-8df1-fae754401dd3" class="" dir="auto">Ainda não existem tabelas físicas.</p><p id="3b1369ac-6af0-80ae-93df-e3087a6e3573" class="" dir="auto">Existe apenas o entendimento do problema.</p><hr id="3b1369ac-6af0-80f8-8414-e6fdb3743d20" dir="auto"/><h2 id="3b1369ac-6af0-8029-bfc7-c2698b511b69" class="" dir="auto">O que é uma Entidade?</h2><p id="3b1369ac-6af0-807a-a329-cf07eb550e92" class="" dir="auto">Uma entidade representa algo importante para o negócio.</p><p id="3b1369ac-6af0-8014-8e73-fa10f0ac6b04" class="" dir="auto">Exemplos da SmartCoffee:</p><ul id="3b1369ac-6af0-80a0-a9cf-d3d53bec989e" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Cliente</li></ul><ul id="3b1369ac-6af0-809d-ad3d-c4c8e16e41c6" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Produto</li></ul><ul id="3b1369ac-6af0-80c3-97eb-d24fda206f11" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Funcionário</li></ul><ul id="3b1369ac-6af0-80fb-88ba-cefa1411d5fc" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Pedido</li></ul><ul id="3b1369ac-6af0-808d-88c7-f822faf069b7" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Categoria</li></ul><ul id="3b1369ac-6af0-80e1-90ab-e9ae05f4a44d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Fornecedor</li></ul><p id="3b1369ac-6af0-80fa-ab5a-d5084a26ab9c" class="" dir="auto">Pergunte:</p><blockquote id="3b1369ac-6af0-8078-805d-f3c5c5bff46d" class="" dir="auto"><strong>&quot;O que mais existe dentro de uma cafeteria que merece ser armazenado?&quot;</strong></blockquote><hr id="3b1369ac-6af0-8028-9bcd-dbc963349681" dir="auto"/><h2 id="3b1369ac-6af0-8095-b3a5-fa6792e74c3a" class="" dir="auto">O que é um Atributo?</h2><p id="3b1369ac-6af0-80e3-8a63-fb27eedc2d26" class="" dir="auto">Explique que atributos são as características das entidades.</p><p id="3b1369ac-6af0-8051-a57a-ecb74e6c0574" class="" dir="auto">Exemplo:</p><p id="3b1369ac-6af0-807d-ada2-f728299b9b0d" class="" dir="auto"><strong>Cliente</strong></p><ul id="3b1369ac-6af0-80b1-afa3-db3f0e90b698" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Nome</li></ul><ul id="3b1369ac-6af0-8033-b313-ff5782b747ff" class="bulleted-list" dir="auto"><li style="list-style-type:disc">CPF</li></ul><ul id="3b1369ac-6af0-8007-beec-f181659b5624" class="bulleted-list" dir="auto"><li style="list-style-type:disc">E-mail</li></ul><ul id="3b1369ac-6af0-808d-955c-eeb555099646" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Telefone</li></ul><ul id="3b1369ac-6af0-8026-9519-f5d4ca6d6d97" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Data de nascimento</li></ul><p id="3b1369ac-6af0-8099-8537-d372feb4b8bf" class="" dir="auto">Pergunta:</p><blockquote id="3b1369ac-6af0-80ac-8614-d313442a9b88" class="" dir="auto"><em><strong>&quot;Se eu retirar o e-mail, o cliente deixa de existir?&quot;</strong></em></blockquote><hr id="3b1369ac-6af0-80aa-a9cd-f6b80fd7cd06" dir="auto"/><h2 id="3b1369ac-6af0-806d-a5cc-d48489f14e80" class="" dir="auto">O que é um Relacionamento?</h2><p id="3b1369ac-6af0-807e-a13c-c0aa5b043694" class="" dir="auto">Mostre exemplos simples:</p><p id="3b1369ac-6af0-80e9-9477-e09e9266b479" class="" dir="auto">Cliente realiza Pedido.</p><p id="3b1369ac-6af0-805b-951a-cfbaa36288d1" class="" dir="auto">Pedido possui Produtos.</p><p id="3b1369ac-6af0-8068-8244-d742c0645f4c" class="" dir="auto">Produto pertence a Categoria.</p><p id="3b1369ac-6af0-8060-99f8-d0626de785fb" class="" dir="auto">Funcionário registra Pedido.</p><hr id="3b1369ac-6af0-80e8-bd84-e6a46389e76b" dir="auto"/><h1 id="3b1369ac-6af0-80fa-89dd-f2dff48ed00d" class="" dir="auto">Introdução ao DER</h1><p id="3b1369ac-6af0-8056-b3f1-f3ed4b7dd10d" class="" dir="auto">Agora transforme o MER em um DER.</p><p id="3b1369ac-6af0-8037-8913-f35b7364428c" class="" dir="auto">Apresente a simbologia:</p><ul id="3b1369ac-6af0-806d-8585-d2be78da49e2" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Retângulos → Entidades</li></ul><ul id="3b1369ac-6af0-804b-a5be-e7327eb6b9b5" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Elipses (ou lista de atributos, conforme a notação escolhida) → Atributos</li></ul><ul id="3b1369ac-6af0-802c-a16d-f18cb2580f6b" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Losangos ou ligações → Relacionamentos</li></ul><hr id="3b1369ac-6af0-80de-9b07-d6e5ece86d88" dir="auto"/><h1 id="3b1369ac-6af0-80a5-afd2-c08b55922361" class="" dir="auto">Projeto SmartCoffee</h1><p id="3b1369ac-6af0-806c-9495-fdf8ff1b2a7e" class="" dir="auto">Chegou a hora de iniciar oficialmente o projeto.</p><p id="3b1369ac-6af0-800e-a938-f13c3b865641" class="" dir="auto">Em conjunto com a turma, identifiquem as primeiras entidades.</p><p id="3b1369ac-6af0-80ea-8a81-ca90b096aa9b" class="" dir="auto">Exemplo inicial:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3b1369ac-6af0-8072-81af-dc3a30f7464e" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">Cliente
+
+Produto
+
+Pedido
+
+Funcionário
+
+Categoria
+
+Fornecedor
+
+Pagamento</code></pre><p id="3b1369ac-6af0-8083-b90b-e1bc8b0a7f88" class="" dir="auto">Depois pergunte:</p><blockquote id="3b1369ac-6af0-80ba-ac15-e117d53ba292" class="" dir="auto"><strong>&quot;Quais relacionamentos existem entre elas?&quot;</strong></blockquote><hr id="3b1369ac-6af0-8049-8052-d0400440a656" dir="auto"/><h1 id="3b1369ac-6af0-8050-9095-f76025eaf239" class="" dir="auto">💡 IA aplicada</h1><p id="3b1369ac-6af0-808f-89d3-ef14ad563c8a" class="" dir="auto">Solicite à IA:</p><blockquote id="3b1369ac-6af0-80af-89d6-f84ac99b479c" class="" dir="auto">&quot;Crie um MER para uma cafeteria.&quot;</blockquote><p id="3b1369ac-6af0-804a-b0f3-c1af9d97aef7" class="" dir="auto">Analise o resultado com a turma.</p><p id="3b1369ac-6af0-80d0-967a-dd698f7f5b38" class="" dir="auto">Pergunte:</p><ul id="3b1369ac-6af0-8090-9623-e2415f80fa9b" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Esqueceu alguma entidade?</li></ul><ul id="3b1369ac-6af0-8053-a359-d2d008027bc8" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Criou entidades desnecessárias?</li></ul><ul id="3b1369ac-6af0-8048-be43-f4865a3e7afa" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Algum relacionamento está incorreto?</li></ul><hr id="3b1369ac-6af0-80a2-93c0-e0a091b343fc" dir="auto"/><h1 id="3b1369ac-6af0-805d-a734-d7077989e97c" class="" dir="auto">Laboratório</h1><p id="3b1369ac-6af0-80f5-98ae-fd53be0cba14" class="" dir="auto">Cada dupla deverá elaborar, utilizando a ferramenta de modelagem, o primeiro MER da SmartCoffee.</p><p id="3b1369ac-6af0-8041-90cf-cb6899140892" class="" dir="auto">Critérios:</p><ul id="3b1369ac-6af0-8081-8c82-e3af25d7edc1" class="bulleted-list" dir="auto"><li style="list-style-type:disc">mínimo de 6 entidades;</li></ul><ul id="3b1369ac-6af0-80a0-ac83-c42cccc4448b" class="bulleted-list" dir="auto"><li style="list-style-type:disc">atributos principais;</li></ul><ul id="3b1369ac-6af0-80c8-853f-e3f8f1bc6a20" class="bulleted-list" dir="auto"><li style="list-style-type:disc">relacionamentos identificados;</li></ul><ul id="3b1369ac-6af0-8041-a5b9-c6d86c0890c1" class="bulleted-list" dir="auto"><li style="list-style-type:disc">justificativa para cada entidade.</li></ul><hr id="3b1369ac-6af0-80c4-baf8-f75dca262b10" dir="auto"/><h1 id="3b1369ac-6af0-80c7-85c4-fdcf600504ad" class="" dir="auto">Desafio</h1><p id="3b1369ac-6af0-8007-a124-f72af293ec48" class="" dir="auto">Cada equipe receberá um cenário diferente:</p><ul id="3b1369ac-6af0-8063-b076-d765dfce92be" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Clínica Médica</li></ul><ul id="3b1369ac-6af0-80f7-b58a-cd4785c379a2" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Escola</li></ul><ul id="3b1369ac-6af0-8061-8a3d-c45bd17b1408" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Biblioteca</li></ul><ul id="3b1369ac-6af0-8061-87ab-c0549f5e0b0a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Loja Virtual</li></ul><ul id="3b1369ac-6af0-809b-b517-ce98ad882d7b" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Academia</li></ul><ul id="3b1369ac-6af0-80e2-86ad-f37e7cfc41d6" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Hotel</li></ul><p id="3b1369ac-6af0-8041-b4cf-d4e02ba959d7" class="" dir="auto">Missão:</p><ol type="1" id="3b1369ac-6af0-80cc-829b-e07031f6ca17" class="numbered-list" start="1" dir="auto"><li>Identificar as entidades.</li></ol><ol type="1" id="3b1369ac-6af0-80d9-a359-cb981018a6e0" class="numbered-list" start="2" dir="auto"><li>Definir atributos.</li></ol><ol type="1" id="3b1369ac-6af0-808c-9091-e7d31cc3d806" class="numbered-list" start="3" dir="auto"><li>Construir um MER simples.</li></ol><hr id="3b1369ac-6af0-80e7-82e5-eee5cf32b37b" dir="auto"/><h1 id="3b1369ac-6af0-80c3-8063-c3212e006c21" class="" dir="auto">Momento Mercado</h1><p id="3b1369ac-6af0-80e3-90e6-dcf34ff5cba2" class="" dir="auto">Explique como um projeto de software normalmente acontece:</p><p id="3b1369ac-6af0-8023-980c-dd0db0e9de31" class="" dir="auto">Cliente → Levantamento de requisitos → Modelagem → Aprovação → Desenvolvimento → Testes → Implantação.</p><p id="3b1369ac-6af0-8052-8b2f-f187d4f5b116" class="" dir="auto">Mostre que a modelagem reduz retrabalho, melhora a comunicação entre equipes e facilita a manutenção futura.</p><hr id="3b1369ac-6af0-8005-bdd2-d72252bf15bd" dir="auto"/><h1 id="3b1369ac-6af0-80b3-8719-d6aa8110375a" class="" dir="auto">Avaliação</h1><p id="3b1369ac-6af0-805b-9551-ed699eed76df" class="" dir="auto">Cada dupla entregará:</p><ul id="3b1369ac-6af0-80be-8674-c5416c6ad2e7" class="bulleted-list" dir="auto"><li style="list-style-type:disc">MER da SmartCoffee;</li></ul><ul id="3b1369ac-6af0-8086-953b-f1f540babfd5" class="bulleted-list" dir="auto"><li style="list-style-type:disc">lista de entidades;</li></ul><ul id="3b1369ac-6af0-8043-bc28-ee077e847d70" class="bulleted-list" dir="auto"><li style="list-style-type:disc">lista de atributos;</li></ul><ul id="3b1369ac-6af0-8070-b877-c95961bce22a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">justificativas das escolhas.</li></ul><p id="3b1369ac-6af0-8089-8a85-e4dab476e16b" class="" dir="auto">Serão avaliados:</p><ul id="3b1369ac-6af0-80c1-ad76-d1c6ffaac816" class="bulleted-list" dir="auto"><li style="list-style-type:disc">identificação correta das entidades;</li></ul><ul id="3b1369ac-6af0-80cf-8d3d-f29c24e8167c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">coerência dos atributos;</li></ul><ul id="3b1369ac-6af0-8083-b65b-ddd6c6b9cac5" class="bulleted-list" dir="auto"><li style="list-style-type:disc">qualidade dos relacionamentos;</li></ul><ul id="3b1369ac-6af0-8019-a5c6-ce16bb668e63" class="bulleted-list" dir="auto"><li style="list-style-type:disc">participação e argumentação durante a construção do modelo.</li></ul><hr id="3b1369ac-6af0-80df-9a7a-e373f130855d" dir="auto"/><h1 id="3b1369ac-6af0-803a-8772-c762609b5865" class="" dir="auto">Missão para casa</h1><p id="3b1369ac-6af0-8071-837d-f06fc4e863b3" class="" dir="auto">Observe um ambiente do seu dia a dia (mercado, academia, clínica, escola, oficina, restaurante ou outro).</p><p id="3b1369ac-6af0-80e7-a19f-f719b55ad105" class="" dir="auto">Identifique:</p><ul id="3b1369ac-6af0-8022-9cd9-c1d87753e87f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">pelo menos <strong>5 entidades</strong>;</li></ul><ul id="3b1369ac-6af0-80eb-972b-c0cf0f069128" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>5 atributos</strong> para cada entidade;</li></ul><ul id="3b1369ac-6af0-803b-8ca0-f9dc16e783bc" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>3 relacionamentos</strong> entre elas.</li></ul><hr id="3b1369ac-6af0-80a9-938f-e643473b2af1" dir="auto"/><h1 id="3b1369ac-6af0-8046-8d11-d4d11cab5072" class="" dir="auto">🎵 Playlist - <em>90&#x27;s Acoustic &amp; Alternative Vibes</em></h1><p id="3b1369ac-6af0-80f6-ab15-d45714181f76" class="" dir="auto"></p><ol type="1" id="3b1369ac-6af0-80c1-9406-d80159eced8f" class="numbered-list" start="1" dir="auto"><li>Alice in Chains — <em>No Excuses (MTV Unplugged)</em></li></ol><ol type="1" id="3b1369ac-6af0-8009-a612-e3e16d3ffae4" class="numbered-list" start="2" dir="auto"><li>Pearl Jam — <em>Black (MTV Unplugged)</em></li></ol><ol type="1" id="3b1369ac-6af0-802a-b059-e6a5cf7cf13c" class="numbered-list" start="3" dir="auto"><li>Stone Temple Pilots — <em>Plush (Acoustic)</em></li></ol><ol type="1" id="3b1369ac-6af0-8042-8aaf-fae87a8ae241" class="numbered-list" start="4" dir="auto"><li>Metallica — <em>Nothing Else Matters</em></li></ol><ol type="1" id="3b1369ac-6af0-8062-93ce-ca5be6048b36" class="numbered-list" start="5" dir="auto"><li>Radiohead — <em>High and Dry</em></li></ol><ol type="1" id="3b1369ac-6af0-80a9-9b4a-ebada7952482" class="numbered-list" start="6" dir="auto"><li>Oasis — <em>Wonderwall</em></li></ol><ol type="1" id="3b1369ac-6af0-80dd-a2a8-ee8e7038a0f5" class="numbered-list" start="7" dir="auto"><li>The Cranberries — <em>Linger</em></li></ol><ol type="1" id="3b1369ac-6af0-8081-b765-cb6862c569b3" class="numbered-list" start="8" dir="auto"><li>Live — <em>Lightning Crashes</em></li></ol><ol type="1" id="3b1369ac-6af0-8043-8745-e79b585eae55" class="numbered-list" start="9" dir="auto"><li>R.E.M. — <em>Nightswimming</em></li></ol><ol type="1" id="3b1369ac-6af0-80fe-a5c6-dc6f46c1bc46" class="numbered-list numbered-list-digits-2" start="10" dir="auto"><li>Blind Melon — <em>Change</em></li></ol><h3 id="3b1369ac-6af0-8033-9f4d-fe2c738a9ab9" class="" dir="auto">Mensagem final</h3><blockquote id="3b1369ac-6af0-80d3-8aba-e54f76a3973e" class="" dir="auto"><strong>&quot;Hoje vocês não desenharam apenas caixas e linhas. Vocês deram o primeiro passo para transformar um problema real em uma solução tecnológica. Todo grande sistema começa com uma boa pergunta e um bom modelo.&quot;</strong></blockquote></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html> -->

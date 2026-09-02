@@ -1,0 +1,7 @@
+print("Eu calculo quanto voce gasta em pedagio na viagem")
+p1 = int(input("quanto voce gastou no pedagio 1 "))
+p2 = int(input("quanto voce gastou no pedagio 2 "))
+p3 = int(input("quanto voce gastou no pedagio 3 "))
+print()
+print("voce gastou no total na viagem em pedagios:\n")
+print(p1 + p2 + p3)

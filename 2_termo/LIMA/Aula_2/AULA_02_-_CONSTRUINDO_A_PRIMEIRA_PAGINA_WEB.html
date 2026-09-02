@@ -1,0 +1,861 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>02 - CONSTRUINDO A PRIMEIRA PÁGINA WEB</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+/*
+ * Toggles and callouts hold arbitrary content, so they can easily be taller
+ * than a page. They must stay breakable: avoiding breaks inside them makes
+ * Chromium push the whole block onto the next page, which leaves the previous
+ * page mostly empty before every long toggle.
+ */
+details,
+aside {
+	margin: 1.25em 0;
+}
+
+/* Keep a toggle's title on the same page as the start of its content. */
+summary {
+	page-break-after: avoid;
+	break-after: avoid;
+}
+
+/*
+ * Toggle headings render as <h1/h2/h3 style="display:inline-block"> inside
+ * <summary>. Without this reset, the heading's margin-top pushes it below the
+ * ::marker (▼), so the triangle and the title appear on separate lines.
+ */
+summary h1,
+summary h2,
+summary h3,
+summary h4 {
+	margin-top: 0;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="3aa369ac-6af0-8038-b9ad-c055c1e76f2a" class="page serif"><header><img class="page-cover-image" src="SENAI-SP.jpg" style="object-position:center 50%"/><h1 class="page-title" dir="auto">02 - CONSTRUINDO A PRIMEIRA PÁGINA WEB</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><blockquote id="3aa369ac-6af0-8027-b8f9-eda460adf43b" class="" dir="auto"><strong>&quot;Caramba... eu consigo criar um site!&quot;</strong></blockquote><p id="3aa369ac-6af0-80a3-beda-c6efaa9d8bcf" class="" dir="auto">Essa aula é extremamente importante. Na maioria dos cursos, ela é um monte de teoria sobre <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code> e <code>&lt;body&gt;</code>.</p><p id="3aa369ac-6af0-8084-832a-c7e4a0485cf6" class="" dir="auto">Nós não vamos fazer isso.</p><p id="3aa369ac-6af0-80a8-bddd-d29956058c53" class="" dir="auto">Vamos fazer o aluno entender <strong>POR QUE</strong> essas tags existem.</p><hr id="3aa369ac-6af0-805b-b313-cea39c6ebee9" dir="auto"/><p id="3aa369ac-6af0-80f6-9f25-f0838bdbf578" class="" dir="auto"><strong>Sprint:</strong> 02 - Primeira Entrega para o Cliente</p><hr id="3aa369ac-6af0-8029-8941-f815ea29a483" dir="auto"/><h1 id="3aa369ac-6af0-8065-b0e4-c1870c009cd0" class="" dir="auto">Objetivos</h1><p id="3aa369ac-6af0-80de-acd7-f5805e524d90" class="" dir="auto">Ao final da aula o aluno será capaz de:</p><ul id="3aa369ac-6af0-80de-88ce-ffa2e761b87c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Criar a estrutura básica de um documento HTML5.</li></ul><ul id="3aa369ac-6af0-801a-8908-da87506ca372" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Entender a função de cada elemento principal (<code>&lt;!DOCTYPE&gt;</code>, <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code>).</li></ul><ul id="3aa369ac-6af0-806e-83c2-d711ebc772b8" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Criar títulos, metadados e comentários.</li></ul><ul id="3aa369ac-6af0-80cb-b3fa-f4db49e5fed7" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Utilizar o VS Code com mais autonomia.</li></ul><ul id="3aa369ac-6af0-8098-9c18-f40da18c335e" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Compreender como o navegador interpreta um documento HTML.</li></ul><hr id="3aa369ac-6af0-80cd-9cd8-d723c497160c" dir="auto"/><h1 id="3aa369ac-6af0-80db-b1a7-ff64b753cccd" class="" dir="auto">História da Aula</h1><p id="3aa369ac-6af0-809f-a692-f18711bf6f6e" class="" dir="auto">Na semana passada a equipe da <strong>DevSolutions</strong> foi contratada pela startup <strong>ConectaMais</strong>.</p><p id="3aa369ac-6af0-807c-af49-db4d4b686a8b" class="" dir="auto">Hoje, o gerente chega com uma missão:</p><blockquote id="3aa369ac-6af0-8086-afd3-d11492389ed2" class="" dir="auto">&quot;O cliente pediu apenas uma página para apresentar a empresa. Nada de design ainda. Eles só querem que o navegador consiga entender o documento.&quot;</blockquote><p id="3aa369ac-6af0-805c-a2de-c21f8bc42f44" class="" dir="auto">Explicação</p><blockquote id="3aa369ac-6af0-809d-9ce6-c2b553a3494b" class="" dir="auto">Antes de decorar tags, um desenvolvedor precisa entender <strong>como um navegador lê uma página</strong>.</blockquote><hr id="3aa369ac-6af0-8086-986e-d6f9d67b1889" dir="auto"/><h1 id="3aa369ac-6af0-80e5-bf95-fa69f55cf2b6" class="" dir="auto">Missão do Dia</h1><p id="3aa369ac-6af0-8050-b8bc-ec41477a904c" class="" dir="auto">Construir a primeira página institucional da ConectaMais.</p><p id="3aa369ac-6af0-801c-a673-d823f7159b23" class="" dir="auto">Ainda sem CSS.</p><p id="3aa369ac-6af0-8042-91eb-cf4969706053" class="" dir="auto">Ainda sem imagens.</p><p id="3aa369ac-6af0-80da-bd7d-e8737b819118" class="" dir="auto">Apenas estrutura.</p><hr id="3aa369ac-6af0-80b0-abe3-cda3f10d8166" dir="auto"/><h1 id="3aa369ac-6af0-802e-bc24-df6dfb177100" class="" dir="auto">Quebra-gelo </h1><p id="3aa369ac-6af0-80f2-be90-cb35feee4f20" class="" dir="auto">São dois documentos.</p><p id="3aa369ac-6af0-809f-9f99-f377ff15c61f" class="" dir="auto">Um organizado:</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="3aa369ac-6af0-80d7-a06c-d87497b96db3" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">Nome
+Telefone
+Email</code></pre><p id="3aa369ac-6af0-8018-a003-e138ed7cdf97" class="" dir="auto">Outro completamente bagunçado:</p><pre id="3aa369ac-6af0-8035-84cd-f443b54792f0" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">TelefoneNomeEmail</code></pre><p id="3aa369ac-6af0-8074-8c65-e26abe0e9f4e" class="" dir="auto">Pergunta:</p><blockquote id="3aa369ac-6af0-8075-9043-ca8478dae31c" class="" dir="auto">Qual deles é mais fácil de entender?</blockquote><p id="3aa369ac-6af0-804c-aef4-d3a10820cf9a" class="" dir="auto">Depois faça a conexão:</p><blockquote id="3aa369ac-6af0-8012-9889-cd432ba423a9" class="" dir="auto">O navegador também precisa de organização.</blockquote><p id="3aa369ac-6af0-806b-b632-d1f418751d7f" class="" dir="auto">É exatamente isso que o HTML faz.</p><hr id="3aa369ac-6af0-80f3-9491-ff5cf2c02247" dir="auto"/><h1 id="3aa369ac-6af0-806b-8999-f681ca6a6134" class="" dir="auto">Mundo Real</h1><p id="3aa369ac-6af0-8060-91c0-c1d7a6a49b5e" class="" dir="auto">Pergunta:</p><p id="3aa369ac-6af0-808d-ab30-ca219805927d" class="" dir="auto">Quando você abre um site...</p><p id="3aa369ac-6af0-80dc-9de7-c29e8768ff6e" class="" dir="auto">Como o navegador sabe:</p><ul id="3aa369ac-6af0-80e3-b5de-e45518568990" class="bulleted-list" dir="auto"><li style="list-style-type:disc">onde começa?</li></ul><ul id="3aa369ac-6af0-80f2-8a94-fc6459fd4f26" class="bulleted-list" dir="auto"><li style="list-style-type:disc">qual é o título?</li></ul><ul id="3aa369ac-6af0-80e7-acff-fd5a27cc3aad" class="bulleted-list" dir="auto"><li style="list-style-type:disc">qual idioma?</li></ul><ul id="3aa369ac-6af0-802b-a125-d572feefc435" class="bulleted-list" dir="auto"><li style="list-style-type:disc">onde fica o conteúdo?</li></ul><p id="3aa369ac-6af0-8068-901f-fe9cb91d0e7a" class="" dir="auto">Resposta:</p><p id="3aa369ac-6af0-809a-a792-ce115a4b3d2c" class="" dir="auto">Porque existe uma estrutura.</p><hr id="3aa369ac-6af0-80a6-81d0-c4067359393c" dir="auto"/><h1 id="3aa369ac-6af0-809f-8f71-e263f9c1b67a" class="" dir="auto">Conversa</h1><p id="3aa369ac-6af0-8055-a697-f7b8bdc22e95" class="" dir="auto">Introdução:</p><pre id="3aa369ac-6af0-808a-8c99-c77256915856" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">index.html
+
+↓
+
+Chrome
+
+↓
+
+Renderização
+
+↓
+
+Página pronta</code></pre><p id="3aa369ac-6af0-8087-a78d-fa98b2380cec" class="" dir="auto">Pergunta:</p><p id="3aa369ac-6af0-8057-90f4-f1adeca3d0b2" class="" dir="auto">Quem realmente &quot;lê&quot; o HTML?</p><p id="3aa369ac-6af0-80f7-b957-fc7993a1a701" class="" dir="auto"><em><strong>O navegador.</strong></em></p><hr id="3aa369ac-6af0-8062-8789-fed386a46f7e" dir="auto"/><h1 id="3aa369ac-6af0-8058-bcb8-df9b02318c41" class="" dir="auto">Analogia</h1><p id="3aa369ac-6af0-8044-9601-cd9f773724c0" class="" dir="auto">HTML é como construir uma mochila.</p><p id="3aa369ac-6af0-80d5-a0c0-de2fff9ab5cb" class="" dir="auto">Primeiro você cria a mochila.</p><p id="3aa369ac-6af0-805a-8318-f4fc4d27f86e" class="" dir="auto">Depois coloca compartimentos.</p><p id="3aa369ac-6af0-80ff-a77f-cf9cf4965ba9" class="" dir="auto">Depois organiza o conteúdo.</p><p id="3aa369ac-6af0-804b-a937-f50335a3aaf9" class="" dir="auto">Se jogar tudo dentro sem organização...</p><p id="3aa369ac-6af0-8057-a757-e012de8e6911" class="" dir="auto">ninguém encontra nada.</p><hr id="3aa369ac-6af0-8029-8db4-fa2055d5ca9e" dir="auto"/><h1 id="3aa369ac-6af0-80f2-b7d7-c6f18eda80f6" class="" dir="auto">Conceito</h1><p id="3aa369ac-6af0-8016-8038-e9cfd693d714" class="" dir="auto">Apresente a estrutura básica.</p><pre id="3aa369ac-6af0-80b8-8990-d0124fec1017" class="code code-wrap" data-notion-code-syntax="html"><code class="language-html" style="white-space:pre-wrap;word-break:break-all">&lt;!DOCTYPE html&gt;
+&lt;htmllang=&quot;pt-BR&quot;&gt;
+&lt;head&gt;
+&lt;metacharset=&quot;UTF-8&quot;&gt;&lt;metaname=&quot;viewport&quot;content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;ConectaMais&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre><p id="3aa369ac-6af0-8017-9e75-fad69d36b1e7" class="" dir="auto">Mas...</p><p id="3aa369ac-6af0-80ec-8702-c64fd18d29ad" class="" dir="auto">Execute.</p><p id="3aa369ac-6af0-80f6-b398-fbd242a4a2a2" class="" dir="auto">Explique outra.</p><p id="3aa369ac-6af0-8059-85ae-f011366afb8c" class="" dir="auto">Execute.</p><hr id="3aa369ac-6af0-80e7-8e9e-d19b5d6a44c8" dir="auto"/><h1 id="3aa369ac-6af0-8036-9623-c7425c9f7947" class="" dir="auto">Dinâmica — Montando o HTML Humano</h1><p id="3aa369ac-6af0-80a1-8520-feb202a65771" class="" dir="auto">Essa costuma ser inesquecível.</p><p id="3aa369ac-6af0-8053-8a66-c69eed9ff143" class="" dir="auto">Escolha 8 alunos.</p><p id="3aa369ac-6af0-80c0-bed1-e26a61978ea2" class="" dir="auto">Cada um recebe uma folha.</p><pre id="3aa369ac-6af0-8084-8c01-dada83aa0de5" class="code code-wrap" data-notion-code-syntax="html"><code class="language-html" style="white-space:pre-wrap;word-break:break-all">&lt;/html&gt;
+
+&lt;head&gt;
+
+&lt;title&gt;
+
+&lt;meta&gt;
+
+Texto
+
+&lt;!DOCTYPE&gt;
+
+&lt;body&gt;
+
+&lt;html&gt;
+
+</code></pre><p id="3aa369ac-6af0-80d0-9759-e3f0aa4db615" class="" dir="auto">Vamos resolver!</p><hr id="3aa369ac-6af0-803b-bc17-fb4c045309b9" dir="auto"/><h1 id="3aa369ac-6af0-8060-bdf1-ffaf6c9b9931" class="" dir="auto">Bora Codar</h1><p id="3aa369ac-6af0-8003-aa41-c07429e5af45" class="" dir="auto">Agora todos digitam.</p><p id="3aa369ac-6af0-8073-8dd3-e54d98aa9600" class="" dir="auto">Sem copiar.</p><p id="3aa369ac-6af0-8089-946f-f8c3c8d736ed" class="" dir="auto">Você escreve linha por linha.</p><p id="3aa369ac-6af0-8034-9cc1-cd0f7a59fd74" class="" dir="auto">Eles reproduzem.</p><p id="3aa369ac-6af0-801e-8e49-e93481b7c4d5" class="" dir="auto">Depois perguntam.</p><hr id="3aa369ac-6af0-80bd-87ed-c68a5b45eb95" dir="auto"/><h1 id="3aa369ac-6af0-8071-b53f-c0067b83e8cc" class="" dir="auto">DevTools Explorer</h1><p id="3aa369ac-6af0-8062-9838-d6b6d8b83d30" class="" dir="auto">Depois de criar a página...</p><p id="3aa369ac-6af0-802a-b026-eb0ad8efb0a3" class="" dir="auto">Abram o navegador.</p><p id="3aa369ac-6af0-8025-96ba-e023695cd511" class="" dir="auto">F12.</p><p id="3aa369ac-6af0-803a-be74-ef3e76d40477" class="" dir="auto">Elements.</p><p id="3aa369ac-6af0-80c7-9cb2-f42ff0b0c4c9" class="" dir="auto">Mostre:</p><pre id="3aa369ac-6af0-807c-9384-d194f196d656" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">html
+
+head
+
+body</code></pre><p id="3aa369ac-6af0-8046-aea9-cdb4ca28f60c" class="" dir="auto">Isso existe &quot;de verdade&quot;.</p><hr id="3aa369ac-6af0-8051-9e13-da8c4d28489d" dir="auto"/><h1 id="3aa369ac-6af0-8037-b354-dc2e66915f98" class="" dir="auto">Missão DevSolutions</h1><p id="3aa369ac-6af0-807a-afb1-e86169f7273b" class="" dir="auto">A startup pediu uma página temporária.</p><p id="3aa369ac-6af0-802b-9ff5-c6a13ef79d31" class="" dir="auto">Ela deve conter apenas:</p><ul id="3aa369ac-6af0-8072-81cc-f4fd8e797d46" class="bulleted-list" dir="auto"><li style="list-style-type:disc">nome da empresa</li></ul><ul id="3aa369ac-6af0-80e9-9404-ca748eef1b40" class="bulleted-list" dir="auto"><li style="list-style-type:disc">título da aba</li></ul><ul id="3aa369ac-6af0-80e7-9d52-e90c92fe94cc" class="bulleted-list" dir="auto"><li style="list-style-type:disc">idioma</li></ul><ul id="3aa369ac-6af0-8036-ad38-cae1fdcff3c0" class="bulleted-list" dir="auto"><li style="list-style-type:disc">charset</li></ul><ul id="3aa369ac-6af0-802e-ab97-ec4a6693d975" class="bulleted-list" dir="auto"><li style="list-style-type:disc">comentário explicando quem desenvolveu</li></ul><p id="3aa369ac-6af0-80c8-994c-c46a3a3a3775" class="" dir="auto">Sem CSS.</p><hr id="3aa369ac-6af0-8043-b4f7-f21b19f96a52" dir="auto"/><h1 id="3aa369ac-6af0-8069-a89b-df07ae460df2" class="" dir="auto">Desafio</h1><p id="3aa369ac-6af0-8007-a42f-e3c4251d3ab0" class="" dir="auto">Agora cada aluno faz a própria página.</p><p id="3aa369ac-6af0-8007-a59a-cc6727be3c1e" class="" dir="auto">Empresa fictícia.</p><p id="3aa369ac-6af0-8043-a00c-d408cc7c72df" class="" dir="auto">Pode ser:</p><ul id="3aa369ac-6af0-8054-8128-fef34bafce39" class="bulleted-list" dir="auto"><li style="list-style-type:disc">cafeteria (SmartCoffee)</li></ul><p id="3aa369ac-6af0-809d-93d4-c2700b55d8cb" class="" dir="auto">A única regra:</p><p id="3aa369ac-6af0-80a6-a689-d4773bdd556a" class="" dir="auto">A página precisa abrir corretamente.</p><hr id="3aa369ac-6af0-8021-8287-fd262ad64706" dir="auto"/><h1 id="3aa369ac-6af0-802a-af50-e98008d1ac12" class="" dir="auto">Curiosidades</h1><p id="3aa369ac-6af0-80fa-aa69-e4161e4731ec" class="" dir="auto">Mostre algumas informações que aproximam o conteúdo da realidade:</p><ul id="3aa369ac-6af0-80b0-a5a7-d9be6c55ee8e" class="bulleted-list" dir="auto"><li style="list-style-type:disc">O VS Code completa automaticamente a estrutura HTML quando você digita <code>!</code> e pressiona <strong>Tab</strong>.</li></ul><ul id="3aa369ac-6af0-80ba-be05-fe1bba9264a7" class="bulleted-list" dir="auto"><li style="list-style-type:disc">O elemento <code>&lt;title&gt;</code> define o texto exibido na aba do navegador e influencia os resultados dos mecanismos de busca.</li></ul><ul id="3aa369ac-6af0-8090-b352-e6e46fc5bd7a" class="bulleted-list" dir="auto"><li style="list-style-type:disc">O atributo <code>lang=&quot;pt-BR&quot;</code> ajuda leitores de tela e mecanismos de busca a interpretar corretamente o idioma da página.</li></ul><hr id="3aa369ac-6af0-80d6-ab0f-c96f47267f31" dir="auto"/><h1 id="3aa369ac-6af0-80bd-b886-ec6fed6dda7b" class="" dir="auto">⚠ Erros comuns</h1><p id="3aa369ac-6af0-80f6-9dbb-f2d5307e75b1" class="" dir="auto">❌ Esquecer DOCTYPE</p><p id="3aa369ac-6af0-802c-8146-d77567eceedb" class="" dir="auto">❌ Colocar conteúdo dentro do HEAD</p><p id="3aa369ac-6af0-8096-adb7-ddd6f39117f8" class="" dir="auto">❌ Escrever TITLE dentro do BODY</p><p id="3aa369ac-6af0-80ff-b2c3-fb192cea353d" class="" dir="auto">❌ Esquecer fechar tags</p><p id="3aa369ac-6af0-80f7-8182-fc960507d1db" class="" dir="auto">❌ Salvar como</p><pre id="3aa369ac-6af0-8022-b827-f3ff29d91427" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">index.txt</code></pre><p id="3aa369ac-6af0-8031-bb5e-c02a1df8fa52" class="" dir="auto">
+</p><hr id="3aa369ac-6af0-8075-a5e3-e9d8fc4ef9ba" dir="auto"/><h1 id="3aa369ac-6af0-80e1-ad76-d08215fa3e5b" class="" dir="auto">Mini Projeto</h1><p id="3aa369ac-6af0-803c-91d3-f005ba3fd847" class="" dir="auto">Criar:</p><pre id="3aa369ac-6af0-80a8-982e-eba65316ac50" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">Página Inicial
+
+Empresa:
+
+ConectaMais</code></pre><p id="3aa369ac-6af0-8034-98de-c094934a630f" class="" dir="auto">Requisitos:</p><p id="3aa369ac-6af0-8010-80fd-dc3a91cb4f53" class="" dir="auto">✔ Estrutura HTML5</p><p id="3aa369ac-6af0-806b-9376-f943f8ffb0e9" class="" dir="auto">✔ Título</p><p id="3aa369ac-6af0-8005-a16e-e717ee6dc855" class="" dir="auto">✔ Charset</p><p id="3aa369ac-6af0-80f6-98dc-fae8171d0528" class="" dir="auto">✔ Idioma</p><p id="3aa369ac-6af0-8007-a537-c1ca58bc508a" class="" dir="auto">✔ Comentários</p><p id="3aa369ac-6af0-80dd-92c6-d02fc8d9e2b3" class="" dir="auto">✔ Conteúdo simples</p><hr id="3aa369ac-6af0-8067-bd5f-fb0feab55561" dir="auto"/><h1 id="3aa369ac-6af0-8037-b358-d13174e23130" class="" dir="auto">Desafio SENAI</h1><p id="3aa369ac-6af0-8072-9dc7-d76543dd6f7b" class="" dir="auto">O gerente encontra um código problemático:</p><pre id="3aa369ac-6af0-8078-9145-fe161cd9a032" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">&lt;html&gt;
+&lt;body&gt;
+&lt;title&gt;Empresa&lt;/title&gt;
+&lt;h1&gt;ConectaMais
+&lt;/body&gt;</code></pre><p id="3aa369ac-6af0-8024-aed2-f4c9597e9d87" class="" dir="auto">Responder:</p><ul id="3aa369ac-6af0-8059-a106-c87d5ce60969" class="bulleted-list" dir="auto"><li style="list-style-type:disc">O que está errado?</li></ul><ul id="3aa369ac-6af0-8058-b981-e6a05639737f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Como corrigir?</li></ul><ul id="3aa369ac-6af0-8091-99e7-ce9c5c20de12" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Quais problemas esse código pode causar?</li></ul><p id="3aa369ac-6af0-80bb-a011-c84e2a3c0212" class="" dir="auto">Desenvolver a análise crítica, uma competência prevista no plano de ensino.</p><hr id="3aa369ac-6af0-80b8-9cc8-f1037d9b0e23" dir="auto"/><h1 id="3aa369ac-6af0-8067-950c-e0a9c1ad7ae5" class="" dir="auto">❓ Quiz</h1><ol type="1" id="3aa369ac-6af0-8075-8255-f0688e9e0701" class="numbered-list" start="1" dir="auto"><li>O que faz o <code>&lt;!DOCTYPE html&gt;</code>?</li></ol><ol type="1" id="3aa369ac-6af0-8010-b9ab-dad6fa89804f" class="numbered-list" start="2" dir="auto"><li>Qual elemento contém informações que não aparecem diretamente na página?</li></ol><ol type="1" id="3aa369ac-6af0-8064-9f25-d28e07be9658" class="numbered-list" start="3" dir="auto"><li>Onde fica o conteúdo visível ao usuário?</li></ol><ol type="1" id="3aa369ac-6af0-80b0-bf7c-e3b59d2a8d9f" class="numbered-list" start="4" dir="auto"><li>Para que serve o <code>&lt;title&gt;</code>?</li></ol><ol type="1" id="3aa369ac-6af0-80ec-ae80-ebb9faa3b3f0" class="numbered-list" start="5" dir="auto"><li>Qual a função do <code>charset</code>?</li></ol><ol type="1" id="3aa369ac-6af0-8022-9aa2-ee6af1cfa4a5" class="numbered-list" start="6" dir="auto"><li>O que faz o atributo <code>lang</code>?</li></ol><ol type="1" id="3aa369ac-6af0-8044-adc1-fbe278f3a0b9" class="numbered-list" start="7" dir="auto"><li>Quem interpreta o HTML?</li></ol><ol type="1" id="3aa369ac-6af0-801d-bc57-d57be34f4b45" class="numbered-list" start="8" dir="auto"><li>Qual atalho cria a estrutura HTML5 no VS Code?</li></ol><ol type="1" id="3aa369ac-6af0-8099-8028-db02fa4ce806" class="numbered-list" start="9" dir="auto"><li>O que são comentários em HTML?</li></ol><ol type="1" id="3aa369ac-6af0-806b-90ba-d0b3aae05e3d" class="numbered-list numbered-list-digits-2" start="10" dir="auto"><li>O que acontece se a estrutura do documento estiver incorreta?</li></ol><hr id="3aa369ac-6af0-8075-8944-e18149a6fb89" dir="auto"/><h1 id="3aa369ac-6af0-8065-8a4e-dd143b2214a0" class="" dir="auto">🪞 Retrospectiva</h1><p id="3aa369ac-6af0-8070-b4a2-c6437d791b61" class="" dir="auto">Revisão:</p><pre id="3aa369ac-6af0-8074-b985-e522bab41c14" class="code code-wrap"><code style="white-space:pre-wrap;word-break:break-all">Aula 1 ✅
+
+Conheci a Web
+
+↓
+
+Aula 2 ✅
+
+Construí minha primeira página
+
+↓
+
+Aula 3
+
+Vamos aprender a organizar o conteúdo com títulos, parágrafos e textos.</code></pre><p id="3aa369ac-6af0-8046-a654-eed3c9bbfbce" class="" dir="auto">
+</p><hr id="3aa369ac-6af0-80f0-98f5-e3df2c489f5f" dir="auto"/><h1 id="3aa369ac-6af0-80f2-b81f-d37ca4fba5a4" class="" dir="auto">Dica de professor</h1><blockquote id="3aa369ac-6af0-80bc-a496-c22054809894" class="" dir="auto"><strong>&quot;O que vocês construíram hoje que ontem vocês ainda não sabiam fazer?&quot;</strong></blockquote><p id="3aa369ac-6af0-80af-9d00-ee8239510bcc" class="" dir="auto">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

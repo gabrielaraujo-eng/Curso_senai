@@ -1,0 +1,518 @@
+CLIENTES
+id_cliente | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+nome | VARCHAR(100) | NOT NULL
+cpf | VARCHAR(14) | NOT NULL
+telefone | VARCHAR(15) | NOT NULL
+email | VARCHAR(150) | NOT NULL
+endereco | VARCHAR(200) | NOT NULL
+
+VEICULOS
+id_veiculo | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+placa | VARCHAR(8) | NOT NULL
+marca | VARCHAR(50) | NOT NULL
+modelo | VARCHAR(50) | NOT NULL
+ano | YEAR | NOT NULL
+cor | VARCHAR(30) | NOT NULL
+
+FUNCIONARIOS
+id_funcionario | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+nome | VARCHAR(100) | NOT NULL
+cpf | VARCHAR(14) | NOT NULL
+cargo | VARCHAR(50) | NOT NULL
+telefone | VARCHAR(15) | NOT NULL
+salario | DECIMAL(10,2) | NOT NULL | DEFAULT 0.00
+
+SERVICOS
+id_servico | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+nome | VARCHAR(100) | NOT NULL
+descricao | VARCHAR(255)
+preco | DECIMAL(10,2) | NOT NULL | DEFAULT 0.00
+tempo_estimado | INT(11) | NOT NULL | DEFAULT 60
+status | VARCHAR(20) | NOT NULL | DEFAULT 'Ativo'
+
+ORDENS_SERVICO
+id_ordem_servico | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+data_abertura | DATE | NOT NULL | DEFAULT CURRENT_DATE
+data_fechamento | DATE
+valor_total | DECIMAL(10,2) | NOT NULL | DEFAULT 0.00
+status | VARCHAR(30) | NOT NULL | DEFAULT 'Aberta'
+observacao | VARCHAR(255)
+
+PECAS
+id_peca | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+nome | VARCHAR(100) | NOT NULL
+descricao | VARCHAR(255)
+preco | DECIMAL(10,2) | NOT NULL | DEFAULT 0.00
+quantidade | INT(11) | NOT NULL | DEFAULT 0
+fabricante | VARCHAR(100) | NOT NULL
+
+FORNECEDORES
+id_fornecedor | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+nome | VARCHAR(100) | NOT NULL
+cnpj | VARCHAR(18) | NOT NULL
+telefone | VARCHAR(15) | NOT NULL
+email | VARCHAR(150) | NOT NULL
+endereco | VARCHAR(200) | NOT NULL
+
+ESTOQUE
+id_estoque | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+quantidade | INT(11) | NOT NULL | DEFAULT 0
+estoque_minimo | INT(11) | NOT NULL | DEFAULT 0
+data_entrada | DATE | NOT NULL | DEFAULT CURRENT_DATE
+data_atualizacao | DATE | NOT NULL | DEFAULT CURRENT_DATE
+localizacao | VARCHAR(100)
+
+PAGAMENTOS
+id_pagamento | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+valor | DECIMAL(10,2) | NOT NULL | DEFAULT 0.00
+data_pagamento | DATE | NOT NULL | DEFAULT CURRENT_DATE
+forma_pagamento | VARCHAR(30) | NOT NULL | DEFAULT 'Dinheiro'
+status | VARCHAR(30) | NOT NULL | DEFAULT 'Pendente'
+observacao | VARCHAR(255)
+
+AGENDAMENTOS
+id_agendamento | INT(11) | PRIMARY KEY | NOT NULL | AUTO_INCREMENT
+data_agendamento | DATE | NOT NULL
+hora_agendamento | TIME | NOT NULL
+motivo | VARCHAR(255) | NOT NULL
+status | VARCHAR(30) | NOT NULL | DEFAULT 'Agendado'
+observacao | VARCHAR(255)
+
+
+
+-- PARTE 2 ---
+
+
+1. CLIENTES
+Entidade: Cadastro dos clientes da oficina, armazenando informações pessoais e de contato.
+
+id_cliente: Identificador único do cliente.
+nome: Nome completo do cliente.
+cpf: Número do CPF do cliente.
+telefone: Número de telefone do cliente.
+email: Endereço de e-mail do cliente.
+endereco: Endereço residencial do cliente.
+2. VEICULOS
+Entidade: Cadastro dos veículos dos clientes atendidos pela oficina.
+
+id_veiculo: Identificador único do veículo.
+placa: Placa de identificação do veículo.
+marca: Marca do veículo.
+modelo: Modelo do veículo.
+ano: Ano de fabricação do veículo.
+cor: Cor predominante do veículo.
+3. FUNCIONARIOS
+Entidade: Cadastro dos funcionários que trabalham na oficina e realizam os serviços.
+
+id_funcionario: Identificador único do funcionário.
+nome: Nome completo do funcionário.
+cpf: Número do CPF do funcionário.
+cargo: Função exercida pelo funcionário na oficina.
+telefone: Número de telefone do funcionário.
+salario: Valor do salário recebido pelo funcionário.
+4. SERVICOS
+Entidade: Cadastro dos serviços oferecidos pela oficina para manutenção e reparo dos veículos.
+
+id_servico: Identificador único do serviço.
+nome: Nome do serviço oferecido pela oficina.
+descricao: Descrição das atividades realizadas no serviço.
+preco: Valor cobrado pelo serviço.
+tempo_estimado: Tempo estimado para realização do serviço em minutos.
+status: Situação atual do serviço no cadastro.
+5. ORDENS_SERVICO
+Entidade: Registro das ordens de serviço abertas para manutenção e reparo dos veículos.
+
+id_ordem_servico: Identificador único da ordem de serviço.
+data_abertura: Data em que a ordem de serviço foi aberta.
+data_fechamento: Data em que a ordem de serviço foi finalizada.
+valor_total: Valor total dos serviços e peças utilizados na ordem.
+status: Situação atual da ordem de serviço.
+observacao: Informações adicionais sobre a ordem de serviço.
+6. PECAS
+Entidade: Cadastro das peças utilizadas nos serviços de manutenção e reparo dos veículos.
+
+id_peca: Identificador único da peça.
+nome: Nome da peça utilizada pela oficina.
+descricao: Descrição das características da peça.
+preco: Valor de venda da peça.
+quantidade: Quantidade disponível da peça.
+fabricante: Nome do fabricante da peça.
+7. FORNECEDORES
+Entidade: Cadastro dos fornecedores responsáveis pelo fornecimento de peças e materiais para a oficina.
+
+id_fornecedor: Identificador único do fornecedor.
+nome: Nome ou razão social do fornecedor.
+cnpj: Número do CNPJ do fornecedor.
+telefone: Número de telefone do fornecedor.
+email: Endereço de e-mail do fornecedor.
+endereco: Endereço comercial do fornecedor.
+8. ESTOQUE
+Entidade: Controle das peças e materiais disponíveis no estoque da oficina.
+
+id_estoque: Identificador único do registro de estoque.
+quantidade: Quantidade atual de itens disponíveis no estoque.
+estoque_minimo: Quantidade mínima que deve ser mantida em estoque.
+data_entrada: Data de entrada do item no estoque.
+data_atualizacao: Data da última atualização do estoque.
+localizacao: Local onde o item está armazenado na oficina.
+9. PAGAMENTOS
+Entidade: Registro dos pagamentos realizados pelos clientes pelos serviços e peças utilizados.
+
+id_pagamento: Identificador único do pagamento.
+valor: Valor pago pelo cliente.
+data_pagamento: Data em que o pagamento foi realizado.
+forma_pagamento: Forma utilizada para realizar o pagamento.
+status: Situação atual do pagamento.
+observacao: Informações adicionais relacionadas ao pagamento.
+10. AGENDAMENTOS
+Entidade: Registro dos agendamentos realizados pelos clientes para atendimento na oficina.
+
+id_agendamento: Identificador único do agendamento.
+data_agendamento: Data marcada para o atendimento.
+hora_agendamento: Horário marcado para o atendimento.
+motivo: Motivo informado pelo cliente para o atendimento.
+status: Situação atual do agendamento.
+observacao: Informações adicionais sobre o agendamento.
+
+
+
+
+parte 3
+
+
+Relacionamentos
+Tabela 1	Relacionamento	Tabela 2	Cardinalidade
+Clientes	possui	Veículos	1:N
+Marcas	possui	Modelos	1:N
+Modelos	identifica	Veículos	1:N
+Funcionários	executa	Ordens de Serviço	1:N
+Clientes	solicita	Ordens de Serviço	1:N
+Veículos	possui	Ordens de Serviço	1:N
+Ordens de Serviço	contém	Serviços	N:N
+Ordens de Serviço	utiliza	Peças	N:N
+Fornecedores	fornece	Peças	1:N
+Ordens de Serviço	possui	Pagamentos	1:N
+
+      1
+      |
+      N
+ordem_servico_servicos
+      N
+      |
+      1
+servicos
+
+Ordem de Serviço ↔ Peças
+
+ordens_servico
+      1
+      |
+      N
+ordem_servico_pecas
+      N
+      |
+      1
+pecas
+Modelo geral
+CLIENTES
+   |
+   | 1:N
+   v
+VEICULOS
+   |
+   | N:1
+   v
+MODELOS
+   |
+   | N:1
+   v
+MARCAS
+
+
+CLIENTES
+   |
+   | 1:N
+   v
+ORDENS_SERVICO
+   |          |
+   |          |
+  N:N        N:N
+   |          |
+   v          v
+SERVICOS    PECAS
+   ^          ^
+   |          |
+   |          | N:1
+   |          |
+   |     FORNECEDORES
+   |
+   |
+FUNCIONARIOS
+   |
+   | 1:N
+   v
+ORDENS_SERVICO
+
+ORDENS_SERVICO
+   |
+   | 1:N
+   v
+PAGAMENTOS
+
+parte 4 
+
+-- ============================================
+-- BANCO DE DADOS - OFICINA
+-- ============================================
+
+CREATE DATABASE oficina;
+
+USE oficina;
+
+
+-- ============================================
+-- 1. TABELA CLIENTES
+-- ============================================
+
+CREATE TABLE clientes (
+    id_cliente INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60) NOT NULL,
+    cpf VARCHAR(14) NOT NULL UNIQUE,
+    telefone VARCHAR(20),
+    email VARCHAR(60),
+    endereco VARCHAR(100)
+);
+
+
+-- ============================================
+-- 2. TABELA MARCAS
+-- ============================================
+
+CREATE TABLE marcas (
+    id_marca INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60) NOT NULL
+);
+
+
+-- ============================================
+-- 3. TABELA MODELOS
+-- ============================================
+
+CREATE TABLE modelos (
+    id_modelo INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60) NOT NULL,
+    id_marca INT NOT NULL,
+
+    CONSTRAINT fk_modelos_marcas
+        FOREIGN KEY (id_marca)
+        REFERENCES marcas(id_marca)
+);
+
+
+-- ============================================
+-- 4. TABELA VEICULOS
+-- ============================================
+
+CREATE TABLE veiculos (
+    id_veiculo INT AUTO_INCREMENT PRIMARY KEY,
+    placa VARCHAR(10) NOT NULL UNIQUE,
+    ano INT,
+    cor VARCHAR(30),
+    id_cliente INT NOT NULL,
+    id_modelo INT NOT NULL,
+
+    CONSTRAINT fk_veiculos_clientes
+        FOREIGN KEY (id_cliente)
+        REFERENCES clientes(id_cliente),
+
+    CONSTRAINT fk_veiculos_modelos
+        FOREIGN KEY (id_modelo)
+        REFERENCES modelos(id_modelo)
+);
+
+
+-- ============================================
+-- 5. TABELA FUNCIONARIOS
+-- ============================================
+
+CREATE TABLE funcionarios (
+    id_funcionario INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60) NOT NULL,
+    cpf VARCHAR(14) NOT NULL UNIQUE,
+    telefone VARCHAR(20),
+    cargo VARCHAR(50),
+    salario DECIMAL(10,2)
+);
+
+
+-- ============================================
+-- 6. TABELA SERVICOS
+-- ============================================
+
+CREATE TABLE servicos (
+    id_servico INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60) NOT NULL,
+    descricao VARCHAR(150),
+    valor DECIMAL(10,2) NOT NULL
+);
+
+
+-- ============================================
+-- 7. TABELA FORNECEDORES
+-- ============================================
+
+CREATE TABLE fornecedores (
+    id_fornecedor INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60) NOT NULL,
+    cnpj VARCHAR(18) UNIQUE,
+    telefone VARCHAR(20),
+    email VARCHAR(60),
+    endereco VARCHAR(100)
+);
+
+
+-- ============================================
+-- 8. TABELA PECAS
+-- ============================================
+
+CREATE TABLE pecas (
+    id_peca INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60) NOT NULL,
+    descricao VARCHAR(150),
+    valor DECIMAL(10,2) NOT NULL,
+    estoque INT DEFAULT 0,
+    id_fornecedor INT NOT NULL,
+
+    CONSTRAINT fk_pecas_fornecedores
+        FOREIGN KEY (id_fornecedor)
+        REFERENCES fornecedores(id_fornecedor)
+);
+
+
+-- ============================================
+-- 9. TABELA ORDENS DE SERVICO
+-- ============================================
+
+CREATE TABLE ordens_servico (
+    id_ordem INT AUTO_INCREMENT PRIMARY KEY,
+    data_abertura DATE NOT NULL,
+    data_fechamento DATE,
+    descricao VARCHAR(200),
+    status VARCHAR(30) NOT NULL,
+    valor_total DECIMAL(10,2) DEFAULT 0,
+    id_cliente INT NOT NULL,
+    id_veiculo INT NOT NULL,
+    id_funcionario INT NOT NULL,
+
+    CONSTRAINT fk_ordens_clientes
+        FOREIGN KEY (id_cliente)
+        REFERENCES clientes(id_cliente),
+
+    CONSTRAINT fk_ordens_veiculos
+        FOREIGN KEY (id_veiculo)
+        REFERENCES veiculos(id_veiculo),
+
+    CONSTRAINT fk_ordens_funcionarios
+        FOREIGN KEY (id_funcionario)
+        REFERENCES funcionarios(id_funcionario)
+);
+
+
+-- ============================================
+-- 10. TABELA PAGAMENTOS
+-- ============================================
+
+CREATE TABLE pagamentos (
+    id_pagamento INT AUTO_INCREMENT PRIMARY KEY,
+    data_pagamento DATE NOT NULL,
+    valor DECIMAL(10,2) NOT NULL,
+    forma_pagamento VARCHAR(30) NOT NULL,
+    status VARCHAR(30) NOT NULL,
+    id_ordem INT NOT NULL,
+
+    CONSTRAINT fk_pagamentos_ordens
+        FOREIGN KEY (id_ordem)
+        REFERENCES ordens_servico(id_ordem)
+);
+
+
+-- ============================================
+-- 11. RELACIONAMENTO ORDEM x SERVIÇOS
+-- ============================================
+
+CREATE TABLE ordem_servico_servicos (
+    id_ordem INT NOT NULL,
+    id_servico INT NOT NULL,
+    quantidade INT DEFAULT 1,
+    valor DECIMAL(10,2) NOT NULL,
+
+    PRIMARY KEY (id_ordem, id_servico),
+
+    CONSTRAINT fk_oss_ordem
+        FOREIGN KEY (id_ordem)
+        REFERENCES ordens_servico(id_ordem),
+
+    CONSTRAINT fk_oss_servico
+        FOREIGN KEY (id_servico)
+        REFERENCES servicos(id_servico)
+);
+
+
+-- ============================================
+-- 12. RELACIONAMENTO ORDEM x PEÇAS
+-- ============================================
+
+CREATE TABLE ordem_servico_pecas (
+    id_ordem INT NOT NULL,
+    id_peca INT NOT NULL,
+    quantidade INT DEFAULT 1,
+    valor DECIMAL(10,2) NOT NULL,
+
+    PRIMARY KEY (id_ordem, id_peca),
+
+    CONSTRAINT fk_osp_ordem
+        FOREIGN KEY (id_ordem)
+        REFERENCES ordens_servico(id_ordem),
+
+    CONSTRAINT fk_osp_peca
+        FOREIGN KEY (id_peca)
+        REFERENCES pecas(id_peca)
+
+
+clientes 1:N veiculos
+marcas 1:N modelos
+modelos 1:N veiculos
+clientes 1:N ordens_servico
+veiculos 1:N ordens_servico
+funcionarios 1:N ordens_servico
+fornecedores 1:N pecas
+ordens_servico 1:N pagamentos
+ordens_servico N:N servicos
+ordens_servico N:N pecas
+
+
+Relacionamento	Descrição
+Clientes → Veículos	Um cliente pode possuir vários veículos, mas cada veículo pertence a um único cliente.
+Marcas → Modelos	Uma marca pode possuir vários modelos, mas cada modelo pertence a uma única marca.
+Modelos → Veículos	Um modelo pode estar associado a vários veículos, mas cada veículo possui um único modelo.
+Clientes → Ordens de Serviço	Um cliente pode possuir várias ordens de serviço, mas cada ordem pertence a um único cliente.
+Veículos → Ordens de Serviço	Um veículo pode possuir várias ordens de serviço, mas cada ordem está relacionada a um único veículo.
+Funcionários → Ordens de Serviço	Um funcionário pode ser responsável por várias ordens de serviço, mas cada ordem possui um funcionário responsável.
+Fornecedores → Peças	Um fornecedor pode fornecer várias peças, mas cada peça está associada a um fornecedor.
+Ordens de Serviço → Pagamentos	Uma ordem de serviço pode possuir um ou vários pagamentos, e cada pagamento pertence a uma ordem de serviço.
+Ordens de Serviço → Serviços	Uma ordem de serviço pode possuir vários serviços e um serviço pode estar em várias ordens de serviço.
+Ordens de Serviço → Peças	Uma ordem de serviço pode utilizar várias peças e uma peça pode ser utilizada em várias ordens de serviço.
+
+Tabela	Atributo	Descrição
+veiculos	id_cliente	Identifica o cliente proprietário do veículo. FK para clientes.id_cliente.
+veiculos	id_modelo	Identifica o modelo do veículo. FK para modelos.id_modelo.
+modelos	id_marca	Identifica a marca à qual o modelo pertence. FK para marcas.id_marca.
+ordens_servico	id_cliente	Identifica o cliente responsável pela ordem de serviço. FK para clientes.id_cliente.
+ordens_servico	id_veiculo	Identifica o veículo relacionado à ordem de serviço. FK para veiculos.id_veiculo.
+ordens_servico	id_funcionario	Identifica o funcionário responsável pela ordem de serviço. FK para funcionarios.id_funcionario.
+pecas	id_fornecedor	Identifica o fornecedor da peça. FK para fornecedores.id_fornecedor.
+pagamentos	id_ordem	Identifica a ordem de serviço relacionada ao pagamento. FK para ordens_servico.id_ordem.
+ordem_servico_servicos	id_ordem	Identifica a ordem de serviço relacionada ao serviço. FK para ordens_servico.id_ordem.
+ordem_servico_servicos	id_servico	Identifica o serviço utilizado na ordem. FK para servicos.id_servico.
+ordem_servico_pecas	id_ordem	Identifica a ordem de serviço que utiliza a peça. FK para ordens_servico.id_ordem.
+ordem_servico_pecas	id_peca	Identifica a peça utilizada na ordem de serviço. FK para pecas.id_peca.

@@ -1,0 +1,14 @@
+body{
+    background-color: rgb(63, 55, 97);
+}
+h1 {
+    color: black;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+ol {
+    color: rgb(101, 99, 253);
+}
+
+ul {
+    color: rgb(64, 62, 190);
+}

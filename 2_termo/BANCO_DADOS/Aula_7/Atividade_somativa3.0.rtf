@@ -1,0 +1,239 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset0 MS Sans Serif;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\b\f0\fs16 001 - Entidade: \cf2\b0 Clientes\cf1\b 
+\par \cf0\b0  Cadastro dos clientes da oficina, armazenando informa\f1\'e7\'f5es pessoais e de contato.
+\par \f0 
+\par \cf1\b 002 - Entidade: \cf2\b0 Fornecedores\cf1\b 
+\par \cf0\b0 Cadastro dos fornecedores respons\f1\'e1veis pelo fornecimento de pe\'e7as e materiais para a oficina.
+\par \f0 
+\par \cf1\b 003 - Entidade: \cf2\b0 Funcionarios\cf1\b 
+\par \cf0\b0 cadastro dos funcionarios que trabalham na oficina e realizam os servicos
+\par 
+\par \cf1\b 004 - Entidade: \cf2\b0 Marcas\cf1\b 
+\par \cf0\b0 marcas da oficina de veiculos
+\par 
+\par \cf1\b 005 - Entidade: \cf2\b0 Modelos\cf1\b 
+\par \cf0\b0 Registro de modelos da oficina de veiculo
+\par 
+\par \cf1\b 006 - Observa\f1\'e7\'e3o: \cf2\b0 Oficina de veiculo\cf1\b  \cf0\b0\f0 
+\par \cf1\b 007 - Entidade: \cf2\b0 Ordens_de_servico\cf1\b 
+\par \cf0\b0 Registro das ordens de servi\f1\'e7o abertas para manuten\'e7\'e3o e reparo dos ve\'edculos.
+\par \f0 
+\par \cf1\b 008 - Entidade: \cf2\b0 Pagamentos\cf1\b 
+\par \cf0\b0 Registro dos pagamentos realizados pelos clientes pelos servi\f1\'e7os e pe\'e7as utilizados.
+\par \f0 
+\par \cf1\b 009 - Entidade: \cf2\b0 Pecas\cf1\b 
+\par \cf0\b0  Cadastro das pe\f1\'e7as utilizadas nos servi\'e7os de manuten\'e7\'e3o e reparo dos ve\'edculos.
+\par \f0 
+\par \cf1\b 010 - Rela\f1\'e7\'e3o: \cf2\b0 Possui\cf1\b 
+\par \cf0\b0\f0 Um cliente pode possuir v\f1\'e1rios ve\'edculos, mas cada ve\'edculo pertence a um \'fanico cliente.
+\par \f0 
+\par \cf1\b 011 - Entidade: \cf2\b0 Servicos\cf1\b 
+\par \cf0\b0  Cadastro dos servi\f1\'e7os oferecidos pela oficina para manuten\'e7\'e3o e reparo dos ve\'edculos.
+\par \f0 
+\par \cf1\b 012 - Entidade: \cf2\b0 Veiculos\cf1\b 
+\par \cf0\b0 Cadastro dos veiculos dos clientes atendidos pela oficina 
+\par \cf1\b 013 - Atributo: \cf2\b0 ano\cf1\b 
+\par \cf0\b0 ano de fabricacao de veiculo
+\par 
+\par \cf1\b 014 - Atributo: \cf2\b0 ano_modelo\cf1\b 
+\par \cf0\b0 ano de fabricacao do modelo 
+\par 
+\par \cf1\b 015 - Atributo: \cf2\b0 cargo\cf1\b 
+\par \cf0\b0 funcao exercida pelo funcionario na oficina
+\par 
+\par \cf1\b 016 - Atributo: \cf2\b0 cnpj\cf1\b 
+\par \cf0\b0 N\f1\'famero do CNPJ do fornecedor.
+\par \f0 
+\par \cf1\b 017 - Rela\f1\'e7\'e3o: \cf2\b0 compor\cf1\b 
+\par \cf0\b0\f0  Ordem de servi\f1\'e7o utiliza uma ou mais pe\'e7as durante o servi\'e7o.
+\par \f0 
+\par \cf1\b 018 - Rela\f1\'e7\'e3o: \cf2\b0 contem\cf1\b 
+\par \cf0\b0\f0 Ve\f1\'edculo pertence a um determinado modelo.
+\par \f0 
+\par \cf1\b 019 - Atributo: \cf2\b0 cor\cf1\b 
+\par \cf0\b0 cor predominante do veiculo
+\par 
+\par \cf1\b 020 - Atributo: \cf2\b0 cpf\cf1\b 
+\par \cf0\b0 numero do cpf do cliente 
+\par \cf1\b 021 - Atributo: \cf2\b0 cpf\cf1\b 
+\par \cf0\b0 numero do cpf do funcionario
+\par 
+\par \cf1\b 022 - Atributo: \cf2\b0 data_abertura\cf1\b 
+\par \cf0\b0 data em que a ordem de servico foi aberta
+\par 
+\par \cf1\b 023 - Atributo: \cf2\b0 data_fechamento\cf1\b 
+\par \cf0\b0 data em que a ordem de servico foi fechada
+\par 
+\par \cf1\b 024 - Atributo: \cf2\b0 data_fundacao\cf1\b 
+\par \cf0\b0 data da fundacao da marca
+\par 
+\par \cf1\b 025 - Atributo: \cf2\b0 data_pagamento\cf1\b 
+\par \cf0\b0 data atual do pagamento
+\par 
+\par \cf1\b 026 - Atributo: \cf2\b0 descricao\cf1\b 
+\par \cf0\b0 descricao das atividades realizadas no servico 
+\par 
+\par \cf1\b 027 - Atributo: \cf2\b0 descricao\cf1\b 
+\par \cf0\b0 Descri\f1\'e7\'e3o das caracter\'edsticas da pe\'e7a.
+\par \f0 
+\par \cf1\b 028 - Atributo: \cf2\b0 descricao\cf1\b 
+\par \cf0\b0 descricao para informacoes adicionais do modelo
+\par 
+\par \cf1\b 029 - Atributo: \cf2\b0 email\cf1\b 
+\par \cf0\b0 endereco de e-mail do cliente
+\par 
+\par \cf1\b 030 - Atributo: \cf2\b0 email\cf1\b 
+\par \cf0\b0  Endere\f1\'e7o de e-mail do fornecedor.
+\par \f0 
+\par \cf1\b 031 - Atributo: \cf2\b0 endereco\cf1\b 
+\par \cf0\b0  Endere\f1\'e7o comercial do fornecedor.
+\par \f0 
+\par \cf1\b 032 - Atributo: \cf2\b0 endereco\cf1\b 
+\par \cf0\b0 endereco residencial do cliente
+\par 
+\par \cf1\b 033 - Rela\f1\'e7\'e3o: \cf2\b0 executa\cf1\b 
+\par \cf0\b0\f0 Funcion\f1\'e1rio executa as atividades relacionadas \'e0 ordem de servi\'e7o.
+\par \f0 
+\par \cf1\b 034 - Atributo: \cf2\b0 fabricante\cf1\b 
+\par \cf0\b0  Nome do fabricante da pe\f1\'e7a.
+\par \f0 
+\par \cf1\b 035 - Rela\f1\'e7\'e3o: \cf2\b0 finalizam\cf1\b 
+\par \cf0\b0\f0 Ordem de servi\f1\'e7o finalizam um ou mais pagamentos.     
+\par \f0 
+\par \cf1\b 036 - Atributo: \cf2\b0 forma_pagamento\cf1\b 
+\par \cf0\b0 forma de pagamento escolhida pelo cliente
+\par 
+\par \cf1\b 037 - Rela\f1\'e7\'e3o: \cf2\b0 fornecer\cf1\b 
+\par \cf0\b0\f0 Fornecedor fornece pe\f1\'e7as utilizadas pela oficina. 
+\par \f0 
+\par \cf1\b 038 - Rela\f1\'e7\'e3o: \cf2\b0 gera\cf1\b 
+\par \cf0\b0\f0 Cliente recebe ordens de servi\f1\'e7o referentes aos seus ve\'edculos.
+\par \f0 
+\par \cf1\b 039 - Atributo: \cf2\b0 id_cliente\cf1\b 
+\par \cf0\b0 Indentificador unico do cliente 
+\par \cf1\b 040 - Atributo: \cf2\b0 id_fornecedor\cf1\b 
+\par \cf0\b0 Identificador \f1\'fanico do fornecedor.
+\par \f0 
+\par \cf1\b 041 - Atributo: \cf2\b0 id_funcionario\cf1\b 
+\par \cf0\b0 identificador unico do funcionario
+\par 
+\par \cf1\b 042 - Atributo: \cf2\b0 id_marca\cf1\b 
+\par \cf0\b0 indentificador primario da marca
+\par 
+\par \cf1\b 043 - Atributo: \cf2\b0 id_modelo\cf1\b 
+\par \cf0\b0 indentificador unico do modelo
+\par 
+\par \cf1\b 044 - Atributo: \cf2\b0 id_ordem_servico\cf1\b 
+\par \cf0\b0 identificador unico da ordem de servico
+\par 
+\par \cf1\b 045 - Atributo: \cf2\b0 id_pagamento\cf1\b 
+\par \cf0\b0 Identificador \f1\'fanico do pagamento.
+\par \f0 
+\par \cf1\b 046 - Atributo: \cf2\b0 id_peca\cf1\b 
+\par \cf0\b0 identificador unico da peca
+\par 
+\par \cf1\b 047 - Atributo: \cf2\b0 id_servico\cf1\b 
+\par \cf0\b0 Identificador unico do servico
+\par 
+\par \cf1\b 048 - Atributo: \cf2\b0 id_veiculo\cf1\b 
+\par \cf0\b0 Indentificador unico do veiculo
+\par 
+\par \cf1\b 049 - Atributo: \cf2\b0 marca\cf1\b 
+\par \cf0\b0 marca do veiculo
+\par 
+\par \cf1\b 050 - Atributo: \cf2\b0 modelo\cf1\b 
+\par \cf0\b0 modelo do veiculo
+\par 
+\par \cf1\b 051 - Atributo: \cf2\b0 motorizacao\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 052 - Atributo: \cf2\b0 nome\cf1\b 
+\par \cf0\b0 nome completo do cliente
+\par 
+\par \cf1\b 053 - Atributo: \cf2\b0 nome\cf1\b 
+\par \cf0\b0 Nome ou raz\f1\'e3o social do fornecedor.
+\par \f0 
+\par \cf1\b 054 - Atributo: \cf2\b0 nome\cf1\b 
+\par \cf0\b0 nome do servico oferecido pela oficina 
+\par \cf1\b 055 - Atributo: \cf2\b0 nome \cf1\b 
+\par \cf0\b0 Nome da pe\f1\'e7a utilizada pela oficina. \f0 
+\par \cf1\b 056 - Atributo: \cf2\b0 nome_marca\cf1\b 
+\par \cf0\b0 nome da marca do veiculo
+\par 
+\par \cf1\b 057 - Atributo: \cf2\b0 nome_modelo\cf1\b 
+\par \cf0\b0 nome atual do modelo
+\par 
+\par \cf1\b 058 - Atributo: \cf2\b0 norme\cf1\b 
+\par \cf0\b0 nome completo do funcionario
+\par 
+\par \cf1\b 059 - Atributo: \cf2\b0 observacao\cf1\b 
+\par \cf0\b0 informacoes adicionais sobre a ordem de servico
+\par 
+\par \cf1\b 060 - Atributo: \cf2\b0 pais_origem\cf1\b 
+\par \cf0\b0 pais de origem da marca
+\par 
+\par \cf1\b 061 - Rela\f1\'e7\'e3o: \cf2\b0 passa\cf1\b 
+\par \cf0\b0\f0 Ordem de servi\f1\'e7o cont\'e9m um ou mais servi\'e7os a serem realizados. 
+\par \f0 
+\par \cf1\b 062 - Atributo: \cf2\b0 pedido\cf1\b 
+\par \cf0\b0 pedido do pagamento
+\par 
+\par \cf1\b 063 - Atributo: \cf2\b0 placa\cf1\b 
+\par \cf0\b0 Placa de identificacao do veiculo
+\par 
+\par \cf1\b 064 - Atributo: \cf2\b0 preco\cf1\b 
+\par \cf0\b0 preco do item do pagamento
+\par 
+\par \cf1\b 065 - Atributo: \cf2\b0 preco\cf1\b 
+\par \cf0\b0 Valor de venda da pe\f1\'e7a.
+\par \f0 
+\par \cf1\b 066 - Atributo: \cf2\b0 preco \cf1\b 
+\par \cf0\b0 valor cobrado pelo servico
+\par 
+\par \cf1\b 067 - Atributo: \cf2\b0 quantidade\cf1\b 
+\par \cf0\b0  Quantidade dispon\f1\'edvel da pe\'e7a.
+\par \f0 
+\par \cf1\b 068 - Rela\f1\'e7\'e3o: \cf2\b0 recebem\cf1\b 
+\par \cf0\b0\f0 Ve\f1\'edculo recebe uma ou mais ordens de servi\'e7o para manuten\'e7\'e3o.
+\par \f0 
+\par \cf1\b 069 - Atributo: \cf2\b0 salario\cf1\b 
+\par \cf0\b0 valor do salario recebido pelo funcionario
+\par 
+\par \cf1\b 070 - Atributo: \cf2\b0 site\cf1\b 
+\par \cf0\b0 site em que esta ospedado a oficina
+\par 
+\par \cf1\b 071 - Atributo: \cf2\b0 status\cf1\b 
+\par \cf0\b0 situacao atual da ordem de servico
+\par 
+\par \cf1\b 072 - Atributo: \cf2\b0 status\cf1\b 
+\par \cf0\b0 status atual do pagamento
+\par 
+\par \cf1\b 073 - Atributo: \cf2\b0 status\cf1\b 
+\par \cf0\b0 status atual da marca
+\par 
+\par \cf1\b 074 - Atributo: \cf2\b0 status\cf1\b 
+\par \cf0\b0 situacao atual do servico no cadastro 
+\par 
+\par \cf1\b 075 - Atributo: \cf2\b0 telefone\cf1\b 
+\par \cf0\b0 telefone do funcionario
+\par 
+\par \cf1\b 076 - Atributo: \cf2\b0 telefone\cf1\b 
+\par \cf0\b0 N\f1\'famero de telefone do fornecedor.
+\par \f0 
+\par \cf1\b 077 - Atributo: \cf2\b0 telefone\cf1\b 
+\par \cf0\b0 numero de telefone do cliente
+\par 
+\par \cf1\b 078 - Rela\f1\'e7\'e3o: \cf2\b0 tem\cf1\b 
+\par \cf0\b0\f0 Modelo pertence a uma determinada marca.    
+\par 
+\par \cf1\b 079 - Atributo: \cf2\b0 tempo_estimado\cf1\b 
+\par \cf0\b0 tempo estimado para realizacao do servico em minutos
+\par 
+\par \cf1\b 080 - Atributo: \cf2\b0 tipo_veiculo\cf1\b 
+\par \cf0\b0 
+\par \cf1\b 081 - Atributo: \cf2\b0 valor_total\cf1\b 
+\par \cf0\b0 valor total dos servicos e pecas utilizados na ordem
+\par 
+\par 
+\par }
+ 

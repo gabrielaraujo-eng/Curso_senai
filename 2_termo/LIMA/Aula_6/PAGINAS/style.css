@@ -1,0 +1,29 @@
+/* cabeçalho */
+h1 {
+    font-family: 'Arial Black', Arial, sans-serif;
+    color: #3a5774;
+    font-size: 40px;
+    margin: 30px;
+    padding: 30px;
+}
+
+/* CLASSE */
+.seletor {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding: 50px;
+    line-height: 25px;
+}
+
+/* ID */
+#texto {
+    color: blue;
+
+}
+
+h2 {
+    font-family: Roboto;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 30px;
+}

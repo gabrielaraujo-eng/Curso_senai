@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo geral da página */
+body {
+    background-color: #121824;
+    color: #e2e8f0;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Estilo do título principal */
+h1 {
+    color: #e2e8f0;
+    margin-bottom: 10px;
+}
+
+/* Estilo do parágrafo */
+p {
+    font-size: 16px;
+    color: #e2e8f0;
+}
+
+/* Estilo de um botão simples */
+.botao {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.botao:hover {
+    background-color: #2980b9;
+}

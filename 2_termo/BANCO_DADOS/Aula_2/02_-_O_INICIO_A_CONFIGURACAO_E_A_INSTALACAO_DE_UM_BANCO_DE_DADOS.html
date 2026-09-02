@@ -1,0 +1,771 @@
+<!-- <html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>02 - O INÍCIO, A CONFIGURAÇÃO E A INSTALAÇÃO DE UM BANCO DE DADOS</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+/* Override strong tags inside headings to maintain consistent weight */
+h1 strong,
+h2 strong,
+h3 strong {
+	font-weight: 600;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 10px;
+	padding: 1rem;
+}
+
+/* For default-background callouts, render the border outline. */
+.callout.block-color-default_background {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+figure,
+aside,
+details {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+
+	table.collection-content {
+		width: 100%;
+		table-layout: fixed;
+	}
+
+	table.collection-content th,
+	table.collection-content td {
+		overflow-wrap: anywhere;
+	}
+
+	table.collection-content td > .user,
+	table.collection-content td > time {
+		white-space: pre-wrap;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content-wrapper {
+	overflow-x: auto;
+}
+
+@media only print {
+	.collection-content-wrapper {
+		overflow-x: visible;
+	}
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.collection-content td {
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.column-list {
+	display: flex;
+	gap: 46px;
+}
+
+.column {
+	min-width: 0;
+	overflow: hidden;
+}
+
+.column > *:first-child {
+	margin-top: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding-inline: 0.125rem;
+	padding-block: 0.375rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+table {
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol.numbered-list.numbered-list-digits-2 {
+	padding-inline-start: 2em;
+}
+
+ol.numbered-list.numbered-list-digits-3plus {
+	padding-inline-start: 2.4em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+/*
+ * Render emoji icons using a ::before pseudo-element to keep the glyph
+ * out of the DOM textContent traversal. This avoids double-rendering icons
+ * in callouts and page titles.
+ * NOTE(slim/html-export-pseudo-icons): I can't tagref this because it will
+ * flag as a duplicate tag after codegen.
+ */
+.icon[data-emoji]::before {
+	content: attr(data-emoji);
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.callout img.notion-static-icon {
+	width: 1em;
+	height: 1em;
+}
+
+.callout p {
+	margin: 0;
+}
+
+.callout h1,
+.callout h2,
+.callout h3 {
+	margin: 0 0 0.6rem;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	margin-right: 0.4em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+blockquote.quote-large {
+	font-size: 1.25em;
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.tab {
+	margin: 1.25em 0;
+	padding-inline: 1rem;
+	border: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", "Noto Sans Arabic", "Noto Sans Hebrew", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.highlight-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.highlight-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.highlight-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.highlight-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.highlight-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.highlight-default_background {
+	color: rgba(44, 44, 43, 1);
+}
+.highlight-gray_background {
+	background: rgba(42, 28, 0, 0.07);
+}
+.highlight-brown_background {
+	background: rgba(139, 46, 0, 0.086);
+}
+.highlight-orange_background {
+	background: rgba(224, 101, 1, 0.129);
+}
+.highlight-yellow_background {
+	background: rgba(211, 168, 0, 0.137);
+}
+.highlight-teal_background {
+	background: rgba(0, 100, 45, 0.09);
+}
+.highlight-blue_background {
+	background: rgba(0, 124, 215, 0.094);
+}
+.highlight-purple_background {
+	background: rgba(102, 0, 178, 0.078);
+}
+.highlight-pink_background {
+	background: rgba(197, 0, 93, 0.086);
+}
+.highlight-red_background {
+	background: rgba(223, 22, 0, 0.094);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(125, 122, 117, 1);
+	fill: rgba(125, 122, 117, 1);
+}
+.block-color-brown {
+	color: rgba(159, 118, 90, 1);
+	fill: rgba(159, 118, 90, 1);
+}
+.block-color-orange {
+	color: rgba(210, 123, 45, 1);
+	fill: rgba(210, 123, 45, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 148, 52, 1);
+	fill: rgba(203, 148, 52, 1);
+}
+.block-color-teal {
+	color: rgba(80, 148, 110, 1);
+	fill: rgba(80, 148, 110, 1);
+}
+.block-color-blue {
+	color: rgba(56, 125, 201, 1);
+	fill: rgba(56, 125, 201, 1);
+}
+.block-color-purple {
+	color: rgba(154, 107, 180, 1);
+	fill: rgba(154, 107, 180, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(207, 81, 72, 1);
+	fill: rgba(207, 81, 72, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(240, 239, 237, 1);
+}
+.block-color-brown_background {
+	background: rgba(245, 237, 233, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 235, 222, 1);
+}
+.block-color-yellow_background {
+	background: rgba(249, 243, 220, 1);
+}
+.block-color-teal_background {
+	background: rgba(232, 241, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(229, 242, 252, 1);
+}
+.block-color-purple_background {
+	background: rgba(243, 235, 249, 1);
+}
+.block-color-pink_background {
+	background: rgba(250, 233, 241, 1);
+}
+.block-color-red_background {
+	background: rgba(252, 233, 231, 1);
+}
+.select-value-color-default { background-color: rgba(42, 28, 0, 0.07); }
+.select-value-color-gray { background-color: rgba(28, 19, 1, 0.11); }
+.select-value-color-brown { background-color: rgba(127, 51, 0, 0.156); }
+.select-value-color-orange { background-color: rgba(196, 88, 0, 0.203); }
+.select-value-color-yellow { background-color: rgba(209, 156, 0, 0.282); }
+.select-value-color-green { background-color: rgba(0, 96, 38, 0.156); }
+.select-value-color-blue { background-color: rgba(0, 118, 217, 0.203); }
+.select-value-color-purple { background-color: rgba(92, 0, 163, 0.141); }
+.select-value-color-pink { background-color: rgba(183, 0, 78, 0.152); }
+.select-value-color-red { background-color: rgba(206, 24, 0, 0.164); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style><style>@import url('https://cdn.jsdelivr.net/npm/katex@0.16.25/dist/katex-swap.min.css')</style></head><body><article id="3a7369ac-6af0-80a1-aed6-da4eaf8b59a6" class="page serif"><header><img class="page-cover-image" src="MYSQL.png" style="object-position:center 50%"/><h1 class="page-title" dir="auto">02 - O INÍCIO, A CONFIGURAÇÃO E A INSTALAÇÃO DE UM BANCO DE DADOS</h1><p class="page-description" dir="auto"></p></header><div class="page-body"><h1 id="3a7369ac-6af0-8008-86c4-dd928bd2468e" class="" dir="auto">Tema</h1><p id="3a7369ac-6af0-8046-b6da-f4e675557fae" class="" dir="auto"><strong>Configurando o ambiente para utilização de um Banco de Dados Relacional</strong></p><p id="3a7369ac-6af0-8079-b56e-c794fd6452c2" class="" dir="auto">Esta aula está alinhada à segunda aula prevista no plano de ensino: instalação e configuração de um SGBD relacional, com foco na autonomia.</p><hr id="3a7369ac-6af0-80f4-9b77-e6e8e2aad8d5" dir="auto"/><h1 id="3a7369ac-6af0-808f-99d1-c4e83920bbde" class="" dir="auto">📖 Abertura</h1><blockquote id="3a7369ac-6af0-8036-aff9-d93f5c33be3c" class="" dir="auto"><em>&quot;A perfeição é alcançada, não quando não há mais nada para acrescentar, mas quando não há mais nada para retirar.&quot;</em><p id="3a7369ac-6af0-80b6-8b75-d5d8a02e5581" class="" dir="auto"><strong>— Antoine de Saint-Exupéry</strong></p></blockquote><h3 id="3a7369ac-6af0-806d-bc6d-e96a1e9b7a79" class="" dir="auto">Conversa inicial</h3><p id="3a7369ac-6af0-8079-b258-e321d4251237" class="" dir="auto"><strong>&quot;Por que um computador recém-formatado não consegue desenvolver software profissional?&quot;</strong></p><p id="3a7369ac-6af0-80be-a99c-f572c4aedf13" class="" dir="auto">Depois concluir:</p><blockquote id="3a7369ac-6af0-8039-b18c-e55f8537d4a8" class="" dir="auto">&quot;Ferramentas não fazem um profissional, mas um profissional sabe preparar suas ferramentas.&quot;</blockquote><p id="3a7369ac-6af0-8092-a262-d5aea4d967ee" class="" dir="auto">Essa será exatamente a missão de hoje.</p><p id="3a7369ac-6af0-8004-8bce-f7fc03ef3e1c" class="" dir="auto">Hoje ninguém aprenderá SQL.</p><p id="3a7369ac-6af0-80b0-80c7-e1cfbada2a20" class="" dir="auto">Hoje aprenderemos algo que todo desenvolvedor faz antes de escrever a primeira linha de código:</p><p id="3a7369ac-6af0-803f-bbd0-ec8f19ee082a" class="" dir="auto"><strong>Preparar o ambiente de trabalho.</strong></p><hr id="3a7369ac-6af0-80bd-b7bd-d1a4aae0b210" dir="auto"/><h1 id="3a7369ac-6af0-80ce-9fd9-c1e9cfcb9b0f" class="" dir="auto">Objetivo da aula</h1><p id="3a7369ac-6af0-8074-99ed-fa0d58e72c00" class="" dir="auto">Ao final da aula os estudantes deverão:</p><ul id="3a7369ac-6af0-8023-9a2b-cddb86245c7f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">compreender o papel de um SGBD;</li></ul><ul id="3a7369ac-6af0-8074-a1be-ff233f8ebacf" class="bulleted-list" dir="auto"><li style="list-style-type:disc">conhecer os principais bancos relacionais do mercado;</li></ul><ul id="3a7369ac-6af0-8066-9558-d485ccebbe5c" class="bulleted-list" dir="auto"><li style="list-style-type:disc">instalar e configurar um ambiente profissional;</li></ul><ul id="3a7369ac-6af0-80b8-83d8-e3b73f7cf0e9" class="bulleted-list" dir="auto"><li style="list-style-type:disc">testar o funcionamento da instalação;</li></ul><ul id="3a7369ac-6af0-80c8-8623-e6b6b785899f" class="bulleted-list" dir="auto"><li style="list-style-type:disc">compreender a importância de um ambiente organizado.</li></ul><hr id="3a7369ac-6af0-800e-8783-f7b481e33aca" dir="auto"/><h1 id="3a7369ac-6af0-8015-b3f7-db8abe8e82b4" class="" dir="auto">Grande pergunta</h1><p id="3a7369ac-6af0-8012-a562-c3abf52c9fa3" class="" dir="auto">
+</p><blockquote id="3a7369ac-6af0-806f-954f-d84d005e9a65" class="" dir="auto"><strong>&quot;Você confiaria um banco que movimenta bilhões de reais a um software mal instalado?&quot;</strong></blockquote><p id="3a7369ac-6af0-80c5-8e0c-f9b03a234f37" class="" dir="auto">
+</p><p id="3a7369ac-6af0-80e1-912e-ec2709b3c67d" class="" dir="auto">Todo sistema começa com uma boa infraestrutura.</p><hr id="3a7369ac-6af0-803a-8c68-c2771bfc1db0" dir="auto"/><h1 id="3a7369ac-6af0-8027-a463-fea43ace6dc8" class="" dir="auto">Storytelling</h1><p id="3a7369ac-6af0-8045-8131-ddfc5e46184d" class="" dir="auto"><strong>Imagine que você foi contratado pela empresa que desenvolve o sistema de uma grande rede de hospitais.</strong></p><p id="3a7369ac-6af0-8004-b1c0-e1adbc0ca340" class="" dir="auto">Primeiro dia.</p><p id="3a7369ac-6af0-8013-9e0f-d567bec2d888" class="" dir="auto">Você recebe um notebook novo.</p><p id="3a7369ac-6af0-806c-8d4f-e0846d5575d3" class="" dir="auto">Seu gerente diz:</p><blockquote id="3a7369ac-6af0-8018-a879-f056e214dd68" class="" dir="auto">&quot;Até às 17 horas preciso que seu ambiente esteja funcionando.&quot;</blockquote><p id="3a7369ac-6af0-80d4-b0ca-ea38b4cec494" class="" dir="auto">Nenhuma linha de código.</p><p id="3a7369ac-6af0-808b-8765-e82e1d0561e0" class="" dir="auto">Apenas preparar o ambiente.</p><p id="3a7369ac-6af0-80fb-8b71-f42972cb9190" class="" dir="auto">Essa é uma situação extremamente comum na vida profissional.</p><hr id="3a7369ac-6af0-80a1-838b-fadbd679dc83" dir="auto"/><h1 id="3a7369ac-6af0-80ba-9977-e733557c6f88" class="" dir="auto">Aquecimento</h1><p id="3a7369ac-6af0-80ed-86c3-dda9e5e0d8d8" class="" dir="auto">Dicas de softwares</p><ul id="3a7369ac-6af0-8003-836e-d8b2b729978d" class="bulleted-list" dir="auto"><li style="list-style-type:disc">MySQL Workbench</li></ul><ul id="3a7369ac-6af0-80f9-a688-c0b7bca17029" class="bulleted-list" dir="auto"><li style="list-style-type:disc">PostgreSQL</li></ul><ul id="3a7369ac-6af0-80d7-bb97-d57b48c38128" class="bulleted-list" dir="auto"><li style="list-style-type:disc">SQL Server</li></ul><ul id="3a7369ac-6af0-8072-ba16-ca53ab6907bc" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Oracle</li></ul><ul id="3a7369ac-6af0-806b-8813-c754cc0d83c8" class="bulleted-list" dir="auto"><li style="list-style-type:disc">MariaDB</li></ul><p id="3a7369ac-6af0-801a-a1e2-c18cf64f3755" class="" dir="auto">Pergunta:</p><p id="3a7369ac-6af0-8057-9017-f8f0f3114791" class="" dir="auto">&quot;Qual desses vocês já ouviram falar?&quot;</p><hr id="3a7369ac-6af0-800e-b601-fbc65eee1094" dir="auto"/><h1 id="3a7369ac-6af0-80be-b634-f2d3e04612c9" class="" dir="auto">Mercado de trabalho</h1><p id="3a7369ac-6af0-80ca-9c05-c92c77c1f644" class="" dir="auto">Dicas:</p><table id="3a7369ac-6af0-80ab-9e1a-e1399b3c2069" class="simple-table" dir="ltr"><thead class="simple-table-header"><tr id="3a7369ac-6af0-80f2-9d5e-e6d02cc5e995" dir="ltr"><th id="~SjH" class="simple-table-header-color simple-table-header">Banco</th><th id="WZN?" class="simple-table-header-color simple-table-header">Onde é utilizado</th></tr></thead><tbody><tr id="3a7369ac-6af0-8093-a61d-eb5053fcf5b6" dir="ltr"><td id="~SjH" class="">MySQL</td><td id="WZN?" class="">Web, pequenas e médias empresas</td></tr><tr id="3a7369ac-6af0-80bf-9ce3-f595812e1a63" dir="ltr"><td id="~SjH" class="">PostgreSQL</td><td id="WZN?" class="">Fintechs, governo, empresas de dados</td></tr><tr id="3a7369ac-6af0-8067-965c-f1ee6fb33e08" dir="ltr"><td id="~SjH" class="">SQL Server</td><td id="WZN?" class="">Grandes empresas Microsoft</td></tr><tr id="3a7369ac-6af0-80a0-a3e7-e14cba4cefdf" dir="ltr"><td id="~SjH" class="">Oracle</td><td id="WZN?" class="">Bancos, telecomunicações</td></tr><tr id="3a7369ac-6af0-80ac-9f6f-ce316b1d62d4" dir="ltr"><td id="~SjH" class="">MariaDB</td><td id="WZN?" class="">Hospedagem web</td></tr><tr id="3a7369ac-6af0-8038-b50e-f0c29c979a40" dir="ltr"><td id="~SjH" class="">SQLite</td><td id="WZN?" class="">Aplicativos móveis</td></tr><tr id="3a7369ac-6af0-802a-a8d0-ca287ba903f1" dir="ltr"><td id="~SjH" class="">MongoDB</td><td id="WZN?" class="">Aplicações NoSQL</td></tr></tbody></table><p id="3a7369ac-6af0-80f3-9142-ebca082e1cf0" class="" dir="auto">Pergunta:</p><blockquote id="3a7369ac-6af0-805d-8770-c1701aba65f0" class="" dir="auto"><strong>&quot;Percebem que aprender Banco de Dados não significa aprender apenas um software?&quot;</strong></blockquote><hr id="3a7369ac-6af0-800e-8394-ce7b97e76bcb" dir="auto"/><h1 id="3a7369ac-6af0-8039-a0b9-e834ffc55e2d" class="" dir="auto">Demonstração</h1><p id="3a7369ac-6af0-80b5-bcb4-cf5e9153363e" class="" dir="auto">O que é um SGBD?</p><p id="3a7369ac-6af0-80ef-b272-fec6cfc67226" class="" dir="auto">O que ele faz?</p><p id="3a7369ac-6af0-8024-92b1-ed2edb24b5e4" class="" dir="auto">Onde ficam os arquivos?</p><p id="3a7369ac-6af0-8064-9a1b-db0ea55230c3" class="" dir="auto">Quem controla os dados?</p><p id="3a7369ac-6af0-8031-bfe1-f1bbef626567" class="" dir="auto">Quem controla os usuários?</p><p id="3a7369ac-6af0-8062-b3f5-e5d12b83f085" class="" dir="auto">Quem controla a segurança?</p><p id="3a7369ac-6af0-8052-bb12-e220a6a8ccf7" class="" dir="auto">Sem pressa.</p><hr id="3a7369ac-6af0-802f-9711-e781c643a0c8" dir="auto"/><h1 id="3a7369ac-6af0-80ae-82c4-cfd2fb6a15db" class="" dir="auto">Mão na massa</h1><p id="3a7369ac-6af0-80a2-86b2-d6ec4f61fe1d" class="" dir="auto">
+</p><p id="3a7369ac-6af0-8057-aff6-e4423c20e969" class="" dir="auto">✔ instalar</p><p id="3a7369ac-6af0-805f-8c81-f994486b21d5" class="" dir="auto">✔ configurar</p><p id="3a7369ac-6af0-80f6-952a-d5a347bd2ad4" class="" dir="auto">✔ iniciar o serviço</p><p id="3a7369ac-6af0-80d6-9c1a-deb51ba5ca67" class="" dir="auto">✔ conectar</p><p id="3a7369ac-6af0-8075-898d-cf2a86793aa5" class="" dir="auto">✔ abrir o Workbench</p><p id="3a7369ac-6af0-80c2-961c-e4ffc57fd350" class="" dir="auto">✔ criar conexão</p><p id="3a7369ac-6af0-804f-9326-f47eb505c725" class="" dir="auto">✔ testar</p><hr id="3a7369ac-6af0-80c9-bc78-fa54083cb781" dir="auto"/><h1 id="3a7369ac-6af0-8085-b16f-c3a57c922a04" class="" dir="auto">Momento &quot;Erro é aprendizado&quot;</h1><p id="3a7369ac-6af0-80d8-9165-e533f6b8fc17" class="" dir="auto">Erros comuns: Por exemplo!</p><p id="3a7369ac-6af0-804b-995d-caaece4bfcd3" class="" dir="auto"><strong>Senha incorreta.</strong></p><p id="3a7369ac-6af0-809f-b9fd-c060039b2e59" class="" dir="auto"><strong>Servidor parado.</strong></p><p id="3a7369ac-6af0-8032-a954-ecf4604543f7" class="" dir="auto"><strong>Porta errada.</strong></p><p id="3a7369ac-6af0-8058-b047-f078960b4ab0" class="" dir="auto"><strong>Serviço não iniciado.</strong></p><p id="3a7369ac-6af0-80d8-85de-df23faab2431" class="" dir="auto">Depois perguntar:</p><blockquote id="3a7369ac-6af0-8043-ae49-f669a4dc4e54" class="" dir="auto"><strong>&quot;O problema está no banco ou na configuração?&quot;</strong></blockquote><p id="3a7369ac-6af0-8030-a4b7-cc9a4eba433f" class="" dir="auto"><strong><span style="border-bottom:0.05em solid">Depurar faz parte da profissão.</span></strong></p><hr id="3a7369ac-6af0-80ee-84fa-d9936556b206" dir="auto"/><h1 id="3a7369ac-6af0-809e-b5ee-d629dc39adeb" class="" dir="auto">IA aplicada</h1><p id="3a7369ac-6af0-80be-bdd2-cc5097a30d3e" class="" dir="auto">Erro comum de conexão.</p><p id="3a7369ac-6af0-808f-94f4-d1f67a4ea4ab" class="" dir="auto">Pedir à IA:</p><blockquote id="3a7369ac-6af0-8052-97e0-ee25552a08d9" class="" dir="auto"><strong>&quot;Explique este erro de conexão em linguagem simples.&quot;</strong></blockquote><p id="3a7369ac-6af0-8088-b5d9-d4b2d7a6502d" class="" dir="auto">E agora a grande pergunta<strong>:</strong></p><p id="3a7369ac-6af0-8024-8e1e-ca05c3cfe135" class="" dir="auto"><strong>A IA resolveu?</strong></p><p id="3a7369ac-6af0-8052-a2f8-f20929c0cb96" class="" dir="auto"><strong>Ela apenas explicou?</strong></p><p id="3a7369ac-6af0-801a-bd2e-c96588c8723f" class="" dir="auto"><strong>O que ainda depende do profissional?</strong></p><hr id="3a7369ac-6af0-8002-a6b9-f30f904ddbd2" dir="auto"/><h1 id="3a7369ac-6af0-8071-b4ef-f6ce76609a86" class="" dir="auto">Laboratório</h1><p id="3a7369ac-6af0-8032-bc4b-d40bcc5ef52b" class="" dir="auto">Cada equipe deverá produzir um pequeno documento contendo:</p><ul id="3a7369ac-6af0-80ff-8592-e8c158631fb0" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Nome do banco escolhido.</li></ul><ul id="3a7369ac-6af0-8049-9b8c-cdfda3f83272" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Versão instalada.</li></ul><ul id="3a7369ac-6af0-80ec-aad4-f745b3390f19" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Sistema operacional.</li></ul><ul id="3a7369ac-6af0-80b8-893b-c21518dbd4df" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Requisitos.</li></ul><ul id="3a7369ac-6af0-80ba-b13b-ea23d3341bd7" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Passo a passo da instalação.</li></ul><ul id="3a7369ac-6af0-80f3-91f2-e989348f2d29" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Problemas encontrados.</li></ul><ul id="3a7369ac-6af0-800f-970b-e06620be80f7" class="bulleted-list" dir="auto"><li style="list-style-type:disc">Como resolveram.</li></ul><p id="3a7369ac-6af0-805b-b8c6-c9da5a04d3e2" class="" dir="auto"><strong>Importância da documentação técnica.</strong></p><hr id="3a7369ac-6af0-8001-bb9a-c2d666a90214" dir="auto"/><h1 id="3a7369ac-6af0-8012-9291-dedd9859f1fc" class="" dir="auto">Curiosidade</h1><p id="3a7369ac-6af0-80d9-9f88-c98ee0f1df9e" class="" dir="auto">Pergunta:</p><p id="3a7369ac-6af0-8076-9bcc-ff8eef7b56a7" class="" dir="auto"><strong>&quot;Por que PostgreSQL é considerado um dos bancos mais robustos do mundo?&quot;</strong></p><hr id="3a7369ac-6af0-807e-9e54-faa006f494f3" dir="auto"/><h1 id="3a7369ac-6af0-8092-b7ee-d587ef060474" class="" dir="auto">Desafio</h1><p id="3a7369ac-6af0-80c2-ad69-d26c1f599a34" class="" dir="auto">Cada equipe recebe um cenário.</p><p id="3a7369ac-6af0-8014-be8f-e3e5bdb69b9e" class="" dir="auto"><mark class="highlight-pink" data-notion-highlight="pink"><mark class="highlight-red_background" data-notion-highlight="red_background"><strong>Empresa A</strong></mark></mark></p><p id="3a7369ac-6af0-806c-93a1-e5d3efa50740" class="" dir="auto"><strong>Notebook antigo.</strong></p><p id="3a7369ac-6af0-804d-827f-dd66693e976e" class="" dir="auto"><strong>Pouca memória.</strong></p><p id="3a7369ac-6af0-80c5-b43f-f875f2887697" class="" dir="auto"><strong>Qual banco instalar?</strong></p><p id="3a7369ac-6af0-8000-b191-f87cef1a489d" class="" dir="auto"><mark class="highlight-blue" data-notion-highlight="blue"><mark class="highlight-blue_background" data-notion-highlight="blue_background"><strong>Empresa B</strong></mark></mark></p><p id="3a7369ac-6af0-8041-b948-fd7917e4ffa7" class="" dir="auto"><strong>Servidor Linux.</strong></p><p id="3a7369ac-6af0-80bd-bce7-f711262e726d" class="" dir="auto"><strong>Grande volume de dados.</strong></p><p id="3a7369ac-6af0-803b-aa40-c98dd7c916a0" class="" dir="auto"><strong>Qual banco?</strong></p><p id="3a7369ac-6af0-80aa-b582-e4f6ebbb072b" class="" dir="auto"><mark class="highlight-orange" data-notion-highlight="orange"><mark class="highlight-orange_background" data-notion-highlight="orange_background">Empresa C</mark></mark></p><p id="3a7369ac-6af0-8091-b94e-d5a6d4d1edcb" class="" dir="auto">Startup.</p><p id="3a7369ac-6af0-80d8-bef5-cd0b1d439faa" class="" dir="auto"><strong>Equipe pequena.</strong></p><p id="3a7369ac-6af0-80bb-a2a5-cd86e2d2d703" class="" dir="auto"><strong>Pouco orçamento.</strong></p><p id="3a7369ac-6af0-80f6-b512-e3f05108a869" class="" dir="auto"><strong>Qual banco?</strong></p><p id="3a7369ac-6af0-8078-9a32-df678a94d7b1" class="" dir="auto"><em>Justificar.</em></p><hr id="3a7369ac-6af0-80ea-9f25-dc9b0c85723c" dir="auto"/><h1 id="3a7369ac-6af0-8020-bba0-f2dccb75c04f" class="" dir="auto">Fechamento</h1><p id="3a7369ac-6af0-80d0-aa3e-e74e987ccdb5" class="" dir="auto">Retomar a pergunta inicial.</p><blockquote id="3a7369ac-6af0-8030-8d15-f9c7beda320c" class="" dir="auto"><strong>&quot;Você confiaria um banco mal instalado?&quot;</strong></blockquote><p id="3a7369ac-6af0-8030-9346-fe4edd8fc70e" class="" dir="auto">Uma instalação bem feita é parte essencial da segurança e da confiabilidade de qualquer sistema.</p><p id="3a7369ac-6af0-8047-a398-ce2a141e3d2d" class="" dir="auto">Frase do dia:</p><blockquote id="3a7369ac-6af0-800c-b62d-c4dac813506a" class="" dir="auto"><strong>&quot;Grandes sistemas começam com pequenas configurações feitas com cuidado.&quot;</strong></blockquote><hr id="3a7369ac-6af0-809b-bccd-f3ee5332e7e3" dir="auto"/><h1 id="3a7369ac-6af0-8090-a851-ccbe9dde745a" class="" dir="auto">Avaliação</h1><p id="3a7369ac-6af0-802c-8d34-e404d4382f57" class="" dir="auto">A avaliação será prática.</p><p id="3a7369ac-6af0-80ea-b45b-f13a852756b0" class="" dir="auto">Cada um deverá demonstrar:</p><ul id="3a7369ac-6af0-808a-95a8-e0baaf5613a1" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>instalação concluída;</strong></li></ul><ul id="3a7369ac-6af0-8080-9c38-f9098f361de1" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>conexão funcionando;</strong></li></ul><ul id="3a7369ac-6af0-8027-a272-ced4f844d7c8" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>ambiente operacional;</strong></li></ul><ul id="3a7369ac-6af0-80f5-b4da-ca77f1592126" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>capacidade de explicar as escolhas realizadas.</strong></li></ul><hr id="3a7369ac-6af0-8061-8238-ed264276694a" dir="auto"/><h1 id="3a7369ac-6af0-805c-82f3-df721f248f77" class="" dir="auto">Missão para casa</h1><p id="3a7369ac-6af0-8014-8ca4-d5c4c70e035b" class="" dir="auto">Pesquisar:</p><p id="3a7369ac-6af0-8005-a3d8-d545b4b3d619" class="" dir="auto"><strong>&quot;Como uma empresa realiza a instalação de um banco de dados em produção?&quot;</strong></p><p id="3a7369ac-6af0-80c8-a76b-ea724619ef01" class="" dir="auto">Cada estudante deverá trazer uma curiosidade ou uma prática profissional encontrada em sua pesquisa para discutirmos na próxima aula.</p><hr id="3a7369ac-6af0-801c-b631-f2f7aa809b80" dir="auto"/><h1 id="3a7369ac-6af0-80b4-b8ca-cac0362f8ea4" class="" dir="auto">🎵 Playlist de encerramento — &quot;Friday Acoustic Sessions&quot;</h1><p id="3a7369ac-6af0-802e-9437-f65d764903fb" class="" dir="auto">Uma playlist para curtir em seu conteúdo de desenvolvimento das aulas </p><ol type="1" id="3a7369ac-6af0-8062-b52a-eab22c83bc6b" class="numbered-list" start="1" dir="auto"><li><strong>Alice in Chains – Nutshell (MTV Unplugged)</strong></li></ol><ol type="1" id="3a7369ac-6af0-8037-8d8f-f844c0f407c8" class="numbered-list" start="2" dir="auto"><li><strong>Pearl Jam – Elderly Woman Behind the Counter in a Small Town (Live/Acoustic)</strong></li></ol><ol type="1" id="3a7369ac-6af0-80bb-8684-d00e3a13117a" class="numbered-list" start="3" dir="auto"><li><strong>Stone Temple Pilots – Plush (Acoustic)</strong></li></ol><ol type="1" id="3a7369ac-6af0-8029-9180-ce32d0b2182c" class="numbered-list" start="4" dir="auto"><li><strong>Metallica – Nothing Else Matters</strong></li></ol><ol type="1" id="3a7369ac-6af0-8090-a175-ea2c299c3fb8" class="numbered-list" start="5" dir="auto"><li><strong>Black Label Society – In This River</strong></li></ol><ol type="1" id="3a7369ac-6af0-803e-baf0-c3ffddd33e4d" class="numbered-list" start="6" dir="auto"><li><strong>Chris Cornell – Can&#x27;t Change Me (Acoustic)</strong></li></ol><ol type="1" id="3a7369ac-6af0-8002-bbba-d3d28a5c2a2b" class="numbered-list" start="7" dir="auto"><li><strong>Creed – One Last Breath</strong></li></ol><ol type="1" id="3a7369ac-6af0-80fc-b0e1-ec1aa5688a50" class="numbered-list" start="8" dir="auto"><li><strong>Days of the New – Touch, Peel and Stand (Acoustic)</strong></li></ol><ol type="1" id="3a7369ac-6af0-8086-b8dc-e7d82cc5ca4b" class="numbered-list" start="9" dir="auto"><li><strong>Neil Young – Harvest Moon</strong> </li></ol><ol type="1" id="3a7369ac-6af0-804d-86bf-f4d74247400c" class="numbered-list numbered-list-digits-2" start="10" dir="auto"><li><strong>Foo Fighters – Walking After You</strong></li></ol><p id="3a7369ac-6af0-8098-86f7-d52c735e5d04" class="" dir="auto">
+</p><hr id="3a7369ac-6af0-805d-97b0-f24e0a3381ca" dir="auto"/><h2 id="3a7369ac-6af0-8025-9876-e5f1e334da79" class="" dir="auto">Fortalecimento de conteúdo e conteúdo extra para conhecimento</h2><p id="3a7369ac-6af0-8008-ad60-d8823dc595a4" class="" dir="auto"><strong>&quot;Os 5 minutos de Cultura Tech&quot;</strong>.</p><p id="3a7369ac-6af0-8027-8d21-d161545170ac" class="" dir="auto">Aprofunde seus conhecimentos</p><ul id="3a7369ac-6af0-80dc-8a50-ff9cf354a528" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>A história do MySQL e Postgres.</strong></li></ul><ul id="3a7369ac-6af0-802a-8aa0-e5e3f24683ec" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Por que o nome &quot;Oracle&quot;?</strong></li></ul><ul id="3a7369ac-6af0-8050-80f1-fda6032efdb9" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Como nasceu o Git.</strong></li></ul><ul id="3a7369ac-6af0-8050-a585-dad5676cf7ed" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>O primeiro bug da computação.</strong></li></ul><ul id="3a7369ac-6af0-80ea-9cb5-f17f00149dce" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Linus Torvalds e o Linux.</strong></li></ul><ul id="3a7369ac-6af0-802c-8413-e79d10a0e3ca" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Margaret Hamilton e a engenharia de software.</strong></li></ul><ul id="3a7369ac-6af0-80c3-b8de-f5444aa05908" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Alan Turing.</strong></li></ul><ul id="3a7369ac-6af0-80c2-a7b2-fe398e094c82" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Ada Lovelace.</strong></li></ul><ul id="3a7369ac-6af0-80c5-95df-fceba743c5c3" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Grace Hopper.</strong></li></ul><ul id="3a7369ac-6af0-8003-88ee-eaeb21a3b77c" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Como funciona um data center.</strong></li></ul><ul id="3a7369ac-6af0-8086-86ed-f397c8c391c4" class="bulleted-list" dir="auto"><li style="list-style-type:disc"><strong>Curiosidades sobre IA e bancos de dados.</strong></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html> -->

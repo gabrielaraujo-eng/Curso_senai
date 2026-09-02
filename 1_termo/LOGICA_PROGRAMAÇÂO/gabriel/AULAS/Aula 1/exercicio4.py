@@ -1,0 +1,5 @@
+print("eu sou um algoritmico de calculo de IMC\n")
+peso = float(input("qual seu peso?"))
+altura = float(input("qual sua altura?"))
+imc = peso /(altura * altura)
+print("com base nos dados fornecidos seu imc é\n IMC:", imc)
