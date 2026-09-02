@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoPrime | Agência de Veículos</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>AutoPrime</h1>
+            <p>Agência de Veículos</p>
+        </div>
+
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#veiculos">Veículos</a>
+            <a href="#comprar">Comprar</a>
+            <a href="#vender">Vender</a>
+            <a href="#financiamento">Financiamento</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="banner" id="inicio">
+
+            <div class="banner-conteudo">
+
+                <h2>Encontre o veículo ideal para você</h2>
+
+                <p>
+                    Qualidade, segurança e confiança para você encontrar
+                    seu próximo veículo.
+                </p>
+
+                <a href="#veiculos" class="botao">
+                    Ver veículos
+                </a>
+
+                <a href="#contato" class="botao botao-secundario">
+                    Entrar em contato
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <section class="pesquisa">
+
+            <h2>Encontre seu veículo</h2>
+
+            <form>
+
+                <input type="text" placeholder="Marca ou modelo">
+
+                <select>
+                    <option>Todos os preços</option>
+                    <option>Até R$ 50.000</option>
+                    <option>Até R$ 100.000</option>
+                    <option>Acima de R$ 100.000</option>
+                </select>
+
+                <select>
+                    <option>Todos os anos</option>
+                    <option>2026</option>
+                    <option>2025</option>
+                    <option>2024</option>
+                    <option>2023</option>
+                </select>
+
+                <select>
+                    <option>Todos os tipos</option>
+                    <option>Carro</option>
+                    <option>SUV</option>
+                    <option>Sedan</option>
+                    <option>Hatch</option>
+                    <option>Picape</option>
+                    <option>Moto</option>
+                </select>
+
+                <button type="submit">
+                    Buscar
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section id="veiculos" class="veiculos">
+
+            <h2>Veículos em Destaque</h2>
+
+            <p class="subtitulo">
+                Confira alguns dos veículos disponíveis em nossa agência.
+            </p>
+
+
+            <div class="grid-veiculos">
+
+
+                <article class="card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"
+                        alt="Carro esportivo">
+
+                    <div class="card-conteudo">
+
+                        <h3>BMW Série 3</h3>
+
+                        <p>Ano: 2024</p>
+
+                        <p>Quilometragem: 15.000 km</p>
+
+                        <p>Câmbio: Automático</p>
+
+                        <h4>R$ 285.000</h4>
+
+                        <button>Ver detalhes</button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80"
+                        alt="Carro moderno">
+
+                    <div class="card-conteudo">
+
+                        <h3>Mercedes-Benz C200</h3>
+
+                        <p>Ano: 2023</p>
+
+                        <p>Quilometragem: 22.000 km</p>
+
+                        <p>Câmbio: Automático</p>
+
+                        <h4>R$ 245.000</h4>
+
+                        <button>Ver detalhes</button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=80"
+                        alt="SUV">
+
+                    <div class="card-conteudo">
+
+                        <h3>Volvo XC60</h3>
+
+                        <p>Ano: 2024</p>
+
+                        <p>Quilometragem: 10.000 km</p>
+
+                        <p>Câmbio: Automático</p>
+
+                        <h4>R$ 320.000</h4>
+
+                        <button>Ver detalhes</button>
+
+                    </div>
+
+                </article>
+
+
+                <article class="card">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80"
+                        alt="Carro premium">
+
+                    <div class="card-conteudo">
+
+                        <h3>Audi A4</h3>
+
+                        <p>Ano: 2023</p>
+
+                        <p>Quilometragem: 18.000 km</p>
+
+                        <p>Câmbio: Automático</p>
+
+                        <h4>R$ 230.000</h4>
+
+                        <button>Ver detalhes</button>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <section class="ofertas">
+
+            <h2>Ofertas Especiais</h2>
+
+            <div class="ofertas-grid">
+
+                <article>
+
+                    <h3>Veículos com desconto</h3>
+
+                    <p>
+                        Confira condições especiais em veículos selecionados.
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>Financiamento facilitado</h3>
+
+                    <p>
+                        Simule seu financiamento e encontre as melhores condições.
+                    </p>
+
+                </article>
+
+                <article>
+
+                    <h3>Aceitamos troca</h3>
+
+                    <p>
+                        Utilize seu veículo atual como parte do pagamento.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section id="comprar" class="comprar">
+
+            <div>
+
+                <h2>Comprar um veículo</h2>
+
+                <p>
+                    Encontre o veículo ideal para você com segurança e
+                    tranquilidade.
+                </p>
+
+                <ul>
+
+                    <li>Veículos revisados</li>
+
+                    <li>Documentação organizada</li>
+
+                    <li>Financiamento disponível</li>
+
+                    <li>Atendimento especializado</li>
+
+                    <li>Possibilidade de troca</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <section id="vender" class="vender">
+
+            <h2>Venda seu veículo</h2>
+
+            <p>
+                Preencha o formulário e nossa equipe entrará em contato.
+            </p>
+
+            <form class="formulario">
+
+                <input type="text" placeholder="Nome">
+
+                <input type="tel" placeholder="Telefone">
+
+                <input type="email" placeholder="E-mail">
+
+                <input type="text" placeholder="Marca">
+
+                <input type="text" placeholder="Modelo">
+
+                <input type="number" placeholder="Ano">
+
+                <input type="number" placeholder="Quilometragem">
+
+                <input type="text" placeholder="Valor desejado">
+
+                <button type="submit">
+                    Enviar veículo
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section id="financiamento" class="financiamento">
+
+            <h2>Financiamento</h2>
+
+            <p>
+                Simule as condições para comprar seu próximo veículo.
+            </p>
+
+
+            <div class="financiamento-conteudo">
+
+                <div>
+
+                    <h3>Simule agora</h3>
+
+                    <ul>
+
+                        <li>Escolha o veículo</li>
+
+                        <li>Informe o valor da entrada</li>
+
+                        <li>Escolha a quantidade de parcelas</li>
+
+                        <li>Consulte as condições disponíveis</li>
+
+                    </ul>
+
+                </div>
+
+
+                <form class="formulario">
+
+                    <input type="text" placeholder="Nome">
+
+                    <input type="tel" placeholder="Telefone">
+
+                    <input type="email" placeholder="E-mail">
+
+                    <input type="number" placeholder="Valor da entrada">
+
+                    <select>
+
+                        <option>Quantidade de parcelas</option>
+
+                        <option>12 parcelas</option>
+
+                        <option>24 parcelas</option>
+
+                        <option>36 parcelas</option>
+
+                        <option>48 parcelas</option>
+
+                        <option>60 parcelas</option>
+
+                    </select>
+
+                    <button type="submit">
+                        Solicitar simulação
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <section id="sobre" class="sobre">
+
+            <div class="sobre-imagem">
+
+                <img
+                    src="https://images.unsplash.com/photo-1562141961-7c2dcb38f4e8?auto=format&fit=crop&w=1000&q=80"
+                    alt="Showroom de veículos">
+
+            </div>
+
+
+            <div class="sobre-texto">
+
+                <h2>Sobre a AutoPrime</h2>
+
+                <p>
+                    Somos uma agência de veículos comprometida em oferecer
+                    qualidade, segurança e confiança aos nossos clientes.
+                </p>
+
+                <p>
+                    Trabalhamos com veículos selecionados e buscamos oferecer
+                    as melhores condições para compra, venda e troca.
+                </p>
+
+                <h3>Nossos diferenciais</h3>
+
+                <ul>
+
+                    <li>Veículos selecionados</li>
+
+                    <li>Atendimento especializado</li>
+
+                    <li>Transparência nas negociações</li>
+
+                    <li>Financiamento facilitado</li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <section class="avaliacoes">
+
+            <h2>O que nossos clientes dizem</h2>
+
+
+            <div class="avaliacoes-grid">
+
+                <article>
+
+                    <p>
+                        "Excelente atendimento e grande variedade de veículos."
+                    </p>
+
+                    <h4>Cliente AutoPrime</h4>
+
+                </article>
+
+
+                <article>
+
+                    <p>
+                        "Encontrei o carro que procurava e fui muito bem atendido."
+                    </p>
+
+                    <h4>Cliente AutoPrime</h4>
+
+                </article>
+
+
+                <article>
+
+                    <p>
+                        "Processo de compra rápido, seguro e transparente."
+                    </p>
+
+                    <h4>Cliente AutoPrime</h4>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="faq">
+
+            <h2>Perguntas Frequentes</h2>
+
+
+            <article>
+
+                <h3>A agência aceita troca?</h3>
+
+                <p>
+                    Sim. Avaliamos seu veículo para que ele possa ser utilizado
+                    como parte do pagamento.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>É possível financiar um veículo?</h3>
+
+                <p>
+                    Sim. Consulte nossas condições de financiamento.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <h3>Posso realizar um test drive?</h3>
+
+                <p>
+                    Sim. Entre em contato para agendar um horário.
+                </p>
+
+            </article>
+
+        </section>
+
+
+        <section id="contato" class="contato">
+
+            <h2>Entre em contato</h2>
+
+
+            <div class="contato-grid">
+
+
+                <div class="informacoes">
+
+                    <h3>Informações</h3>
+
+                    <p>Telefone: (11) 99999-9999</p>
+
+                    <p>WhatsApp: (11) 99999-9999</p>
+
+                    <p>E-mail: contato@autoprime.com</p>
+
+                    <p>Endereço: São Paulo - SP</p>
+
+                    <p>Segunda a sábado: 08h às 18h</p>
+
+                </div>
+
+
+                <form class="formulario">
+
+                    <input type="text" placeholder="Nome">
+
+                    <input type="email" placeholder="E-mail">
+
+                    <input type="tel" placeholder="Telefone">
+
+                    <input type="text" placeholder="Assunto">
+
+                    <textarea placeholder="Digite sua mensagem"></textarea>
+
+                    <button type="submit">
+                        Enviar mensagem
+                    </button>
+
+                </form>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div>
+
+            <h2>AutoPrime</h2>
+
+            <p>Sua próxima viagem começa aqui.</p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Links rápidos</h3>
+
+            <a href="#inicio">Início</a>
+
+            <a href="#veiculos">Veículos</a>
+
+            <a href="#financiamento">Financiamento</a>
+
+            <a href="#contato">Contato</a>
+
+        </div>
+
+
+        <div>
+
+            <h3>Contato</h3>
+
+            <p>(11) 99999-9999</p>
+
+            <p>contato@autoprime.com</p>
+
+        </div>
+
+
+        <div class="copyright">
+
+            <p>
+                © 2026 AutoPrime - Agência de Veículos.
+                Todos os direitos reservados.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <a href="#contato" class="whatsapp">
+        WhatsApp
+    </a>
+
+</body>
+
+</html>
