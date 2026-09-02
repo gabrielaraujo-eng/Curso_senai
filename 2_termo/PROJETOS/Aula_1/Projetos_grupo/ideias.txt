@@ -1,0 +1,701 @@
+GUIA COMPLETO PARA UM SITE DE AGÊNCIA DE VEÍCULOS
+
+==================================================
+1. APRESENTAÇÃO DO SITE
+==================================================
+
+O site de uma agência de veículos deve apresentar a empresa de forma profissional, organizada e confiável. O principal objetivo é permitir que os clientes conheçam os veículos disponíveis, encontrem informações detalhadas e entrem em contato com a agência.
+
+O site pode ser utilizado para venda, compra, troca e financiamento de veículos.
+
+==================================================
+2. PÁGINA INICIAL
+==================================================
+
+A página inicial deve ser visualmente atrativa e apresentar rapidamente a agência.
+
+Elementos recomendados:
+
+- Logo da agência
+- Nome da empresa
+- Slogan
+- Banner principal
+- Imagem de veículos em destaque
+- Menu de navegação
+- Botão para visualizar veículos
+- Botão para entrar em contato
+- Informações resumidas sobre a empresa
+- Veículos em destaque
+- Promoções
+- Formas de pagamento
+- Informações de financiamento
+- Rodapé com informações da empresa
+
+Exemplo de slogan:
+
+"Sua próxima viagem começa aqui."
+
+==================================================
+3. MENU DE NAVEGAÇÃO
+==================================================
+
+O menu principal pode possuir as seguintes opções:
+
+- Início
+- Veículos
+- Comprar
+- Vender seu veículo
+- Trocar veículo
+- Financiamento
+- Ofertas
+- Sobre nós
+- Contato
+
+O menu deve permitir uma navegação simples e organizada.
+
+==================================================
+4. CATÁLOGO DE VEÍCULOS
+==================================================
+
+O catálogo é uma das partes mais importantes do site.
+
+Cada veículo deve possuir informações como:
+
+- Foto principal
+- Outras fotos
+- Marca
+- Modelo
+- Versão
+- Ano
+- Quilometragem
+- Cor
+- Tipo de combustível
+- Tipo de câmbio
+- Potência do motor
+- Número de portas
+- Valor
+- Situação do veículo
+- Descrição
+- Opcionais
+- Código do veículo
+
+Exemplo:
+
+Marca: Toyota
+Modelo: Corolla
+Ano: 2024
+Quilometragem: 15.000 km
+Câmbio: Automático
+Combustível: Flex
+Valor: R$ 145.000,00
+
+==================================================
+5. FILTROS DE PESQUISA
+==================================================
+
+O sistema deve permitir que o cliente encontre veículos facilmente.
+
+Filtros recomendados:
+
+- Marca
+- Modelo
+- Preço mínimo
+- Preço máximo
+- Ano mínimo
+- Ano máximo
+- Quilometragem
+- Tipo de combustível
+- Tipo de câmbio
+- Cor
+- Categoria do veículo
+
+Categorias possíveis:
+
+- Carros
+- SUVs
+- Sedans
+- Hatchs
+- Picapes
+- Motos
+- Utilitários
+- Veículos elétricos
+- Veículos híbridos
+
+Também pode existir uma barra de pesquisa para procurar veículos pelo nome.
+
+==================================================
+6. PÁGINA DE DETALHES DO VEÍCULO
+==================================================
+
+Ao clicar em um veículo, o cliente deve visualizar todas as informações.
+
+A página pode conter:
+
+- Galeria de fotos
+- Informações técnicas
+- Descrição completa
+- Preço
+- Opcionais
+- Condições de pagamento
+- Simulação de financiamento
+- Botão para falar com um vendedor
+- Botão para agendar uma visita
+- Botão para demonstrar interesse
+- Veículos semelhantes
+
+==================================================
+7. GALERIA DE FOTOS
+==================================================
+
+Cada veículo deve possuir várias imagens.
+
+Exemplos:
+
+- Parte frontal
+- Parte traseira
+- Lateral
+- Interior
+- Painel
+- Porta-malas
+- Motor
+- Rodas
+
+As imagens devem possuir boa qualidade.
+
+==================================================
+8. COMPRA DE VEÍCULOS
+==================================================
+
+A agência pode possuir uma página explicando como funciona a compra de veículos.
+
+Informações recomendadas:
+
+- Como comprar um veículo
+- Formas de pagamento
+- Possibilidade de financiamento
+- Uso de veículo como entrada
+- Documentação necessária
+- Processo de transferência
+
+==================================================
+9. VENDA DE VEÍCULOS
+==================================================
+
+O site pode permitir que clientes ofereçam seus veículos para venda.
+
+O formulário pode solicitar:
+
+- Nome
+- Telefone
+- E-mail
+- Marca
+- Modelo
+- Ano
+- Quilometragem
+- Estado do veículo
+- Valor desejado
+- Fotos do veículo
+
+A agência poderá analisar o veículo e entrar em contato com o proprietário.
+
+==================================================
+10. TROCA DE VEÍCULOS
+==================================================
+
+O cliente pode utilizar seu veículo atual como parte do pagamento.
+
+O site pode permitir informar:
+
+- Marca
+- Modelo
+- Ano
+- Quilometragem
+- Estado do veículo
+- Fotos
+
+A agência pode realizar uma avaliação.
+
+==================================================
+11. FINANCIAMENTO
+==================================================
+
+Uma área de financiamento pode apresentar:
+
+- Simulação de parcelas
+- Valor da entrada
+- Quantidade de parcelas
+- Valor aproximado das parcelas
+- Condições de financiamento
+
+O cliente pode preencher um formulário demonstrando interesse.
+
+Informações possíveis:
+
+- Nome
+- CPF
+- Telefone
+- E-mail
+- Valor da entrada
+- Veículo desejado
+
+Dados sensíveis devem ser protegidos adequadamente.
+
+==================================================
+12. OFERTAS E PROMOÇÕES
+==================================================
+
+O site pode possuir uma seção exclusiva para promoções.
+
+Exemplos:
+
+- Veículos com desconto
+- Promoções especiais
+- Condições especiais de financiamento
+- Ofertas da semana
+- Veículos recém-chegados
+
+==================================================
+13. VEÍCULOS EM DESTAQUE
+==================================================
+
+A página inicial pode mostrar alguns veículos especiais.
+
+Critérios possíveis:
+
+- Mais vendidos
+- Novidades
+- Promoções
+- Veículos premium
+- Melhor custo-benefício
+
+==================================================
+14. FAVORITOS
+==================================================
+
+O cliente pode marcar veículos que gostou.
+
+Funcionalidades:
+
+- Adicionar aos favoritos
+- Remover dos favoritos
+- Comparar veículos salvos
+
+==================================================
+15. COMPARAÇÃO DE VEÍCULOS
+==================================================
+
+O site pode permitir comparar diferentes veículos.
+
+Informações comparadas:
+
+- Preço
+- Ano
+- Quilometragem
+- Motor
+- Combustível
+- Câmbio
+- Consumo
+- Opcionais
+
+==================================================
+16. AGENDAMENTO DE VISITA
+==================================================
+
+O cliente pode agendar uma visita à agência.
+
+Informações:
+
+- Nome
+- Telefone
+- E-mail
+- Veículo desejado
+- Data
+- Horário
+
+O sistema pode informar se o horário está disponível.
+
+==================================================
+17. TEST DRIVE
+==================================================
+
+O cliente pode solicitar um test drive.
+
+Informações necessárias:
+
+- Nome
+- Telefone
+- E-mail
+- Veículo
+- Data desejada
+- Horário desejado
+
+==================================================
+18. CONTATO
+==================================================
+
+A página de contato deve possuir:
+
+- Telefone
+- WhatsApp
+- E-mail
+- Endereço
+- Horário de funcionamento
+- Formulário de contato
+
+Exemplo de formulário:
+
+Nome:
+E-mail:
+Telefone:
+Assunto:
+Mensagem:
+
+==================================================
+19. WHATSAPP
+==================================================
+
+Um botão de WhatsApp pode ficar visível no site.
+
+Ele permite que o cliente:
+
+- Tire dúvidas
+- Solicite informações
+- Negocie um veículo
+- Agende uma visita
+- Solicite uma proposta
+
+==================================================
+20. SOBRE A AGÊNCIA
+==================================================
+
+A página deve apresentar informações sobre a empresa.
+
+Informações recomendadas:
+
+- História da agência
+- Missão
+- Visão
+- Valores
+- Tempo de mercado
+- Equipe
+- Diferenciais
+
+==================================================
+21. EQUIPE
+==================================================
+
+O site pode apresentar os funcionários.
+
+Exemplos:
+
+- Vendedores
+- Consultores
+- Gerentes
+- Especialistas em financiamento
+
+Cada perfil pode possuir:
+
+- Foto
+- Nome
+- Cargo
+- Forma de contato
+
+==================================================
+22. AVALIAÇÕES DE CLIENTES
+==================================================
+
+Uma área pode apresentar opiniões de clientes.
+
+Exemplo:
+
+"Excelente atendimento e grande variedade de veículos."
+
+As avaliações ajudam a aumentar a confiança dos visitantes.
+
+==================================================
+23. PERGUNTAS FREQUENTES
+==================================================
+
+A seção de perguntas frequentes pode responder dúvidas como:
+
+- A agência aceita troca?
+- É possível financiar?
+- Quais documentos são necessários?
+- Posso agendar um test drive?
+- Os veículos possuem garantia?
+- Como funciona a transferência?
+
+==================================================
+24. BLOG OU NOTÍCIAS
+==================================================
+
+O site pode possuir conteúdos sobre veículos.
+
+Temas possíveis:
+
+- Dicas para comprar um carro
+- Como cuidar do veículo
+- Diferenças entre carros elétricos e híbridos
+- Novidades do mercado automobilístico
+- Dicas de financiamento
+
+==================================================
+25. LOCALIZAÇÃO
+==================================================
+
+O site deve informar onde a agência está localizada.
+
+Pode conter:
+
+- Endereço
+- Mapa
+- Referências próximas
+- Horário de funcionamento
+
+==================================================
+26. RODAPÉ
+==================================================
+
+O rodapé pode conter:
+
+- Logo
+- Nome da agência
+- Links importantes
+- Telefone
+- E-mail
+- Endereço
+- Direitos autorais
+- Política de privacidade
+- Termos de uso
+
+==================================================
+27. PAINEL ADMINISTRATIVO
+==================================================
+
+Caso o site possua sistema administrativo, o administrador poderá:
+
+- Cadastrar veículos
+- Editar veículos
+- Remover veículos
+- Adicionar fotos
+- Alterar preços
+- Cadastrar promoções
+- Gerenciar contatos
+- Gerenciar agendamentos
+- Visualizar interessados
+- Gerenciar usuários
+
+==================================================
+28. CADASTRO DE VEÍCULOS
+==================================================
+
+O sistema administrativo pode possuir os seguintes campos:
+
+- Código
+- Marca
+- Modelo
+- Versão
+- Ano
+- Quilometragem
+- Cor
+- Combustível
+- Câmbio
+- Preço
+- Descrição
+- Opcionais
+- Fotos
+- Status
+
+Status possíveis:
+
+- Disponível
+- Reservado
+- Vendido
+- Em negociação
+
+==================================================
+29. SISTEMA DE USUÁRIOS
+==================================================
+
+O sistema pode possuir diferentes tipos de usuários.
+
+Administrador:
+
+- Controle total do sistema
+
+Funcionário:
+
+- Cadastro e atualização de veículos
+- Atendimento de clientes
+
+Cliente:
+
+- Visualização de veículos
+- Favoritos
+- Agendamentos
+
+==================================================
+30. SEGURANÇA
+==================================================
+
+O site deve possuir cuidados com segurança.
+
+Recomendações:
+
+- Proteção de senhas
+- Controle de acesso
+- Proteção de dados pessoais
+- Validação de formulários
+- Uso de conexão segura
+- Backup das informações
+
+==================================================
+31. RESPONSIVIDADE
+==================================================
+
+O site deve funcionar corretamente em diferentes dispositivos.
+
+Deve ser adaptado para:
+
+- Computadores
+- Notebooks
+- Tablets
+- Celulares
+
+==================================================
+32. ACESSIBILIDADE
+==================================================
+
+O site deve ser acessível para diferentes usuários.
+
+Boas práticas:
+
+- Textos legíveis
+- Bom contraste
+- Imagens com descrição
+- Navegação simples
+- Botões identificados
+
+==================================================
+33. DESIGN
+==================================================
+
+O visual do site deve transmitir confiança e profissionalismo.
+
+Elementos importantes:
+
+- Cores organizadas
+- Tipografia legível
+- Fotos de qualidade
+- Botões bem visíveis
+- Layout moderno
+- Espaçamento adequado
+
+Cores comuns:
+
+- Preto
+- Branco
+- Cinza
+- Azul
+- Vermelho
+
+==================================================
+34. FUNCIONALIDADES EXTRAS
+==================================================
+
+Outras funcionalidades possíveis:
+
+- Comparador de veículos
+- Calculadora de financiamento
+- Chat online
+- Notificações de novos veículos
+- Alertas de redução de preço
+- Histórico de veículos visualizados
+- Recomendações personalizadas
+
+==================================================
+35. ESTRUTURA SUGERIDA DO SITE
+==================================================
+
+PÁGINA INICIAL
+
+├── Header
+│   ├── Logo
+│   ├── Menu
+│   └── Contato
+│
+├── Banner Principal
+│
+├── Pesquisa de Veículos
+│
+├── Veículos em Destaque
+│
+├── Ofertas
+│
+├── Sobre a Agência
+│
+├── Avaliações
+│
+├── Contato
+│
+└── Footer
+
+==================================================
+36. TECNOLOGIAS QUE PODEM SER UTILIZADAS
+==================================================
+
+FRONT-END:
+
+- HTML
+- CSS
+- JavaScript
+
+BACK-END:
+
+- PHP
+- Python
+- Java
+- Node.js
+
+BANCO DE DADOS:
+
+- MySQL
+- PostgreSQL
+- MongoDB
+
+==================================================
+37. PRINCIPAIS OBJETIVOS DO SITE
+==================================================
+
+O site deve:
+
+- Apresentar a agência
+- Exibir veículos disponíveis
+- Facilitar a pesquisa de veículos
+- Atrair novos clientes
+- Facilitar o contato
+- Permitir agendamentos
+- Divulgar promoções
+- Aumentar a confiança na empresa
+- Organizar informações dos veículos
+- Auxiliar no processo de compra e venda
+
+==================================================
+38. CONCLUSÃO
+==================================================
+
+Um site completo para uma agência de veículos deve unir um bom design com funcionalidades práticas. O cliente deve conseguir encontrar facilmente os veículos, visualizar todas as informações, comparar opções, entrar em contato e solicitar atendimento.
+
+Além da parte pública do site, um sistema administrativo pode facilitar o gerenciamento dos veículos, clientes, contatos, vendas e agendamentos.
+
+O principal objetivo é criar uma plataforma moderna, segura, organizada, responsiva e fácil de utilizar.
+
+
+
+
+
+================
+MEU
+----------------
+
+pik: https://www.porsche.com/brazil/pt/
