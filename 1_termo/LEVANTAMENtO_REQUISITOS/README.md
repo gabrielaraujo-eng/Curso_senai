@@ -1,59 +1,25 @@
-# 📚 Engenharia de Requisitos: Conteúdo das Aulas
+# Levantamento de Requisitos
 
-## 1. Requisitos Funcionais e Não Funcionais
-### Requisitos Funcionais (RF)
-*   **Definição**: O que o sistema deve fazer.
-*   **Foco**: Funcionalidades, serviços, comportamentos e transformações de entradas em saídas.
-*   **Exemplos**: 
-    *   "O sistema deve permitir o cadastro de clientes."
-    *   "O usuário deve conseguir emitir um relatório de vendas mensal."
+Módulo dedicado à compreensão do problema, identificação das necessidades dos usuários e documentação do comportamento esperado de um sistema.
 
-### Requisitos Não Funcionais (RNF)
-*   **Definição**: Como o sistema deve realizar as funções.
-*   **Foco**: Qualidade, restrições, desempenho, segurança, usabilidade e confiabilidade.
-*   **Exemplos**:
-    *   "O tempo de resposta da busca não deve exceder 2 segundos."
-    *   "O sistema deve ser compatível com a LGPD."
+## Conteúdo estudado
 
----
+| Etapa | O que foi aprendido |
+| --- | --- |
+| Requisitos funcionais | Descrever as funções, serviços e comportamentos que o sistema deve oferecer. |
+| Requisitos não funcionais | Definir qualidade, segurança, desempenho, usabilidade, compatibilidade e restrições. |
+| Elicitação | Utilizar entrevistas e brainstorming para compreender o negócio e as necessidades dos stakeholders. |
+| Modelagem | Representar atores, processos e interações com casos de uso, atividades e sequências UML. |
+| Especificação | Organizar escopo, requisitos RF/RNF, regras e diagramas em um documento técnico. |
+| Validação | Conferir se os requisitos são claros, completos, consistentes e verificáveis. |
+| Prototipação | Criar wireframes de baixa fidelidade e protótipos visuais de alta fidelidade para reduzir retrabalho. |
 
-## 2. Técnicas de Elicitação de Requisitos
+## Navegação
 
-### Brainstorming
-*   **Objetivo**: Estimular a geração livre de ideias e soluções inovadoras em grupo.
-*   **Dinâmica**: Sessões rápidas, sem julgamentos ou críticas iniciais das propostas.
-*   **Resultado**: Lista bruta de possíveis funcionalidades e caminhos para o projeto.
+- [`LER/`](./LER/) — materiais e atividades da disciplina.
+- [`1_termo/README.md`](../README.md) — visão geral do termo.
+- [`README principal`](../../README.md) — mapa completo do curso.
 
-### Entrevistas
-*   **Objetivo**: Coleta aprofundada de dados diretamente com stakeholders e usuários.
-*   **Tipos**: Estruturadas (roteiro fixo) ou Semi-estruturadas (flexíveis e conversacionais).
-*   **Foco**: Compreender o fluxo de trabalho atual, dores do cliente e expectativas futuras.
+## Resultado do estudo
 
----
-
-## 3. Modelagem e Especificação
-
-### Diagramas de Requisitos
-*   **Diagrama de Casos de Uso (UML)**: Representa os atores, o sistema e as interações entre eles.
-*   **Diagrama de Atividades**: Mapeia o fluxo de trabalho e as decisões de um processo de negócio.
-*   **Diagrama de Sequência**: Detalha a troca de mensagens entre objetos ao longo do tempo.
-
-### Relatórios Técnicos
-*   **Documento de Especificação de Requisitos de Software (SRS)**: Padrão formal (ex: IEEE 830).
-*   **Estrutura Básica**:
-    1. Introdução e Escopo.
-    2. Descrição Geral do Sistema.
-    3. Lista de Requisitos Funcionais (RF001, RF002...).
-    4. Lista de Requisitos Não Funcionais (RNF001, RNF002...).
-    5. Modelos de Análise (Diagramas).
-
----
-
-## 4. Validação e Prototipagem
-
-### Prototipagem
-*   **Objetivo**: Criar representações visuais do sistema para validação rápida com o usuário.
-*   **Tipos de Protótipos**:
-    *   *Baixa Fidelidade*: Desenhos em papel (wireframes) para validar o fluxo e conceitos básicos.
-    *   *Alta Fidelidade*: Telas interativas (ex: Figma) para testar a usabilidade e interface visual.
-*   **Benefício**: Reduz o retrabalho ao identificar falhas antes da fase de desenvolvimento.
+O módulo prepara o desenvolvimento antes da escrita do código: primeiro o problema é entendido, depois o escopo é representado e validado. Essa documentação serve como referência para as etapas posteriores de projeto, banco de dados, interface e back-end.

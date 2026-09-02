@@ -1,27 +1,26 @@
-# 🏗️ Desenvolvimento de Projetos
+# Projetos Integradores
 
-Esta pasta armazena os projetos integradores e a documentação de gestão. Aqui, aplicamos os conhecimentos técnicos em cenários reais, utilizando metodologias de mercado para garantir a entrega de software de alta qualidade.
+Esta pasta reúne materiais de projeto, páginas web, estilos, imagens, protótipos e documentação produzidos durante o curso.
 
----
+## Conteúdo da pasta
 
-## 📋 Gestão e Metodologia
+| Caminho | Conteúdo |
+| --- | --- |
+| [`Paginas_atual/`](./Paginas_atual/) | Versões atuais das páginas HTML e do arquivo CSS. |
+| [`IMAGENS/`](./IMAGENS/) | Banner, logo, adereços e imagens usadas na identidade visual. |
+| [`teste.html`](./teste.html) | Página de teste de estrutura ou conteúdo. |
+| [`teste2.html`](./teste2.html) | Segunda página de teste. |
 
-Trabalhamos com o fluxo de desenvolvimento profissional:
+## O que foi praticado
 
-| Prática | Objetivo |
-| :--- | :--- |
-| **Scrum/Kanban** | Organização de tarefas, prazos e priorização de entregas. |
-| **Git / GitHub** | Controle de versão, trabalho em equipe e histórico de alterações. |
-| **Documentação** | Criação de manuais técnicos e especificações de requisitos. |
+O módulo aplica conhecimentos de levantamento de requisitos, prototipação, HTML, CSS, organização de arquivos, identidade visual, colaboração com Git/GitHub e apresentação de uma solução. As imagens e o arquivo de slogan apoiam a construção da comunicação do projeto.
 
----
+## Fluxo de desenvolvimento
 
-## 🎯 Objetivos do Módulo
+1. Compreender o problema e definir o objetivo do projeto.
+2. Organizar requisitos, conteúdo, páginas e identidade visual.
+3. Criar protótipos e separar estrutura HTML de apresentação CSS.
+4. Implementar as páginas e testar links, imagens e responsividade.
+5. Revisar a entrega, documentar decisões e manter o histórico no Git.
 
-*   **Colaboração**: Desenvolvimento de código em equipe com resolução de conflitos via Git.
-*   **Qualidade (QA)**: Revisão de código e aplicação de padrões de projeto para manter a manutenibilidade.
-*   **Prototipagem**: Criação de wireframes e protótipos antes da implementação final.
-*   **Entrega Contínua**: Foco em entregar funcionalidades testadas e prontas para o uso ao final de cada ciclo.
-
----
-> "Grandes sistemas não são apenas escritos, são construídos através de colaboração e método." 🤝
+Para visualizar o projeto, abra a página HTML principal em um navegador. Ao mover arquivos, atualize os caminhos relativos das imagens e folhas de estilo.

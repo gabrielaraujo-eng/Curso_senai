@@ -1,28 +1,36 @@
-# 🗄️ Banco de Dados
+# Banco de Dados
 
-Este diretório é dedicado ao estudo de persistência de dados, abrangendo desde a concepção lógica até a implementação física em sistemas relacionais. Aqui estão armazenados scripts SQL, diagramas de modelagem e exercícios de consulta.
+Este módulo registra a evolução desde a instalação do ambiente até a modelagem e implementação física de bancos relacionais.
 
----
+## Aulas e atividades
 
-## 🏗️ Estrutura de Aprendizado
+| Aula | Conteúdo e materiais |
+| --- | --- |
+| **1** | Configuração e instalação de banco de dados, links de apoio e modelo conceitual SmartCoffee. |
+| **2** | Continuação do início e da configuração do banco de dados. |
+| **3** | MER e DER, com material explicativo da aula. |
+| **4** | Conceitos aplicados ao DER, modelos SmartCoffee e primeiro script de comandos SQL. |
+| **5** | Dicionário de dados e documentação; versões dos modelos SmartCoffee e Hotel. |
+| **6** | DDL, comandos de definição e criação da estrutura física do SmartCoffee. |
+| **7** | Atividade somativa, evidências e arquivos de apoio sobre Oficina de Veículos e tipagem. |
+| **Somativa 1** | Script da Oficina de Veículos e dicionário de dados. |
 
-O processo de desenvolvimento de dados segue três etapas fundamentais:
+## Caminho de navegação
 
-| Etapa | Descrição |
-| :--- | :--- |
-| **Modelagem Conceitual** | Criação do Diagrama Entidade-Relacionamento (**DER**) para representar o negócio. |
-| **Modelagem Lógica** | Definição de tabelas, chaves primárias (PK), estrangeiras (FK) e tipos de dados. |
-| **Implementação Física** | Execução de scripts SQL para criação e manipulação do banco de dados real. |
+```text
+BANCO_DADOS/
+├── Aula_1/ ... Aula_7/     # materiais de cada aula
+├── SOMATIVA_1/             # avaliação e entrega complementar
+└── README_BANCO_DADOS.md   # este guia
+```
 
----
+## Conceitos consolidados
 
-## 💻 Comandos e Linguagem SQL
+| Camada | Prática |
+| --- | --- |
+| Conceitual | MER, entidades, atributos e relacionamentos. |
+| Lógica | DER, chaves primárias, chaves estrangeiras e cardinalidade. |
+| Documentação | Dicionário de dados e descrição das estruturas. |
+| Física | SQL, DDL, criação de tabelas, tipos e restrições. |
 
-Exploramos as sublinguagens do SQL para controle total da informação:
-
-1.  **DDL (Data Definition Language)**: Comandos como `CREATE`, `ALTER` e `DROP` para estruturar o banco.
-2.  **DML (Data Manipulation Language)**: Comandos como `INSERT`, `UPDATE` e `DELETE` para gerenciar registros.
-3.  **DQL (Data Query Language)**: Consultas avançadas com `SELECT`, filtros `WHERE`, ordenação `ORDER BY` e junções `JOIN`.
-
----
-> "Dados são o novo petróleo, mas o banco de dados é a refinaria que lhes dá valor." 💎
+Os scripts `.sql` devem ser revisados antes da execução e utilizados em um banco de testes. Os arquivos `.brM`, `.rtf`, `.pdf` e as imagens preservam modelos e evidências produzidos durante as aulas.

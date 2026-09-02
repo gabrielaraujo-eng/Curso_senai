@@ -1,41 +1,52 @@
-# 📂 2º Termo — Desenvolvimento de Sistemas
+# 2º Termo — Desenvolvimento de Sistemas
 
-Este repositório centraliza o ecossistema de aprendizado e desenvolvimento construído durante o **2º Termo** do curso Técnico em Desenvolvimento de Sistemas. Nesta etapa, a formação evolui da lógica fundamental para a construção de arquiteturas completas, integrando processamento em servidor, persistência de dados e interfaces web modernas.
+O segundo termo avança dos fundamentos para a construção de aplicações, integrando back-end, banco de dados, interfaces web e projetos.
 
----
+## Caminho de navegação
 
-## 📑 Sumário das Disciplinas
+```text
+2_termo/
+├── BACKEND/       # aulas compactadas e trabalhos de POO no back-end
+├── BANCO_DADOS/   # aulas 1–7, scripts SQL e atividade somativa
+├── LIMA/          # aulas 1–7, DevSolutions e atividade somativa
+└── PROJETOS/      # projeto integrador, páginas, CSS e imagens
+```
 
-Abaixo, apresenta-se uma visão consolidada dos pilares técnicos abordados neste semestre:
+| Disciplina | O que foi realizado | Pasta |
+| --- | --- | --- |
+| Back-end | Aulas práticas, desenvolvimento de servidor, POO e relacionamentos entre objetos. | [`BACKEND/`](./BACKEND/) |
+| Banco de Dados | Instalação, MER/DER, dicionário de dados, DDL, scripts e modelos SmartCoffee/Oficina de Veículos. | [`BANCO_DADOS/`](./BANCO_DADOS/) |
+| LIMA | Páginas HTML, imagens, favicon, HTML semântico, tipografia, layouts, CSS e listas. | [`LIMA/`](./LIMA/) |
+| Projetos | Prototipação, páginas, identidade visual, documentação, colaboração e entrega. | [`PROJETOS/`](./PROJETOS/) |
 
-| Disciplina | Foco Principal | Tecnologias Chave |
-| :--- | :--- | :--- |
-| **[Back-End](./BACKEND)** | Lógica de servidor e APIs. | Node.js, NPM, JSON |
-| **[Banco de Dados](./BANCO_DADOS)** | Persistência e modelagem. | SQL, MySQL, DER |
-| **[LIMA](./LIMA)** | Interface e marcação web. | HTML5, CSS3 |
-| **[Projetos](./PROJETOS)** | Gestão e colaboração. | Git, Scrum, Kanban |
+## Sequência das aulas
 
----
+### Back-end
 
-## 🚀 Visão Técnica
+As pastas compactadas `AULA_1.zip` a `AULA_4.zip`, além de `AULA_10(5).zip` e `AULA_11.zip`, registram as aulas práticas. O arquivo de apoio em Markdown apresenta o desenvolvimento back-end. A pasta `Trabalho_grupo/` documenta relacionamentos entre objetos e conceitos de associação, agregação, composição e programação orientada a objetos.
 
-### ⚙️ Arquitetura e Servidor (Back-End)
-O foco reside na criação de aplicações escaláveis utilizando **Node.js**. Exploramos o ciclo de vida das requisições HTTP e a construção de serviços que servem como ponte entre a interface e os dados, garantindo performance e segurança no tratamento das informações.
+### Banco de Dados
 
-### 🎨 Interface e Semântica (LIMA)
-Através das **Linguagens de Marcação**, desenvolvemos a camada visual focada na experiência do usuário. A utilização de **HTML5 semântico** e **CSS3 avançado** (Flexbox/Grid) garante que as aplicações sejam acessíveis, responsivas e visualmente profissionais.
+- **Aula 1:** início, configuração e instalação de um banco de dados, com materiais e modelo conceitual SmartCoffee.
+- **Aula 2:** continuidade da configuração e instalação do ambiente.
+- **Aula 3:** MER e DER.
+- **Aula 4:** conceitos aplicados ao DER, modelos conceituais e primeiro script SQL.
+- **Aula 5:** dicionário de dados e documentação do projeto, com versões dos modelos SmartCoffee e Hotel.
+- **Aula 6:** DDL, comandos de criação e scripts físicos do banco SmartCoffee.
+- **Aula 7:** atividade somativa, registros de apoio e evidências de execução.
+- **Somativa 1:** dicionário de dados e script do projeto Oficina de Veículos.
 
-### 🗄️ Estrutura de Dados (Banco de Dados)
-A gestão da informação é tratada com rigor técnico, desde a modelagem conceitual no **DER** até a manipulação complexa via **SQL**. O objetivo é garantir a integridade referencial e a eficiência nas consultas em bancos relacionais.
+### LIMA
 
-### 🏗️ Gestão Integrada (Projetos)
-A disciplina de projetos une todas as frentes técnicas sob a égide das **Metodologias Ágeis**. O uso de **Git/GitHub** para controle de versão e frameworks como **Scrum** prepara o desenvolvedor para o fluxo real de trabalho em grandes equipes de software.
+- **Aula 1:** início do HTML e criação das primeiras páginas.
+- **Aula 2:** construção da primeira página web e organização de páginas de equipe.
+- **Aula 3:** organização de informações com HTML e uso de imagens.
+- **Aula 4:** favicon, imagens e página “sobre”.
+- **Aula 5:** HTML semântico, tipografia e layout visual, com currículo e atividade de páginas.
+- **Aula 6:** CSS inline, interno e externo, seletores e folhas de estilo.
+- **Aula 7:** listas e links de suporte.
+- **Projeto e somativa:** desenvolvimento do site DevSolutions e criação da primeira página avaliativa.
 
----
+## Como estudar
 
-## 🛠️ Como Navegar
-Cada pasta neste repositório contém um arquivo `README.md` específico com detalhes sobre os exercícios, laboratórios e projetos desenvolvidos na respectiva área.
-
----
-
-> "A tecnologia é apenas uma ferramenta. Em termos de conseguir que as crianças trabalhem juntas e as motivem, o professor é o mais importante." — *Bill Gates* 💻✨
+Consulte primeiro o material da aula, depois abra os arquivos produzidos e compare a teoria com a prática. Arquivos `.zip` devem ser extraídos localmente. HTML pode ser aberto no navegador; CSS deve ser associado às páginas; scripts SQL devem ser executados em um ambiente de banco configurado.
