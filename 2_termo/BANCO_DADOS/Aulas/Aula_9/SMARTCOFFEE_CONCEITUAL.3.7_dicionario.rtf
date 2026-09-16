@@ -1,0 +1,556 @@
+{\rtf1\ansi\ansicpg1252\deff0\deflang1046{\fonttbl{\f0\fnil MS Sans Serif;}{\f1\fnil\fcharset0 MS Sans Serif;}}
+{\colortbl ;\red0\green0\blue255;\red0\green0\blue0;}
+\viewkind4\uc1\pard\cf1\b\f0\fs16 001 - Observa\f1\'e7\'e3o: \cf2\b0 - Smart Coffee -
+\par Gabriel\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 002 - Atributo: \cf2\b0 Categoria\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 003 - Atributo: \cf2\b0 Cheque\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 004 - Atributo: \cf2\b0 Cliente\cf1\b 
+\par \cf0\b0 Cargo atributo de identifica\f1\'e7\'e3o do cliente
+\par Tipo de Dados: int
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 005 - Entidade: \cf2\b0 Clientes\cf1\b 
+\par \cf0\b0 Entidade respons\f1\'e1vel pelo cadastro dos clientes da cafeteria.
+\par Armazena informa\'e7\'f5es pessoais e de contato dos clientes, como nome, CPF, telefone, endere\'e7o, e-mail e data de nascimento.
+\par \f0 
+\par \cf1\b 006 - Atributo: \cf2\b0 Data_nascimento\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 007 - Entidade: \cf2\b0 Delivery\cf1\b 
+\par \cf0\b0 Entidade respons\f1\'e1vel pelo controle das entregas realizadas aos clientes.
+\par Armazena as informa\'e7\'f5es do entregador, endere\'e7o de entrega, frete, pre\'e7o e datas relacionadas \'e0 entrega.
+\par \f0 
+\par \cf1\b 008 - Atributo: \cf2\b0 Email_cliente\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 009 - Atributo: \cf2\b0 Entregador\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 010 - Entidade: \cf2\b0 Estoque\cf1\b 
+\par \cf0\b0 Entidade respons\f1\'e1vel pelo controle do estoque dos produtos da cafeteria.
+\par Armazena informa\'e7\'f5es sobre quantidade dispon\'edvel, estoque m\'ednimo, localiza\'e7\'e3o, categoria, produto e validade.
+\par \f0 
+\par \cf1\b 011 - Atributo: \cf2\b0 Forma_pagamento\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 012 - Entidade: \cf2\b0 Funcionario\cf1\b 
+\par \cf0\b0 Entidade respons\f1\'e1vel pelo cadastro e controle dos funcion\'e1rios da cafeteria.
+\par Armazena informa\'e7\'f5es pessoais, profissionais e de contato dos funcion\'e1rios.
+\par \f0 
+\par \cf1\b 013 - Atributo: \cf2\b0 Local_estoque\cf1\b 
+\par \cf0\b0 Cargo atributo de localiza\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 014 - Atributo: \cf2\b0 Mesa\cf1\b 
+\par \cf0\b0 Cargo atributo de identifica\f1\'e7\'e3o
+\par Tipo de Dados: int
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 015 - Observa\f1\'e7\'e3o: \cf2\b0 Modelagem de banco de dados SmartCoffee\cf1\b 
+\par \cf0\b0\f0 
+\par \cf1\b 016 - Atributo: \cf2\b0 Nome_produto_estoque\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 017 - Entidade: \cf2\b0 Pagamento\cf1\b 
+\par \cf0\b0 Entidade respons\f1\'e1vel pelo registro dos pagamentos realizados pelos clientes.
+\par Armazena o valor pago, hor\'e1rio, pedido, forma de pagamento e data do pagamento.
+\par \f0 
+\par \cf1\b 018 - Entidade: \cf2\b0 Pedidos\cf1\b 
+\par \cf0\b0 Entidade respons\f1\'e1vel pelo registro e controle dos pedidos realizados pelos clientes.
+\par Armazena informa\'e7\'f5es como nome do produto, quantidade, pre\'e7o, mesa e hor\'e1rio do pedido.
+\par \f0 
+\par \cf1\b 019 - Atributo: \cf2\b0 Pix\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 020 - Atributo: \cf2\b0 Produto\cf1\b 
+\par \cf0\b0 Cargo atributo de identifica\f1\'e7\'e3o do produto
+\par Tipo de Dados: int
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 021 - Entidade: \cf2\b0 Produtos\cf1\b 
+\par \cf0\b0 Entidade respons\f1\'e1vel pelo cadastro dos produtos comercializados pela cafeteria.
+\par Armazena informa\'e7\'f5es como nome, descri\'e7\'e3o, categoria, pre\'e7o, validade e CPF do respons\'e1vel.
+\par \f0 
+\par \cf1\b 022 - Entidade: \cf2\b0 Programa_fidelidade\cf1\b 
+\par \cf0\b0 Entidade respons\f1\'e1vel pelo controle do programa de fidelidade dos clientes.
+\par Armazena informa\'e7\'f5es sobre pontos, descontos, hist\'f3rico de transfer\'eancias e data de cadastro do cliente.
+\par \f0 
+\par \cf1\b 023 - Rela\f1\'e7\'e3o: \cf2\b0 Realiza\cf1\b 
+\par \cf0\b0\f0 Relaciona clientes aos pedidos realizados por eles.
+\par Um cliente pode realizar v\f1\'e1rios pedidos e cada pedido \'e9 realizado por um cliente.
+\par Cardinalidade: Clientes (1,1) e Pedidos (1,n).
+\par \f0 
+\par \cf1\b 024 - Atributo: \cf2\b0 Telefone\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 025 - Atributo: \cf2\b0 Telefone\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 026 - Atributo: \cf2\b0 Turno\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 027 - Atributo: \cf2\b0 Validade\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 028 - Atributo: \cf2\b0 Validade\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 029 - Rela\f1\'e7\'e3o: \cf2\b0 atende\cf1\b 
+\par \cf0\b0\f0 Relaciona funcion\f1\'e1rios aos pedidos atendidos por eles.
+\par Um funcion\'e1rio pode atender v\'e1rios pedidos e cada pedido pode ser atendido por um funcion\'e1rio.
+\par Cardinalidade: Funcion\'e1rios (1,1) e Pedidos (0,n).
+\par \f0 
+\par \cf1\b 030 - Atributo: \cf2\b0 cargo\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 031 - Atributo: \cf2\b0 cartao\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 032 - Atributo: \cf2\b0 categoria\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 033 - Atributo: \cf2\b0 cpf_clientes\cf1\b 
+\par \cf0\b0 Cargo atributo de identifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 034 - Atributo: \cf2\b0 cpf_funcionario\cf1\b 
+\par \cf0\b0 Cargo atributo de identifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 035 - Atributo: \cf2\b0 credito\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 036 - Atributo: \cf2\b0 data_admissao\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 037 - Atributo: \cf2\b0 data_cadastro_cliente\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 038 - Atributo: \cf2\b0 data_cadastro_fidelidade\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 039 - Atributo: \cf2\b0 data_entrega\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 040 - Atributo: \cf2\b0 data_hora\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: time
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 041 - Atributo: \cf2\b0 data_hora_pagamento\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 042 - Atributo: \cf2\b0 data_hora_saida\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 043 - Atributo: \cf2\b0 data_nascimento\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 044 - Atributo: \cf2\b0 data_ultima_atualizacao\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: date
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 045 - Atributo: \cf2\b0 debito\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 046 - Atributo: \cf2\b0 desconto\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 047 - Atributo: \cf2\b0 descricao_produto\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 048 - Atributo: \cf2\b0 dinheiro\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 049 - Atributo: \cf2\b0 email_funcionario\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 050 - Atributo: \cf2\b0 endereco_cliente\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 051 - Atributo: \cf2\b0 endereco_entrega\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 052 - Atributo: \cf2\b0 endereco_funcionario\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 053 - Rela\f1\'e7\'e3o: \cf2\b0 entrega\cf1\b 
+\par \cf0\b0\f0 Um funcion\f1\'e1rio pode realizar v\'e1rios deliveries e cada delivery \'e9 realizado por um funcion\'e1rio.
+\par Cardinalidade: Funcion\'e1rio (0,n) e Delivery (1,1).Um funcionario pode levar varios deliveries
+\par \f0 
+\par \cf1\b 054 - Atributo: \cf2\b0 escolaridade\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 055 - Entidade associativa: \cf2\b0 ficha_tecnica\cf1\b 
+\par \cf0\b0 Relaciona produtos ao estoque onde est\f1\'e3o armazenados.
+\par Um produto pode pertencer a um estoque e um estoque pode possuir v\'e1rios produtos. \f0 
+\par \cf1\b 056 - Rela\f1\'e7\'e3o: \cf2\b0 gera\cf1\b 
+\par \cf0\b0\f0 Relaciona os pedidos \f1\'e0s entregas realizadas pelo servi\'e7o de Delivery.
+\par Um pedido pode estar relacionado a uma entrega e cada entrega est\'e1 relacionada a um pedido.
+\par Cardinalidade: Delivery (0,1) e Pedidos (1,1).
+\par \f0 
+\par \cf1\b 057 - Atributo: \cf2\b0 historico_transferencias\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 058 - Atributo: \cf2\b0 id_clientes\cf1\b 
+\par \cf0\b0 Cargo atributo identificador
+\par Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 059 - Atributo: \cf2\b0 id_delivery\cf1\b 
+\par \cf0\b0 Cargo atributo identificador
+\par Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 060 - Atributo: \cf2\b0 id_ficha_tecnica\cf1\b 
+\par \cf0\b0 Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 061 - Atributo: \cf2\b0 id_fidelidade\cf1\b 
+\par \cf0\b0 Cargo atributo identificador
+\par Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 062 - Atributo: \cf2\b0 id_funcionario\cf1\b 
+\par \cf0\b0 Cargo atributo identificador
+\par Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 063 - Atributo: \cf2\b0 id_insumo\cf1\b 
+\par \cf0\b0 Cargo atributo identificador
+\par Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 064 - Atributo: \cf2\b0 id_item_pedido\cf1\b 
+\par \cf0\b0 Cargo atributo identificador
+\par Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 065 - Atributo: \cf2\b0 id_pagamento\cf1\b 
+\par \cf0\b0 Cargo atributo identificador
+\par Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 066 - Atributo: \cf2\b0 id_pedidos\cf1\b 
+\par \cf0\b0 Cargo atributo identificador
+\par Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 067 - Atributo: \cf2\b0 id_produtos\cf1\b 
+\par \cf0\b0 Cargo atributo identificador
+\par Tipo de Dados: int
+\par Chave primaria: PK
+\par Auto_increment: Campo de incremento autom\f1\'e1tico
+\par \f0 
+\par \cf1\b 068 - Entidade associativa: \cf2\b0 item_pedido\cf1\b 
+\par \cf0\b0 Relaciona os pedidos aos produtos que fazem parte de cada pedido.
+\par Um pedido pode possuir v\f1\'e1rios itens e um produto pode aparecer em v\'e1rios pedidos.
+\par \f0 
+\par \cf1\b 069 - Atributo: \cf2\b0 nome_clientes\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 070 - Atributo: \cf2\b0 nome_funcionario\cf1\b 
+\par \cf0\b0 Tipo de Dados: varchar(60)
+\par Chave primaria: N\f1\'e3o
+\par Auto_increment: N\'e3o
+\par  \f0 
+\par \cf1\b 071 - Atributo: \cf2\b0 nome_insumo\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 072 - Atributo: \cf2\b0 nome_produto\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 073 - Atributo: \cf2\b0 nome_produto\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 074 - Rela\f1\'e7\'e3o: \cf2\b0 participa\cf1\b 
+\par \cf0\b0\f0 Relaciona clientes ao programa de fidelidade.
+\par Um cliente pode possuir um programa de fidelidade e cada programa de fidelidade pertence a um cliente.
+\par Cardinalidade: Clientes (0,1) e Programa_fidelidade (1,1).
+\par 
+\par \cf1\b 075 - Atributo: \cf2\b0 pedido\cf1\b 
+\par \cf0\b0 Cargo atributo de identifica\f1\'e7\'e3o do pedido
+\par Tipo de Dados: int
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 076 - Rela\f1\'e7\'e3o: \cf2\b0 possui\cf1\b 
+\par \cf0\b0\f0 Relaciona pagamentos aos pedidos gerados no sistema.
+\par Um pagamento est\f1\'e1 relacionado a um pedido.
+\par Cardinalidade: Pagamentos (1,1) e Pedidos (0,n).
+\par \f0 
+\par \cf1\b 077 - Atributo: \cf2\b0 preco_delivery\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 078 - Atributo: \cf2\b0 preco_historico\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 079 - Atributo: \cf2\b0 preco_pagamento\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 080 - Atributo: \cf2\b0 preco_pedido\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 081 - Atributo: \cf2\b0 preco_unitario\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 082 - Atributo: \cf2\b0 quantidade\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: int
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 083 - Atributo: \cf2\b0 quantidade_atual\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: int
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 084 - Atributo: \cf2\b0 quantidade_gasta\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: int
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 085 - Atributo: \cf2\b0 quantidade_minima\cf1\b 
+\par \cf0\b0 Cargo atributo de controle de estoque
+\par Tipo de Dados: int
+\par Chave primaria: N\f1\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 086 - Atributo: \cf2\b0 quantidade_pedido\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: int
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 087 - Atributo: \cf2\b0 salario\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 088 - Atributo: \cf2\b0 saldo_pontos\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: int
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 089 - Atributo: \cf2\b0 sexo\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 090 - Atributo: \cf2\b0 status\'1f\'1f_pedido\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par  \f0 
+\par \cf1\b 091 - Atributo: \cf2\b0 status_entrega\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 092 - Atributo: \cf2\b0 status_pagamento\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 093 - Atributo: \cf2\b0 taxa_entrega\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 094 - Atributo: \cf2\b0 tipo_pedido\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 095 - Atributo: \cf2\b0 unidade_medida\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 096 - Atributo: \cf2\b0 vale_alimentacao\cf1\b 
+\par \cf0\b0 Cargo atributo de classifica\f1\'e7\'e3o
+\par Tipo de Dados: varchar(60)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 097 - Atributo: \cf2\b0 valor_pago\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par \cf1\b 098 - Atributo: \cf2\b0 valor_total\cf1\b 
+\par \cf0\b0 Cargo atributo de informa\f1\'e7\'e3o
+\par Tipo de Dados: decimal(10,2)
+\par Chave primaria: N\'e3o
+\par Auto_increment: N\'e3o
+\par \f0 
+\par 
+\par }
+ 
