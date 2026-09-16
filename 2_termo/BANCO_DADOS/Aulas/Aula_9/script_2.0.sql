@@ -84,7 +84,6 @@ Cliente varchar(60) not null,
 historico_transferencias varchar(60) not null,
 saldo_pontos float not null,
 id_fidelidade int auto_increment primary key,
--- Erro: nome do campo duplicado nesta tabela!
 data_cadastro datetime not null,
 desconto float not null,
 data_ultima_atualizacao date time,
