@@ -194,7 +194,7 @@ CREATE table forma_pagamento (
 );
 
 create table pagamento (
-    id_produto INT PRIMARY KEY AUTO_INCREMENT,
+    id_pagamento INT PRIMARY KEY AUTO_INCREMENT,
     id_pedido int not null,
     id_forma_pagamento int not null,
     valor decimal(10,2),
@@ -302,3 +302,38 @@ UPDATE cliente
 SET telefone = NULL 
 Where id_cliente = 5;
 -- TUDO ATUALIZAÇÕES OU MODIFICAÇÃO DE DADOS
+
+
+
+-- 1.
+insert into cliente (nome, email, telefone, cidade, ativo) VALUES 
+('Ana Laura', 'anaLaura123@email.com', '19999990401', 'Limeira', TRUE),
+('Gabriel Lucio', 'gabriellucio00@email.com', '19999966001', 'Limeira', TRUE);
+
+-- 2.
+INSERT into categoria (nome) VALUES
+('Especiais da Casa');
+
+-- 3.
+insert into produto (nome, preco, ativo, id_categoria) VALUES
+('Especiais da casa', 25.00, TRUE, 16),
+('Pao de queijo', 5.00, TRUE, 16),
+('Coxinha', 7.00, TRUE, 16);
+
+-- 4.
+insert into cliente (nome, email, telefone, cidade, ativo) VALUES 
+('Ana giboia', 'anagi1234@email.com', null, 'Limeira', TRUE);
+
+-- 5. 
+insert into pedido (data_pedido, status, valor_total, id_cliente) VALUES
+('2026-09-10 08:15:00', 'Aberto', 16.00, 3);
+
+-- 6. 
+
+insert into pedido (data_pedido, status, valor_total, id_cliente) VALUES
+(NOW(), 'ABERTO', 0.00, 8),
+(NOW(), 'ABERTO', 0.00, 8);
+
+
+set @pedido = LAST_INSERT_ID();
+select @pedido;
