@@ -128,3 +128,4 @@ insert into pagamento (id_pedido, id_forma_pagamento, valor, data_pagamento) VAL
 
 select * from pagamento;
 
+select 'BANCO DE DADOS SMARTCOFFEE_DML_GABRIEL CRIADO COM SUCESSO!' AS mensagem;
