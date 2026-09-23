@@ -264,3 +264,41 @@ insert into pagamento (id_pedido, id_forma_pagamento, valor, data_pagamento) VAL
 select * from pagamento;
 
 select 'BANCO DE DADOS SMARTCOFFEE_DML_GABRIEL CRIADO COM SUCESSO!' AS mensagem;
+
+-- EX 1 : UPDATE OU ATUALIZAÇÕES DE DADOS
+UPDATE cliente
+SET telefone = '19999990210'
+WHERE id_cliente = 3;
+--determinar o comando where sempre ;)
+select * from cliente;
+
+-- EX 2 : ATUALIZANDO VÁRIOS CAMPOS
+UPDATE cliente
+SET telefone = '1999999981213',
+    cidade = 'Piracicaba'
+Where id_cliente = 4;
+select * from cliente 
+
+-- EX 3 : ATUALIZAÇÃO VÁRIOS REGISTROS
+UPDATE produto
+SET preco = preco * 1.05
+where id_categoria = 1;
+
+-- EX : ATUALIZANDO SEM WHERE
+-- UPDATE produto 
+-- SET PRECO = 1.00;
+-- CUIDADO AO UTILIZAR ESSA LINHA
+
+-- EX : 5 ATUALIZANDO CONDICIONAIS 
+UPDATE  produto
+set preco = case 
+    WHEN PRECO < 10 THEN PRECO * 1.10
+    ELSE PRECO * 1.05
+END 
+WHERE ativo = TRUE;
+
+-- EX 6 : ATUALIZANDO PARA NULL
+UPDATE cliente 
+SET telefone = NULL 
+Where id_cliente = 5;
+-- TUDO ATUALIZAÇÕES OU MODIFICAÇÃO DE DADOS
