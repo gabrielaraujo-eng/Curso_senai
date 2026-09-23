@@ -1,0 +1,20 @@
+[
+  {
+    "id": 101,
+    "nome": "Torno Mecânico Universal",
+    "setor": "Usinagem",
+    "operacional": true
+  },
+  {
+    "id": 102,
+    "nome": "Fresadora Ferramenteira",
+    "setor": "Usinagem",
+    "operacional": false
+  },
+  {
+    "id": 103,
+    "nome": "Prensa Hidráulica 50T",
+    "setor": "Estampagem",
+    "operacional": true
+  }
+]
