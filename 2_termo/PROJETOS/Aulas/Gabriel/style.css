@@ -1,0 +1,416 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #0f1720,
+        #1e293b,
+        #0f1720
+    );
+
+    color: white;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    gap: 35px;
+
+    width: 100%;
+    max-width: 1250px;
+
+    padding: 35px;
+}
+
+
+/* =========================
+   JOGO
+========================= */
+
+.jogo {
+    text-align: center;
+}
+
+.jogo h1 {
+    margin: 0 0 22px 0;
+
+    font-size: 38px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    color: #ffffff;
+
+    text-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================
+   TABULEIRO
+========================= */
+
+#tabuleiro {
+    width: min(72vw, 700px);
+    height: min(72vw, 700px);
+
+    display: grid;
+
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+
+    padding: 8px;
+
+    background: #111827;
+
+    border: 2px solid #475569;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.6),
+        0 0 30px rgba(0, 0, 0, 0.3);
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   CASAS
+========================= */
+
+.casa {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    user-select: none;
+
+    font-size: clamp(32px, 6.5vw, 68px);
+
+    transition: 0.15s;
+}
+
+
+/* CASA CLARA */
+
+.clara {
+    background: #e8edf2;
+}
+
+
+/* CASA ESCURA */
+
+.escura {
+    background: #55738c;
+}
+
+
+/* =========================
+   MOUSE
+========================= */
+
+.casa:hover {
+    filter: brightness(1.15);
+}
+
+
+/* =========================
+   CASA SELECIONADA
+========================= */
+
+.selecionada {
+    box-shadow:
+        inset 0 0 0 5px #00e5ff;
+
+    z-index: 5;
+}
+
+
+/* =========================
+   MOVIMENTO POSSÍVEL
+========================= */
+
+.movimento::after {
+    content: "";
+
+    position: absolute;
+
+    width: 20%;
+    height: 20%;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    border-radius: 50%;
+}
+
+
+/* =========================
+   CAPTURA
+========================= */
+
+.captura {
+    box-shadow:
+        inset 0 0 0 5px #ff5555;
+}
+
+
+/* =========================
+   PAINEL
+========================= */
+
+.painel {
+    width: 300px;
+
+    padding: 25px;
+
+    border-radius: 20px;
+
+    background: #1e293b;
+
+    border: 1px solid #475569;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+#status {
+    min-height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px;
+
+    margin-bottom: 18px;
+
+    border-radius: 12px;
+
+    background: #111827;
+
+    border: 1px solid #475569;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    text-align: center;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+button {
+    width: 100%;
+
+    padding: 13px;
+
+    margin-top: 10px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #334155;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #475569;
+
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+.historico {
+    margin-top: 22px;
+
+    padding: 15px;
+
+    height: 270px;
+
+    overflow-y: auto;
+
+    border-radius: 12px;
+
+    background: #111827;
+
+    border: 1px solid #334155;
+}
+
+
+/* BARRA DE ROLAGEM */
+
+.historico::-webkit-scrollbar {
+    width: 7px;
+}
+
+.historico::-webkit-scrollbar-track {
+    background: #111827;
+}
+
+.historico::-webkit-scrollbar-thumb {
+    background: #475569;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   TITULO DO HISTÓRICO
+========================= */
+
+.historico h3 {
+    margin: 0 0 12px 0;
+
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid #334155;
+
+    color: #7dd3fc;
+
+    font-size: 16px;
+}
+
+
+/* =========================
+   MOVIMENTOS
+========================= */
+
+#movimentos {
+    font-size: 14px;
+
+    line-height: 1.8;
+
+    color: #dbeafe;
+}
+
+
+/* =========================
+   AVISO
+========================= */
+
+.aviso {
+    margin-top: 18px;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: #111827;
+
+    border: 1px solid #334155;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    text-align: center;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .container {
+        flex-direction: column;
+
+        align-items: center;
+
+        padding: 20px;
+    }
+
+    #tabuleiro {
+        width: min(92vw, 650px);
+        height: min(92vw, 650px);
+    }
+
+    .painel {
+        width: min(92vw, 650px);
+    }
+
+    .historico {
+        height: 180px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 12px;
+
+        gap: 20px;
+    }
+
+    .jogo h1 {
+        font-size: 28px;
+    }
+
+    #tabuleiro {
+        padding: 5px;
+
+        border-radius: 12px;
+    }
+
+    .painel {
+        padding: 18px;
+
+        border-radius: 15px;
+    }
+
+    #status {
+        font-size: 16px;
+    }
+}

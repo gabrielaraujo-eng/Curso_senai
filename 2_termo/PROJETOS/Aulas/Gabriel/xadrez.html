@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Xadrez</title>
+
+    <!-- <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #151515;
+            color: white;
+            font-family: Arial, sans-serif;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+            padding: 25px;
+        }
+
+        .jogo {
+            text-align: center;
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        #tabuleiro {
+            width: min(80vw, 640px);
+            height: min(80vw, 640px);
+
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(8, 1fr);
+
+            border: 5px solid #333;
+            box-shadow: 0 10px 30px rgba(0,0,0,.5);
+        }
+
+        .casa {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-size: clamp(30px, 7vw, 65px);
+
+            cursor: pointer;
+            user-select: none;
+
+            position: relative;
+        }
+
+        .clara {
+            background: #f0d9b5;
+        }
+
+        .escura {
+            background: #b58863;
+        }
+
+        .selecionada {
+            box-shadow: inset 0 0 0 5px #00ff88;
+        }
+
+        .movimento::after {
+            content: "";
+            width: 20%;
+            height: 20%;
+            background: rgba(0, 0, 0, .35);
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .captura {
+            box-shadow: inset 0 0 0 5px rgba(255, 60, 60, .8);
+        }
+
+        .painel {
+            width: 260px;
+            background: #222;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.4);
+        }
+
+        #status {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+
+            border: none;
+            border-radius: 8px;
+
+            background: #444;
+            color: white;
+
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #555;
+        }
+
+        .historico {
+            margin-top: 20px;
+            background: #171717;
+            border-radius: 8px;
+            padding: 12px;
+
+            height: 250px;
+            overflow-y: auto;
+        }
+
+        .historico h3 {
+            margin-top: 0;
+        }
+
+        #movimentos {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        .aviso {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        @media (max-width: 850px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .painel {
+                width: min(80vw, 640px);
+            }
+
+            .historico {
+                height: 150px;
+            }
+        }
+    </style> -->
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="jogo">
+        <h1>♟ Xadrez</h1>
+
+        <div id="tabuleiro"></div>
+    </div>
+
+    <div class="painel">
+
+        <div id="status">
+            Sua vez
+        </div>
+
+        <button onclick="reiniciar()">
+            🔄 Reiniciar partida
+        </button>
+
+        <button onclick="trocarDificuldade()">
+            🤖 Dificuldade: <span id="dificuldade">Média</span>
+        </button>
+
+        <div class="historico">
+            <h3>Jogadas</h3>
+            <div id="movimentos"></div>
+        </div>
+
+        <div class="aviso">
+            Você joga com as peças brancas.<br><br>
+            Clique em uma peça e depois na casa para onde deseja movê-la.
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const tabuleiroHTML = document.getElementById("tabuleiro");
+const statusHTML = document.getElementById("status");
+const movimentosHTML = document.getElementById("movimentos");
+const dificuldadeHTML = document.getElementById("dificuldade");
+
+const pecas = {
+    r: "♜",
+    n: "♞",
+    b: "♝",
+    q: "♛",
+    k: "♚",
+    p: "♟",
+
+    R: "♖",
+    N: "♘",
+    B: "♗",
+    Q: "♕",
+    K: "♔",
+    P: "♙"
+};
+
+let tabuleiro;
+let selecionada = null;
+let movimentosPossiveis = [];
+let vez = "brancas";
+let jogoAcabou = false;
+
+let roque = {
+    brancoRei: true,
+    brancoTorreA: true,
+    brancoTorreH: true,
+
+    pretoRei: true,
+    pretoTorreA: true,
+    pretoTorreH: true
+};
+
+let historico = [];
+
+let nivel = 2;
+
+const valores = {
+    p: 100,
+    n: 320,
+    b: 330,
+    r: 500,
+    q: 900,
+    k: 20000
+};
+
+
+/* =========================
+   TABULEIRO INICIAL
+========================= */
+
+function criarTabuleiro() {
+
+    tabuleiro = [
+        ["r","n","b","q","k","b","n","r"],
+        ["p","p","p","p","p","p","p","p"],
+        [null,null,null,null,null,null,null,null],
+        [null,null,null,null,null,null,null,null],
+        [null,null,null,null,null,null,null,null],
+        [null,null,null,null,null,null,null,null],
+        ["P","P","P","P","P","P","P","P"],
+        ["R","N","B","Q","K","B","N","R"]
+    ];
+}
+
+
+/* =========================
+   DESENHAR
+========================= */
+
+function desenhar() {
+
+    tabuleiroHTML.innerHTML = "";
+
+    for(let linha = 0; linha < 8; linha++) {
+
+        for(let coluna = 0; coluna < 8; coluna++) {
+
+            const casa = document.createElement("div");
+
+            casa.classList.add("casa");
+
+            if((linha + coluna) % 2 === 0) {
+                casa.classList.add("clara");
+            } else {
+                casa.classList.add("escura");
+            }
+
+            casa.dataset.linha = linha;
+            casa.dataset.coluna = coluna;
+
+            const peca = tabuleiro[linha][coluna];
+
+            if(peca) {
+                casa.textContent = pecas[peca];
+            }
+
+            if(
+                selecionada &&
+                selecionada.linha === linha &&
+                selecionada.coluna === coluna
+            ) {
+                casa.classList.add("selecionada");
+            }
+
+            if(
+                movimentosPossiveis.some(
+                    m => m.linha === linha && m.coluna === coluna
+                )
+            ) {
+
+                if(peca) {
+                    casa.classList.add("captura");
+                } else {
+                    casa.classList.add("movimento");
+                }
+            }
+
+            casa.onclick = () => clicarCasa(linha, coluna);
+
+            tabuleiroHTML.appendChild(casa);
+        }
+    }
+}
+
+
+/* =========================
+   CLIQUE
+========================= */
+
+function clicarCasa(linha, coluna) {
+
+    if(jogoAcabou) return;
+
+    if(vez === "pretas") return;
+
+    const peca = tabuleiro[linha][coluna];
+
+    if(selecionada) {
+
+        const movimento = movimentosPossiveis.find(
+            m => m.linha === linha && m.coluna === coluna
+        );
+
+        if(movimento) {
+
+            fazerMovimento(
+                selecionada.linha,
+                selecionada.coluna,
+                linha,
+                coluna
+            );
+
+            selecionada = null;
+            movimentosPossiveis = [];
+
+            desenhar();
+
+            verificarEstado();
+
+            if(!jogoAcabou) {
+
+                vez = "pretas";
+
+                atualizarStatus();
+
+                setTimeout(jogadaComputador, 300);
+            }
+
+            return;
+        }
+    }
+
+    if(peca && ehBranca(peca)) {
+
+        selecionada = {
+            linha,
+            coluna
+        };
+
+        movimentosPossiveis =
+            movimentosLegais(linha, coluna, tabuleiro);
+
+        desenhar();
+    }
+}
+
+
+/* =========================
+   COR DAS PEÇAS
+========================= */
+
+function ehBranca(peca) {
+    return peca && peca === peca.toUpperCase();
+}
+
+function ehPreta(peca) {
+    return peca && peca === peca.toLowerCase();
+}
+
+
+/* =========================
+   MOVIMENTOS
+========================= */
+
+function movimentosPseudo(linha, coluna, board) {
+
+    const peca = board[linha][coluna];
+
+    if(!peca) return [];
+
+    const resultado = [];
+
+    const tipo = peca.toLowerCase();
+    const branca = ehBranca(peca);
+
+    function adicionar(l, c) {
+
+        if(l < 0 || l > 7 || c < 0 || c > 7) {
+            return false;
+        }
+
+        const destino = board[l][c];
+
+        if(!destino) {
+
+            resultado.push({
+                linha: l,
+                coluna: c
+            });
+
+            return true;
+        }
+
+        if(ehBranca(destino) !== branca) {
+
+            resultado.push({
+                linha: l,
+                coluna: c
+            });
+        }
+
+        return false;
+    }
+
+
+    /* PEÃO */
+
+    if(tipo === "p") {
+
+        const direcao = branca ? -1 : 1;
+
+        const inicial = branca ? 6 : 1;
+
+        if(
+            linha + direcao >= 0 &&
+            linha + direcao <= 7 &&
+            !board[linha + direcao][coluna]
+        ) {
+
+            resultado.push({
+                linha: linha + direcao,
+                coluna
+            });
+
+            if(
+                linha === inicial &&
+                !board[linha + 2 * direcao][coluna]
+            ) {
+
+                resultado.push({
+                    linha: linha + 2 * direcao,
+                    coluna
+                });
+            }
+        }
+
+        for(const dc of [-1,1]) {
+
+            const l = linha + direcao;
+            const c = coluna + dc;
+
+            if(
+                l >= 0 &&
+                l < 8 &&
+                c >= 0 &&
+                c < 8
+            ) {
+
+                const destino = board[l][c];
+
+                if(destino && ehBranca(destino) !== branca) {
+
+                    resultado.push({
+                        linha: l,
+                        coluna: c
+                    });
+                }
+            }
+        }
+    }
+
+
+    /* CAVALO */
+
+    if(tipo === "n") {
+
+        const saltos = [
+            [-2,-1],[-2,1],
+            [-1,-2],[-1,2],
+            [1,-2],[1,2],
+            [2,-1],[2,1]
+        ];
+
+        for(const [dl,dc] of saltos) {
+            adicionar(linha + dl, coluna + dc);
+        }
+    }
+
+
+    /* BISPO */
+
+    if(tipo === "b" || tipo === "q") {
+
+        const diagonais = [
+            [-1,-1],
+            [-1,1],
+            [1,-1],
+            [1,1]
+        ];
+
+        for(const [dl,dc] of diagonais) {
+
+            let l = linha + dl;
+            let c = coluna + dc;
+
+            while(adicionar(l,c)) {
+
+                l += dl;
+                c += dc;
+            }
+        }
+    }
+
+
+    /* TORRE */
+
+    if(tipo === "r" || tipo === "q") {
+
+        const direcoes = [
+            [-1,0],
+            [1,0],
+            [0,-1],
+            [0,1]
+        ];
+
+        for(const [dl,dc] of direcoes) {
+
+            let l = linha + dl;
+            let c = coluna + dc;
+
+            while(adicionar(l,c)) {
+
+                l += dl;
+                c += dc;
+            }
+        }
+    }
+
+
+    /* REI */
+
+    if(tipo === "k") {
+
+        for(let dl = -1; dl <= 1; dl++) {
+
+            for(let dc = -1; dc <= 1; dc++) {
+
+                if(dl !== 0 || dc !== 0) {
+                    adicionar(
+                        linha + dl,
+                        coluna + dc
+                    );
+                }
+            }
+        }
+
+        /* ROQUE */
+
+        if(branca && linha === 7 && coluna === 4) {
+
+            if(
+                roque.brancoRei &&
+                roque.brancoTorreH &&
+                !board[7][5] &&
+                !board[7][6] &&
+                !casaAtacada(7,4,"pretas",board) &&
+                !casaAtacada(7,5,"pretas",board) &&
+                !casaAtacada(7,6,"pretas",board)
+            ) {
+
+                resultado.push({
+                    linha: 7,
+                    coluna: 6,
+                    roque: "brancoH"
+                });
+            }
+
+            if(
+                roque.brancoRei &&
+                roque.brancoTorreA &&
+                !board[7][1] &&
+                !board[7][2] &&
+                !board[7][3] &&
+                !casaAtacada(7,4,"pretas",board) &&
+                !casaAtacada(7,3,"pretas",board) &&
+                !casaAtacada(7,2,"pretas",board)
+            ) {
+
+                resultado.push({
+                    linha: 7,
+                    coluna: 2,
+                    roque: "brancoA"
+                });
+            }
+        }
+
+        if(!branca && linha === 0 && coluna === 4) {
+
+            if(
+                roque.pretoRei &&
+                roque.pretoTorreH &&
+                !board[0][5] &&
+                !board[0][6] &&
+                !casaAtacada(0,4,"brancas",board) &&
+                !casaAtacada(0,5,"brancas",board) &&
+                !casaAtacada(0,6,"brancas",board)
+            ) {
+
+                resultado.push({
+                    linha: 0,
+                    coluna: 6,
+                    roque: "pretoH"
+                });
+            }
+
+            if(
+                roque.pretoRei &&
+                roque.pretoTorreA &&
+                !board[0][1] &&
+                !board[0][2] &&
+                !board[0][3] &&
+                !casaAtacada(0,4,"brancas",board) &&
+                !casaAtacada(0,3,"brancas",board) &&
+                !casaAtacada(0,2,"brancas",board)
+            ) {
+
+                resultado.push({
+                    linha: 0,
+                    coluna: 2,
+                    roque: "pretoA"
+                });
+            }
+        }
+    }
+
+    return resultado;
+}
+
+
+/* =========================
+   CASA ATACADA
+========================= */
+
+function casaAtacada(linha, coluna, por, board) {
+
+    for(let l = 0; l < 8; l++) {
+
+        for(let c = 0; c < 8; c++) {
+
+            const peca = board[l][c];
+
+            if(!peca) continue;
+
+            if(
+                (por === "brancas" && !ehBranca(peca)) ||
+                (por === "pretas" && !ehPreta(peca))
+            ) continue;
+
+            const tipo = peca.toLowerCase();
+
+            /* PEÃO */
+
+            if(tipo === "p") {
+
+                const direcao = ehBranca(peca) ? -1 : 1;
+
+                if(
+                    l + direcao === linha &&
+                    (c - 1 === coluna || c + 1 === coluna)
+                ) {
+                    return true;
+                }
+            }
+
+            /* CAVALO */
+
+            if(tipo === "n") {
+
+                const dl = Math.abs(l - linha);
+                const dc = Math.abs(c - coluna);
+
+                if(
+                    (dl === 2 && dc === 1) ||
+                    (dl === 1 && dc === 2)
+                ) {
+                    return true;
+                }
+            }
+
+            /* REI */
+
+            if(tipo === "k") {
+
+                if(
+                    Math.max(
+                        Math.abs(l-linha),
+                        Math.abs(c-coluna)
+                    ) === 1
+                ) {
+                    return true;
+                }
+            }
+
+            /* BISPO / TORRE / DAMA */
+
+            if(
+                tipo === "b" ||
+                tipo === "r" ||
+                tipo === "q"
+            ) {
+
+                const dl = linha - l;
+                const dc = coluna - c;
+
+                let valido = false;
+
+                if(tipo === "b") {
+                    valido =
+                        Math.abs(dl) === Math.abs(dc);
+                }
+
+                if(tipo === "r") {
+                    valido =
+                        dl === 0 || dc === 0;
+                }
+
+                if(tipo === "q") {
+                    valido =
+                        dl === 0 ||
+                        dc === 0 ||
+                        Math.abs(dl) === Math.abs(dc);
+                }
+
+                if(valido) {
+
+                    const passoL = Math.sign(dl);
+                    const passoC = Math.sign(dc);
+
+                    let nl = l + passoL;
+                    let nc = c + passoC;
+
+                    let bloqueado = false;
+
+                    while(nl !== linha || nc !== coluna) {
+
+                        if(board[nl][nc]) {
+                            bloqueado = true;
+                            break;
+                        }
+
+                        nl += passoL;
+                        nc += passoC;
+                    }
+
+                    if(!bloqueado) {
+                        return true;
+                    }
+                }
+            }
+        }
+    }
+
+    return false;
+}
+
+
+/* =========================
+   ENCONTRAR REI
+========================= */
+
+function encontrarRei(board, branca) {
+
+    const rei = branca ? "K" : "k";
+
+    for(let l = 0; l < 8; l++) {
+
+        for(let c = 0; c < 8; c++) {
+
+            if(board[l][c] === rei) {
+                return {
+                    linha: l,
+                    coluna: c
+                };
+            }
+        }
+    }
+
+    return null;
+}
+
+
+/* =========================
+   XEQUE
+========================= */
+
+function emXeque(board, branca) {
+
+    const rei = encontrarRei(board, branca);
+
+    if(!rei) return true;
+
+    return casaAtacada(
+        rei.linha,
+        rei.coluna,
+        branca ? "pretas" : "brancas",
+        board
+    );
+}
+
+
+/* =========================
+   COPIAR TABULEIRO
+========================= */
+
+function copiarBoard(board) {
+    return board.map(linha => [...linha]);
+}
+
+
+/* =========================
+   APLICAR MOVIMENTO
+========================= */
+
+function aplicarMovimento(board, origem, destino) {
+
+    const novo = copiarBoard(board);
+
+    const peca = novo[origem.linha][origem.coluna];
+
+    novo[destino.linha][destino.coluna] = peca;
+
+    novo[origem.linha][origem.coluna] = null;
+
+    /* ROQUE */
+
+    if(destino.roque === "brancoH") {
+
+        novo[7][5] = novo[7][7];
+        novo[7][7] = null;
+    }
+
+    if(destino.roque === "brancoA") {
+
+        novo[7][3] = novo[7][0];
+        novo[7][0] = null;
+    }
+
+    if(destino.roque === "pretoH") {
+
+        novo[0][5] = novo[0][7];
+        novo[0][7] = null;
+    }
+
+    if(destino.roque === "pretoA") {
+
+        novo[0][3] = novo[0][0];
+        novo[0][0] = null;
+    }
+
+    /* PROMOÇÃO */
+
+    if(peca === "P" && destino.linha === 0) {
+        novo[destino.linha][destino.coluna] = "Q";
+    }
+
+    if(peca === "p" && destino.linha === 7) {
+        novo[destino.linha][destino.coluna] = "q";
+    }
+
+    return novo;
+}
+
+
+/* =========================
+   MOVIMENTOS LEGAIS
+========================= */
+
+function movimentosLegais(linha, coluna, board) {
+
+    const peca = board[linha][coluna];
+
+    if(!peca) return [];
+
+    const branca = ehBranca(peca);
+
+    const pseudo = movimentosPseudo(
+        linha,
+        coluna,
+        board
+    );
+
+    const legais = [];
+
+    for(const movimento of pseudo) {
+
+        const novo = aplicarMovimento(
+            board,
+            {linha, coluna},
+            movimento
+        );
+
+        if(!emXeque(novo, branca)) {
+            legais.push(movimento);
+        }
+    }
+
+    return legais;
+}
+
+
+/* =========================
+   TODOS OS MOVIMENTOS
+========================= */
+
+function todosMovimentos(board, branca) {
+
+    const resultado = [];
+
+    for(let l = 0; l < 8; l++) {
+
+        for(let c = 0; c < 8; c++) {
+
+            const peca = board[l][c];
+
+            if(!peca) continue;
+
+            if(branca !== ehBranca(peca)) continue;
+
+            const movimentos =
+                movimentosLegais(l,c,board);
+
+            for(const destino of movimentos) {
+
+                resultado.push({
+                    origem: {
+                        linha: l,
+                        coluna: c
+                    },
+                    destino
+                });
+            }
+        }
+    }
+
+    return resultado;
+}
+
+
+/* =========================
+   FAZER MOVIMENTO
+========================= */
+
+function fazerMovimento(
+    l1,
+    c1,
+    l2,
+    c2
+) {
+
+    const peca = tabuleiro[l1][c1];
+
+    const destino = movimentosPossiveis.find(
+        m => m.linha === l2 && m.coluna === c2
+    );
+
+    if(!destino) return;
+
+    const capturada = tabuleiro[l2][c2];
+
+    tabuleiro = aplicarMovimento(
+        tabuleiro,
+        {
+            linha: l1,
+            coluna: c1
+        },
+        destino
+    );
+
+    atualizarRoque(peca,l1,c1,l2,c2);
+
+    let texto =
+        nomePeca(peca) +
+        " " +
+        casaNome(l1,c1) +
+        "-" +
+        casaNome(l2,c2);
+
+    if(capturada) {
+        texto += " x " + nomePeca(capturada);
+    }
+
+    if(destino.roque) {
+        texto += " (roque)";
+    }
+
+    if(
+        (peca === "P" && l2 === 0) ||
+        (peca === "p" && l2 === 7)
+    ) {
+        texto += " = Dama";
+    }
+
+    historico.push(texto);
+
+    atualizarHistorico();
+}
+
+
+/* =========================
+   ROQUE
+========================= */
+
+function atualizarRoque(peca,l1,c1,l2,c2) {
+
+    if(peca === "K") {
+        roque.brancoRei = false;
+    }
+
+    if(peca === "k") {
+        roque.pretoRei = false;
+    }
+
+    if(peca === "R") {
+
+        if(l1 === 7 && c1 === 0)
+            roque.brancoTorreA = false;
+
+        if(l1 === 7 && c1 === 7)
+            roque.brancoTorreH = false;
+    }
+
+    if(peca === "r") {
+
+        if(l1 === 0 && c1 === 0)
+            roque.pretoTorreA = false;
+
+        if(l1 === 0 && c1 === 7)
+            roque.pretoTorreH = false;
+    }
+
+    /* Torre capturada */
+
+    if(l2 === 7 && c2 === 0)
+        roque.brancoTorreA = false;
+
+    if(l2 === 7 && c2 === 7)
+        roque.brancoTorreH = false;
+
+    if(l2 === 0 && c2 === 0)
+        roque.pretoTorreA = false;
+
+    if(l2 === 0 && c2 === 7)
+        roque.pretoTorreH = false;
+}
+
+
+/* =========================
+   NOMES
+========================= */
+
+function casaNome(linha,coluna) {
+
+    const letras = "abcdefgh";
+
+    return letras[coluna] + (8 - linha);
+}
+
+function nomePeca(peca) {
+
+    const nomes = {
+        P: "Peão",
+        N: "Cavalo",
+        B: "Bispo",
+        R: "Torre",
+        Q: "Dama",
+        K: "Rei",
+
+        p: "Peão",
+        n: "Cavalo",
+        b: "Bispo",
+        r: "Torre",
+        q: "Dama",
+        k: "Rei"
+    };
+
+    return nomes[peca];
+}
+
+
+/* =========================
+   HISTÓRICO
+========================= */
+
+function atualizarHistorico() {
+
+    movimentosHTML.innerHTML = "";
+
+    historico.forEach((movimento,index) => {
+
+        const div = document.createElement("div");
+
+        div.textContent =
+            (index + 1) + ". " + movimento;
+
+        movimentosHTML.appendChild(div);
+    });
+
+    movimentosHTML.parentElement.scrollTop =
+        movimentosHTML.parentElement.scrollHeight;
+}
+
+
+/* =========================
+   ESTADO DO JOGO
+========================= */
+
+function verificarEstado() {
+
+    const branca =
+        vez === "brancas";
+
+    const movimentos =
+        todosMovimentos(tabuleiro, branca);
+
+    if(movimentos.length === 0) {
+
+        jogoAcabou = true;
+
+        if(emXeque(tabuleiro, branca)) {
+
+            statusHTML.textContent =
+                branca
+                ? "♟ Xeque-mate! Computador venceu."
+                : "🏆 Xeque-mate! Você venceu!";
+        } else {
+
+            statusHTML.textContent =
+                "🤝 Empate por afogamento!";
+        }
+
+        return;
+    }
+
+    if(emXeque(tabuleiro, branca)) {
+
+        statusHTML.textContent =
+            "⚠️ " +
+            (branca ? "Você" : "Computador") +
+            " está em xeque!";
+    }
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+function atualizarStatus() {
+
+    if(jogoAcabou) return;
+
+    if(vez === "brancas") {
+        statusHTML.textContent = "♙ Sua vez";
+    } else {
+        statusHTML.textContent = "♟ Computador pensando...";
+    }
+}
+
+
+/* =========================
+   IA
+========================= */
+
+function jogadaComputador() {
+
+    if(jogoAcabou) return;
+
+    const movimentos =
+        todosMovimentos(tabuleiro,false);
+
+    if(movimentos.length === 0) {
+
+        verificarEstado();
+        return;
+    }
+
+    let melhorMovimento = null;
+    let melhorValor = -Infinity;
+
+    for(const movimento of movimentos) {
+
+        const novo =
+            aplicarMovimento(
+                tabuleiro,
+                movimento.origem,
+                movimento.destino
+            );
+
+        const valor =
+            minimax(
+                novo,
+                nivel - 1,
+                true,
+                -Infinity,
+                Infinity
+            );
+
+        if(valor > melhorValor) {
+
+            melhorValor = valor;
+            melhorMovimento = movimento;
+        }
+    }
+
+    const movimento = melhorMovimento;
+
+    const peca =
+        tabuleiro[
+            movimento.origem.linha
+        ][
+            movimento.origem.coluna
+        ];
+
+    const capturada =
+        tabuleiro[
+            movimento.destino.linha
+        ][
+            movimento.destino.coluna
+        ];
+
+    tabuleiro =
+        aplicarMovimento(
+            tabuleiro,
+            movimento.origem,
+            movimento.destino
+        );
+
+    atualizarRoque(
+        peca,
+        movimento.origem.linha,
+        movimento.origem.coluna,
+        movimento.destino.linha,
+        movimento.destino.coluna
+    );
+
+    let texto =
+        "Computador: " +
+        nomePeca(peca) +
+        " " +
+        casaNome(
+            movimento.origem.linha,
+            movimento.origem.coluna
+        ) +
+        "-" +
+        casaNome(
+            movimento.destino.linha,
+            movimento.destino.coluna
+        );
+
+    if(capturada) {
+        texto += " x " + nomePeca(capturada);
+    }
+
+    historico.push(texto);
+
+    atualizarHistorico();
+
+    vez = "brancas";
+
+    desenhar();
+
+    verificarEstado();
+
+    if(!jogoAcabou) {
+        atualizarStatus();
+    }
+}
+
+
+/* =========================
+   MINIMAX
+========================= */
+
+function minimax(
+    board,
+    profundidade,
+    maximizando,
+    alfa,
+    beta
+) {
+
+    if(profundidade === 0) {
+        return avaliar(board);
+    }
+
+    const movimentos =
+        todosMovimentos(
+            board,
+            maximizando
+        );
+
+    if(movimentos.length === 0) {
+
+        if(emXeque(board,maximizando)) {
+
+            return maximizando
+                ? -999999
+                : 999999;
+        }
+
+        return 0;
+    }
+
+    if(maximizando) {
+
+        let melhor = -Infinity;
+
+        for(const movimento of movimentos) {
+
+            const novo =
+                aplicarMovimento(
+                    board,
+                    movimento.origem,
+                    movimento.destino
+                );
+
+            const valor =
+                minimax(
+                    novo,
+                    profundidade - 1,
+                    false,
+                    alfa,
+                    beta
+                );
+
+            melhor = Math.max(
+                melhor,
+                valor
+            );
+
+            alfa = Math.max(
+                alfa,
+                valor
+            );
+
+            if(beta <= alfa) break;
+        }
+
+        return melhor;
+
+    } else {
+
+        let melhor = Infinity;
+
+        for(const movimento of movimentos) {
+
+            const novo =
+                aplicarMovimento(
+                    board,
+                    movimento.origem,
+                    movimento.destino
+                );
+
+            const valor =
+                minimax(
+                    novo,
+                    profundidade - 1,
+                    true,
+                    alfa,
+                    beta
+                );
+
+            melhor = Math.min(
+                melhor,
+                valor
+            );
+
+            beta = Math.min(
+                beta,
+                valor
+            );
+
+            if(beta <= alfa) break;
+        }
+
+        return melhor;
+    }
+}
+
+
+/* =========================
+   AVALIAÇÃO
+========================= */
+
+function avaliar(board) {
+
+    let valor = 0;
+
+    for(let l = 0; l < 8; l++) {
+
+        for(let c = 0; c < 8; c++) {
+
+            const peca = board[l][c];
+
+            if(!peca) continue;
+
+            const tipo = peca.toLowerCase();
+
+            const valorPeca =
+                valores[tipo];
+
+            if(ehPreta(peca)) {
+                valor += valorPeca;
+            } else {
+                valor -= valorPeca;
+            }
+
+            /* Pequeno bônus por ocupar o centro */
+
+            if(
+                (l === 3 || l === 4) &&
+                (c === 3 || c === 4)
+            ) {
+
+                if(ehPreta(peca))
+                    valor += 20;
+                else
+                    valor -= 20;
+            }
+        }
+    }
+
+    return valor;
+}
+
+
+/* =========================
+   DIFICULDADE
+========================= */
+
+function trocarDificuldade() {
+
+    if(nivel === 1) {
+
+        nivel = 2;
+        dificuldadeHTML.textContent = "Média";
+
+    } else if(nivel === 2) {
+
+        nivel = 3;
+        dificuldadeHTML.textContent = "Difícil";
+
+    } else {
+
+        nivel = 1;
+        dificuldadeHTML.textContent = "Fácil";
+    }
+}
+
+
+/* =========================
+   REINICIAR
+========================= */
+
+function reiniciar() {
+
+    criarTabuleiro();
+
+    selecionada = null;
+    movimentosPossiveis = [];
+
+    vez = "brancas";
+
+    jogoAcabou = false;
+
+    historico = [];
+
+    roque = {
+        brancoRei: true,
+        brancoTorreA: true,
+        brancoTorreH: true,
+
+        pretoRei: true,
+        pretoTorreA: true,
+        pretoTorreH: true
+    };
+
+    atualizarHistorico();
+
+    atualizarStatus();
+
+    desenhar();
+}
+
+
+/* =========================
+   INICIAR
+========================= */
+
+reiniciar();
+
+</script>
+
+</body>
+</html>
