@@ -1,0 +1,18 @@
+body {
+    font-family: 'Inter';
+    background-color: #FFF9F3 ;
+}
+
+.cabecalho {
+    background-color: #2B170D;
+    color: #ffffff;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.escolha-banner {
+    color: #C66A1A;
+}
