@@ -4,8 +4,8 @@
   "amostras": [
     12.5,
     13,
-    12,
+    12.1,
     12.2
   ],
-  "loteAprovado": false
+  "loteAprovado": true
 }
