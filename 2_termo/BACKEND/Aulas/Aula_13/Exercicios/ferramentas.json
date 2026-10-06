@@ -1,7 +1,27 @@
 [
   {
-    "nome": "d",
-    "quantidade": 3,
-    "custoUnitario": 2
+    "nome": "Martelo",
+    "quantidade": 329,
+    "custoUnitario": 18.99
+  },
+  {
+    "nome": "Mareta",
+    "quantidade": 984,
+    "custoUnitario": 44.99
+  },
+  {
+    "nome": "prego",
+    "quantidade": 2342,
+    "custoUnitario": 1.99
+  },
+  {
+    "nome": "Machado",
+    "quantidade": 243,
+    "custoUnitario": 89.99
+  },
+  {
+    "nome": "Broca",
+    "quantidade": 243,
+    "custoUnitario": 999.99
   }
 ]

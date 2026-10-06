@@ -1,7 +1,7 @@
 [
   {
     "id": 101,
-    "nome": "Torno Mecânico Universal",
+    "nome": "Torno Mecanico Universal",
     "setor": "Usinagem",
     "operacional": true
   },
@@ -13,8 +13,14 @@
   },
   {
     "id": 103,
-    "nome": "Prensa Hidráulica 50T",
-    "setor": "Estampagem",
+    "nome": "Prensa Hidraulica",
+    "setor": "Usinagem",
+    "operacional": true
+  },
+  {
+    "id": 104,
+    "nome": "Compresor",
+    "setor": "Utilidade",
     "operacional": true
   }
 ]
