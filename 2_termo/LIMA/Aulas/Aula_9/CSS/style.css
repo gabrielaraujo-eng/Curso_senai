@@ -71,6 +71,19 @@ nav a {
     font-size: 32px;
 }
 
+.lista-cafes {
+    list-style: none;
+    display: flex;
+    flex: 1;
+    
+    min-width: 300px;
+}
+
+.lista-cafes img {
+    width: 100%;
+    display: block;
+}
+
 .card-cafe {
     background-color: #ffffff;
     padding: 20px;
