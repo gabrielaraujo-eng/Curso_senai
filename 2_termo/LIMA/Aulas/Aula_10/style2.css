@@ -1,0 +1,49 @@
+body {
+    background-color: rgb(110, 109, 109);
+}
+
+.um, .tres, .area, .cinco  {
+    background-color: azure;
+
+}
+
+.equipe {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    list-style: none;
+}
+
+p {
+    align-items: flex-start;
+}
+
+.mum {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+
+.area {
+    display: flex;
+}
+
+.A {
+    display: flex;
+    align-items: flex-start;
+    list-style: none;
+    height: 50px;
+
+}
+.B {
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+}
+
+.cards {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
