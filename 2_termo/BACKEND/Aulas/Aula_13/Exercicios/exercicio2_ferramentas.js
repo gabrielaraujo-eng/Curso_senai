@@ -8,36 +8,6 @@
 // via .push().
 // Persistir os dados em ferramentas.json e exibir confirmação com contagem de itens.
 
-// const fs = require('fs');
-// const entrada = require('readline-sync')
-
-// const ferramenta = entrada.questionInt("Quantas ferramentas serao registradas?: ")
-// const ferramentas = []
-
-// for (let i = 0; i < ferramenta; i++) {
-//     const nome = entrada.question("Digite o nome da ferramenta: ")
-//     const quantidade = entrada.questionInt("Digite a quantidade: ")
-//     const custoUnitario = entrada.questionFloat("Digite o custo unitario: ")
-//     const ferramentaObj = {
-//         nome: nome,
-//         quantidade: quantidade,
-//         custoUnitario: custoUnitario
-//     }
-//     ferramentas.push(ferramentaObj)
-// }
-
-
-// console.log("=== SISTEMA DE PERSISTÊNCIA: REGISTRO DE FERRAMENTAS ===");
-
-// const dadosParaGravar = JSON.stringify(ferramentas, null, 2);
-
-// const nomeDoArquivo = "ferramentas.json";
-// fs.writeFileSync(nomeDoArquivo, dadosParaGravar);
-
-// console.log(`\nGravação concluída com sucesso.`);
-// console.log(`Verifique o arquivo '${nomeDoArquivo}' gerado na barra lateral do VS Code. ${ferramentas.length} ferramentas foram registradas. `);
-
-
 const fs = require('fs');
 const entrada = require('readline-sync')
 
@@ -45,11 +15,9 @@ const ferramenta = entrada.questionInt("Quantas ferramentas serao registradas?: 
 const ferramentas = []
 
 for (let i = 0; i < ferramenta; i++) {
-    console.log(`Itens ${i+1} de ${ferramenta}:`)
-    const nome = entrada.question("Qual o nome?: ")
-    const quantidade = entrada.questionInt("Qual a quantidade?:")
-    const custoUnitario = entrada.questionFloat("Qual o custo unitario?:")
-
+    const nome = entrada.question("Digite o nome da ferramenta: ")
+    const quantidade = entrada.questionInt("Digite a quantidade: ")
+    const custoUnitario = entrada.questionFloat("Digite o custo unitario: ")
     const ferramentaObj = {
         nome: nome,
         quantidade: quantidade,
@@ -57,6 +25,7 @@ for (let i = 0; i < ferramenta; i++) {
     }
     ferramentas.push(ferramentaObj)
 }
+
 
 console.log("=== SISTEMA DE PERSISTÊNCIA: REGISTRO DE FERRAMENTAS ===");
 
