@@ -79,28 +79,46 @@ SELECT * from categoria;
 
 
 -- 10. Altere o status do pedido criado para 'PREPARANDO'.
+SELECT * FROM produto
 
+UPDATE pedido
+SET status = 'PREPARANDO'
+WHERE id_cliente = 93;
 
 -- 11. Atualize valor_total do pedido de acordo com os itens cadastrados.
 --     Você pode calcular previamente com SELECT SUM(quantidade * preco_unitario).
 PULARRRRRRR
 
 -- 12. Escolha um dos produtos criados e faça uma exclusão lógica (ativo = FALSE).
-
+UPDATE produto
+SET `ATIVO` = FALSE
+WHERE id_produto = 72
 
 -- PARTE C - DELETE
 
 -- 13. Crie um cliente de teste sem pedidos.
 --     Depois localize e exclua apenas esse cliente.
+INSERT INTO cliente (nome, email, telefone, cidade, ativo) VALUES
+('Arthur Concollato', 'arthurc@email.com', '19999999922', 'Serra Negra', TRUE)
 
+SELECT * FROM cliente
+
+DELETE FROM cliente
+WHERE ID_CLIENTE = 166
 
 -- 14. Tente excluir um cliente da base original que possua pedidos.
 --     Deixe o DELETE comentado após o teste e descreva o erro abaixo.
--- Resultado observado:
-
+-- Resultado observado: O FK NAO DEIXA EXCLUIR
+-- DELETE FROM cliente
+-- WHERE id_cliente = 166
 
 -- 15. Explique em comentário por que a FK bloqueou a exclusão.
--- Resposta:
+-- Resposta: o FK evita excluir porque excliiria mais de 1 
 
 
 -- 16. Crie uma categoria temporária chamada 'Excluir Depois' e remova-a.
+INSERT INTO categoria (nome) VALUES
+('Excluir Depois');
+select * from categoria;
+DELETE FROM categoria
+WHERE id_categoria = 7
