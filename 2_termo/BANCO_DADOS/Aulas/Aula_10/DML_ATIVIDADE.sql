@@ -151,6 +151,7 @@ insert into cliente (nome,email,telefone,cidade,ativo) values
 ('Gabriel A','gabriel221@email.com','19999999922','Limeira',TRUE);
 insert into pedido (data_pedido,status,valor_total,id_cliente) values
 (NOW(),'ABERTO',10.00,168);
+insert into item_pedido ()
 
 rollback;
 commit;
