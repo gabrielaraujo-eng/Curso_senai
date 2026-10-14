@@ -122,3 +122,68 @@ INSERT INTO categoria (nome) VALUES
 select * from categoria;
 DELETE FROM categoria
 WHERE id_categoria = 7
+
+-- Parte D Integridade e validação 
+
+-- 17. Tente inserir um produto usando uma categoria inexistente. 
+INSERT INTO produto (nome,id_categoria) VALUES
+('teste', 3);
+
+-- 18. Tente cadastrar um cliente usando um e-mail que já existe. 
+insert into cliente (nome,email,telefone,cidade,ativo) values
+('Gabriel A','gabriel@email.com','19999999922','Limeira',TRUE);
+
+-- 19. Tente criar um pedido para um cliente inexistente. 
+insert into pedido (data_pedido,status,valor_total,id_cliente) values
+(NOW(),'ABERTO',10.00,100);
+
+-- 20. Para cada erro, identifique qual restrição foi responsável. 
+-- resposta: A FK
+
+-- Parte E― Desafio completo 
+
+-- 21. Inicie uma transação. 
+START TRANSACTION;
+
+-- 22. Cadastre um cliente, um pedido e dois itens relacionados. 
+START TRANSACTION;
+insert into cliente (nome,email,telefone,cidade,ativo) values
+('Gabriel A','gabriel221@email.com','19999999922','Limeira',TRUE);
+insert into pedido (data_pedido,status,valor_total,id_cliente) values
+(NOW(),'ABERTO',10.00,168);
+
+rollback;
+commit;
+
+-- 23. Consulte os dados criados através de JOIN. 
+
+-- 24. Execute ROLLBACK e prove com SELECT que os novos registros foram desfeitos. 
+start transaction;
+update produto
+set preco = preco * 1.50
+where id_categoria = 1;
+rollback;
+select preco from produto
+where id_categoria = 1;
+
+-- 25. Repita o processo e finalize com COMMIT. 
+start transaction;
+update produto
+set preco = preco * 1.50
+where id_categoria = 1;
+rollback;
+select preco from produto
+where id_categoria = 1;
+
+commit;
+
+
+
+-- Sei diferenciar DDL, DQL e DML. 
+-- x Consigo inserir uma ou várias linhas. 
+-- x Entendo AUTO_INCREMENT, DEFAULT e NULL. 
+-- x Consigo atualizar uma ou várias linhas com segurança. 
+-- x Nunca executo UPDATE ou DELETE sem conferir o WHERE. 
+-- x Entendo por que uma FK pode bloquear uma exclusão. 
+-- Consigo manipular registros relacionados. 
+-- x Sei utilizar COMMIT e ROLLBACK como apoio às operações. 

@@ -127,5 +127,31 @@ select * from pagamento;
 select * from cliente
 WHERE id_cliente = 15;
 
+-- transações -- segurança e integridade dos dados
+
+START TRANSACTION;
+
+UPDATE produto
+SET preco = preco * 1.50
+WHERE id_categoria = 1;
+
+SELECT id_produto, nome, preco
+FROM produto
+WHERE id_categoria = 1;
+
+-- DESSFAZER AÇÕES
+ROLLBACK;
+
+-- REALIZAR OU CONFIRMAR AÇÕES
+COMMIT;
 
 
+-- EX 2:
+START TRANSACTION;
+UPDATE cliente
+SET cidade = 'Limeira'
+WHERE id_cliente = 3;
+COMMIT;
+ROLLBACK;
+select * from cliente
+where id_cliente = 3;
