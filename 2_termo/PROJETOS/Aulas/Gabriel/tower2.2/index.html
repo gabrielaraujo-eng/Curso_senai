@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bastião 3D — Tower Defense</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header id="hud">
+      <h1>Bastião 3D</h1>
+      <div class="stat"><small>Vidas</small><b id="hLives">20</b></div>
+      <div class="stat"><small>Onda</small><b id="hWave">0/30</b></div>
+      <div class="stat"><small>Inimigos</small><b id="hEnemies">0</b></div>
+      <div class="stat"><small>Pontos</small><b id="hScore">0</b></div>
+      <div class="stat"><small>Próxima onda</small><b id="hTimer">—</b></div>
+    </header>
+
+    <main>
+      <div id="stage">
+        <canvas id="game"></canvas>
+        <div id="overlay"></div>
+      </div>
+
+      <aside id="side">
+        <h2>Torres</h2>
+        <div id="shop"></div>
+        <div id="players"></div>
+        <div id="preview"></div>
+        <div id="controls">
+          <button id="bWave">Chamar onda (Espaço)</button>
+          <button id="bFix">Reparar base: +2 vidas (150)</button>
+          <button id="bPause">Pausar (P)</button>
+          <button id="bSpeed">Velocidade 1x</button>
+          <button id="bMute">Som: ligado</button>
+        </div>
+        <div id="help"></div>
+      </aside>
+    </main>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
