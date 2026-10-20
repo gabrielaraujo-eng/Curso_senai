@@ -75,6 +75,7 @@ nav a {
     list-style: none;
     display: flex;
     flex: 1;
+
     
     min-width: 300px;
 }
@@ -89,6 +90,11 @@ nav a {
     padding: 20px;
     border-radius: 10px;
     margin: 10px;
+    min-height: 400px;
+}
+.card-cafe img {
+    min-height: 400px;
+    object-fit: cover;
 }
 
 .ambiente {
@@ -107,16 +113,65 @@ nav a {
 .contato {
     background-color: #F3E6D7;
     padding: 60px 8%;
+    display: flex;
+
+}
+
+.contato-cabecalho {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.bot {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    resize: none;
+
 }
 
 footer {
+    display: flex;
     background-color: #5A321B;
     color: #ffffff;
     padding: 30px;
     text-align: center;
 }
+
+.footer-list {
+    display: flex;
+    text-decoration: none;
+    flex-direction: row;
+    font-weight: bold;
+    list-style: none;
+    resize: none;
+}
+
 img {
     max-width: 100%;
     height: auto;
     display: block;
 }
+
+
+/* media */
+
+@media (max-width: 900px) {
+    .cabecalho {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+    .banner {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+    .sobre  {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+    .card-cafe {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+    .card-cafe img {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+} 
+
