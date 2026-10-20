@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Tower Defense (2 Players)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="hud">
+            <div class="player-status p1">
+                <h3>Jogador 1 (Azul)</h3>
+                <p>Ouro: $<span id="p1-gold">100</span></p>
+                <small>Teclas: [1] Comprar Torres</small>
+            </div>
+            
+            <div class="base-status">
+                <h2>VIDA DA BASE: <span id="base-hp">20</span></h2>
+                <p>Horda: <span id="wave-counter">1</span></p>
+            </div>
+
+            <div class="player-status p2">
+                <h3>Jogador 2 (Vermelho)</h3>
+                <p>Ouro: $<span id="p2-gold">100</span></p>
+                <small>Teclas: [2] Comprar Torres</small>
+            </div>
+        </div>
+
+        <canvas id="gameCanvas" width="800" height="400"></canvas>
+        
+        <div id="controls-info">
+            <p><strong>Como Jogar:</strong> Movam o mouse sobre o mapa. O J01 aperta <strong>"1"</strong> para colocar uma torre azul ($50). O J02 aperta <strong>"2"</strong> para colocar uma torre vermelha ($75).</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
