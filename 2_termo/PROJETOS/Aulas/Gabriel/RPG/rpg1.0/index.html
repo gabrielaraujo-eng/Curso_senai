@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reino de Aethra RPG</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>⚔️ Reino de Aethra</h1>
+  <div id="gold"></div>
+  <div><button data-a="save">💾 Salvar</button> <button data-a="reset">🗑️ Reiniciar</button></div>
+</header>
+<main>
+  <section id="hero" class="card"></section>
+  <section id="stage" class="card">
+    <div id="view"></div>
+    <div id="log"></div>
+  </section>
+  <section id="side" class="card">
+    <nav>
+      <button data-a="tab" data-x="inv">🎒 Mochila</button>
+      <button data-a="tab" data-x="shop">🛒 Loja</button>
+      <button data-a="tab" data-x="skills">✨ Skills</button>
+    </nav>
+    <div id="panel"></div>
+  </section>
+</main>
+<script src="game.js"></script>
+</body>
+</html>

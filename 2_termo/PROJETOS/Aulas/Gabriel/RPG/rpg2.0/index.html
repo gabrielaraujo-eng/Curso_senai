@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aethra Online 3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game"></div>
+<div id="hud">
+  <div id="stats"><div id="nm"></div>
+    <div class="bar hp"><i></i><b></b></div><div class="bar mp"><i></i><b></b></div><div class="bar xp"><i></i><b></b></div></div>
+  <div id="top"><div id="gold"></div><div id="zone"></div><button data-a="open">🎒 Mochila (I)</button></div>
+  <div id="target" hidden><b></b><div class="bar hp"><i></i><b></b></div></div>
+  <canvas id="mini" width="140" height="140"></canvas>
+  <div id="msg"></div>
+  <div id="hot"></div>
+  <div id="tips">Clique no chão: andar · Clique no monstro: atacar · WASD: mover · 1-3: skills · H/M: poções · E: mercador · Scroll: zoom</div>
+</div>
+<div id="panel" hidden></div>
+<div id="menu">
+  <h1>⚔️ Aethra Online 3D</h1><p>Escolha sua classe</p>
+  <div>
+    <button data-cls="w">🗡️ Guerreiro<small>Corpo a corpo, muito HP</small></button>
+    <button data-cls="a">🏹 Arqueiro<small>Ataque à distância</small></button>
+    <button data-cls="m">🪄 Mago<small>Magia, gasta mana</small></button>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
