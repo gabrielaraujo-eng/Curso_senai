@@ -16,6 +16,7 @@
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
          /* O auto fit realiza a responsividade automaticamente sem eu ter que predefinir cada posibilidade */
     }
+}
 /* tablets */
 @media (max-width: 900px) {
     .lista {
@@ -27,5 +28,5 @@
     .lista {
         grid-template-columns: 1fr;
     }
-    
+
 }
