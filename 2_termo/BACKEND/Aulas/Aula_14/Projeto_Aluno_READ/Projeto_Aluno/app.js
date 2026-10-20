@@ -19,27 +19,29 @@ function listarMaquinas(maquinas) {
 
 
 function buscarPorId(maquinas, id) {
-  // TODO 5: encontrar com find(). O ID recebido deve ser número.
-  throw new Error('Implementar buscarPorId');
+return maquinas.find(maquina => maquina.id === id);
 }
 
 function filtrarPorStatus(maquinas, status) {
-  // TODO 6: retornar um novo array com filter().
-  throw new Error('Implementar filtrarPorStatus');
+return maquinas.filter(maquina => maquina.status === status);
 }
 
 function filtrarPorSetor(maquinas, setor) {
-  // DESAFIO: retornar máquinas do setor informado.
-  throw new Error('Implementar filtrarPorSetor');
+return maquinas.filter(maquina => maquina.setor === setor);
 }
 
 function executar() {
-  // TODO 7: chamar carregarMaquinas, listarMaquinas e fazer consultas.
-  // Exemplos a testar: id 3, id 99, status 'manutencao'.
   console.log('Sistema de consultas industriais - CRUD READ');
   const maquinas = carregarMaquinas();
   listarMaquinas(maquinas);
+  console.log('\nBusca por ID 3:');
+  console.log(buscarPorId(maquinas, 3));
+  console.log('Busca por ID 99:');
+  console.log(buscarPorId(maquinas, 99));
+  console.log('Maquinas em manutencao:');
+  console.log(filtrarPorStatus(maquinas, 'manutencao'));
 }
 
 if (require.main === module) executar();
 module.exports = { carregarMaquinas, listarMaquinas, buscarPorId, filtrarPorStatus, filtrarPorSetor };
+

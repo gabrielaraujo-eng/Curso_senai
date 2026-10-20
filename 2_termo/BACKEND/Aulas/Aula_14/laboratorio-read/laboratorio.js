@@ -26,6 +26,23 @@
 const fs = require("fs");
 const texto = fs.readFileSync("maquinas.json", "utf8");
 const maquinas = JSON.parse(texto);
-maquinas.forEach((maquina, indice) => {
-  console.log(`${indice + 1}. ${maquina.nome} - ${maquina.setor} - ${maquina.status}`);
-});
+// maquinas.forEach((maquina, indice) => {
+//   console.log(`${indice + 1}. ${maquina.nome} - ${maquina.setor} - ${maquina.status}`);
+// });
+// const procurada = maquinas.find(maquina => maquina.id === 2);
+// console.log(procurada);
+// const procurada = maquinas.find(maquina => maquina.id === 3);
+// console.log(procurada); // undefined
+// if (procurada !== undefined) {
+//   console.log(procurada.nome);
+// } else {
+//   console.log("Máquina não encontrada.");
+// }
+// const emManutencao = maquinas.filter(
+//   maquina => maquina.status === "Manutenção"
+// );
+// console.log(emManutencao.length);
+// console.log(emManutencao)
+const paradas = maquinas.filter(maquina => maquina.setor === "Montagem");
+console.log(paradas);        // []
+console.log(paradas.length); // 0
