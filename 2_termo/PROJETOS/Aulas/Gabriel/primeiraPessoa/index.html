@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Arena Fire 3D</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="hud" class="hidden">
+  <div id="crosshair"></div>
+  <div id="hitmarker"></div>
+  <div id="damage"></div>
+  <div id="top"><span>👥 Vivos: <b id="alive">0</b></span><span>💀 Abates: <b id="kills">0</b></span></div>
+  <div id="bottom-left">
+    <div class="bar"><div id="hpbar"></div></div>
+    <div id="hptxt">100</div>
+  </div>
+  <div id="bottom-right">
+    <div id="wname">Pistola</div>
+    <div id="ammo">12 / 60</div>
+    <div id="wlist"></div>
+  </div>
+  <div id="msg"></div>
+</div>
+
+<div id="menu" class="screen">
+  <h1>ARENA FIRE 3D</h1>
+  <p id="sub">Elimine todos os inimigos e seja o último sobrevivente.</p>
+  <button id="play">JOGAR</button>
+  <div class="help">
+    <b>WASD</b> mover · <b>Mouse</b> mirar · <b>Clique</b> atirar · <b>Shift</b> correr<br>
+    <b>Espaço</b> pular · <b>R</b> recarregar · <b>1 / 2 / 3</b> ou <b>Scroll</b> trocar arma
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
