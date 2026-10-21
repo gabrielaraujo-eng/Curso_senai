@@ -188,3 +188,7 @@ commit;
 -- x Entendo por que uma FK pode bloquear uma exclusão. 
 -- Consigo manipular registros relacionados. 
 -- x Sei utilizar COMMIT e ROLLBACK como apoio às operações. 
+
+-- DESAFIO EXTRA
+-- 26. Escolha uma situação realista do SmartCoffee que exija INSERT + UPDATE
+--     ou UPDATE + DELETE lógico. Descreva a regra de negócio e implemente.

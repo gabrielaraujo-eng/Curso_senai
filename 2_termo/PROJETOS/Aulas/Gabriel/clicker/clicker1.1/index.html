@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mina de Cristais 2</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-zone="0">
+<canvas id="fx"></canvas>
+<header>
+  <h1>Mina de Cristais</h1>
+  <div class="bank"><b id="bank">0</b> cristais</div>
+  <div class="sub"><span id="cps">0</span> por segundo · <span title="Gemas: vêm de críticos, missões e cristais raros">🔮 <b id="gems">0</b></span></div>
+</header>
+<div id="buffs" aria-live="polite"></div>
+
+<main>
+  <section id="mine" aria-label="Mina">
+    <div class="crystal-wrap"><button id="crystal" class="crystal" aria-label="Minerar cristal"></button></div>
+    <p class="hint"><b id="clickPow">1</b> por clique · barra de espaço também minera</p>
+    <div class="bar"><i id="combo"></i></div>
+    <p class="muted" id="comboTxt"></p>
+    <div class="panel"><h2>Habilidades</h2><div id="skills" class="skills"></div></div>
+    <div class="panel"><h2 id="zone"></h2><div class="bar"><i id="zbar"></i></div><p class="muted">Progresso para a próxima zona</p></div>
+  </section>
+
+  <section id="center">
+    <nav class="tabs" id="tabs">
+      <button data-tab="ups" class="on">Melhorias</button>
+      <button data-tab="tals">Talentos</button>
+      <button data-tab="qs">Missões</button>
+      <button data-tab="achs">Conquistas <small id="achCount"></small></button>
+      <button data-tab="more">Mais</button>
+    </nav>
+    <div class="panel pane" id="p-ups"><div id="ups" class="ups"></div></div>
+    <div class="panel pane" id="p-tals" hidden>
+      <div class="rebirth">
+        <p>Renascer reinicia cristais, construções e melhorias, e dá <b id="essPending">0</b> essências. Você tem <b id="ess">0</b> essências (+5% de produção cada).</p>
+        <button id="rebirth" class="btn">Renascer</button>
+      </div>
+      <div id="tal" class="ups"></div>
+    </div>
+    <div class="panel pane" id="p-qs" hidden>
+      <p class="muted">Cada missão dá gemas. Ao cumprir uma, outra aparece.</p>
+      <div id="qs"></div>
+    </div>
+    <div class="panel pane" id="p-achs" hidden>
+      <p class="muted">Cada conquista dá +2% de produção. Passe o mouse para ver a descrição.</p>
+      <div id="achs" class="achs"></div>
+    </div>
+    <div class="panel pane" id="p-more" hidden>
+      <dl id="stats" class="stats"></dl>
+      <div class="opts">
+        <button class="btn" id="save">Salvar</button>
+        <button class="btn" id="snd">Som: ligado</button>
+        <button class="btn" id="export">Exportar save</button>
+        <button class="btn" id="import">Importar save</button>
+        <button class="btn danger" id="reset">Apagar tudo</button>
+      </div>
+      <p class="muted">Atalhos: espaço minera · Q W E usam habilidades · 1 a 8 compram construções.</p>
+    </div>
+  </section>
+
+  <section id="shop" aria-label="Construções">
+    <div class="panel">
+      <h2>Construções</h2>
+      <div class="amt" id="amt">
+        <button data-n="1" class="on">x1</button>
+        <button data-n="10">x10</button>
+        <button data-n="100">x100</button>
+        <button data-n="max">Máx</button>
+      </div>
+      <div id="gens" class="gens"></div>
+    </div>
+  </section>
+</main>
+
+<div id="toasts"></div>
+<script src="game.js"></script>
+</body>
+</html>

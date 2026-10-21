@@ -1,0 +1,99 @@
+:root{
+  --bg:#120d24;--panel:#1c1536;--panel2:#261c48;--line:#3a2d63;
+  --teal:#3df2d0;--violet:#8b5cf6;--amber:#ffb84d;--text:#efeaff;--muted:#9d93c7;--bad:#ff6b8a;
+  --font:'Bricolage Grotesque',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{
+  font-family:var(--font);color:var(--text);min-height:100vh;
+  background:
+    radial-gradient(900px 500px at 15% -10%,rgba(139,92,246,.28),transparent 60%),
+    radial-gradient(700px 500px at 100% 20%,rgba(61,242,208,.12),transparent 60%),
+    var(--bg);
+}
+header{text-align:center;padding:22px 12px 6px}
+h1{margin:0;font-weight:800;font-size:1.1rem;color:var(--muted);letter-spacing:.02em}
+.bank{font-size:clamp(2rem,6vw,3.4rem);font-weight:800;line-height:1.1;margin-top:4px}
+.bank b{color:var(--teal)}
+.sub{color:var(--amber);font-weight:600}
+h2{margin:0 0 10px;font-size:1.05rem;font-weight:800}
+h2 small{color:var(--muted);font-weight:400;margin-left:6px}
+.muted{color:var(--muted);font-size:.9rem;margin:4px 0}
+
+main{display:grid;grid-template-columns:320px minmax(0,1fr) 380px;gap:16px;padding:16px;max-width:1500px;margin:0 auto}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:16px}
+#mine{text-align:center}
+
+/* cristal */
+.crystal-wrap{display:flex;justify-content:center;padding:26px 0 8px;filter:drop-shadow(0 0 38px rgba(61,242,208,.45));animation:float 4.5s ease-in-out infinite}
+.crystal{
+  position:relative;width:210px;height:250px;border:0;padding:0;cursor:pointer;
+  background:linear-gradient(135deg,#9ffbea 0%,#3df2d0 28%,#6d4cff 68%,#34178f 100%);
+  clip-path:polygon(50% 0,92% 28%,80% 92%,50% 100%,20% 92%,8% 28%);
+  transition:transform .08s;
+}
+.crystal::before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,rgba(255,255,255,.6),transparent 50%);clip-path:polygon(50% 0,92% 28%,50% 46%,8% 28%)}
+.crystal::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 48%,rgba(0,0,20,.22) 50%,transparent 52%)}
+.crystal:active{transform:scale(.92)}
+.crystal:focus-visible{outline:3px solid var(--amber);outline-offset:6px}
+@keyframes float{50%{transform:translateY(-8px)}}
+.hint{color:var(--muted);margin:8px 0 18px}
+.hint b{color:var(--text)}
+.float{position:fixed;pointer-events:none;font-weight:800;color:var(--teal);text-shadow:0 2px 8px #000;animation:rise .9s ease-out forwards;z-index:50;transform:translate(-50%,-50%)}
+@keyframes rise{to{transform:translate(-50%,-190%);opacity:0}}
+
+/* botões */
+.btn{font:inherit;font-weight:600;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:9px 14px;cursor:pointer}
+.btn:hover:not(:disabled){border-color:var(--teal)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn.danger:hover{border-color:var(--bad);color:var(--bad)}
+.rebirth{text-align:left}
+.rebirth p{margin:6px 0 10px;font-size:.92rem}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+
+/* construções */
+.amt{display:flex;gap:6px;margin-bottom:12px}
+.amt button{flex:1;font:inherit;font-weight:600;color:var(--muted);background:transparent;border:1px solid var(--line);border-radius:8px;padding:6px;cursor:pointer}
+.amt button.on{background:var(--violet);border-color:var(--violet);color:#fff}
+.gens{display:flex;flex-direction:column;gap:8px}
+.gen{display:grid;grid-template-columns:44px 1fr auto;gap:2px 12px;align-items:center;text-align:left;font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px 12px;cursor:pointer}
+.gen .ic{grid-row:span 2;font-size:1.9rem;text-align:center}
+.gen .nm{font-weight:800}
+.gen .n{font-size:1.5rem;font-weight:800;color:var(--muted);grid-row:span 2}
+.gen .cost{font-size:.85rem;color:var(--bad)}
+.gen.can{border-color:var(--teal)}
+.gen.can .cost{color:var(--teal)}
+.gen.locked{opacity:.45;pointer-events:none;filter:blur(.6px)}
+.gen:hover.can{background:#2d2158}
+
+/* melhorias */
+.ups{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.up{display:flex;gap:10px;align-items:center;text-align:left;font:inherit;color:var(--text);background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;cursor:pointer}
+.up .ic{font-size:1.5rem}
+.up b{display:block;font-size:.92rem}
+.up span{display:block;font-size:.78rem;color:var(--muted)}
+.up em{font-style:normal;font-size:.82rem;color:var(--bad)}
+.up.can{border-color:var(--amber)}
+.up.can em{color:var(--amber)}
+
+/* conquistas */
+.achs{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:8px}
+.ach{aspect-ratio:1;display:grid;place-items:center;font-size:1.4rem;border-radius:10px;background:var(--panel2);border:1px solid var(--line);filter:grayscale(1);opacity:.35}
+.ach.got{filter:none;opacity:1;border-color:var(--amber)}
+
+.stats{display:grid;grid-template-columns:1fr auto;gap:6px 12px;margin:0;font-size:.92rem}
+.stats dt{color:var(--muted)}
+.stats dd{margin:0;text-align:right;font-weight:600}
+
+/* buffs, toasts, cristal raro */
+#buffs{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;min-height:8px}
+.buff{background:rgba(255,184,77,.15);border:1px solid var(--amber);color:var(--amber);padding:4px 12px;border-radius:99px;font-weight:600;font-size:.88rem}
+#toasts{position:fixed;right:14px;bottom:14px;display:flex;flex-direction:column;gap:8px;z-index:60;max-width:300px}
+.toast{background:var(--panel2);border:1px solid var(--teal);border-radius:10px;padding:10px 14px;font-size:.9rem;animation:rise2 .3s ease-out}
+@keyframes rise2{from{transform:translateY(12px);opacity:0}}
+.golden{position:fixed;z-index:40;width:70px;height:70px;font-size:2.6rem;border:0;border-radius:50%;cursor:pointer;background:radial-gradient(circle,rgba(255,184,77,.6),transparent 70%);animation:pulse 1s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.2)}}
+
+@media (max-width:1050px){main{grid-template-columns:1fr}.panel{margin-bottom:12px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

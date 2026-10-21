@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mina de Cristais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Mina de Cristais</h1>
+  <div class="bank"><b id="bank">0</b> cristais</div>
+  <div class="sub"><span id="cps">0</span> por segundo</div>
+</header>
+<div id="buffs" aria-live="polite"></div>
+
+<main>
+  <section id="mine" aria-label="Mina">
+    <div class="crystal-wrap">
+      <button id="crystal" class="crystal" aria-label="Minerar cristal"></button>
+    </div>
+    <p class="hint"><b id="clickPow">1</b> por clique</p>
+
+    <div class="panel rebirth">
+      <h2>Renascer</h2>
+      <p>Reinicie a mina e ganhe <b id="essPending">0</b> essências. Cada essência dá +5% de produção para sempre.</p>
+      <p class="muted">Você tem <b id="ess">0</b> essências.</p>
+      <button id="rebirth" class="btn">Renascer</button>
+    </div>
+  </section>
+
+  <section id="center">
+    <div class="panel">
+      <h2>Melhorias</h2>
+      <div id="ups" class="ups"><p class="muted empty">Continue minerando para desbloquear melhorias.</p></div>
+    </div>
+    <div class="panel">
+      <h2>Conquistas <small id="achCount"></small></h2>
+      <p class="muted">Cada conquista dá +2% de produção.</p>
+      <div id="achs" class="achs"></div>
+    </div>
+    <div class="panel">
+      <h2>Estatísticas</h2>
+      <dl id="stats" class="stats"></dl>
+    </div>
+    <div class="panel">
+      <h2>Opções</h2>
+      <div class="opts">
+        <button class="btn" id="save">Salvar</button>
+        <button class="btn" id="export">Exportar save</button>
+        <button class="btn" id="import">Importar save</button>
+        <button class="btn danger" id="reset">Apagar tudo</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="shop" aria-label="Construções">
+    <div class="panel">
+      <h2>Construções</h2>
+      <div class="amt" id="amt">
+        <button data-n="1" class="on">x1</button>
+        <button data-n="10">x10</button>
+        <button data-n="100">x100</button>
+        <button data-n="max">Máx</button>
+      </div>
+      <div id="gens" class="gens"></div>
+    </div>
+  </section>
+</main>
+
+<div id="toasts"></div>
+<script src="game.js"></script>
+</body>
+</html>
