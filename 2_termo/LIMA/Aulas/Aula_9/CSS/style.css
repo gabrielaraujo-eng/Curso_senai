@@ -92,7 +92,7 @@ nav a {
     margin: 10px;
     min-height: 400px;
 }
-.card-cafe img {
+.card-cafe img { /* importante */
     min-height: 400px;
     object-fit: cover;
 }
