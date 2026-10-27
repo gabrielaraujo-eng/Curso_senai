@@ -39,7 +39,9 @@ function executar() {
   console.log('Busca por ID 99:');
   console.log(buscarPorId(maquinas, 99));
   console.log('Maquinas em manutencao:');
-  console.log(filtrarPorStatus(maquinas, 'manutencao'));
+  console.log(filtrarPorStatus(maquinas, ''));
+  console.log("setor: ")
+  console.log(filtrarPorSetor(maquinas, 'Usinagem'))
 }
 
 if (require.main === module) executar();
