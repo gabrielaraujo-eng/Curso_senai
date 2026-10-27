@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>Aethra Online 3D</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Nunito:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game"></div>
+<div id="hurt"></div>
+<div id="dmg"></div>
+<div id="hud" hidden>
+  <div id="pframe">
+    <div id="pc">🗡️</div>
+    <div class="pf"><div id="pn"></div>
+      <div class="bar hp" id="php"><i></i><span></span></div>
+      <div class="bar mp" id="pmp"><i></i><span></span></div>
+      <div id="buffs"></div>
+    </div>
+  </div>
+  <div id="party"></div>
+  <div id="tframe" hidden><b></b><div class="bar hp"><i></i><span></span></div><small class="ex"></small></div>
+  <div id="bossbar" hidden><b></b><div class="bar boss"><i></i><span></span></div></div>
+  <div id="speech"></div>
+  <div id="mmwrap"><canvas id="mini" width="180" height="180"></canvas><div id="zone"></div><div id="gold"></div></div>
+  <div id="menubtns">
+    <button data-act="menu" data-w="inv" title="Mochila (I)">🎒</button>
+    <button data-act="menu" data-w="char" id="bC" title="Personagem (C)">👤</button>
+    <button data-act="menu" data-w="skills" id="bK" title="Habilidades (K)">✨</button>
+    <button data-act="menu" data-w="quests" title="Missões (J)">📜</button>
+    <button data-act="menu" data-w="map" title="Mapa (M)">🗺️</button>
+    <button data-act="menu" data-w="online" title="Online (O)">👥</button>
+    <button data-act="menu" data-w="menu" title="Menu (Esc)">⚙️</button>
+  </div>
+  <div id="tracker"></div>
+  <div id="chat"><div id="chatlog"></div><input id="chatin" maxlength="80" placeholder="Enter para conversar…" autocomplete="off"></div>
+  <div id="hot"></div>
+  <div class="bar xp" id="xpb"><i></i><span></span></div>
+  <div id="prompt" hidden></div>
+  <div id="touch"><div id="joy"><div id="joyk"></div></div>
+    <button id="tAtk" data-act="act">⚔️</button><button id="tDodge" data-act="dodge">💨</button><button id="tJump" data-act="jump">⤒</button></div>
+</div>
+<div id="sta"></div>
+<div id="banner"></div>
+<div id="toasts"></div>
+<div id="tip"></div>
+<div id="dlg" hidden></div>
+<div id="win" hidden></div>
+<div id="overlay" hidden></div>
+<div id="title" hidden></div>
+<div id="fade"></div>
+<div id="load">Carregando o mundo de Aethra…</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script src="game.js"></script>
+</body>
+</html>

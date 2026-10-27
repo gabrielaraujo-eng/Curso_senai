@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cassino Pixel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="logo">CASSINO <span>PIXEL</span></div>
+  <div class="hud">
+    <div class="money" id="money">$0</div>
+    <button class="px sm" id="home" hidden>LOBBY</button>
+    <button class="px sm" id="mute">SOM: ON</button>
+  </div>
+</header>
+
+<main>
+  <section id="lobby">
+    <p class="sub">ESCOLHA SUA MESA · AS FICHAS SÃO 100% FALSAS</p>
+    <div class="tiles">
+      <button class="tile" data-go="bj"><i class="ico" id="icoBj"></i><b>BLACKJACK</b><span>Chegue a 21 sem estourar. Blackjack paga 3:2.</span></button>
+      <button class="tile" data-go="pk"><i class="ico" id="icoPk"></i><b>POKER</b><span>Texas Hold'em contra dois rivais. Blefe à vontade.</span></button>
+      <button class="tile" data-go="sl"><i class="ico" id="icoSl"></i><b>CAÇA-NÍQUEIS</b><span>Três rolos, seis símbolos e um jackpot de 100x.</span></button>
+    </div>
+    <div class="panel stats" id="stats"></div>
+    <div class="center"><button class="px gold" id="bonus" hidden>PEDIR FICHAS (+$500)</button></div>
+  </section>
+
+  <section id="bj" hidden>
+    <div class="table">
+      <div class="lbl">DEALER <span id="bjDT"></span></div>
+      <div class="hand" id="bjDealer"></div>
+      <div class="msg" id="bjMsg"></div>
+      <div class="lbl">VOCÊ <span id="bjPT"></span></div>
+      <div class="hand" id="bjPlayer"></div>
+      <div class="betline">APOSTA: <b id="bjBet">$0</b></div>
+    </div>
+    <div class="chips" id="bjChips"></div>
+    <div class="btns" id="bjBtns"></div>
+  </section>
+
+  <section id="pk" hidden>
+    <div id="pkSitBox" class="panel center">
+      <p>MESA DE TEXAS HOLD'EM</p>
+      <p class="muted">BLINDS $10 / $20 · BUY-IN $500 (OU TUDO QUE VOCÊ TEM)</p>
+      <button class="px green" id="pkSit">SENTAR NA MESA</button>
+      <p class="msg" id="pkMsg0"></p>
+    </div>
+    <div id="pkTable" hidden>
+      <div class="table">
+        <div class="opps" id="pkOpp"></div>
+        <div class="board" id="pkBoard"></div>
+        <div class="pot" id="pkPot"></div>
+        <div class="me" id="pkMe"></div>
+      </div>
+      <div class="btns" id="pkBtns"></div>
+      <div class="log" id="pkLog"></div>
+    </div>
+  </section>
+
+  <section id="sl" hidden>
+    <div class="machine">
+      <div class="marquee">★ JACKPOT ★</div>
+      <div class="reels" id="reels"><img alt=""><img alt=""><img alt=""></div>
+      <div class="msg" id="slMsg">GIRE PARA JOGAR!</div>
+      <div class="betrow">
+        <button class="px sm" id="slMinus">−</button>
+        <div class="betbox">APOSTA <b id="slBet">$25</b></div>
+        <button class="px sm" id="slPlus">+</button>
+      </div>
+      <button class="px red big" id="slBtn">GIRAR</button>
+    </div>
+    <div class="panel pay" id="pay"></div>
+  </section>
+</main>
+<div id="toasts"></div>
+<script src="game.js"></script>
+</body>
+</html>
