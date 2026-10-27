@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="4260" viewBox="0 0 1440 4260">
+<defs>
+  <linearGradient id="heroG" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#090A16"/>
+    <stop offset=".55" stop-color="#101225"/>
+    <stop offset="1" stop-color="#1A1234"/>
+  </linearGradient>
+  <linearGradient id="manifestG" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="#6D4AFF"/>
+    <stop offset="1" stop-color="#FF3D81"/>
+  </linearGradient>
+  <style>
+    .sans{font-family:Arial,Helvetica,sans-serif}
+    .bold{font-family:Arial Black,Arial,Helvetica,sans-serif;font-weight:900}
+    .muted{fill:#C7CADB}
+    .white{fill:#FFF7E6}
+    .cyan{fill:#18D9FF}
+    .pink{fill:#FF3D81}
+    .yellow{fill:#FFD84D}
+    .small{font-size:18px;letter-spacing:4px;font-weight:700}
+    .nav{font-size:17px;font-weight:700}
+    .body{font-size:22px}
+    .h2{font-size:58px;letter-spacing:-2px}
+    .h3{font-size:30px}
+  </style>
+</defs>
+
+<!-- TOPO -->
+<rect width="1440" height="92" fill="#090A16"/>
+<line x1="0" y1="92" x2="1440" y2="92" stroke="#FFFFFF" stroke-opacity=".12"/>
+<text x="90" y="58" class="bold white" font-size="26">NOSTALGIA</text>
+<text x="258" y="58" class="bold pink" font-size="26">PLAY</text>
+<text x="850" y="57" class="sans muted nav">INÍCIO</text>
+<text x="938" y="57" class="sans muted nav">CLÁSSICOS</text>
+<text x="1048" y="57" class="sans muted nav">HERÓIS</text>
+<text x="1138" y="57" class="sans muted nav">HOJE</text>
+<rect x="1220" y="28" rx="20" width="130" height="40" fill="none" stroke="#FF3D81"/>
+<text x="1260" y="54" class="sans white nav">SOBRE</text>
+
+<!-- HERO -->
+<rect y="92" width="1440" height="710" fill="url(#heroG)"/>
+<text x="90" y="220" class="sans cyan small">80 • 90 • 2000</text>
+<text x="90" y="315" class="bold white" font-size="82">HISTÓRIAS QUE</text>
+<text x="90" y="398" class="bold white" font-size="82">ATRAVESSARAM</text>
+<text x="90" y="481" class="bold white" font-size="82">GERAÇÕES.</text>
+<text x="90" y="545" class="sans muted body">Uma viagem pela TV, pelos heróis e pelas animações</text>
+<text x="90" y="578" class="sans muted body">que transformaram tardes comuns em grandes aventuras.</text>
+<rect x="90" y="625" rx="28" width="205" height="58" fill="#FF3D81"/>
+<text x="132" y="662" class="sans white nav">APERTAR O PLAY</text>
+
+<rect x="835" y="165" width="500" height="535" rx="36" fill="#171A31" stroke="#FFFFFF" stroke-opacity=".12"/>
+<circle cx="1010" cy="350" r="120" fill="none" stroke="#18D9FF" stroke-width="20" opacity=".75"/>
+<circle cx="1215" cy="550" r="72" fill="none" stroke="#FF3D81" stroke-width="18" opacity=".82"/>
+<rect x="1140" y="215" width="140" height="68" fill="#FFD84D" transform="rotate(7 1140 215)"/>
+<text x="1185" y="260" class="bold" font-size="28" fill="#090A16">90</text>
+<rect x="875" y="515" width="170" height="72" fill="#FF3D81" transform="rotate(-7 875 515)"/>
+<text x="910" y="562" class="bold" font-size="28" fill="#090A16">PLAY</text>
+<rect x="1105" y="440" width="180" height="70" fill="#18D9FF" transform="rotate(3 1105 440)"/>
+<text x="1130" y="486" class="bold" font-size="26" fill="#090A16">REWIND</text>
+<text x="875" y="660" class="sans muted" font-size="18" letter-spacing="2">MEMÓRIAS EM MODO REPLAY.</text>
+
+<!-- CLÁSSICOS -->
+<rect y="802" width="1440" height="930" fill="#101225"/>
+<text x="90" y="910" class="sans cyan small">ANTES DOS ANOS 90</text>
+<text x="90" y="985" class="bold white h2">CLÁSSICOS QUE CHEGARAM</text>
+<text x="90" y="1050" class="bold white h2">PARA FICAR</text>
+<text x="90" y="1105" class="sans muted body">Duas produções anteriores aos anos 90 que permaneceram vivas</text>
+<text x="90" y="1138" class="sans muted body">na memória de quem cresceu cercado por fantasia e aventura.</text>
+
+<rect x="90" y="1190" width="610" height="460" rx="24" fill="#171A31" stroke="#FFFFFF" stroke-opacity=".12"/>
+<rect x="108" y="1208" width="574" height="255" rx="18" fill="#6D4AFF"/>
+<circle cx="600" cy="1290" r="55" fill="#18D9FF"/>
+<text x="124" y="1525" class="sans yellow small">1986</text>
+<text x="124" y="1580" class="bold white h3">CAVALEIROS DO ZODÍACO</text>
+
+<rect x="740" y="1190" width="610" height="460" rx="24" fill="#171A31" stroke="#FFFFFF" stroke-opacity=".12"/>
+<rect x="758" y="1208" width="574" height="255" rx="18" fill="#FF3D81"/>
+<circle cx="1250" cy="1290" r="55" fill="#FFD84D"/>
+<text x="774" y="1525" class="sans yellow small">1983</text>
+<text x="774" y="1580" class="bold white h3">CAVERNA DO DRAGÃO</text>
+
+<!-- HERÓIS -->
+<rect y="1732" width="1440" height="900" fill="#090A16"/>
+<text x="720" y="1840" text-anchor="middle" class="sans cyan small">FAIXA ESPECIAL</text>
+<text x="720" y="1915" text-anchor="middle" class="bold white h2">HERÓIS QUE DOMINARAM A TV</text>
+<text x="720" y="1960" text-anchor="middle" class="sans muted body">Tokusatsu, ação e personagens que viraram memória afetiva.</text>
+
+<rect x="90" y="2020" width="390" height="490" rx="24" fill="#171A31" stroke="#FFFFFF" stroke-opacity=".12"/>
+<rect x="108" y="2038" width="354" height="250" rx="18" fill="#FF3D81"/>
+<text x="124" y="2365" class="sans yellow small">METAL HERO</text>
+<text x="124" y="2420" class="bold white h3">JASPION</text>
+
+<rect x="525" y="2020" width="390" height="490" rx="24" fill="#171A31" stroke="#FFFFFF" stroke-opacity=".12"/>
+<rect x="543" y="2038" width="354" height="250" rx="18" fill="#18D9FF"/>
+<text x="559" y="2365" class="sans yellow small">NINJA HERO</text>
+<text x="559" y="2420" class="bold white h3">JIRAIYA</text>
+
+<rect x="960" y="2020" width="390" height="490" rx="24" fill="#171A31" stroke="#FFFFFF" stroke-opacity=".12"/>
+<rect x="978" y="2038" width="354" height="250" rx="18" fill="#FFD84D"/>
+<text x="994" y="2365" class="sans yellow small">TOKUSATSU</text>
+<text x="994" y="2420" class="bold white h3">KAMEN RIDER BLACK</text>
+
+<!-- ATUAIS -->
+<rect y="2632" width="1440" height="1110" fill="#0E1020"/>
+<text x="90" y="2740" class="sans cyan small">O PASSADO CONTINUA PRESENTE</text>
+<text x="90" y="2815" class="bold white h2">NOVAS PRODUÇÕES,</text>
+<text x="90" y="2880" class="bold white h2">VELHAS EMOÇÕES</text>
+
+<rect x="90" y="2950" width="560" height="210" rx="22" fill="#FFD84D"/>
+<circle cx="540" cy="3015" r="58" fill="#6D4AFF"/>
+<text x="126" y="3078" class="bold" font-size="42" fill="#090A16">X-MEN '97</text>
+<text x="780" y="3005" class="bold pink" font-size="46">01</text>
+<text x="780" y="3042" class="sans cyan small">CONTINUAÇÃO</text>
+<text x="780" y="3090" class="bold white h3">X-MEN '97</text>
+
+<rect x="780" y="3210" width="560" height="210" rx="22" fill="#FFD84D"/>
+<circle cx="1230" cy="3275" r="58" fill="#18D9FF"/>
+<text x="816" y="3338" class="bold" font-size="42" fill="#090A16">OS SIMPSONS</text>
+<text x="90" y="3265" class="bold pink" font-size="46">02</text>
+<text x="90" y="3302" class="sans cyan small">CULTURA POP</text>
+<text x="90" y="3350" class="bold white h3">OS SIMPSONS</text>
+
+<rect x="90" y="3470" width="560" height="210" rx="22" fill="#18D9FF"/>
+<circle cx="540" cy="3535" r="58" fill="#FF3D81"/>
+<text x="126" y="3598" class="bold" font-size="42" fill="#090A16">GRAVITY FALLS</text>
+<text x="780" y="3525" class="bold pink" font-size="46">03</text>
+<text x="780" y="3562" class="sans cyan small">MISTÉRIO</text>
+<text x="780" y="3610" class="bold white h3">GRAVITY FALLS</text>
+
+<!-- MANIFESTO E RODAPÉ -->
+<rect y="3742" width="1440" height="350" fill="url(#manifestG)"/>
+<text x="720" y="3845" text-anchor="middle" class="sans yellow small">FIM DA FITA?</text>
+<text x="720" y="3950" text-anchor="middle" class="bold white" font-size="112">NUNCA.</text>
+<text x="720" y="4005" text-anchor="middle" class="sans white body">Algumas histórias envelhecem. Outras viram memória.</text>
+
+<rect y="4092" width="1440" height="168" fill="#060711"/>
+<text x="90" y="4160" class="bold white" font-size="24">NOSTALGIA</text>
+<text x="245" y="4160" class="bold pink" font-size="24">PLAY</text>
+<text x="720" y="4155" text-anchor="middle" class="sans muted" font-size="18">“Memória boa é aquela que ainda dá vontade de apertar o play.”</text>
+<text x="720" y="4202" text-anchor="middle" class="sans white" font-size="16">Desenvolvido por Bruno A de Moraes</text>
+<text x="1160" y="4160" class="sans cyan" font-size="17">Instagram</text>
+<text x="1260" y="4160" class="sans cyan" font-size="17">GitHub</text>
+<text x="1340" y="4160" text-anchor="end" class="sans cyan" font-size="17">LinkedIn</text>
+</svg>
