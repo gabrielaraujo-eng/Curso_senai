@@ -1,0 +1,197 @@
+body {
+    font-family: 'Inter';
+    background-color: #FFF9F3;
+    margin: 0;
+    padding: 0;
+    color: #2B170D;
+}
+
+.cabecalho {
+    background-color: #2B170D;
+    color: #ffffff;
+    padding: 20px 8%;
+    margin: 0;
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 10px;
+}
+
+nav a:hover {
+    color: #5A321B
+}
+
+.menu {
+    display: flex;
+    margin: 0;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.escolha-banner {
+    color: #C66A1A;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+}
+
+.banner {
+    background-color: #F3E6D7;
+    padding: 60px 8%;
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+/* //A  - nao esquecer*/
+
+.sobre {
+    background-color: #f6efe6;
+    padding: 60px 8%;
+
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.classicosherois {
+    background-color: #000000;
+    text-align: center;
+    padding: 60px 8%;
+}
+
+.cafes h2 {
+    text-align: center;
+    color: #5A321B;
+    font-size: 32px;
+}
+
+.lista-cafes {
+    list-style: none;
+    display: flex;
+    flex: 1;
+
+    
+    min-width: 300px;
+}
+
+.lista-cafes img {
+    width: 100%;
+    display: block;
+}
+
+.card-cafe {
+    background-color: #ffffff;
+    padding: 20px 5%;
+    border-radius: 10px;
+    margin: 10px;
+    min-height: 400px;
+    height: auto;
+    border: 1px solid #cd6a31;
+    border-radius: 14px;
+    box-shadow: 0 8px 240px rgba(43, 23, 13, 0.08);
+    transition: transform 0.4s ease;
+}
+
+
+.card-cafe img { /* importante */
+    /* min-height: 400px;
+    object-fit: cover; */
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+
+.card-cafe:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(43, 23, 13, 0.12);
+}
+.ambiente {
+    background-color: #5A321B;
+    padding: 60px 8%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.ambiente-conteudo {
+    color: #ffffff;
+}
+
+.contato {
+    background-color: #F3E6D7;
+    padding: 60px 8%;
+    display: flex;
+
+}
+
+.contato-cabecalho {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.bot {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    resize: none;
+
+}
+
+footer {
+    display: flex;
+    background-color: #5A321B;
+    color: #ffffff;
+    padding: 30px;
+    text-align: center;
+}
+
+.footer-list {
+    display: flex;
+    text-decoration: none;
+    flex-direction: row;
+    font-weight: bold;
+    list-style: none;
+    resize: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+/* media */
+
+@media (max-width: 900px) {
+    .cabecalho {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+    .banner {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+    .sobre  {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+    .card-cafe {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+    .card-cafe img {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr) )
+    }
+} 
+

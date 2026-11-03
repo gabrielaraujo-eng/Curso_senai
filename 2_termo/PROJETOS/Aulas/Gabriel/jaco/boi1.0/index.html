@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 Horas no Banheiro</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+
+  <section id="menu" class="screen active">
+    <h1>5 HORAS<br><span>NO BANHEIRO</span></h1>
+    <p class="sub">Eles querem te gravar. Não deixe.</p>
+    <nav>
+      <button id="btnNew">Novo Jogo</button>
+      <button id="btnContinue">Continuar</button>
+      <button id="btnControls">Controles</button>
+      <button id="btnCredits">Créditos</button>
+    </nav>
+  </section>
+
+  <section id="controls" class="screen">
+    <h2>Controles</h2>
+    <ul>
+      <li><b>Mouse:</b> clique no amigo que aparecer em cima da cabine para dar um tapa nele.</li>
+      <li><b>Teclado:</b> <kbd>A</kbd> esquerda, <kbd>S</kbd> meio, <kbd>D</kbd> direita.</li>
+      <li><b>Objetivo:</b> aguente do 12 AM até as 5 AM sem ser gravado.</li>
+      <li>Quando a barra vermelha do amigo enche, ele grava você.</li>
+    </ul>
+    <button class="back">Voltar</button>
+  </section>
+
+  <section id="credits" class="screen">
+    <h2>Créditos</h2>
+    <p class="name">Gabriel Lucio De Araujo</p>
+    <p class="nick">jaco</p>
+    <a href="https://github.com/gabrielaraujo-eng" target="_blank" rel="noopener">github.com/gabrielaraujo-eng</a>
+    <button class="back">Voltar</button>
+  </section>
+
+  <section id="story" class="screen">
+    <p id="storyText"></p>
+  </section>
+
+  <section id="game" class="screen">
+    <div id="hud">
+      <span id="clock">12 AM</span>
+      <span id="msg"></span>
+      <span id="bladder">Aperto: 😖</span>
+    </div>
+    <div id="stall">
+      <div class="spot" data-i="0"><div class="friend"><div class="head"><i></i><i></i><u></u></div><div class="phone">📱</div></div><div class="bar"><div></div></div></div>
+      <div class="spot" data-i="1"><div class="friend"><div class="head"><i></i><i></i><u></u></div><div class="phone">📱</div></div><div class="bar"><div></div></div></div>
+      <div class="spot" data-i="2"><div class="friend"><div class="head"><i></i><i></i><u></u></div><div class="phone">📱</div></div><div class="bar"><div></div></div></div>
+      <div id="door"><div class="toilet">🚽</div><p>Você</p></div>
+    </div>
+    <div id="slap">👋</div>
+  </section>
+
+  <section id="over" class="screen">
+    <h2>VOCÊ FOI GRAVADO</h2>
+    <p>Já tá no grupo da turma.</p>
+    <button id="btnRetry">Tentar de novo</button>
+    <button class="back">Menu</button>
+  </section>
+
+  <section id="win" class="screen">
+    <h2>5 AM</h2>
+    <p>Você saiu do banheiro com a dignidade intacta.</p>
+    <button class="back">Menu</button>
+  </section>
+
+  <div id="fade"></div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+/* Variaveis */
+/* Podems guardar cores em um unico local*/
+
+:root {
+    /* paleta de cores */
+    --espresso: #2b170D;
+    --cafe: #5a321b;
+    --caralemo: #c66a1a;
+    --creme: #f3e6d7;
+    --marfim: #fff9f3;
+    --taupe: #9a887a;
+    --texto: #1e140f;
+    --branco: #ffffff;
+
+    /* Fontes ou tipografia */
+    --fonte-principal: Arial, sans-serif;
+    --fonte-secundaria: "Poppins", Helvetica;
+
+    /* Espaçamentos */
+    --espaco-minusculo: 4px
+    --espaco-pequeno: 8px
+    --espaco-medio: 16px
+    --espaco-g: 24px
+    --espaco-gg: 48px
+    --espaco-xgg: 80px
+
+
+
+    /* Obs: root é responsavel por disponibilizar um espaço para cadastro de variaveis do elemento raiz do documento. Variaveis CSS global. */
+}
+
+
+/* Ajustes iniciais  */
+/* Configuração padrao com regras gerais */
+* {
+    box-sizing: border-box;
+    /* aplicar configuração geral em todo oo documento */
+}
+html {
+    scroll-behavior: smooth
+    /* Ajuste visual de sroll mais lento ou ajustavel ao html */
+}
+
+body {
+    margin: 0;
+    background-color: var(--marfim);
+    font-family: var(--fonte-principal);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+/* ----------------------------- */
+/* hierarquia de fontes */
+h1, h2, h3 {
+    margin-top: 0;
+    color: var(--espresso)
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+h2 {
+    font-size:2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+.cabecalho {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background-color: var(--espresso);
+}
+
+.visual {
+    color: var(--branco);
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.menu{
+    display: flex;
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.menu a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.menu a:hover {
+    color: var(--caralemo)
+    /* representa o estado em que o cursos passa sobre o elemento */
+}
+
+.menu a:focus-visible{
+    outline: 3px dotted var(--caralemo);
+    outline-offset: 4px;
+    /* Estilos de formato de bordas */
+    /* dotted, dashed, solid, double, groove, ridge, inset */
+}
+
+.banner {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 80px 8%;
+    background-color: var(--creme);
+}
+
+.banner-imagem {
+    flex: 1;
+    margin: 0;
+}
+
+.banner-imagem img {
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+
+.marca-reg {
+    display: inline-block;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background-color: var(--caralemo);
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+}
+
+.marca-reg:hover {
+    background-color: var(--cafe);
+    transition: background-color 0.8s ease;
+
+}
+
+.sobre {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    padding: 80px 8%;
+    background-color: var(--marfim);
+}
+
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: 18px;
+}
+
+
+.lista-marca {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.img-cartao {
+    height: 100%;
+    padding: 28px;
+    background-color: var(--branco);
+    border: 1px solid var(--creme);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(43, 23, 13, 0.08);
+    transition: transform 0.2s ease;
+}
+
+.img-cartao img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.img-cartao:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(43, 23, 13, 0.12);
+}

@@ -95,7 +95,7 @@ nav a {
 .card-cafe img { /* importante */
     min-height: 400px;
     object-fit: cover;
-}
+}//
 
 .ambiente {
     background-color: #5A321B;
