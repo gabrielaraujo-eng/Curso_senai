@@ -1,0 +1,20 @@
+[
+  {
+    "id": 101,
+    "nome": "Furadeira de Bancada",
+    "setor": "Usinagem",
+    "operacial": true
+  },
+  {
+    "id": 102,
+    "nome": "Prensa de Hidraulica 40T",
+    "setor": "Estamparia",
+    "operacial": false
+  },
+  {
+    "id": 103,
+    "nome": "Torno automatico",
+    "setor": "Usinagem",
+    "operacial": true
+  }
+]

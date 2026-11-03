@@ -3514,6 +3514,6 @@ try {
   buildWorld(); spawnNPCs(); spawnBots(); initPost();
   $('#load').remove();
   showTitle();
-  window.G = { get P() { return P; }, PL, ARENA, NET, arenaStart, MON, S: () => S, gainXP, completeMain, teleport, placePlayer, BOSS, LAIRS, killMon, hitMon, useSkill, openWin, spawnAll, get GAME() { return GAME; }, set GAME(v) { GAME = v; } };
+  window.G = { get P() { return P; }, PL, ARENA, arenaStart, MON, S: () => S, gainXP, completeMain, teleport, placePlayer, BOSS, LAIRS, killMon, hitMon, useSkill, openWin, spawnAll, get GAME() { return GAME; }, set GAME(v) { GAME = v; } };
 } catch (e) { console.error(e); $('#load').textContent = 'Erro ao carregar: ' + e.message; }
 loop();

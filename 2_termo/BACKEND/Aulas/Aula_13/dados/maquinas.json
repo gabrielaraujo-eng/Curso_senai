@@ -1,0 +1,58 @@
+[
+  {
+    "id": 1,
+    "nome": "Torno CNC T-01",
+    "setor": "Usinagem",
+    "status": "operando",
+    "horasUso": 1250
+  },
+  {
+    "id": 2,
+    "nome": "Prensa Hidraulica P-02",
+    "setor": "Estamparia",
+    "status": "manutencao",
+    "horasUso": 980
+  },
+  {
+    "id": 3,
+    "nome": "Esteira E-03",
+    "setor": "Montagem",
+    "status": "operando",
+    "horasUso": 2100
+  },
+  {
+    "id": 4,
+    "nome": "Fresadora F-04",
+    "setor": "Usinagem",
+    "status": "parada",
+    "horasUso": 760
+  },
+  {
+    "id": 5,
+    "nome": "Robo de Solda R-05",
+    "setor": "Soldagem",
+    "status": "operando",
+    "horasUso": 1320
+  },
+  {
+    "id": 6,
+    "nome": "Prensa Hidraulica P-06",
+    "setor": "Estamparia",
+    "status": "manutencao",
+    "horasUso": 1580
+  },
+  {
+    "id": 7,
+    "nome": "Mesa de Corte C-07",
+    "setor": "Corte",
+    "status": "parada",
+    "horasUso": 480
+  },
+  {
+    "id": 8,
+    "nome": "Esteira E-08",
+    "setor": "Montagem",
+    "status": "operando",
+    "horasUso": 860
+  }
+]
