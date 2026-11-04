@@ -1,0 +1,51 @@
+
+:root{--sky:#5c94fc;--ink:#fff;--panel:#0d1b4c;--gold:#fcd800;--red:#e8341c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--sky:#3a6fd8;--panel:#050c2a}}
+:root[data-theme="dark"]{--sky:#3a6fd8;--panel:#050c2a}
+html,body{height:100%;margin:0;background:var(--sky);overflow:hidden;color:var(--ink);font-family:"Press Start 2P","Courier New",monospace;user-select:none;-webkit-user-select:none}
+#cv{position:fixed;left:50%;bottom:0;transform:translateX(-50%);image-rendering:pixelated}
+.scr{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:16px;text-align:center;z-index:5;line-height:1.6;font-size:.7rem}
+.scr.on{display:flex}
+#menu{pointer-events:none;justify-content:flex-start;padding-top:7vh}
+#menu>*{pointer-events:auto}
+h1{margin:0;font-weight:400;color:var(--gold);font-size:clamp(1.6rem,7vw,3.4rem);line-height:1.25;text-shadow:4px 4px 0 var(--red),7px 7px 0 #000;pointer-events:none}
+h1 small{display:block;color:#fff;font-size:.34em;text-shadow:2px 2px 0 #000;margin-top:10px}
+h2{margin:0;font-weight:400;color:var(--gold);text-shadow:3px 3px 0 #000}
+nav{display:flex;flex-direction:column;gap:10px;margin-top:3vh}
+button{font:inherit;font-size:.75rem;color:#fff;background:var(--panel);border:3px solid #fff;padding:11px 22px;min-width:230px;cursor:pointer;box-shadow:3px 3px 0 #000}
+button:hover:not(:disabled),button:focus-visible{color:var(--gold);outline:none}
+button:hover:not(:disabled)::before{content:"▶ "}
+button:disabled{opacity:.4;cursor:not-allowed}
+.box{background:var(--panel);border:4px solid #fff;padding:18px;max-width:560px;box-shadow:5px 5px 0 #000}
+.box p{margin:8px 0}
+a{color:var(--gold)}
+.nick{font-size:7px;opacity:.7;cursor:pointer}
+#eggs{position:fixed;top:10px;left:12px;font-size:.55rem;text-shadow:2px 2px 0 #000}
+#toast{position:fixed;top:14%;left:50%;transform:translateX(-50%);background:var(--panel);border:3px solid var(--gold);padding:10px 14px;font-size:.6rem;line-height:1.6;max-width:88%;text-align:center;opacity:0;pointer-events:none;transition:opacity .25s;z-index:9}
+#toast.on{opacity:1}
+#tc{position:fixed;bottom:14px;left:0;right:0;display:none;justify-content:space-between;padding:0 16px;z-index:8}
+#tc button{min-width:0;width:64px;height:64px;padding:0;font-size:1.2rem;opacity:.75}
+body.touch.playing #tc{display:flex}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+#sec{position:fixed!important;left:8px;bottom:8px;min-width:0;padding:7px 10px;font-size:.5rem;opacity:.6;border-width:2px}
+#sec:hover{opacity:1}
+#pin{display:flex;gap:8px;justify-content:center;margin:12px 0}
+#pin input{width:42px;height:52px;font:inherit;font-size:1.2rem;text-align:center;background:#000;color:var(--gold);border:3px solid #fff}
+#pin input:focus{outline:none;border-color:var(--gold)}
+#pinInfo{font-size:.55rem;line-height:1.8}
+html{background:linear-gradient(to top,var(--gc,#c84c0c) 0,var(--gc,#c84c0c) calc(var(--gh,0px) - var(--gs,0px)),var(--gg,#58c030) calc(var(--gh,0px) - var(--gs,0px)),var(--gg,#58c030) var(--gh,0px),var(--sky) var(--gh,0px))}
+body{background:none}
+textarea,#sugNome{width:100%;box-sizing:border-box;font:inherit;font-size:.6rem;line-height:1.6;background:#000;color:#fff;border:3px solid #fff;padding:8px;margin-top:8px;resize:none}
+textarea:focus,#sugNome:focus{outline:none;border-color:var(--gold)}
+#suggest .box{width:min(90vw,480px)}
+.small{font-size:.5rem;opacity:.8}
+nav{display:grid;grid-template-columns:repeat(2,minmax(0,230px));gap:8px}
+#bNew{grid-column:span 2}
+@media(max-width:520px){nav{grid-template-columns:minmax(0,230px)}#bNew{grid-column:auto}}
+#achList{display:flex;flex-direction:column;gap:6px;max-height:58vh;overflow:auto;text-align:left;width:min(86vw,520px)}
+.ac{border:2px solid #fff;background:#000;padding:7px 9px;display:flex;flex-direction:column;gap:4px;opacity:.7}
+.ac.on{border-color:var(--gold);color:var(--gold);opacity:1}
+.ac span{font-size:.5rem;line-height:1.6;color:#fff}
+#atoast{position:fixed;bottom:96px;right:12px;z-index:9;background:var(--panel);border:3px solid var(--gold);color:var(--gold);padding:10px 14px;font-size:.6rem;line-height:1.7;opacity:0;transform:translateX(30px);transition:.3s;pointer-events:none}
+#atoast.on{opacity:1;transform:none}
+button:disabled{opacity:.4}

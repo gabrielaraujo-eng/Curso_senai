@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maurício e os Remédios Roubados</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<section id="menu" class="scr on">
+  <h1>MAURÍCIO<small>E OS REMÉDIOS ROUBADOS</small></h1>
+  <nav>
+    <button id="bNew">Novo Jogo</button>
+    <button id="bCont">Continuar</button>
+    <button id="bImp">Modo Impossível</button>
+    <button id="bAch">Conquistas</button>
+    <button id="bCtl">Controles</button>
+    <button id="bSug">Sugestões</button>
+    <button id="bCred">Créditos</button>
+  </nav>
+  <div id="eggs">Segredos 0/5</div>
+  <button id="sec">🔒 secret</button>
+</section>
+
+<section id="controls" class="scr">
+  <h2>Controles</h2>
+  <div class="box">
+    <p>Andar: setas ou A / D</p>
+    <p>Pular: espaço, seta pra cima, W ou Z (segure para pular mais alto)</p>
+    <p>Correr: Shift ou X</p>
+    <p>Atirar: F ou K (só depois de pegar a flor)</p>
+    <p>Blocos ? especiais dão cogumelo (cresce e aguenta 1 tapa) e flor (pistola).</p>
+    <p>Modo Impossível: 1 vida, sem poderes, 10x mais inimigos e boss com 15 de vida.</p>
+    <p>A aba Conquistas tem metas e dicas.</p>
+    <p>Pise nos inimigos. Derrote o Dr. Receitus no Mundo 5 e pegue seus remédios de volta.</p>
+    <p>Dica: o menu e as fases têm segredos. Alguns tijolos brilham e escondem um número da senha do botão secret.</p>
+  </div>
+  <button class="back">Voltar</button>
+</section>
+
+<section id="suggest" class="scr">
+  <h2>Sugestões</h2>
+  <div class="box">
+    <p>Teve uma ideia pro jogo? Escreva aqui.</p>
+    <textarea id="sugTxt" maxlength="800" rows="5" placeholder="Sua sugestão..."></textarea>
+    <input id="sugNome" maxlength="30" placeholder="Seu nome (opcional)">
+    <p class="small">O envio abre uma página do GitHub já preenchida. É só confirmar lá.</p>
+  </div>
+  <button id="bSend">Enviar pro GitHub</button>
+  <button class="back">Voltar</button>
+</section>
+
+<section id="credits" class="scr">
+  <h2>Créditos</h2>
+  <div class="box">
+    <p>Feito por</p>
+    <p style="font-size:1rem">Gabriel Lucio De Araujo</p>
+    <p class="nick" id="nick">jaco</p>
+    <p><a href="https://github.com/gabrielaraujo-eng" target="_blank" rel="noopener">github.com/gabrielaraujo-eng</a></p>
+  </div>
+  <button class="back">Voltar</button>
+</section>
+
+<section id="secret" class="scr">
+  <h2>Cofre Secreto</h2>
+  <div class="box">
+    <p>Digite a senha de 5 números.</p>
+    <div id="pin"><input inputmode="numeric" maxlength="1" aria-label="número 1"><input inputmode="numeric" maxlength="1" aria-label="número 2"><input inputmode="numeric" maxlength="1" aria-label="número 3"><input inputmode="numeric" maxlength="1" aria-label="número 4"><input inputmode="numeric" maxlength="1" aria-label="número 5"></div>
+    <p id="pinInfo"></p>
+  </div>
+  <button id="bPin">Entrar</button>
+  <button class="back">Voltar</button>
+</section>
+
+<section id="ach" class="scr">
+  <h2>Conquistas <span id="achCount"></span></h2>
+  <div class="box"><div id="achList"></div></div>
+  <button class="back">Voltar</button>
+</section>
+
+<section id="invmenu" class="scr">
+  <h2>Mundo Invertido</h2>
+  <div class="box"><p>O cofre abriu. O Leão do PROERD roubou o pote do Maurício.</p><p id="ngInfo" class="small"></p></div>
+  <button id="bInv">Mundo Invertido</button>
+  <button id="bNG">NG+</button>
+  <button class="back">Voltar</button>
+</section>
+
+<div id="atoast"></div>
+<div id="toast"></div>
+<div id="tc"><div><button id="tl">◀</button> <button id="tr">▶</button></div><div><button id="ts">F</button> <button id="tj">A</button></div></div>
+
+<script src="script.js"></script>
+</body>
+</html>
