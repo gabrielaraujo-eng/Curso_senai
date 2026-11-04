@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>5 Horas no Banheiro da Escola</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="cv"></canvas>
+
+<div id="hud">
+  <div id="clock">12:00 AM</div>
+  <div id="hint">Mexa o mouse (ou A / D) para olhar pros lados.<br>Clique (ou Espaço) para dar o tapa.</div>
+  <div id="sub"></div>
+  <div id="dots"><i></i><i></i><i></i></div>
+</div>
+
+<section id="menu" class="screen active">
+  <canvas id="peek"></canvas>
+  <div class="rec" id="rec">● REC</div>
+  <div id="sign"><b>🚽 BANHEIRO MASCULINO</b><small>E.E. Prof. Armando Salles · 2º andar</small></div>
+  <h1 id="title">5 HORAS<br><span>NO BANHEIRO</span></h1>
+  <p class="tag">Noite do Pijama na escola. Você só queria fazer xixi em paz.</p>
+  <nav>
+    <button id="btnNew">Novo Jogo</button>
+    <button id="btnContinue">Continuar</button>
+    <button id="btnControls">Regras da Escola</button>
+    <button id="btnCredits">Diretoria</button>
+  </nav>
+  <div id="graf"><span id="g1">LEO FOI AQUI</span><span id="g2">3ºB manda</span><span id="g3">Dona Neide vê tudo</span></div>
+  <div id="eggs">🔎 Segredos 0/8</div>
+  <button id="flush" title="descarga">🚽</button>
+</section>
+
+<section id="controls" class="screen">
+  <h2>Regras da Escola</h2>
+  <ul>
+    <li><b>Olhar:</b> mova o mouse para esquerda ou direita, ou use <kbd>A</kbd> <kbd>D</kbd> (ou as setas). <kbd>S</kbd> volta pra porta.</li>
+    <li><b>Tapa:</b> clique ou aperte <kbd>Espaço</kbd> quando um colega aparecer com o celular em cima da divisória.</li>
+    <li><b>Tênis embaixo:</b> alguém está chegando. Se você ficar olhando pra lá, ele desiste.</li>
+    <li><b>Atenção:</b> os colegas aparecem pela esquerda, pela porta e pela direita. Use fone e ouça o corredor.</li>
+    <li><b>Objetivo:</b> aguente do 12 AM até o sinal das 5 AM sem ser gravado.</li>
+    <li><b>Dica da inspetora:</b> o menu tem segredos. Fuxique.</li>
+  </ul>
+  <button class="back">Voltar</button>
+</section>
+
+<section id="credits" class="screen">
+  <h2>Diretoria</h2>
+  <p class="name">Gabriel Lucio De Araujo</p>
+  <p class="nick" id="nick">jaco</p>
+  <a href="https://github.com/gabrielaraujo-eng" target="_blank" rel="noopener">github.com/gabrielaraujo-eng</a>
+  <button class="back">Voltar</button>
+</section>
+
+<section id="story" class="screen"><p id="storyText"></p></section>
+
+<section id="cast" class="screen">
+  <h2>Ficha da Turma</h2>
+  <p class="tag">Os três que viram você entrar no banheiro.</p>
+  <div id="cards"></div>
+  <button id="btnCastGo">Trancar a cabine</button>
+</section>
+
+<section id="over" class="screen">
+  <h2>GRAVADO</h2>
+  <p id="overTxt"></p>
+  <button id="btnRetry">Tentar de novo</button>
+  <button class="back">Menu</button>
+</section>
+
+<section id="win" class="screen">
+  <h2>5:00 AM</h2>
+  <p>Tocou o sinal! Você deu descarga, lavou a mão e saiu do banheiro da escola de cabeça erguida.</p>
+  <button class="back">Menu</button>
+</section>
+
+<div id="toast"></div>
+<div id="fade"></div>
+<div class="scan"></div>
+<script src="script.js"></script>
+</body>
+</html>

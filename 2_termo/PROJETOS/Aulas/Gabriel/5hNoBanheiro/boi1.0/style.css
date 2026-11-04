@@ -1,0 +1,53 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#050605;color:#d8e6d0;font-family:"Courier New",monospace;overflow:hidden}
+#app{position:relative;width:100%;height:100%}
+.screen{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;text-align:center;
+  background:radial-gradient(ellipse at 50% 30%,#1b2a1c 0%,#070907 70%)}
+.screen.active{display:flex}
+h1{font-size:clamp(2.2rem,8vw,5rem);line-height:1;letter-spacing:.04em;color:#e9f5e0;text-shadow:0 0 18px #4fff6a55;animation:flick 4s infinite}
+h1 span{color:#b3ff5e}
+h2{font-size:2rem;color:#b3ff5e}
+.sub{color:#8da58a}
+nav{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+button{font:inherit;font-size:1.1rem;padding:12px 34px;min-width:230px;background:#0d140d;color:#d8e6d0;border:2px solid #b3ff5e;cursor:pointer;transition:.15s}
+button:hover:not(:disabled){background:#b3ff5e;color:#050605}
+button:disabled{opacity:.35;cursor:not-allowed;border-color:#555}
+ul{list-style:none;max-width:520px;display:flex;flex-direction:column;gap:12px;text-align:left}
+kbd{background:#223;border:1px solid #b3ff5e;padding:1px 7px}
+.name{font-size:1.5rem;color:#e9f5e0}
+.nick{font-size:.55rem;color:#6d8069;margin-top:-14px}
+a{color:#b3ff5e}
+#story p,#storyText{max-width:560px;font-size:1.3rem;line-height:1.6;min-height:5em}
+#fade{position:absolute;inset:0;background:#000;opacity:0;pointer-events:none;transition:opacity .8s;z-index:50}
+#fade.on{opacity:1;pointer-events:all}
+
+#game{justify-content:flex-start;padding:0;gap:0;background:#0a0c0a}
+#hud{width:100%;display:flex;justify-content:space-between;padding:12px 18px;font-size:1.3rem;z-index:5;background:#000a}
+#clock{color:#b3ff5e;font-weight:bold}
+#msg{color:#ff6b6b;font-size:1rem}
+#stall{position:relative;flex:1;width:100%;max-width:900px;margin:0 auto;background:linear-gradient(#202820,#0d120d);border-left:10px solid #333;border-right:10px solid #333;overflow:hidden}
+.spot{position:absolute;top:0;width:26%;height:60%;cursor:pointer;z-index:3}
+.spot[data-i="0"]{left:4%}.spot[data-i="1"]{left:37%}.spot[data-i="2"]{left:70%}
+.friend{position:absolute;left:50%;top:0;transform:translate(-50%,-110%);transition:transform .25s;text-align:center}
+.spot.show .friend{transform:translate(-50%,0)}
+.spot.slapped .friend{transform:translate(-50%,-110%) rotate(25deg)}
+.head{position:relative;width:90px;height:100px;margin:0 auto;background:#e0b48a;border-radius:45% 45% 50% 50%;box-shadow:inset 0 -14px #0003}
+.head i{position:absolute;top:36px;width:14px;height:14px;background:#111;border-radius:50%}
+.head i:nth-child(1){left:24px}.head i:nth-child(2){right:24px}
+.head u{position:absolute;left:30px;bottom:16px;width:30px;height:12px;border-radius:0 0 30px 30px;background:#400}
+.phone{font-size:2.4rem;margin-top:-18px;animation:rec 1s steps(2) infinite}
+@keyframes rec{50%{filter:drop-shadow(0 0 8px red)}}
+.bar{position:absolute;left:10%;right:10%;bottom:8px;height:8px;background:#300;display:none}
+.spot.show .bar{display:block}
+.bar div{height:100%;width:0;background:#f33}
+#door{position:absolute;left:0;right:0;bottom:0;height:34%;background:#1b140d;border-top:6px solid #4a3a28;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.toilet{font-size:4.5rem}
+#slap{position:absolute;font-size:4rem;pointer-events:none;opacity:0;z-index:9;transform:translate(-50%,-50%)}
+#slap.go{animation:sl .3s}
+@keyframes sl{0%{opacity:1;transform:translate(-50%,-50%) rotate(-50deg) scale(.7)}100%{opacity:0;transform:translate(-50%,-50%) rotate(30deg) scale(1.5)}}
+#over{background:#300;animation:shake .1s 8}
+#over h2{color:#fff;font-size:3rem}
+@keyframes shake{25%{transform:translate(8px,-6px)}75%{transform:translate(-8px,6px)}}
+@keyframes flick{0%,92%,100%{opacity:1}94%{opacity:.4}96%{opacity:.9}98%{opacity:.5}}
+@media(max-width:600px){.head{width:64px;height:72px}.head i{top:26px;width:10px;height:10px}.head i:nth-child(1){left:16px}.head i:nth-child(2){right:16px}.head u{left:20px;bottom:10px;width:22px}.phone{font-size:1.8rem}}
+@media(prefers-reduced-motion:reduce){h1,.phone{animation:none}}

@@ -1,0 +1,75 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#000;color:#d9e6dc;font-family:"Courier New",monospace;overflow:hidden;user-select:none}
+#cv{position:fixed;inset:0;width:100%;height:100%;display:block}
+.scan{position:fixed;inset:0;pointer-events:none;z-index:60;background:repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 1px,transparent 1px 3px)}
+.screen{position:fixed;inset:0;z-index:20;display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;text-align:center;
+  background:radial-gradient(ellipse at 50% 35%,rgba(30,52,46,.92),#050807 75%),
+  repeating-linear-gradient(90deg,transparent 0 79px,rgba(255,255,255,.04) 79px 80px),
+  repeating-linear-gradient(0deg,transparent 0 79px,rgba(255,255,255,.04) 79px 80px)}
+.screen.active{display:flex}
+.rec{color:#ff3b3b;font-size:1.1rem;letter-spacing:.2em;animation:blink 1.2s steps(2) infinite}
+h1{font-family:Impact,"Arial Black",sans-serif;font-weight:400;font-size:clamp(2.6rem,10vw,6.5rem);line-height:.95;letter-spacing:.03em;color:#eef7ea;text-shadow:0 0 22px rgba(120,255,170,.25);animation:flick 5s infinite}
+h1 span{color:#b9ff7a;font-size:.62em;letter-spacing:.12em}
+h2{font-family:Impact,"Arial Black",sans-serif;font-weight:400;font-size:2.4rem;color:#b9ff7a;letter-spacing:.05em}
+.tag{color:#8ea596;font-style:italic}
+nav{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+button{font:inherit;font-size:1.05rem;padding:12px 36px;min-width:240px;background:rgba(5,10,8,.8);color:#d9e6dc;border:2px solid #7bd88f;cursor:pointer;transition:.15s;letter-spacing:.06em}
+button:hover:not(:disabled){background:#7bd88f;color:#041008;box-shadow:0 0 18px rgba(123,216,143,.5)}
+button:disabled{opacity:.3;cursor:not-allowed;border-color:#555}
+ul{list-style:none;max-width:560px;display:flex;flex-direction:column;gap:12px;text-align:left;line-height:1.45}
+kbd{background:#16231d;border:1px solid #7bd88f;padding:0 6px;border-radius:3px}
+.name{font-size:1.5rem;color:#eef7ea}
+.nick{font-size:9px;color:#6a7c70;margin-top:-14px}
+a{color:#b9ff7a}
+#storyText{max-width:560px;font-size:1.25rem;line-height:1.7;min-height:7em}
+#over{background:#2a0000;animation:shake .08s 10}
+#over h2{color:#fff;font-size:3.4rem}
+#fade{position:fixed;inset:0;z-index:50;background:#000;opacity:0;pointer-events:none;transition:opacity .8s}
+#fade.on{opacity:1;pointer-events:all}
+
+#hud{position:fixed;inset:0;z-index:10;pointer-events:none;display:none}
+body.playing #hud{display:block}
+#clock{position:absolute;top:16px;right:20px;font-size:1.4rem;color:#cfe;text-shadow:0 0 8px #000}
+#clock::before{content:"● ";color:#ff3b3b;animation:blink 1.2s steps(2) infinite}
+#hint{position:absolute;top:16px;left:20px;font-size:.9rem;color:#9bb;line-height:1.5;transition:opacity 1.5s;text-shadow:0 0 6px #000}
+#hint.off{opacity:0}
+#sub{position:absolute;left:50%;bottom:9%;transform:translateX(-50%);width:min(90%,720px);text-align:center;font-size:clamp(1rem,2.6vw,1.5rem);font-style:italic;color:#f2f2dd;text-shadow:0 2px 6px #000,0 0 14px #000;opacity:0;transition:opacity .4s}
+#dots{position:absolute;left:20px;bottom:18px;display:flex;gap:8px}
+#dots i{width:10px;height:10px;border-radius:50%;background:#2a3a33;border:1px solid #6a8a7a}
+#dots i.on{background:#b9ff7a}
+@keyframes blink{50%{opacity:.15}}
+@keyframes flick{0%,90%,100%{opacity:1}92%{opacity:.35}94%{opacity:.9}96%{opacity:.5}}
+@keyframes shake{25%{transform:translate(8px,-6px)}75%{transform:translate(-8px,6px)}}
+@media(prefers-reduced-motion:reduce){h1,.rec,#over{animation:none}}
+
+/* ---------- menu: banheiro da escola ---------- */
+.screen>*:not(canvas){position:relative;z-index:2}
+#menu{background:radial-gradient(ellipse at 50% 25%,transparent 30%,rgba(0,0,0,.85) 85%),
+  repeating-linear-gradient(90deg,transparent 0 83px,rgba(0,0,0,.4) 83px 85px),
+  repeating-linear-gradient(0deg,transparent 0 83px,rgba(0,0,0,.4) 83px 85px),#3a5249}
+#menu::before{content:"";position:absolute;inset:0;background:rgba(220,255,235,.07);animation:flick 6s infinite;pointer-events:none}
+#peek{position:absolute;left:0;right:0;bottom:0;width:100%;height:32vh;cursor:pointer}
+#sign{background:#1d4f91;color:#fff;border:3px solid #eef7ea;padding:6px 18px;display:flex;flex-direction:column;gap:2px;cursor:pointer;box-shadow:0 4px 0 #0c2a50;transition:transform .1s}
+#sign:active{transform:translateY(3px)}
+#sign small{font-size:.7rem;opacity:.8}
+#graf span{position:absolute;font-family:"Comic Sans MS",cursive;color:rgba(10,18,15,.5);cursor:pointer}
+#g1{left:4vw;top:22vh;transform:rotate(-8deg);font-size:1.3rem}
+#g2{right:5vw;top:30vh;transform:rotate(6deg);font-size:1.1rem}
+#g3{right:6vw;top:14vh;transform:rotate(-3deg);font-size:.85rem}
+#graf span:hover{color:#ffe14a}
+#eggs{position:absolute!important;top:14px;left:18px;font-size:.85rem;color:#9bb}
+#flush{position:absolute!important;top:8px;right:14px;min-width:0;padding:4px 10px;font-size:1.2rem;border-width:1px}
+h1.gold{color:#ffe14a;text-shadow:0 0 28px rgba(255,225,74,.6)}
+body.recreio #menu{filter:hue-rotate(60deg) saturate(1.4)}
+#toast{position:fixed;top:12%;left:50%;transform:translate(-50%,-10px);z-index:70;background:#0b1410;border:2px solid #b9ff7a;color:#eef7ea;padding:10px 20px;max-width:min(90%,520px);text-align:center;opacity:0;pointer-events:none;transition:.25s}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+body.shake #menu{animation:shake .08s 8}
+
+/* ---------- ficha da turma ---------- */
+#cards{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.card{width:200px;background:#e9efe6;color:#14201a;padding:10px;border-bottom:6px solid #1d4f91;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.card:nth-child(1){transform:rotate(-2deg)}.card:nth-child(3){transform:rotate(2deg)}
+.card canvas{width:100%;border:2px solid #14201a}
+.card h3{font-family:Impact,sans-serif;font-weight:400;font-size:1.5rem;margin-top:6px}
+.card em{display:block;color:#1d4f91;font-size:.85rem}
+.card p{font-size:.8rem;line-height:1.35;margin-top:4px;text-align:left}
