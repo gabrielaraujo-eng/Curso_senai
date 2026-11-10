@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sorte ou Conta? — Jogo de Probabilidade</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="bg" id="bg"></div>
+
+<main id="app">
+  <!-- MENU -->
+  <section class="tela ativa" id="menu">
+    <h1 class="logo">Sorte<span>ou</span>Conta?</h1>
+    <p class="sub">Descubra a chance. Acerte a fração.</p>
+    <div class="menu-btns">
+      <button class="btn b-verde" data-go="niveis">▶ Jogar</button>
+      <button class="btn b-azul" data-go="como">🎯 Como jogar</button>
+      <button class="btn b-rosa" id="abrirCreditos">⭐ Créditos</button>
+    </div>
+  </section>
+
+  <!-- NÍVEIS -->
+  <section class="tela" id="niveis">
+    <h2>Escolha o nível</h2>
+    <div class="niveis" id="listaNiveis"></div>
+    <button class="btn b-ghost" data-go="menu">← Menu</button>
+  </section>
+
+  <!-- COMO JOGAR -->
+  <section class="tela" id="como">
+    <h2>Como jogar</h2>
+    <div class="como">
+      <div><b>👀</b>Veja o sorteio</div>
+      <div><b>🧮</b>Escolha a fração certa</div>
+      <div><b>✨</b>Veja os casos favoráveis brilharem</div>
+      <div><b>❤️</b>3 vidas. Errou, perdeu uma!</div>
+    </div>
+    <p class="dica">Chance = casos favoráveis ÷ casos possíveis</p>
+    <button class="btn b-ghost" data-go="menu">← Menu</button>
+  </section>
+
+  <!-- JOGO -->
+  <section class="tela" id="jogo">
+    <div class="hud">
+      <button class="mini" id="sair">✕</button>
+      <div id="vidas"></div>
+      <div class="pts">⭐ <span id="pontos">0</span></div>
+      <div class="seq" id="seq"></div>
+    </div>
+    <div class="prog"><i id="prog"></i></div>
+    <div class="tempo" id="tempoBox"><i id="tempo"></i></div>
+    <h3 id="pergunta"></h3>
+    <div class="cena" id="cena"></div>
+    <div class="opcoes" id="opcoes"></div>
+    <div class="fb" id="fb">
+      <p id="fbTxt"></p>
+      <button class="btn b-verde" id="prox">Próxima ▶</button>
+    </div>
+  </section>
+
+  <!-- FIM -->
+  <section class="tela" id="fim">
+    <h2 id="fimTit"></h2>
+    <div class="estrelas" id="estrelas"></div>
+    <p class="dica" id="fimTxt"></p>
+    <div class="menu-btns">
+      <button class="btn b-verde" id="again">↻ Jogar de novo</button>
+      <button class="btn b-ghost" data-go="niveis">Níveis</button>
+    </div>
+  </section>
+</main>
+
+<!-- CRÉDITOS -->
+<div class="modal" id="creditos">
+  <div class="card">
+    <h2>Créditos</h2>
+    <p class="dev">Gabriel Lucio De Araujo</p>
+    <a class="btn b-azul" href="https://github.com/gabriellucio-eng" target="_blank" rel="noopener">GitHub: gabriellucio-eng</a>
+    <button class="btn b-ghost" id="fecharCreditos">Fechar</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -6,6 +6,10 @@ body {
     color: #2B170D;
 }
 
+h1 {
+    font-weight: 900;
+}
+
 .cabecalho {
     background-color: #2B170D;
     color: #ffffff;
@@ -44,6 +48,13 @@ nav a:hover {
     margin: 10px;
     font-weight: bold;
 }
+.escolha-banner-center {
+    color: #C66A1A;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold; 
+    text-align: center;
+}
 
 .banner {
     background-color: #F3E6D7;
@@ -64,6 +75,19 @@ nav a:hover {
     gap: 40px;
 }
 
+.botao-laranja {
+    text-decoration: none;
+    border: 3px solid;
+    border-radius: 20px;
+    border-color: #C66A1A;
+    color: #090909;
+    padding: 10px 20px;
+    background-color: #f8f5f2;
+}
+.botao-laranja:hover {
+    color: #8f4c12;
+
+}
 .classicosherois {
     background-color: #000000;
     text-align: center;
@@ -147,8 +171,11 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: end;
-    resize: none;
 
+}
+
+.mensagem {
+    resize: none;
 }
 
 footer {
@@ -171,6 +198,7 @@ footer {
 img {
     max-width: 100%;
     height: auto;
+    width: 700px;
     display: block;
 }
 

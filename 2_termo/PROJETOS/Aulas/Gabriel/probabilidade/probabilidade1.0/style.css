@@ -1,0 +1,76 @@
+:root{--roxo:#2b0a5e;--rosa:#ff3d9a;--amar:#ffd600;--verde:#12d96b;--azul:#2f7bff;--verm:#ff3b3b;--tx:#fff}
+*{box-sizing:border-box;margin:0}
+body{min-height:100vh;font-family:"Trebuchet MS","Segoe UI",sans-serif;color:var(--tx);
+  background:radial-gradient(circle at 20% 10%,#6a1bff,transparent 50%),radial-gradient(circle at 85% 90%,#ff3d9a,transparent 45%),var(--roxo);
+  overflow-x:hidden}
+.bg{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.bg i{position:absolute;bottom:-60px;border-radius:50%;opacity:.5;animation:sobe linear infinite}
+@keyframes sobe{to{transform:translateY(-115vh) rotate(360deg)}}
+#app{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:20px 16px}
+.tela{display:none;flex-direction:column;align-items:center;gap:18px;text-align:center;min-height:90vh;justify-content:center}
+.tela.ativa{display:flex;animation:entra .35s}
+@keyframes entra{from{opacity:0;transform:scale(.96)}}
+h2{font-size:2rem;font-weight:900}
+h3{font-size:1.35rem;max-width:560px;line-height:1.3}
+.logo{font-size:clamp(2.6rem,10vw,4.6rem);font-weight:900;letter-spacing:-1px;line-height:1;text-shadow:0 5px 0 #0004;transform:rotate(-3deg)}
+.logo span{font-size:.45em;margin:0 .25em;color:var(--amar)}
+.sub,.dica{font-size:1.1rem;opacity:.9}
+.dica{background:#0003;padding:10px 18px;border-radius:14px}
+.menu-btns{display:flex;flex-direction:column;gap:12px;width:min(300px,100%)}
+.btn{display:inline-block;border:0;border-radius:18px;padding:15px 24px;font:inherit;font-weight:900;font-size:1.15rem;color:#fff;
+  cursor:pointer;text-decoration:none;box-shadow:0 6px 0 #0005;transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn:active{transform:translateY(5px);box-shadow:0 1px 0 #0005}
+.btn:focus-visible,.op:focus-visible,.mini:focus-visible{outline:4px solid var(--amar);outline-offset:3px}
+.b-verde{background:var(--verde);color:#063}.b-azul{background:var(--azul)}.b-rosa{background:var(--rosa)}.b-ghost{background:#fff2}
+/* níveis */
+.niveis{display:grid;gap:14px;width:100%}
+.nv{display:flex;align-items:center;gap:14px;padding:16px 20px;border-radius:22px;border:0;color:#fff;font:inherit;text-align:left;cursor:pointer;box-shadow:0 6px 0 #0005;transition:transform .15s}
+.nv:hover:not(:disabled){transform:scale(1.03)}
+.nv .ic{font-size:2.4rem}.nv b{font-size:1.4rem;display:block}.nv small{opacity:.9}.nv .st{margin-left:auto;font-size:1.5rem;letter-spacing:2px}
+.nv:disabled{filter:grayscale(.9) brightness(.7);cursor:not-allowed}
+.nv.f{background:linear-gradient(90deg,#0fb85c,#7be21a)}.nv.m{background:linear-gradient(90deg,#ff9a00,#ffd600);color:#4a2c00}.nv.d{background:linear-gradient(90deg,#ff2d6f,#a31bff)}
+.como{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+.como div{background:#fff2;border-radius:18px;padding:16px;font-weight:700}.como b{display:block;font-size:2.2rem}
+/* jogo */
+#jogo{justify-content:flex-start;gap:14px;padding-top:6px}
+.hud{display:flex;align-items:center;gap:14px;width:100%}
+.pts{font-weight:900;font-size:1.3rem;margin-left:auto}
+#vidas{font-size:1.5rem}
+.seq{font-weight:900;color:var(--amar);min-width:60px;text-align:right}
+.mini{background:#fff3;border:0;color:#fff;width:38px;height:38px;border-radius:50%;font-size:1rem;cursor:pointer}
+.prog,.tempo{width:100%;height:12px;background:#0004;border-radius:99px;overflow:hidden}
+.prog i{display:block;height:100%;width:0;background:var(--amar);transition:width .4s}
+.tempo{height:8px}.tempo i{display:block;height:100%;width:100%;background:var(--verde)}
+.cena{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;background:#0003;padding:18px;border-radius:24px;min-height:130px;align-items:center;width:100%}
+.t{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;font-weight:900;font-size:1.3rem;background:#fff;color:#222;transition:all .35s;box-shadow:inset -5px -6px 0 #0003}
+.cena.faces .t{border-radius:14px;font-size:2rem}
+.cena.moedas .t{width:62px;height:62px;background:radial-gradient(#ffe66b,#e0a800);font-size:1.1rem}
+.cena.grade{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;max-width:340px}
+.cena.grade .t{width:100%;height:auto;aspect-ratio:1;border-radius:8px;font-size:.8rem;box-shadow:none}
+.cena.pop .t{opacity:.25;transform:scale(.85)}
+.cena.pop .t.fav{opacity:1;transform:scale(1.15);animation:pulsa .8s infinite alternate;box-shadow:0 0 0 4px var(--amar),0 0 22px var(--amar)}
+@keyframes pulsa{to{transform:scale(1.28)}}
+.opcoes{display:grid;grid-template-columns:1fr 1fr;gap:12px;width:100%}
+.op{border:0;border-radius:20px;padding:18px 8px;font:inherit;font-size:1.9rem;font-weight:900;color:#fff;cursor:pointer;box-shadow:0 6px 0 #0005;transition:transform .12s}
+.op:nth-child(1){background:var(--azul)}.op:nth-child(2){background:var(--rosa)}.op:nth-child(3){background:#ff8a00}.op:nth-child(4){background:#9b3dff}
+.op:hover:not(:disabled){transform:translateY(-4px)}
+.op:disabled{cursor:default}
+.op.certa{background:var(--verde)!important;color:#063;animation:pulo .5s}
+.op.errada{background:var(--verm)!important;animation:treme .4s}
+.op:disabled:not(.certa):not(.errada){opacity:.45}
+@keyframes pulo{50%{transform:scale(1.12)}}
+@keyframes treme{25%{transform:translateX(-9px)}75%{transform:translateX(9px)}}
+.fb{display:none;flex-direction:column;align-items:center;gap:12px;width:100%;background:#0004;padding:14px;border-radius:20px}
+.fb.ver{display:flex;animation:entra .3s}
+.fb p{font-size:1.1rem;font-weight:700}
+.estrelas{font-size:4rem;letter-spacing:6px}
+.estrelas .on{animation:pulo .6s both}
+.estrelas .off{opacity:.25;filter:grayscale(1)}
+/* créditos */
+.modal{position:fixed;inset:0;background:#000a;display:none;place-items:center;z-index:10;padding:16px}
+.modal.ver{display:grid}
+.card{background:linear-gradient(160deg,#4a14b8,#ff3d9a);border-radius:28px;padding:30px;display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center;width:min(380px,100%);animation:entra .3s}
+.dev{font-size:1.5rem;font-weight:900;color:var(--amar)}
+@media(max-width:480px){.t{width:42px;height:42px}.op{font-size:1.5rem}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
