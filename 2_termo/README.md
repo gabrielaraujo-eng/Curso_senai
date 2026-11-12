@@ -1,52 +1,43 @@
-# 2º Termo — Desenvolvimento de Sistemas
+# 2º Termo — quando o código começa a virar sistema
 
-O segundo termo avança dos fundamentos para a construção de aplicações, integrando back-end, banco de dados, interfaces web e projetos.
+O segundo termo marca uma mudança importante na formação: o estudo deixa de estar concentrado apenas nos fundamentos e passa a acompanhar o ciclo de construção de uma aplicação. A ideia já não é somente escrever um código que funciona, mas entender como uma solução recebe dados, organiza regras, conversa com um banco, apresenta informações e evolui por meio de testes, documentação e melhorias.
 
-## Caminho de navegação
+Este diretório reúne essa transição em três frentes que se complementam: o servidor que processa as regras, o banco que estrutura e preserva os dados e a interface que transforma tudo isso em uma experiência compreensível. Os projetos integradores aproximam essas frentes e mostram como elas podem trabalhar juntas.
 
-```text
-2_termo/
-├── BACKEND/       # aulas compactadas e trabalhos de POO no back-end
-├── BANCO_DADOS/   # aulas 1–7, scripts SQL e atividade somativa
-├── LIMA/          # aulas 1–7, DevSolutions e atividade somativa
-└── PROJETOS/      # projeto integrador, páginas, CSS e imagens
-```
+## Do JavaScript ao lado do servidor
 
-| Disciplina | O que foi realizado | Pasta |
-| --- | --- | --- |
-| Back-end | Aulas práticas, desenvolvimento de servidor, POO e relacionamentos entre objetos. | [`BACKEND/`](./BACKEND/) |
-| Banco de Dados | Instalação, MER/DER, dicionário de dados, DDL, scripts e modelos SmartCoffee/Oficina de Veículos. | [`BANCO_DADOS/`](./BANCO_DADOS/) |
-| LIMA | Páginas HTML, imagens, favicon, HTML semântico, tipografia, layouts, CSS e listas. | [`LIMA/`](./LIMA/) |
-| Projetos | Prototipação, páginas, identidade visual, documentação, colaboração e entrega. | [`PROJETOS/`](./PROJETOS/) |
+No back-end, o JavaScript passa a ser executado fora do navegador com Node.js. A prática evolui de exercícios isolados para programas organizados em módulos, funções e arquivos com responsabilidades diferentes. Nesse caminho aparecem leitura e gravação de arquivos, manipulação de dados, uso de pacotes pelo NPM, processamento assíncrono e situações que exigem validação, tratamento de erros e manutenção.
 
-## Sequência das aulas
+A comunicação web também deixa de ser apenas uma ideia teórica. Requisições, respostas, métodos HTTP, códigos de status, rotas e estruturas JSON passam a fazer parte do raciocínio de desenvolvimento. Os desafios, laboratórios, atividades complementares e trabalhos de grupo registram a construção de soluções como controle de estoque, produção, manutenção, logística, oficina e leitura de informações. O resultado é uma visão mais próxima de uma aplicação real: uma entrada é recebida, uma regra é aplicada, um resultado é produzido e tudo precisa continuar compreensível para quem dará manutenção depois.
 
-### Back-end
+Acesse o material de [Back-end](./BACKEND/) para acompanhar essa parte prática.
 
-As pastas compactadas `AULA_1.zip` a `AULA_4.zip`, além de `AULA_10(5).zip` e `AULA_11.zip`, registram as aulas práticas. O arquivo de apoio em Markdown apresenta o desenvolvimento back-end. A pasta `Trabalho_grupo/` documenta relacionamentos entre objetos e conceitos de associação, agregação, composição e programação orientada a objetos.
+## Do desenho dos dados à execução das consultas
 
-### Banco de Dados
+O módulo de banco de dados acompanha a transformação de uma necessidade em uma estrutura que pode ser implementada. A modelagem começa no entendimento do domínio e passa pela identificação de entidades, atributos e relacionamentos. Depois, o modelo conceitual é refinado em um modelo lógico, com chaves, cardinalidades e regras capazes de representar o funcionamento do sistema.
 
-- **Aula 1:** início, configuração e instalação de um banco de dados, com materiais e modelo conceitual SmartCoffee.
-- **Aula 2:** continuidade da configuração e instalação do ambiente.
-- **Aula 3:** MER e DER.
-- **Aula 4:** conceitos aplicados ao DER, modelos conceituais e primeiro script SQL.
-- **Aula 5:** dicionário de dados e documentação do projeto, com versões dos modelos SmartCoffee e Hotel.
-- **Aula 6:** DDL, comandos de criação e scripts físicos do banco SmartCoffee.
-- **Aula 7:** atividade somativa, registros de apoio e evidências de execução.
-- **Somativa 1:** dicionário de dados e script do projeto Oficina de Veículos.
+A documentação também ganha espaço: o dicionário de dados ajuda a explicar o significado de cada informação antes que ela seja criada fisicamente. Na etapa seguinte, os scripts SQL colocam a modelagem em prática por meio de comandos de definição, criação de tabelas, tipos, restrições e manipulação de registros. SmartCoffee, Hotel, Oficina de Veículos e outros exercícios funcionam como cenários para testar decisões e perceber que um banco bem planejado facilita tanto o desenvolvimento quanto a consulta e a manutenção.
 
-### LIMA
+O conteúdo está reunido em [Banco de Dados](./BANCO_DADOS/), incluindo as aulas mais recentes, scripts e atividades avaliativas.
 
-- **Aula 1:** início do HTML e criação das primeiras páginas.
-- **Aula 2:** construção da primeira página web e organização de páginas de equipe.
-- **Aula 3:** organização de informações com HTML e uso de imagens.
-- **Aula 4:** favicon, imagens e página “sobre”.
-- **Aula 5:** HTML semântico, tipografia e layout visual, com currículo e atividade de páginas.
-- **Aula 6:** CSS inline, interno e externo, seletores e folhas de estilo.
-- **Aula 7:** listas e links de suporte.
-- **Projeto e somativa:** desenvolvimento do site DevSolutions e criação da primeira página avaliativa.
+## Da página simples à interface com intenção
 
-## Como estudar
+Em LIMA, HTML e CSS deixam de ser vistos apenas como ferramentas para montar páginas e passam a ser usados para organizar informação e comunicar uma ideia. A evolução passa pela estrutura semântica, hierarquia visual, tipografia, imagens, links, formulários, folhas de estilo e composição de layouts. O foco se amplia: uma página precisa ser legível, coerente, navegável e capaz de apresentar seu conteúdo com clareza.
 
-Consulte primeiro o material da aula, depois abra os arquivos produzidos e compare a teoria com a prática. Arquivos `.zip` devem ser extraídos localmente. HTML pode ser aberto no navegador; CSS deve ser associado às páginas; scripts SQL devem ser executados em um ambiente de banco configurado.
+Os exercícios mais recentes continuam essa construção com novas páginas, estilos e propostas visuais. O projeto DevSolutions, as atividades avaliativas e o material do SmartCoffee mostram a aplicação dos conceitos em conjuntos de páginas que precisam manter identidade, organização e consistência. É nesse ponto que a interface começa a dialogar com os dados e com a lógica que existe por trás dela.
+
+A evolução de HTML e CSS pode ser acompanhada em [LIMA](./LIMA/).
+
+## Quando as partes se encontram
+
+Os projetos integradores representam a passagem do exercício separado para uma solução pensada como conjunto. Neles entram prototipação, identidade visual, organização de páginas, estilos, documentação, colaboração e versões sucessivas da mesma ideia. Os projetos pessoais também registram esse processo de tentativa e refinamento, com experiências interativas desenvolvidas em HTML, CSS e JavaScript.
+
+Em [Projetos](./PROJETOS/), o mais importante não é apenas o resultado final de cada atividade, mas o caminho entre uma primeira versão e uma solução mais completa. Cada alteração revela uma decisão de design, uma descoberta técnica ou uma forma diferente de resolver o problema.
+
+## O que este termo representa agora
+
+Este README foi reescrito para acompanhar um momento mais avançado da formação. O segundo termo já não é apenas uma sequência inicial de aulas: ele reúne prática de desenvolvimento, modelagem de dados, comunicação entre componentes, organização de interfaces e projetos que exigem integração entre conhecimentos.
+
+A melhor forma de estudar este material é alternar entre teoria e execução. Leia o contexto, abra os códigos, observe como os arquivos se relacionam, teste os scripts em um ambiente seguro e compare as versões produzidas ao longo do tempo. Arquivos compactados devem ser extraídos antes do uso; páginas HTML podem ser abertas no navegador; estilos precisam estar associados às páginas; e scripts SQL devem ser executados somente em um banco de testes configurado.
+
+> O aprendizado deste termo acontece quando a aplicação deixa de ser apenas código e passa a ser compreendida como uma combinação de dados, regras, interface e escolhas.
