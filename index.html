@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfólio acadêmico de Gabriel Araújo durante o curso Técnico em Desenvolvimento de Sistemas no SENAI.">
+  <meta name="theme-color" content="#07111f">
+  <title>Curso SENAI | Gabriel Araújo</title>
+  <style>
+    :root { --bg:#07111f; --panel:#0e1b2e; --panel-2:#13243a; --text:#edf5ff; --muted:#9db0c8; --line:rgba(190,215,241,.15); --cyan:#55d6ff; --violet:#9b8cff; --green:#7ee2ae; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--text); background:radial-gradient(circle at 85% 8%, rgba(85,214,255,.13), transparent 30rem), radial-gradient(circle at 5% 35%, rgba(155,140,255,.12), transparent 28rem), var(--bg); font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.6; }
+    a { color:inherit; }
+    .wrap { width:min(1120px, calc(100% - 40px)); margin:auto; }
+    nav { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:24px 0; }
+    .brand { display:flex; align-items:center; gap:12px; font-weight:800; letter-spacing:-.02em; }
+    .mark { display:grid; place-items:center; width:38px; height:38px; border-radius:12px; color:#06101d; background:linear-gradient(135deg,var(--cyan),var(--violet)); font-weight:900; }
+    nav .links { display:flex; gap:20px; color:var(--muted); font-size:.92rem; }
+    nav a { text-decoration:none; } nav a:hover { color:var(--text); }
+    .hero { display:grid; grid-template-columns:1.15fr .85fr; align-items:center; gap:60px; padding:80px 0 92px; }
+    .eyebrow { color:var(--cyan); font-size:.78rem; font-weight:800; letter-spacing:.16em; text-transform:uppercase; }
+    h1 { max-width:760px; margin:14px 0 22px; font-size:clamp(2.7rem, 6vw, 5.4rem); line-height:.98; letter-spacing:-.065em; }
+    .hero p { max-width:650px; color:var(--muted); font-size:1.12rem; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 17px; border:1px solid var(--line); border-radius:12px; background:rgba(255,255,255,.04); text-decoration:none; font-weight:750; }
+    .button.primary { color:#06101d; border-color:transparent; background:linear-gradient(100deg,var(--cyan),var(--green)); }
+    .button:hover { transform:translateY(-1px); border-color:rgba(255,255,255,.35); }
+    .hero-card { position:relative; padding:26px; border:1px solid var(--line); border-radius:24px; background:linear-gradient(145deg, rgba(19,36,58,.95), rgba(9,23,40,.85)); box-shadow:0 24px 80px rgba(0,0,0,.24); }
+    .hero-card:before { content:""; display:block; width:72px; height:5px; border-radius:5px; margin-bottom:24px; background:linear-gradient(90deg,var(--cyan),var(--violet)); }
+    .hero-card h2 { margin:0 0 8px; font-size:1.3rem; } .hero-card p { font-size:.95rem; }
+    .mini-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:24px; }
+    .mini { padding:14px; border:1px solid var(--line); border-radius:14px; background:rgba(255,255,255,.035); } .mini strong { display:block; font-size:1.35rem; color:var(--cyan); } .mini span { color:var(--muted); font-size:.78rem; }
+    section { padding:72px 0; border-top:1px solid var(--line); }
+    .section-head { display:flex; align-items:end; justify-content:space-between; gap:24px; margin-bottom:28px; } h2 { margin:0; font-size:clamp(1.8rem,3vw,2.6rem); letter-spacing:-.04em; } .section-head p { max-width:540px; margin:0; color:var(--muted); }
+    .stats, .cards { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; } .stats .mini { min-height:112px; }
+    .cards { grid-template-columns:repeat(2,1fr); }
+    .card { padding:24px; border:1px solid var(--line); border-radius:18px; background:linear-gradient(150deg, rgba(19,36,58,.82), rgba(11,25,43,.66)); }
+    .card .tag { display:inline-block; margin-bottom:16px; padding:5px 9px; border-radius:999px; color:#07111f; background:var(--green); font-size:.72rem; font-weight:850; text-transform:uppercase; letter-spacing:.08em; }
+    .card:nth-child(2) .tag { background:var(--violet); } .card h3 { margin:0 0 8px; font-size:1.32rem; } .card p { margin:0 0 18px; color:var(--muted); } .card a { color:var(--cyan); font-weight:750; text-decoration:none; } .card a:hover { text-decoration:underline; }
+    .skill-list { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; } .skill { padding:9px 13px; border:1px solid var(--line); border-radius:999px; color:#cfe0f3; background:rgba(255,255,255,.035); font-size:.88rem; }
+    .timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; } .step { padding:20px; border-left:3px solid var(--cyan); background:rgba(255,255,255,.035); border-radius:0 15px 15px 0; } .step strong { display:block; margin-bottom:6px; } .step span { color:var(--muted); font-size:.9rem; }
+    footer { padding:36px 0 48px; color:var(--muted); font-size:.9rem; } footer .footer-inner { display:flex; justify-content:space-between; gap:20px; border-top:1px solid var(--line); padding-top:24px; } footer a { color:var(--cyan); text-decoration:none; }
+    @media (max-width:800px) { .hero { grid-template-columns:1fr; padding:54px 0 66px; gap:30px; } nav .links { display:none; } .stats, .timeline { grid-template-columns:repeat(2,1fr); } }
+    @media (max-width:560px) { .wrap { width:min(100% - 28px, 1120px); } .cards, .stats, .timeline { grid-template-columns:1fr; } h1 { font-size:3rem; } .section-head, footer .footer-inner { display:block; } .section-head p { margin-top:10px; } }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav aria-label="Navegação principal">
+      <a class="brand" href="."><span class="mark">GA</span><span>Curso SENAI</span></a>
+      <div class="links"><a href="#termos">Termos</a><a href="#competencias">Competências</a><a href="#jornada">Jornada</a><a href="README.md">README</a></div>
+    </nav>
+    <div class="hero">
+      <div>
+        <div class="eyebrow">Portfólio acadêmico · em evolução</div>
+        <h1>Aprender.<br><span style="color:var(--cyan)">Construir.</span><br>Compartilhar.</h1>
+        <p>Um mapa visual da minha formação no curso Técnico em Desenvolvimento de Sistemas do SENAI: aulas, exercícios, projetos, avaliações e experimentos reunidos em um só lugar.</p>
+        <div class="actions"><a class="button primary" href="#termos">Explorar o curso ↓</a><a class="button" href="https://github.com/gabrielaraujo-eng/Curso_senai">Abrir no GitHub ↗</a></div>
+      </div>
+      <aside class="hero-card"><h2>O que você encontra aqui</h2><p>Uma coleção organizada para acompanhar a evolução do básico até aplicações web, dados e projetos integradores.</p><div class="mini-grid"><div class="mini"><strong>2</strong><span>termos documentados</span></div><div class="mini"><strong>8</strong><span>áreas de estudo</span></div><div class="mini"><strong>670</strong><span>arquivos no acervo</span></div><div class="mini"><strong>∞</strong><span>aprendizados em andamento</span></div></div></aside>
+    </div>
+  </header>
+
+  <main>
+    <section id="termos"><div class="wrap"><div class="section-head"><h2>Uma formação em dois movimentos</h2><p>Cada termo tem seu próprio resumo e reúne materiais práticos, registros das aulas e entregas acadêmicas.</p></div><div class="cards">
+      <article class="card"><span class="tag">1º termo · fundamentos</span><h3>Base técnica e analítica</h3><p>Lógica de programação, Python, requisitos, sistemas operacionais, redes, IoT, Arduino e ESP32.</p><a href="1_termo/README.md">Ver resumo do 1º termo →</a></article>
+      <article class="card"><span class="tag">2º termo · construção</span><h3>Web, servidor e dados</h3><p>HTML, CSS, back-end, orientação a objetos, banco de dados, SQL e projetos integradores.</p><a href="2_termo/README.md">Ver resumo do 2º termo →</a></article>
+    </div></div></section>
+
+    <section id="competencias"><div class="wrap"><div class="section-head"><h2>Explore por área</h2><p>Atalhos para chegar rapidamente ao conteúdo que você quer consultar.</p></div><div class="cards">
+      <article class="card"><h3>01 · Programação</h3><p>Algoritmos, estruturas de controle, funções, Python, Haskell e orientação a objetos.</p><a href="1_termo/LOGICA_PROGRAMACAO/">Abrir materiais →</a></article>
+      <article class="card"><h3>02 · Infraestrutura</h3><p>Requisitos, Windows, Linux, redes, cabeamento, sensores, atuadores e MQTT.</p><a href="1_termo/LEVANTAMENtO_REQUISITOS/">Requisitos →</a><br><a href="1_termo/SISTEMAS_OPERACIONAIS/">Sistemas operacionais →</a></article>
+      <article class="card"><h3>03 · Desenvolvimento web</h3><p>Páginas semânticas, CSS, layouts, tipografia, formulários e responsividade.</p><a href="2_termo/LIMA/">Abrir LIMA →</a></article>
+      <article class="card"><h3>04 · Back-end e dados</h3><p>Node.js, APIs, modelagem, MER, DER, DDL, SQL e documentação de bancos.</p><a href="2_termo/BACKEND/">Back-end →</a><br><a href="2_termo/BANCO_DADOS/">Banco de dados →</a></article>
+    </div><div class="skill-list"><span class="skill">Python</span><span class="skill">HTML5</span><span class="skill">CSS3</span><span class="skill">JavaScript</span><span class="skill">Node.js</span><span class="skill">SQL / MySQL</span><span class="skill">Git & GitHub</span><span class="skill">Arduino / ESP32</span><span class="skill">Linux</span><span class="skill">MQTT</span></div></div></section>
+
+    <section id="jornada"><div class="wrap"><div class="section-head"><h2>Jornada de aprendizagem</h2><p>Do raciocínio lógico à integração de conhecimentos em projetos.</p></div><div class="timeline"><div class="step"><strong>01 · Entender</strong><span>Investigar problemas, requisitos e fundamentos.</span></div><div class="step"><strong>02 · Modelar</strong><span>Organizar dados, processos, interfaces e soluções.</span></div><div class="step"><strong>03 · Desenvolver</strong><span>Transformar ideias em código, páginas e sistemas.</span></div><div class="step"><strong>04 · Documentar</strong><span>Registrar decisões, testes, resultados e aprendizados.</span></div></div></div></section>
+
+    <section><div class="wrap"><div class="section-head"><h2>Projetos e registros</h2><p>O acervo também reúne entregas que mostram a aplicação prática do conteúdo.</p></div><div class="cards"><article class="card"><h3>Projetos integradores</h3><p>Imagens, protótipos, páginas HTML, CSS e arquivos de organização do desenvolvimento.</p><a href="2_termo/PROJETOS/">Explorar projetos →</a></article><article class="card"><h3>Materiais diversos</h3><p>Exercícios, avaliações, relatórios, certificados, PDFs, scripts e exemplos de aula.</p><a href="https://github.com/gabrielaraujo-eng/Curso_senai">Ver todo o repositório ↗</a></article></div></div></section>
+  </main>
+
+  <footer><div class="wrap footer-inner"><span>Desenvolvido por Gabriel Araújo · finalidade educacional</span><span><a href="README.md">Documentação</a> · <a href="https://github.com/gabrielaraujo-eng">GitHub</a></span></div></footer>
+</body>
+</html>
