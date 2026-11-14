@@ -20,6 +20,10 @@
           <a href="#jornada">Jornada</a>
           <a href="https://github.com/gabrielaraujo-eng/Curso_senai/blob/main/README.md">Documentação</a>
         </div>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">
+          <span class="theme-toggle-mark" aria-hidden="true">◐</span>
+          <span class="theme-toggle-label">Modo escuro</span>
+        </button>
       </nav>
     </div>
   </header>
@@ -35,16 +39,22 @@
           <a class="button" href="https://github.com/gabrielaraujo-eng/Curso_senai">Abrir no GitHub</a>
         </div>
       </div>
-      <aside class="hero-note" aria-label="Resumo do acervo">
-        <h2>O acervo em números</h2>
-        <p>Dois termos documentados, oito áreas de estudo e materiais que registram a evolução do curso.</p>
-        <div class="fact-list">
-          <div class="fact"><strong>2</strong><span>termos documentados</span></div>
-          <div class="fact"><strong>8</strong><span>áreas de estudo</span></div>
-          <div class="fact"><strong>670</strong><span>arquivos no acervo</span></div>
-          <div class="fact"><strong>∞</strong><span>aprendizados em andamento</span></div>
-        </div>
-      </aside>
+      <div class="hero-visual">
+        <figure class="hero-art">
+          <img src="assets/creation-of-learning.jpg" alt="Duas mãos se aproximam diante de uma luz dourada, representando a passagem do conhecimento entre pessoas." width="2304" height="1536" fetchpriority="high">
+          <figcaption>Conhecimento também nasce do encontro.</figcaption>
+        </figure>
+        <aside class="hero-note" aria-label="Resumo do acervo">
+          <h2>O acervo em números</h2>
+          <p>Dois termos documentados, oito áreas de estudo e materiais que registram a evolução do curso.</p>
+          <div class="fact-list">
+            <div class="fact"><strong>2</strong><span>termos documentados</span></div>
+            <div class="fact"><strong>8</strong><span>áreas de estudo</span></div>
+            <div class="fact"><strong>670</strong><span>arquivos no acervo</span></div>
+            <div class="fact"><strong>∞</strong><span>aprendizados em andamento</span></div>
+          </div>
+        </aside>
+      </div>
     </header>
 
     <section id="termos">
@@ -121,5 +131,6 @@
       <span><a href="https://github.com/gabrielaraujo-eng/Curso_senai/blob/main/README.md">Documentação</a> · <a href="https://github.com/gabrielaraujo-eng">GitHub</a></span>
     </div>
   </footer>
+  <script src="theme.js"></script>
 </body>
 </html>
