@@ -3,145 +3,50 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Portfólio acadêmico de Gabriel Araújo durante o curso Técnico em Desenvolvimento de Sistemas no SENAI.">
-  <meta name="theme-color" content="#c83232">
-  <title>Curso SENAI | Gabriel Araújo</title>
+  <meta name="description" content="Portfólio de Gabriel Araújo no curso Técnico em Desenvolvimento de Sistemas do SENAI.">
+  <title>Gabriel Araújo — Curso SENAI</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="welcome-open">
+<body>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <div class="welcome-overlay" id="welcome-overlay" role="dialog" aria-label="Abrir portfólio" aria-modal="true">
-    <div class="welcome-visual">
-      <img src="assets/encontro-dos-dedos.jpg" alt="Duas mãos se aproximam diante de uma luz dourada.">
-      <button class="profile-orb" id="profile-orb" type="button" aria-label="Entrar no portfólio">
-        <img src="assets/foto-perfil.jpg" alt="Foto de perfil de Gabriel Araújo no GitHub">
-      </button>
-    </div>
-  </div>
-  <header class="site-header">
-    <div class="wrap">
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="signature" href="https://github.com/gabrielaraujo-eng" aria-label="Abrir meu GitHub">gabriel<span>.dev</span></a>
       <nav aria-label="Navegação principal">
-        <a class="brand" href="https://github.com/gabrielaraujo-eng" aria-label="Abrir o perfil de Gabriel Araújo no GitHub">
-          <span class="mark"><img src="assets/foto-perfil.jpg" alt=""></span>
-          <span>Curso SENAI</span>
-        </a>
-        <div class="nav-links">
-          <a href="#termos">Termos</a>
-          <a href="#competencias">Competências</a>
-          <a href="#jornada">Jornada</a>
-          <a href="https://github.com/gabrielaraujo-eng/Curso_senai/blob/main/README.md">Documentação</a>
-        </div>
-        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">
-          <span class="theme-toggle-mark" aria-hidden="true">◐</span>
-          <span class="theme-toggle-label">Modo escuro</span>
-        </button>
+        <a href="#sobre">Sobre mim</a><a href="#projetos">Projetos</a><a href="#curso">Curso</a><a href="https://github.com/gabrielaraujo-eng/Curso_senai">GitHub ↗</a>
       </nav>
     </div>
   </header>
 
   <main id="conteudo">
-    <header class="wrap hero">
-      <div>
-        <p class="eyebrow">Portfólio acadêmico · em evolução</p>
-        <h1>Aprender,<br>construir,<br>compartilhar.</h1>
-        <p class="hero-intro">Um registro da formação no curso Técnico em Desenvolvimento de Sistemas do SENAI: aulas, exercícios, projetos, avaliações e experimentos reunidos em um só lugar.</p>
-        <div class="actions">
-          <a class="button primary" href="#termos">Explorar o curso</a>
-          <a class="button" href="https://github.com/gabrielaraujo-eng/Curso_senai">Abrir no GitHub</a>
-        </div>
+    <section class="intro shell" id="sobre" aria-labelledby="intro-title">
+      <div class="intro-copy">
+        <p class="kicker">Portfólio do curso · SENAI</p>
+        <h1 id="intro-title">Eu comecei pelo terminal.</h1>
+        <p class="lead">Meu nome é Gabriel e este é o lugar onde eu estou guardando o que faço no curso Técnico em Desenvolvimento de Sistemas. Ainda estou aprendendo e o curso ainda não acabou.</p>
+        <p>Eu comecei a programar pelo celular, usando um terminal de Python. No começo era só uma forma de tentar fazer as atividades, mas isso me ajudou a entender a lógica e depois acompanhar melhor as outras matérias.</p>
+        <div class="intro-actions"><a class="button button-solid" href="#projetos">Ver meus projetos</a><a class="text-link" href="https://github.com/gabrielaraujo-eng/Curso_senai/blob/main/README.md">Ler a documentação completa ↗</a></div>
       </div>
-      <div class="hero-visual">
-        <figure class="hero-art">
-          <img src="assets/encontro-dos-dedos.jpg" alt="Duas mãos se aproximam diante de uma luz dourada, representando a passagem do conhecimento entre pessoas." width="2304" height="1536" fetchpriority="high">
-          <figcaption>Conhecimento também nasce do encontro.</figcaption>
-        </figure>
-        <aside class="hero-note" aria-label="Resumo do acervo">
-          <h2>O acervo em números</h2>
-          <p>Dois termos documentados, oito áreas de estudo e materiais que registram a evolução do curso.</p>
-          <div class="fact-list">
-            <div class="fact"><strong>2</strong><span>termos documentados</span></div>
-            <div class="fact"><strong>8</strong><span>áreas de estudo</span></div>
-            <div class="fact"><strong>670</strong><span>arquivos no acervo</span></div>
-            <div class="fact"><strong>∞</strong><span>aprendizados em andamento</span></div>
-          </div>
-        </aside>
-      </div>
-    </header>
+      <aside class="note" aria-label="Uma anotação pessoal"><div class="note-pin" aria-hidden="true"></div><p class="note-label">anotação</p><p>Não sou uma pessoa que já sabe tudo. Estou tentando aprender, errar menos e descobrir onde minhas habilidades podem me levar.</p><p class="note-sign">— Gabriel</p></aside>
+    </section>
 
-    <section id="termos">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Dois termos, uma formação</h2>
-          <p>Cada termo reúne registros das aulas, materiais práticos e entregas acadêmicas. Os resumos ajudam a encontrar o conteúdo antes de abrir o acervo completo.</p>
-        </div>
-        <div class="entries">
-          <article class="entry">
-            <span class="entry-label">1º termo · fundamentos</span>
-            <h3>Base técnica e analítica</h3>
-            <p>Lógica de programação, Python, requisitos, sistemas operacionais, redes, IoT, Arduino e ESP32.</p>
-            <a href="https://github.com/gabrielaraujo-eng/Curso_senai/blob/main/1_termo/README.md">Ver resumo do 1º termo</a>
-          </article>
-          <article class="entry">
-            <span class="entry-label">2º termo · construção</span>
-            <h3>Web, servidor e dados</h3>
-            <p>HTML, CSS, back-end, orientação a objetos, banco de dados, SQL e projetos integradores.</p>
-            <a href="https://github.com/gabrielaraujo-eng/Curso_senai/blob/main/2_termo/README.md">Ver resumo do 2º termo</a>
-          </article>
-        </div>
+    <section class="story-band" aria-labelledby="story-title"><div class="shell story-grid"><div><p class="kicker">O que mudou em mim</p><h2 id="story-title">O curso acabou mexendo comigo também.</h2></div><div class="story-text"><p>Como eu sou adolescente, muita coisa muda ao mesmo tempo. O curso me ajudou a seguir um caminho que eu gostei e a perceber que eu consigo construir coisas, mesmo quando começo sem saber muito.</p><p>O mais difícil para mim foi banco de dados. Tive dificuldade para assimilar tanta coisa de uma vez: entidades, relacionamentos, chaves, SQL e toda a parte de modelagem. Ainda é um assunto que quero continuar praticando.</p></div></div></section>
+
+    <section class="projects shell" id="projetos" aria-labelledby="projects-title"><div class="section-heading"><p class="kicker">Coisas que eu fiz</p><h2 id="projects-title">Projetos que eu gosto de mostrar</h2><p>Alguns ainda estão em desenvolvimento. Mesmo assim, eles mostram melhor o que eu venho tentando fazer do que uma lista de tecnologias.</p></div>
+      <div class="project-list">
+        <article class="project project-featured"><div class="project-image dark-image"><img src="assets/arcade-preview.svg" alt="Prévia visual do catálogo de jogos documentado no projeto Arcade"></div><div class="project-body"><p class="project-tag">Projeto pessoal · em desenvolvimento</p><h3>Arcade</h3><p>É um site inspirado na ideia de uma Steam de jogos. Eu estou reunindo jogos, catálogo, identidade visual e uma área para acompanhar o desempenho. É o projeto que mais me anima porque junta programação e uma ideia que é minha.</p><a class="text-link" href="https://github.com/gabrielaraujo-eng/arcade-site">Ver o repositório do Arcade ↗</a></div></article>
+        <article class="project"><div class="project-image"><img src="assets/calculadora-terminal.svg" alt="Print do menu da calculadora feita em Python no terminal"></div><div class="project-body"><p class="project-tag">Primeiros exercícios · Python</p><h3>Calculadora de hipotenusa</h3><p>Eu gosto dessa calculadora porque usei uma fórmula que eu criei para resolver o cálculo. Ela lembra uma fase em que eu fazia as coisas pelo terminal e estava começando a entender como transformar uma ideia em código.</p><a class="text-link" href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/1_termo/LOGICA_PROGRAMACAO">Ver os exercícios de lógica ↗</a></div></article>
+        <article class="project project-wide"><div class="project-image tall-image"><img src="assets/projeto-beta-site.jpg" alt="Print de uma versão de página web feita nos projetos do segundo termo"></div><div class="project-body"><p class="project-tag">Projeto do curso · HTML e CSS</p><h3>Projetos de páginas web</h3><p>Nos projetos de LIMA e nos projetos integradores eu pratiquei estrutura de página, CSS, imagens, navegação e organização de arquivos. Foi quando comecei a enxergar melhor como uma página deixa de ser só código e vira algo que outra pessoa consegue usar.</p><a class="text-link" href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/2_termo/PROJETOS">Abrir os projetos integradores ↗</a></div></article>
       </div>
     </section>
 
-    <section id="competencias">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Explore por área</h2>
-          <p>Atalhos para chegar diretamente aos materiais que você quer consultar.</p>
-        </div>
-        <div class="link-grid">
-          <article class="link-item"><h3>01 · Programação</h3><p>Algoritmos, estruturas de controle, funções, Python, Haskell e orientação a objetos.</p><a class="link-list" href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/1_termo/LOGICA_PROGRAMACAO">Abrir materiais</a></article>
-          <article class="link-item"><h3>02 · Infraestrutura</h3><p>Requisitos, Windows, Linux, redes, cabeamento, sensores, atuadores e MQTT.</p><a href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/1_termo/LEVANTAMENtO_REQUISITOS">Requisitos</a><br><a href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/1_termo/SISTEMAS_OPERACIONAIS">Sistemas operacionais</a></article>
-          <article class="link-item"><h3>03 · Desenvolvimento web</h3><p>Páginas semânticas, CSS, layouts, tipografia, formulários e responsividade.</p><a href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/2_termo/LIMA">Abrir LIMA</a></article>
-          <article class="link-item"><h3>04 · Back-end e dados</h3><p>Node.js, APIs, modelagem, MER, DER, DDL, SQL e documentação de bancos.</p><a href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/2_termo/BACKEND">Back-end</a><br><a href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/2_termo/BANCO_DADOS">Banco de dados</a></article>
-        </div>
-        <div class="skill-list" aria-label="Tecnologias estudadas"><span>Python</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Node.js</span><span>SQL / MySQL</span><span>Git &amp; GitHub</span><span>Arduino / ESP32</span><span>Linux</span><span>MQTT</span></div>
-      </div>
+    <section class="course shell" id="curso" aria-labelledby="course-title"><div class="section-heading compact"><p class="kicker">O que está no repositório</p><h2 id="course-title">Materiais do curso</h2><p>Os links abaixo levam para as pastas e resumos reais que eu fui colocando no GitHub.</p></div>
+      <div class="course-links"><a href="https://github.com/gabrielaraujo-eng/Curso_senai/blob/main/1_termo/README.md"><span>01</span><strong>Primeiro termo</strong><small>Lógica, requisitos, sistemas operacionais, redes e IoT.</small></a><a href="https://github.com/gabrielaraujo-eng/Curso_senai/blob/main/2_termo/README.md"><span>02</span><strong>Segundo termo</strong><small>Back-end, banco de dados, LIMA e projetos.</small></a><a href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/2_termo/LIMA"><span>03</span><strong>LIMA</strong><small>HTML, CSS, interfaces e páginas do curso.</small></a><a href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/2_termo/BACKEND"><span>04</span><strong>Back-end</strong><small>Node.js, JavaScript, rotas, JSON e APIs.</small></a><a href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/2_termo/BANCO_DADOS"><span>05</span><strong>Banco de dados</strong><small>Modelagem, MER, DER, SQL e DDL.</small></a></div>
+      <div class="skills" aria-label="Tecnologias estudadas"><span>Python</span><span>JavaScript</span><span>Node.js</span><span>HTML</span><span>CSS</span><span>SQL</span><span>Git e GitHub</span><span>Arduino</span><span>ESP32</span></div>
     </section>
 
-    <section id="jornada">
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Jornada de aprendizagem</h2>
-          <p>O percurso parte do raciocínio lógico e chega à integração de conhecimentos em projetos.</p>
-        </div>
-        <div class="timeline">
-          <div class="step"><strong>01 · Entender</strong><span>Investigar problemas, requisitos e fundamentos.</span></div>
-          <div class="step"><strong>02 · Modelar</strong><span>Organizar dados, processos, interfaces e soluções.</span></div>
-          <div class="step"><strong>03 · Desenvolver</strong><span>Transformar ideias em código, páginas e sistemas.</span></div>
-          <div class="step"><strong>04 · Documentar</strong><span>Registrar decisões, testes, resultados e aprendizados.</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="wrap">
-        <div class="section-head">
-          <h2>Projetos e registros</h2>
-          <p>Entregas que mostram como os conteúdos foram aplicados em exercícios e projetos integradores.</p>
-        </div>
-        <div class="entries">
-          <article class="entry"><h3>Projetos integradores</h3><p>Imagens, protótipos, páginas HTML, CSS e arquivos de organização do desenvolvimento.</p><a href="https://github.com/gabrielaraujo-eng/Curso_senai/tree/main/2_termo/PROJETOS">Explorar projetos</a></article>
-          <article class="entry"><h3>Materiais diversos</h3><p>Exercícios, avaliações, relatórios, certificados, PDFs, scripts e exemplos de aula.</p><a href="https://github.com/gabrielaraujo-eng/Curso_senai">Ver todo o repositório</a></article>
-        </div>
-      </div>
-    </section>
+    <section class="next shell" aria-labelledby="next-title"><div><p class="kicker">Daqui para frente</p><h2 id="next-title">Ainda tem o ano que vem.</h2></div><div><p>Meu principal objetivo é seguir carreira no Exército por motivos pessoais, mas eu também ficaria feliz de encontrar um trabalho onde pudesse usar o que aprendi. Pode ser em tecnologia, em um escritório ou até como professor de TI no futuro.</p><p>No fim, eu quero ter uma vida boa e viver bem. Este portfólio vai continuar mudando junto comigo.</p></div></section>
   </main>
-
-  <footer>
-    <div class="wrap footer-inner">
-      <span>Desenvolvido por Gabriel Araújo · finalidade educacional</span>
-      <span><a href="https://github.com/gabrielaraujo-eng/Curso_senai/blob/main/README.md">Documentação</a> · <a href="https://github.com/gabrielaraujo-eng">GitHub</a></span>
-    </div>
-  </footer>
-  <script src="theme.js"></script>
+  <footer class="footer"><div class="shell footer-inner"><span>Gabriel Araújo · Curso Técnico em Desenvolvimento de Sistemas</span><a href="https://github.com/gabrielaraujo-eng">Meu GitHub ↗</a></div></footer>
 </body>
 </html>

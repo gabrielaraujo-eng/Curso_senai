@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title desc">
+  <title id="title">Print da calculadora em Python</title>
+  <desc id="desc">Janela de terminal com o menu da calculadora criada em Python.</desc>
+  <rect width="1200" height="700" fill="#11151b"/>
+  <rect x="34" y="34" width="1132" height="632" rx="14" fill="#171d25" stroke="#d77832" stroke-width="3"/>
+  <circle cx="72" cy="72" r="9" fill="#e76f51"/><circle cx="101" cy="72" r="9" fill="#e9c46a"/><circle cx="130" cy="72" r="9" fill="#2a9d8f"/>
+  <text x="78" y="134" fill="#d77832" font-family="monospace" font-size="22">python calculadora_terminal.py</text>
+  <g fill="#f2eee8" font-family="monospace" font-size="22">
+    <text x="78" y="190">=============================</text>
+    <text x="78" y="224">1 multiplique dois numeros</text>
+    <text x="78" y="258">2 some dois numeros</text>
+    <text x="78" y="292">3 meu numero e par ou impar</text>
+    <text x="78" y="326">4 qual seu nome</text>
+    <text x="78" y="360">5 subtraia dois numeros</text>
+    <text x="78" y="394">6 divida dois numeros</text>
+    <text x="78" y="428">7 encerar o programa</text>
+    <text x="78" y="480">escolha:</text>
+    <text x="78" y="530" fill="#8bd5ca">2</text>
+    <text x="78" y="580">a soma dos numeros resulta em 12</text>
+    <text x="78" y="620" fill="#d77832">feito no começo do curso, pelo terminal</text>
+  </g>
+</svg>
