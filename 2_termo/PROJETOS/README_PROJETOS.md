@@ -1,26 +1,52 @@
 # Projetos Integradores
 
-Esta pasta reúne materiais de projeto, páginas web, estilos, imagens, protótipos e documentação produzidos durante o curso.
+Esta pasta reúne projetos individuais, trabalhos em grupo, páginas web, jogos, estilos, imagens, protótipos e versões diferentes das ideias desenvolvidas durante o curso.
 
-## Conteúdo da pasta
+## Estrutura atual
+
+```text
+PROJETOS/
+├── Aulas/
+│   ├── Aula_0/       # primeiro conjunto de páginas e imagens
+│   ├── Aula_1/       # projeto em grupo
+│   ├── Aula_2/       # página de atividade
+│   └── Gabriel/      # jogos e projetos individuais
+└── README_PROJETOS.md
+```
+
+## Conteúdo por pasta
 
 | Caminho | Conteúdo |
 | --- | --- |
-| [`Paginas_atual/`](./Paginas_atual/) | Versões atuais das páginas HTML e do arquivo CSS. |
-| [`IMAGENS/`](./IMAGENS/) | Banner, logo, adereços e imagens usadas na identidade visual. |
-| [`teste.html`](./teste.html) | Página de teste de estrutura ou conteúdo. |
-| [`teste2.html`](./teste2.html) | Segunda página de teste. |
+| [`Aulas/Aula_0/`](./Aulas/Aula_0/) | Imagens, slogan, protótipo e páginas de teste do primeiro projeto. |
+| [`Aulas/Aula_1/`](./Aulas/Aula_1/) | Ideias e site do projeto em grupo. |
+| [`Aulas/Aula_2/`](./Aulas/Aula_2/) | Página HTML da atividade seguinte. |
+| [`Aulas/Gabriel/`](./Aulas/Gabriel/) | Jogos e experiências individuais em versões diferentes. |
+
+## Projetos individuais registrados
+
+Dentro de [`Aulas/Gabriel/`](./Aulas/Gabriel/) estão os seguintes projetos:
+
+- `5hNoBanheiro`, com as versões `boi1.0`, `boi1.1` e `boi2.0`.
+- `RPG`, com versões de `rpg1.0` até `rpg2.6.3`, incluindo uma pasta de arquivos da versão `rpg2.6.1`.
+- `SuperMauricio`, com versões de `mauricio1.0` até `mauricio2.3`.
+- `cassino`, com o jogo e seu estilo.
+- `chess`, com a versão `chess2.0` e arquivos de apoio.
+- `clicker`, com versões de `clicker1.0` até `clicker2.0`.
+- `jaco`, com as versões `boi1.0` e `boi1.1`.
+- `primeiraPessoa`, com HTML, CSS e JavaScript.
+- `probabilidade`, com a versão `probabilidade1.0`.
+- `tower`, com versões de `tower1.0` até `tower2.4`.
+
+Os projetos usam principalmente HTML, CSS e JavaScript. As diferentes versões mostram alterações de interface, mecânicas, organização de código e tentativas sucessivas de melhorar cada ideia.
 
 ## O que foi praticado
 
-O módulo aplica conhecimentos de levantamento de requisitos, prototipação, HTML, CSS, organização de arquivos, identidade visual, colaboração com Git/GitHub e apresentação de uma solução. As imagens e o arquivo de slogan apoiam a construção da comunicação do projeto.
+- Levantamento de requisitos e definição do objetivo do projeto.
+- Organização de páginas, estilos, imagens e arquivos JavaScript.
+- Prototipação e identidade visual.
+- Desenvolvimento de jogos e experiências interativas.
+- Testes de links, imagens, responsividade e funcionamento das páginas.
+- Colaboração, documentação e manutenção de versões no Git.
 
-## Fluxo de desenvolvimento
-
-1. Compreender o problema e definir o objetivo do projeto.
-2. Organizar requisitos, conteúdo, páginas e identidade visual.
-3. Criar protótipos e separar estrutura HTML de apresentação CSS.
-4. Implementar as páginas e testar links, imagens e responsividade.
-5. Revisar a entrega, documentar decisões e manter o histórico no Git.
-
-Para visualizar o projeto, abra a página HTML principal em um navegador. Ao mover arquivos, atualize os caminhos relativos das imagens e folhas de estilo.
+Para visualizar uma página ou jogo, abra o HTML correspondente mantendo os arquivos CSS, JavaScript e imagens nos caminhos relativos originais. Os nomes e versões foram preservados para manter o histórico do desenvolvimento.

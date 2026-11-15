@@ -1,36 +1,57 @@
 # Banco de Dados
 
-Este módulo registra a evolução desde a instalação do ambiente até a modelagem e implementação física de bancos relacionais.
+Esta pasta registra o estudo de bancos relacionais, desde a configuração inicial até a modelagem, documentação, comandos SQL e atividades avaliativas.
 
-## Aulas e atividades
-
-| Aula | Conteúdo e materiais |
-| --- | --- |
-| **1** | Configuração e instalação de banco de dados, links de apoio e modelo conceitual SmartCoffee. |
-| **2** | Continuação do início e da configuração do banco de dados. |
-| **3** | MER e DER, com material explicativo da aula. |
-| **4** | Conceitos aplicados ao DER, modelos SmartCoffee e primeiro script de comandos SQL. |
-| **5** | Dicionário de dados e documentação; versões dos modelos SmartCoffee e Hotel. |
-| **6** | DDL, comandos de definição e criação da estrutura física do SmartCoffee. |
-| **7** | Atividade somativa, evidências e arquivos de apoio sobre Oficina de Veículos e tipagem. |
-| **Somativa 1** | Script da Oficina de Veículos e dicionário de dados. |
-
-## Caminho de navegação
+## Estrutura atual
 
 ```text
 BANCO_DADOS/
-├── Aula_1/ ... Aula_7/     # materiais de cada aula
-├── SOMATIVA_1/             # avaliação e entrega complementar
-└── README_BANCO_DADOS.md   # este guia
+├── Aulas/
+│   ├── Aula_1/ até Aula_8/
+│   ├── Aula_9/
+│   ├── Aula_9.1/
+│   ├── Aula_9.2/
+│   ├── Aula_10/
+│   └── Aula_11/
+├── SOMATIVA_03/
+├── SOMATIVA_1/
+├── SOMATIVA_2/
+└── README_BANCO_DADOS.md
 ```
 
-## Conceitos consolidados
+## Aulas e atividades
 
-| Camada | Prática |
+| Caminho | Conteúdo principal |
 | --- | --- |
-| Conceitual | MER, entidades, atributos e relacionamentos. |
-| Lógica | DER, chaves primárias, chaves estrangeiras e cardinalidade. |
-| Documentação | Dicionário de dados e descrição das estruturas. |
-| Física | SQL, DDL, criação de tabelas, tipos e restrições. |
+| [`Aula_1/`](./Aulas/Aula_1/) | Introdução, configuração do ambiente e modelo conceitual do SmartCoffee. |
+| [`Aula_2/`](./Aulas/Aula_2/) | Continuação da instalação e configuração do banco de dados. |
+| [`Aula_3/`](./Aulas/Aula_3/) | MER e DER. |
+| [`Aula_4/`](./Aulas/Aula_4/) | Conceitos aplicados ao DER, modelos do SmartCoffee e primeiros scripts SQL. |
+| [`Aula_5/`](./Aulas/Aula_5/) | Dicionário de dados e versões dos modelos SmartCoffee e Hotel. |
+| [`Aula_6/`](./Aulas/Aula_6/) | DDL, criação da estrutura física e scripts do SmartCoffee. |
+| [`Aula_7/`](./Aulas/Aula_7/) | Atividade somativa, evidências, Oficina de Veículos e tipagem. |
+| [`Aula_8/`](./Aulas/Aula_8/) | Script SQL com comandos de consulta ou manipulação. |
+| [`Aula_9/`](./Aulas/Aula_9/) | Revisão do projeto SmartCoffee, modelos lógicos e scripts. |
+| [`Aula_9.1/`](./Aulas/Aula_9.1/) | DML e desafios de manipulação de dados. |
+| [`Aula_9.2/`](./Aulas/Aula_9.2/) | DQL, consultas SQL e desafios de consulta. |
+| [`Aula_10/`](./Aulas/Aula_10/) | TCL, transações e integridade referencial. |
+| [`Aula_11/`](./Aulas/Aula_11/) | Arquivo `index.sql` com a atividade mais recente registrada. |
 
-Os scripts `.sql` devem ser revisados antes da execução e utilizados em um banco de testes. Os arquivos `.brM`, `.rtf`, `.pdf` e as imagens preservam modelos e evidências produzidos durante as aulas.
+## Avaliações e entregas
+
+| Pasta | Conteúdo |
+| --- | --- |
+| [`SOMATIVA_1/`](./SOMATIVA_1/) | Script da Oficina de Veículos, correção e dicionário de dados. |
+| [`SOMATIVA_2/`](./SOMATIVA_2/) | Script da atividade somativa 2. |
+| [`SOMATIVA_03/`](./SOMATIVA_03/) | Modelo preenchível de entrega para cenários de banco de dados. |
+
+## Conceitos praticados
+
+- MER, DER, entidades, atributos e relacionamentos.
+- Chaves primárias, chaves estrangeiras e cardinalidade.
+- Dicionário de dados e documentação das estruturas.
+- DDL, DML, DQL e TCL.
+- Tipos, restrições, criação de tabelas, consultas, transações e integridade referencial.
+- Aplicação dos conceitos em SmartCoffee, Hotel e Oficina de Veículos.
+
+Os scripts `.sql` devem ser revisados antes da execução e usados somente em um banco de testes. Arquivos `.brM`, `.rtf`, `.pdf`, `.docx`, `.html` e imagens preservam modelos, explicações e evidências produzidos durante as aulas.
