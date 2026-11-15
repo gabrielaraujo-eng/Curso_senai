@@ -2,50 +2,7 @@
 
 Este diretório reúne o material do segundo termo do curso Técnico em Desenvolvimento de Sistemas. Aqui estão as atividades de back-end, banco de dados, desenvolvimento de interfaces e projetos integradores.
 
-## 1. Números do diretório
-
-| Medida | Quantidade | Observação |
-| --- | ---: | --- |
-| Áreas principais | **4** | `BACKEND`, `BANCO_DADOS`, `LIMA` e `PROJETOS` |
-| Arquivos de estudo e projeto | **419** | Contagem sem pastas `node_modules` |
-| Pastas de estudo e projeto | **144** | Contagem sem pastas `node_modules` |
-| Arquivos totais encontrados | **519** | Inclui cópias de dependências |
-| Pastas totais | **174** | Inclui pastas de dependências |
-
-### Arquivos por tipo
-
-| Tipo | Quantidade |
-| --- | ---: |
-| `js` | 108 |
-| `html` | 81 |
-| `css` | 53 |
-| `pdf` | 33 |
-| `json` | 28 |
-| `sql` | 22 |
-| `brm` | 18 |
-| `png` | 18 |
-| `jpg` | 14 |
-| `zip` | 13 |
-| `md` | 8 |
-| `docx` | 7 |
-| `rtf` | 7 |
-| `txt` | 5 |
-| `url` | 2 |
-| `ico` | 1 |
-| `svg` | 1 |
-
-### Arquivos por área
-
-| Área | Arquivos de estudo/projeto | Pastas de estudo/projeto |
-| --- | ---: | ---: |
-| `BACKEND` | 136 | 37 |
-| `BANCO_DADOS` | 70 | 18 |
-| `LIMA` | 87 | 32 |
-| `PROJETOS` | 125 | 53 |
-
-> Os números principais excluem `node_modules`, porque essas pastas são cópias de dependências usadas por alguns exercícios. Elas continuam no repositório, mas não representam aulas ou projetos novos.
-
-## 2. Mapa rápido
+## 1. Mapa rápido
 
 | Número | Área | O que contém | Link |
 | ---: | --- | --- | --- |
@@ -54,42 +11,42 @@ Este diretório reúne o material do segundo termo do curso Técnico em Desenvol
 | 03 | LIMA | HTML, CSS, páginas, wireframes, atividades e SmartCoffee. | [Abrir LIMA](./LIMA/) |
 | 04 | Projetos | Páginas, jogos, protótipos, versões e projetos integradores. | [Abrir PROJETOS](./PROJETOS/) |
 
-## 3. O que foi estudado
+## 2. O que foi estudado
 
-### 3.1 Back-end
+### 2.1 Back-end
 
 Nesta área pratiquei JavaScript fora do navegador com Node.js. Os arquivos registram exercícios de lógica aplicada, leitura e gravação de arquivos, JSON, módulos, dependências, processamento assíncrono, orientação a objetos, desafios e operações de leitura em projetos pequenos. Também há materiais de avaliações, trabalhos em grupo e exemplos de situações como produção, estoque, manutenção, logística e oficina.
 
 → [README do Back-end](./BACKEND/README.md)
 
-### 3.2 Banco de dados
+### 2.2 Banco de dados
 
 Esta área reúne a passagem da modelagem para os comandos SQL. Há materiais sobre entidades, atributos, relacionamentos, MER, DER, dicionário de dados, DDL, DML, DQL, TCL, restrições, transações e projetos como SmartCoffee, Hotel e Oficina de Veículos.
 
 → [README de Banco de Dados](./BANCO_DADOS/README_BANCO_DADOS.md)
 
-### 3.3 LIMA
+### 2.3 LIMA
 
 Em LIMA pratiquei HTML e CSS, começando pela estrutura das páginas e avançando para semântica, tipografia, imagens, formulários, layouts, wireframes, identidade visual e responsividade. A pasta também reúne páginas do DevSolutions, SmartCoffee e atividades somativas.
 
 → [README de LIMA](./LIMA/README_LIMA.md)
 
-### 3.4 Projetos
+### 2.4 Projetos
 
 Aqui estão projetos individuais, projetos em grupo, jogos, páginas e versões diferentes das mesmas ideias. O conteúdo inclui arquivos HTML, CSS e JavaScript, imagens, protótipos, materiais de apoio e documentação.
 
 → [README de Projetos](./PROJETOS/README_PROJETOS.md)
 
-## 4. Como navegar
+## 3. Como navegar
 
-1. Escolha uma das quatro áreas no [mapa rápido](#2-mapa-rápido).
+1. Escolha uma das quatro áreas no [mapa rápido](#1-mapa-rápido).
 2. Leia o README específico quando ele existir.
 3. Entre nas pastas `Aulas`, `Somativas`, `DESAFIOS`, `Trabalho_grupo` ou nos projetos individuais.
 4. Para abrir páginas, mantenha os arquivos HTML, CSS, JavaScript e imagens nos caminhos relativos originais.
 5. Execute scripts SQL somente em um banco de testes.
 6. Em projetos Node.js, observe o `package.json` e instale as dependências no ambiente adequado.
 
-## 5. Sitemap completo
+## 4. Sitemap completo
 
 O mapa abaixo lista todos os arquivos do segundo termo, exceto o conteúdo interno de `node_modules`. As próprias pastas de dependências são registradas no repositório, mas foram omitidas para o sitemap continuar útil para estudar o material.
 
@@ -660,7 +617,7 @@ O mapa abaixo lista todos os arquivos do segundo termo, exceto o conteúdo inter
 └── README.md
 ```
 
-## 6. Observação sobre a organização
+## 5. Observação sobre a organização
 
 Os nomes das pastas e dos arquivos acompanham a organização das aulas e, em alguns casos, preservam nomes antigos, espaços, acentos ou versões diferentes. Por isso, o sitemap mostra os nomes reais em vez de renomear tudo e quebrar os caminhos dos arquivos.
 
