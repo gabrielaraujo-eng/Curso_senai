@@ -188,5 +188,37 @@ select id_JOGO, quantidade_disponivel from JOGO
 WHERE ID_JOGO = 6;
 ROLLBACK;
 
+START TRANSACTION;
+
+UPDATE jogo
+set quantidade_disponivel = 4
+WHERE id_jogo = 6;
+
+SAVEPOINT reajuste_jogo;
+
+UPDATE jogo
+SET quantidade_disponivel = 10
+WHERE id_jogo = 3;
+
+ROLLBACK TO SAVEPOINT reajuste_jogo;
+
+select * from jogo;
+
+COMMIT;
+
+
+START TRANSACTION;
+
+UPDATE locacao
+SET status_locacao = 'DEVOLVIDA'
+where id_locacao = 1;
+
+UPDATE jogo
+SET quantidade_disponivel = quantidade_disponivel + 1
+WHERE id_jogo = 6;
+
+select * from locacao;
+
+COMMIT;
 
 
