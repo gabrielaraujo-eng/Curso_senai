@@ -1,115 +1,66 @@
 # Curso SENAI — Desenvolvimento de Sistemas
 
-Repositório acadêmico de **Gabriel Araújo** com aulas, exercícios, avaliações, projetos, relatórios e materiais produzidos durante o curso Técnico em Desenvolvimento de Sistemas no SENAI.
+<p align="center">
+  <a href="https://gabrielaraujo-eng.github.io/Curso_senai/"><strong>Abrir a página principal do curso</strong></a>
+</p>
 
-> Este README funciona como o mapa do repositório. Para acompanhar a formação, escolha um termo abaixo e depois entre na disciplina desejada. Cada módulo possui um README próprio com os assuntos estudados e os materiais correspondentes.
+<p align="center">
+  Portfólio acadêmico de <strong>Gabriel Araújo</strong> durante o curso Técnico em Desenvolvimento de Sistemas no SENAI.
+</p>
 
-## Índice de navegação
+Este repositório acompanha minha evolução desde os primeiros exercícios de lógica até o desenvolvimento de aplicações, páginas web, bancos de dados e projetos integradores. Aqui estão reunidos códigos, atividades, avaliações, relatórios, protótipos, materiais de aula e experimentos que mostram não apenas o resultado, mas também o processo de aprendizagem.
 
-- [Visão geral do curso](#visão-geral-do-curso)
-- [Navegação rápida](#navegação-rápida)
-- [1º termo](#1º-termo)
-- [2º termo](#2º-termo)
-- [Tecnologias e competências](#tecnologias-e-competências)
-- [Como consultar os materiais](#como-consultar-os-materiais)
-- [Status do repositório](#status-do-repositório)
-- [Autor](#autor)
+## Por onde começar
 
-## Visão geral do curso
+A [página visual do curso](https://gabrielaraujo-eng.github.io/Curso_senai/) é a melhor porta de entrada para conhecer o projeto. Ela apresenta os dois termos, as áreas de estudo e os principais caminhos do acervo de forma mais visual.
 
-O curso reúne a base necessária para compreender, planejar, desenvolver, testar e documentar sistemas. A jornada começa com lógica de programação e fundamentos de infraestrutura e avança para desenvolvimento web, back-end, banco de dados e projetos integradores.
+Quem prefere navegar diretamente pelos arquivos pode começar pelos resumos abaixo:
 
-| Etapa | Competências desenvolvidas |
-| --- | --- |
-| **Fundamentos** | Raciocínio lógico, algoritmos, Python, estruturas de controle e organização de código. |
-| **Análise e infraestrutura** | Engenharia de requisitos, sistemas operacionais, redes, IoT, dispositivos e protocolos de comunicação. |
-| **Desenvolvimento web** | HTML semântico, CSS, páginas responsivas, imagens, favicon, formulários e organização visual. |
-| **Back-end e dados** | Node.js, APIs, orientação a objetos, modelagem de dados, SQL, DDL e documentação de banco. |
-| **Projetos** | Prototipação, colaboração com Git/GitHub, metodologias ágeis, qualidade e integração dos conhecimentos. |
+- [Resumo do 1º termo](./1_termo/README.md), com a base de programação, requisitos, sistemas operacionais, redes e IoT.
+- [Resumo do 2º termo](./2_termo/README.md), com a evolução para back-end, banco de dados, interfaces web e projetos.
 
-## Navegação rápida
+## A formação registrada aqui
 
-| O que você quer consultar? | Caminho |
-| --- | --- |
-| Resumo do 1º termo | [`1_termo/README.md`](./1_termo/README.md) |
-| Resumo do 2º termo | [`2_termo/README.md`](./2_termo/README.md) |
-| Lógica e exercícios em Python | [`1_termo/LOGICA_PROGRAMAÇÂO/`](./1_termo/LOGICA_PROGRAMAÇÂO/) |
-| Atividades complementares de lógica | [`1_termo/LOGICA_PROGRAMAÇÂO/gabriel/Atividades_complementares/`](./1_termo/LOGICA_PROGRAMAÇÂO/gabriel/Atividades_complementares/) |
-| Exercícios de Haskell | [`1_termo/LOGICA_PROGRAMAÇÂO/gabriel/Atividades_complementares/Haskell/`](./1_termo/LOGICA_PROGRAMAÇÂO/gabriel/Atividades_complementares/Haskell/) |
-| Engenharia de requisitos | [`1_termo/LEVANTAMENtO_REQUISITOS/`](./1_termo/LEVANTAMENtO_REQUISITOS/) |
-| Sistemas operacionais | [`1_termo/SISTEMAS_OPERACIONAIS/`](./1_termo/SISTEMAS_OPERACIONAIS/) |
-| Redes e IoT | [`1_termo/ARQUITETURA_IOT/`](./1_termo/ARQUITETURA_IOT/) |
-| Back-end | [`2_termo/BACKEND/`](./2_termo/BACKEND/) |
-| Banco de dados | [`2_termo/BANCO_DADOS/`](./2_termo/BANCO_DADOS/) |
-| LIMA — HTML e CSS | [`2_termo/LIMA/`](./2_termo/LIMA/) |
-| Projetos integradores | [`2_termo/PROJETOS/`](./2_termo/PROJETOS/) |
+### 1º termo — fundamentos para pensar como desenvolvedor
 
-## 1º termo
+O primeiro termo constrói a base técnica e analítica necessária para compreender um sistema antes de implementá-lo. A lógica de programação apresenta algoritmos, variáveis, estruturas de decisão e repetição, coleções, funções e organização de código, com exercícios principalmente em Python e experiências complementares em Haskell.
 
-O primeiro termo constrói a base técnica e analítica para o desenvolvimento de sistemas. O resumo completo está em [`1_termo/README.md`](./1_termo/README.md).
+A formação também passa pela engenharia de requisitos, com levantamento de necessidades, requisitos funcionais e não funcionais, entrevistas, documentação, UML, validação e prototipação. Em sistemas operacionais, o estudo se aproxima da infraestrutura: processos, memória, arquivos, usuários, permissões, comandos, segurança, logs e administração de ambientes Windows e Linux.
 
-### Lógica de programação
+O termo se completa com arquitetura de redes e IoT, incluindo cabeamento, dispositivos, Arduino, ESP32, sensores, atuadores e comunicação por MQTT.
 
-Em [`1_termo/LOGICA_PROGRAMAÇÂO/`](./1_termo/LOGICA_PROGRAMAÇÂO/) foram estudados algoritmos, variáveis, tipos de dados, operadores, condicionais, laços, listas, tuplas, dicionários, funções e boas práticas de código em Python. A pasta pessoal de Gabriel reúne exercícios complementares, projetos como biblioteca, elevador e cancelamento de compras, além de provas formativas e somativas.
+**Acessos:** [Lógica de programação](./1_termo/LOGICA_PROGRAMACAO/) · [Requisitos](./1_termo/LEVANTAMENtO_REQUISITOS/) · [Sistemas operacionais](./1_termo/SISTEMAS_OPERACIONAIS/) · [Redes e IoT](./1_termo/ARQUITETURA_IOT/)
 
-### Engenharia de requisitos
+### 2º termo — quando o conhecimento vira aplicação
 
-Em [`1_termo/LEVANTAMENtO_REQUISITOS/`](./1_termo/LEVANTAMENtO_REQUISITOS/) foram trabalhados requisitos funcionais e não funcionais, técnicas de elicitação, entrevistas, brainstorming, diagramas UML, especificação de requisitos, validação e prototipação.
+No segundo termo, os conteúdos começam a se conectar. O back-end introduz a execução de JavaScript com Node.js, organização em módulos, manipulação de arquivos, dependências, processamento assíncrono, requisições HTTP, respostas, JSON, rotas e regras de negócio. Os exercícios e desafios registram a construção de soluções para situações como estoque, produção, manutenção, logística e oficina.
 
-### Sistemas operacionais
+O banco de dados desenvolve o caminho entre uma necessidade e uma estrutura persistente. A modelagem trabalha entidades, atributos, relacionamentos, MER, DER, chaves e cardinalidades; a implementação avança para dicionário de dados, SQL, DDL, tipos, restrições e criação de estruturas físicas. Os projetos SmartCoffee, Hotel e Oficina de Veículos ajudam a transformar esses conceitos em decisões concretas.
 
-Em [`1_termo/SISTEMAS_OPERACIONAIS/`](./1_termo/SISTEMAS_OPERACIONAIS/) foram estudados processos, memória, sistemas de arquivos, entrada e saída, comandos de Windows e Linux, usuários, permissões, instalação de pacotes, segurança, logs, firewalls e hardening. A pasta também contém avaliações, relatórios, atividades complementares e certificados.
+Em LIMA, HTML e CSS são usados para organizar informação e criar interfaces mais claras. A prática envolve semântica, tipografia, imagens, navegação, formulários, layouts, folhas de estilo e identidade visual. O projeto DevSolutions, as atividades avaliativas e as páginas do SmartCoffee mostram a evolução de exercícios individuais para conjuntos de páginas mais completos.
 
-### Arquitetura de redes e IoT
+Os projetos integradores aproximam todas essas habilidades: prototipação, desenvolvimento, colaboração, documentação, versões sucessivas e apresentação de uma solução como produto.
 
-Em [`1_termo/ARQUITETURA_IOT/`](./1_termo/ARQUITETURA_IOT/) foram registrados conteúdos sobre ativos e passivos de rede, cabeamento RJ45, Arduino, ESP32, sensores, atuadores e comunicação MQTT usando o modelo de publicação e inscrição.
-
-## 2º termo
-
-O segundo termo avança para a construção de aplicações web e para a integração entre interface, servidor e dados. O resumo completo está em [`2_termo/README.md`](./2_termo/README.md).
-
-### Back-end
-
-Em [`2_termo/BACKEND/`](./2_termo/BACKEND/) estão as aulas compactadas, o material de desenvolvimento back-end e os trabalhos em grupo sobre relacionamento entre objetos e programação orientada a objetos. Os materiais devem ser extraídos antes da execução, quando estiverem em formato `.zip`.
-
-### Banco de dados
-
-Em [`2_termo/BANCO_DADOS/`](./2_termo/BANCO_DADOS/) foram realizados estudos de instalação e configuração do banco, MER e DER, conceitos aplicados à modelagem, dicionário de dados, DDL e criação de estruturas físicas. A disciplina inclui scripts SQL, modelos conceituais e atividades somativas, incluindo os exemplos SmartCoffee e Oficina de Veículos.
-
-### LIMA
-
-Em [`2_termo/LIMA/`](./2_termo/LIMA/) foram desenvolvidas páginas HTML e CSS progressivamente: primeira página, organização de informações, imagens, favicon, HTML semântico, tipografia, layout, CSS inline/interno/externo, listas, links e páginas de suporte. A pasta também contém a atividade somativa e o projeto DevSolutions.
-
-### Projetos
-
-Em [`2_termo/PROJETOS/`](./2_termo/PROJETOS/) estão os materiais de projetos integradores, imagens, páginas HTML, estilos CSS, protótipos e arquivos relacionados à organização do desenvolvimento.
+**Acessos:** [Back-end](./2_termo/BACKEND/) · [Banco de dados](./2_termo/BANCO_DADOS/) · [LIMA — HTML e CSS](./2_termo/LIMA/) · [Projetos](./2_termo/PROJETOS/)
 
 ## Tecnologias e competências
 
-| Categoria | Tecnologias ou conceitos |
-| --- | --- |
-| Programação | Python, Haskell, Node.js e orientação a objetos |
-| Web | HTML5, CSS3, páginas semânticas e responsivas |
-| Dados | SQL, MySQL, MER, DER, DDL e dicionário de dados |
-| Infraestrutura | Windows, Linux, redes, RJ45, Arduino e ESP32 |
-| Comunicação | MQTT, HTTP, JSON e APIs |
-| Ferramentas | Git, GitHub, PowerShell, Bash, Arduino IDE e ferramentas de modelagem |
-| Processo | Requisitos, UML, prototipação, Scrum, Kanban, testes e documentação |
+A formação reúne `Python`, `Haskell`, `JavaScript`, `Node.js`, `HTML5`, `CSS3`, `SQL`, `MySQL`, `Git`, `GitHub`, `PowerShell`, `Bash`, `Arduino`, `ESP32`, `MQTT`, `HTTP`, `JSON`, `APIs`, `UML`, prototipação, Scrum, Kanban, testes e documentação.
 
-## Como consultar os materiais
+Mais do que acumular ferramentas, o objetivo é compreender como investigar um problema, modelar uma solução, implementar suas partes, testar o comportamento e comunicar o resultado.
 
-Os arquivos `.md`, `.py`, `.hs`, `.html`, `.css` e `.sql` podem ser abertos diretamente no GitHub ou em um editor de código. Arquivos `.pdf`, `.rtf` e imagens servem como material de apoio e documentação. Para executar códigos, abra a pasta correspondente e siga as instruções do README específico; verifique também se o ambiente necessário está instalado.
+## Como usar este acervo
 
-Os nomes de algumas pastas e arquivos preservam a nomenclatura original das aulas. Por isso, ao copiar caminhos no terminal, utilize aspas quando houver espaços, acentos ou caracteres especiais.
+Os arquivos Markdown servem como guias de contexto. Códigos em Python, Haskell e JavaScript podem ser estudados e executados conforme o ambiente exigido por cada atividade. As páginas HTML devem ser abertas no navegador com seus arquivos CSS e imagens preservados nos caminhos relativos. Scripts SQL devem ser executados somente em um banco de testes configurado.
 
-## Status do repositório
+O repositório mantém nomes de arquivos e pastas que acompanham a organização original das aulas. Por isso, alguns caminhos possuem acentos, espaços ou grafias específicas; ao trabalhar no terminal, use aspas quando necessário. Arquivos compactados também precisam ser extraídos antes da execução.
 
-O repositório está em evolução contínua. Novas aulas, correções, projetos e explicações podem ser adicionados conforme o avanço da formação.
+## GitHub Pages
 
-## Autor
+A página principal está em [`index.html`](./index.html) e foi construída como uma página estática responsiva, sem dependências externas. O workflow em [`.github/workflows/pages.yml`](./.github/workflows/pages.yml) publica automaticamente o conteúdo na branch `main` sempre que há uma nova atualização.
 
-Desenvolvido por [Gabriel Araújo](https://github.com/gabrielaraujo-eng) como registro acadêmico e portfólio de aprendizagem no SENAI.
+## Sobre o projeto
 
-## Licença e uso
+Este é um registro acadêmico em evolução. Novas aulas, correções, projetos e explicações podem ser adicionados à medida que a formação continua.
 
-O conteúdo possui finalidade educacional. Para reutilizar atividades, imagens ou materiais autorais, mantenha os créditos e confirme a permissão de uso quando necessário.
+Desenvolvido por [Gabriel Araújo](https://github.com/gabrielaraujo-eng). O conteúdo tem finalidade educacional; ao reutilizar atividades, imagens ou materiais autorais, mantenha os créditos e verifique as permissões de uso.

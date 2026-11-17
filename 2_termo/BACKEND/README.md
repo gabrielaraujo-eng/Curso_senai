@@ -1,28 +1,41 @@
-# 🚀 Desenvolvimento Back-End
+# Back-end — JavaScript e Node.js
 
-Esta pasta contém todos os exercícios, laboratórios e implementações voltados ao lado do servidor (Server-side). O foco principal é a construção de aplicações robustas, escaláveis e seguras utilizando o ecossistema JavaScript moderno.
+Esta pasta reúne as atividades de back-end do segundo termo. O conteúdo foi crescendo de exercícios de JavaScript para programas organizados em arquivos, leitura e gravação de dados, JSON, módulos, dependências, orientação a objetos e desafios com situações de produção, estoque, manutenção, logística e oficina.
 
----
+## Estrutura atual
 
-## 🛠️ Tecnologias e Ferramentas
+```text
+BACKEND/
+├── AtividadesComplementares/   # exercícios extras, revisão e package.json
+├── Aulas/                      # aulas 1 a 14 e arquivos compactados
+├── DESAFIOS/                   # produção, estoque e manutenção
+├── Somativas/                  # avaliações práticas
+├── Trabalho_grupo/             # materiais sobre POO e relacionamentos entre objetos
+└── README.md
+```
 
-| Ferramenta | Utilização |
-| :--- | :--- |
-| **Node.js** | Ambiente de execução para JavaScript fora do navegador. |
-| **NPM** | Gerenciamento de pacotes e dependências do projeto. |
-| **Express** | Framework para criação de APIs e rotas HTTP (quando aplicável). |
-| **JSON** | Formato padrão para intercâmbio de dados entre cliente e servidor. |
+## Pastas principais
 
----
+| Pasta | Conteúdo |
+| --- | --- |
+| [`AtividadesComplementares/`](./AtividadesComplementares/) | Exercícios complementares, revisão para prova e pequenos projetos Node.js. |
+| [`Aulas/`](./Aulas/) | Materiais das aulas `AULA_1` a `AULA_4`, `AULA_10(5)`, `AULA_11`, `AULA_12`, `Aula_13`, `Aula_14` e arquivos `.zip`. |
+| [`DESAFIOS/`](./DESAFIOS/) | Desafios de produção, estoque e manutenção, com JavaScript, JSON e projetos Node.js. |
+| [`Somativas/`](./Somativas/) | Exercícios da avaliação somativa, incluindo produção, compras, qualidade, temperatura, ciclos, estoque e manutenção. |
+| [`Trabalho_grupo/`](./Trabalho_grupo/) | PDFs e arquivos compactados sobre relacionamentos entre objetos e programação orientada a objetos. |
 
-## 📚 Tópicos Abordados
+## Conteúdos encontrados
 
-Neste módulo, exploramos os fundamentos da comunicação web e lógica de servidor:
+- JavaScript executado com Node.js.
+- Módulos, funções, variáveis, condicionais e repetição.
+- Leitura e gravação de arquivos e persistência em JSON.
+- Uso de `npm`, `package.json` e dependências como `readline-sync`.
+- Processamento assíncrono e organização de responsabilidades em arquivos diferentes.
+- Orientação a objetos e relacionamentos entre objetos.
+- Exercícios e desafios aplicados a produção, estoque, manutenção, logística e oficina.
 
-*   **Fundamentos de Node.js**: Módulos internos, sistema de arquivos (`fs`) e assincronismo.
-*   **Protocolo HTTP**: Manipulação de requisições e respostas, status codes e métodos (GET, POST, PUT, DELETE).
-*   **APIs RESTful**: Estruturação de rotas e lógica de negócio para consumo de dados.
-*   **Segurança**: Validação de esquemas, tratamento de erros e proteção contra injeções de dados maliciosos.
+## Como executar
 
----
-> "O Back-End é o motor que move a aplicação, invisível aos olhos, mas fundamental para a existência." ⚙️
+Leia o `package.json` de cada atividade antes de executar. Quando houver dependências, instale-as dentro da pasta do próprio exercício. Os arquivos JSON usados pelos programas devem permanecer nos caminhos relativos esperados pelo código.
+
+> O conteúdo desta pasta é um registro das atividades do curso. Alguns exercícios possuem versões diferentes e materiais de apoio da mesma aula; eles foram mantidos para preservar o histórico do desenvolvimento.
