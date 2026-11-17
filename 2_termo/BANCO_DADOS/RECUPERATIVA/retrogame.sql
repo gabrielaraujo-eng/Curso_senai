@@ -179,5 +179,14 @@ COMMIT;
 
 select * from livro;
 
+start transaction;
+
+update JOGO
+set quantidade_disponivel = quantidade_disponivel + 100
+where id_JOGO = 6;
+select id_JOGO, quantidade_disponivel from JOGO
+WHERE ID_JOGO = 6;
+ROLLBACK;
+
 
 
