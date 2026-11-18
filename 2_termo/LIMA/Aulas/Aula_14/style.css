@@ -1,0 +1,120 @@
+.inicio {
+    /* background-color: cadetblue; */
+    background-image: linear-gradient(-100deg, #053080, #49cee6);
+    display: flex;
+    border-radius: 2px;
+    border: 2px solid #7a28d850;
+    height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+body {
+    box-sizing: border-box;
+    background-image: linear-gradient(-1000deg, #13b3ab, #055dcf);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0 20px;
+}
+.inicio span {
+    color: rgb(255, 145, 2);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 700;
+}  
+
+.inicio a {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.navegacao {
+    display: flex;
+    text-decoration: none;
+    list-style: none;
+    gap: 48px;
+    margin: 30px;
+    padding: 0px 50px 0px;
+    align-items: flex-start;
+    justify-content: flex-end;
+
+
+}
+
+.conteudo-inicial {
+    display: flex;
+    background-color: rgb(93, 172, 236);
+}
+
+.conteudo-art {
+    display: flex;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 16px;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
+
+}
+
+img {
+    display: block;
+    width: 100%; 
+    /* height: 80%; */
+}
+
+.cartao-img:hover {
+    box-shadow: 0 10px 24px -8px rgba(14, 13, 13, 0.836);
+    background: #1357d6e3;
+    backdrop-filter: blur(14px);
+    transform: translateX(120px) rotate(10deg);
+
+}
+
+.galeria-conteudo {
+    background-color: #123474;
+    padding: 0px;
+    margin: 0px;
+}
+
+.galeria-img {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    grid-column: auto;
+}
+
+.galeria-img img {
+    display: block;
+    max-width: 100%;
+    height: 50%;
+}
+
+.galeria-img, ul {
+    text-decoration: none;
+    list-style: none;
+}
+
+.gal-img {
+    position: relative;
+    overflow: hidden;
+    border-radius: 14px;
+}
+
+.gal-img figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 14px;
+    color: #ffffff;
+    background-color: #121414;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.gal-img:hover figcaption {
+    transform: translateY(0);
+}
+
+.
