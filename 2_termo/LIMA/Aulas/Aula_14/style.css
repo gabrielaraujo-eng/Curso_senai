@@ -123,5 +123,6 @@ img {
     height: 120px;
     object-fit: contain;
     object-position: center;
-    justify-content: center;
+    /* scroll-snap-type: 
+    scroll-snap-align: ; */
 }
