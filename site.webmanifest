@@ -1,0 +1,19 @@
+{
+  "name": "Curso SENAI | Desenvolvimento de Sistemas",
+  "short_name": "Curso SENAI",
+  "description": "Portfólio acadêmico do curso Técnico em Desenvolvimento de Sistemas do SENAI.",
+  "lang": "pt-BR",
+  "start_url": "/Curso_senai/",
+  "scope": "/Curso_senai/",
+  "display": "standalone",
+  "background_color": "#f7f2ea",
+  "theme_color": "#c83232",
+  "icons": [
+    {
+      "src": "/Curso_senai/assets/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
