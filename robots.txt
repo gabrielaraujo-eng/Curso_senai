@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gabrielaraujo-eng.github.io/Curso_senai/sitemap.xml
