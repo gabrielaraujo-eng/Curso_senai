@@ -221,21 +221,10 @@ main section { padding: clamp(4rem, 8vw, 6.5rem) 0; border-top: 1px solid var(--
 .entries { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; border: 1px solid var(--line); background: var(--line); }
 .entry { padding: 1.8rem; background: var(--surface); transition: background-color .2s ease; }
 .entry:hover { background: var(--soft-accent); }
-.entries--projects > .project-entry:hover { background: var(--surface); }
 .entry-label { display: block; margin-bottom: 1.2rem; color: var(--accent-dark); font-size: .76rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .entry h3 { margin: 0 0 .6rem; font-size: 1.5rem; }
 .entry p { margin: 0 0 1.1rem; color: var(--muted); }
 .entry a, .link-list a, footer a { color: var(--accent-dark); font-weight: 750; text-underline-offset: .2em; }
-.entries--projects { grid-template-columns: 1fr; }
-.project-entry { padding: clamp(1.4rem, 3vw, 2.4rem); }
-.project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 1.8rem -1px -1px; border: 1px solid var(--line); background: var(--line); }
-.project-card { display: flex; min-height: 10rem; flex-direction: column; align-items: flex-start; gap: .45rem; padding: 1.15rem; background: var(--surface); transition: background-color .2s ease, transform .2s ease; }
-.project-card:hover { background: var(--soft-accent); transform: translateY(-2px); }
-.project-number { color: var(--accent-dark); font-size: .74rem; font-weight: 800; letter-spacing: .1em; }
-.project-card h4 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.12rem; font-weight: 600; line-height: 1.15; }
-.project-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.45; }
-.project-links { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: auto; }
-.project-links a { color: var(--accent-dark); font-size: .82rem; font-weight: 750; text-underline-offset: .2em; }
 .link-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border-block: 1px solid var(--line); background: var(--line); }
 .link-item { min-height: 12rem; padding: 1.4rem; background: var(--surface); }
 .link-item h3 { margin: 0 0 .55rem; font-size: 1.25rem; }
@@ -264,7 +253,6 @@ footer { padding: 2.5rem 0 3.5rem; color: var(--muted); font-size: .88rem; }
   .theme-toggle { align-self: stretch; justify-content: center; }
   h1 { font-size: clamp(3.15rem, 17vw, 5.5rem); }
   .section-head, .entries, .link-grid, .timeline { grid-template-columns: 1fr; }
-  .project-grid { grid-template-columns: 1fr; }
   .section-head { gap: .75rem; }
   .section-head h2 { max-width: none; }
   .step, .step:nth-child(2) { border-right: 0; border-bottom: 1px solid var(--line); }
