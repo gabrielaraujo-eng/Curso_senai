@@ -20,16 +20,6 @@
     applyTheme(nextTheme);
   });
 
-  document.querySelectorAll('.project-toggle').forEach((toggle) => {
-    toggle.addEventListener('click', () => {
-      const details = document.getElementById(toggle.getAttribute('aria-controls'));
-      if (!details) return;
-      const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-      toggle.setAttribute('aria-expanded', String(!isExpanded));
-      details.hidden = isExpanded;
-    });
-  });
-
   const welcome = document.querySelector('#welcome-overlay');
   const orb = document.querySelector('#profile-orb');
   const visual = welcome?.querySelector('.welcome-visual');

@@ -229,15 +229,12 @@ main section { padding: clamp(4rem, 8vw, 6.5rem) 0; border-top: 1px solid var(--
 .entries--projects { grid-template-columns: 1fr; }
 .project-entry { padding: clamp(1.4rem, 3vw, 2.4rem); }
 .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 1.8rem -1px -1px; border: 1px solid var(--line); background: var(--line); }
-.project-card { display: flex; min-height: 5.8rem; flex-direction: column; align-items: stretch; padding: 0; background: var(--surface); transition: background-color .2s ease, transform .2s ease; }
+.project-card { display: flex; min-height: 10rem; flex-direction: column; align-items: flex-start; gap: .45rem; padding: 1.15rem; background: var(--surface); transition: background-color .2s ease, transform .2s ease; }
 .project-card:hover { background: var(--soft-accent); transform: translateY(-2px); }
-.project-toggle { display: flex; width: 100%; min-height: 5.8rem; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.15rem; border: 0; color: var(--ink); background: transparent; cursor: pointer; font: 600 1.12rem/1.15 Georgia, "Times New Roman", serif; text-align: left; }
-.project-toggle:hover, .project-toggle:focus-visible { color: var(--accent-dark); }
-.project-arrow { display: grid; width: 2rem; height: 2rem; flex: 0 0 2rem; place-items: center; border: 1px solid currentColor; border-radius: 50%; color: var(--accent-dark); font: 700 1.35rem/1 system-ui, sans-serif; transition: transform .2s ease, background-color .2s ease, color .2s ease; }
-.project-toggle[aria-expanded="true"] .project-arrow { color: #fff; background: var(--accent); transform: rotate(180deg); }
-.project-details { padding: 0 1.15rem 1.15rem; }
-.project-card p { margin: 0 0 1.1rem; color: var(--muted); font-size: .88rem; line-height: 1.45; }
-.project-links { display: flex; flex-wrap: wrap; gap: .8rem; }
+.project-number { color: var(--accent-dark); font-size: .74rem; font-weight: 800; letter-spacing: .1em; }
+.project-card h4 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.12rem; font-weight: 600; line-height: 1.15; }
+.project-card p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.45; }
+.project-links { display: flex; flex-wrap: wrap; gap: .8rem; margin-top: auto; }
 .project-links a { color: var(--accent-dark); font-size: .82rem; font-weight: 750; text-underline-offset: .2em; }
 .link-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; border-block: 1px solid var(--line); background: var(--line); }
 .link-item { min-height: 12rem; padding: 1.4rem; background: var(--surface); }
